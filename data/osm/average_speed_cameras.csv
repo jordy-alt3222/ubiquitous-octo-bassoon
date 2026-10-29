@@ -1,0 +1,5 @@
+section,road,direction,role,lat,lon,dir,osm_node
+18,"Pacific Highway, Kew to Port Macquarie (Lake Innes)",northbound,start,-31.6171886,152.7275365,11,3523581861
+18,"Pacific Highway, Kew to Port Macquarie (Lake Innes)",northbound,end,-31.5155922,152.7947074,16,17360336
+18,"Pacific Highway, Kew to Port Macquarie (Lake Innes)",southbound,start,-31.5156457,152.794968,196,423773825
+18,"Pacific Highway, Kew to Port Macquarie (Lake Innes)",southbound,end,-31.6172194,152.7277433,190,3523581862

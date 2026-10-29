@@ -21,6 +21,8 @@ from camlib import DATA, ROOT, load_2021, match_2021
 OUT = ROOT / "output"
 FLAG_SPEED = 1
 FLAG_RED_LIGHT = 2
+FLAG_SECTION_START = 4
+FLAG_SECTION_END = 8
 MAX_OFFSET_M = 3000  # a 2021 point this far outside its suburb is treated as an error
 MAX_SEGMENT_M = 3000  # longest "between A and B" segment we will place a midpoint on
 
@@ -84,6 +86,8 @@ def locate(site, area):
 def main():
     OUT.mkdir(exist_ok=True)
     gps = {"fixed": load_2021("fixed"), "red": load_2021("red")}
+    osm = {(r["kind"], r["suburb"], r["road"]): r
+           for r in csv.DictReader(open(DATA / "osm" / "site_positions.csv"))}
     points, skipped = [], []
     for site in current_sites():
         if site["removed"]:
@@ -98,6 +102,11 @@ def main():
                 found.append((lat, lon, "TfNSW Open Data GPS (2021)"))
             if found:
                 break
+        direction = None
+        if not found and (site["kind"], site["suburb"], site["road"]) in osm:
+            o = osm[(site["kind"], site["suburb"], site["road"])]
+            found = [(float(o["lat"]), float(o["lon"]), "OpenStreetMap: " + o["note"])]
+            direction = int(o["dir"]) if o["dir"] else None
         if not found:
             p, note = locate(site, area)
             if p is None:
@@ -105,23 +114,41 @@ def main():
                 continue
             found = [(round(p.y, 6), round(p.x, 6), note)]
         for lat, lon, source in found:
-            points.append({**site, "lat": lat, "lon": lon, "source": source,
+            points.append({**site, "lat": lat, "lon": lon, "source": source, "dir": direction,
                            "speed_limit": nswgeo.speed_limit(lat, lon)})
+
+    # Average speed sections. Only those enforced for light vehicles, with both ends
+    # mapped in OpenStreetMap, are listed in data/osm/average_speed_cameras.csv.
+    for r in csv.DictReader(open(DATA / "osm" / "average_speed_cameras.csv")):
+        lat, lon = float(r["lat"]), float(r["lon"])
+        points.append({
+            "kind": "average", "suburb": f"section {r['section']}", "school_zone": False,
+            "road": f"Average speed {r['role']}, {r['road']}, {r['direction']}",
+            "role": r["role"], "lat": lat, "lon": lon, "dir": int(r["dir"]),
+            "source": f"OpenStreetMap node {r['osm_node']}", "comment": "",
+            "speed_limit": nswgeo.speed_limit(lat, lon),
+        })
 
     today = datetime.date.today().isoformat()
     with lzma.open(OUT / "nsw_speed_cameras.excam", "wt", encoding="utf-8") as f:
-        f.write(json.dumps({"_meta": {"name": "NSW speed cameras (Transport for NSW data)", "date": today}}) + "\n")
+        f.write(json.dumps({"_meta": {"name": "NSW speed cameras (Transport for NSW, OpenStreetMap)", "date": today}}) + "\n")
         for p in points:
-            label = f"{p['road']}, {p['suburb']}"
-            if p["school_zone"]:
-                label += " (school zone, 40 km/h school days)"
-            cam = {"lat": p["lat"], "lon": p["lon"],
-                   "flg": FLAG_SPEED | (FLAG_RED_LIGHT if p["kind"] == "red" else 0), "str": label}
+            if p["kind"] == "average":
+                label = p["road"]
+                flg = FLAG_SECTION_START if p["role"] == "start" else FLAG_SECTION_END
+            else:
+                label = f"{p['road']}, {p['suburb']}"
+                if p["school_zone"]:
+                    label += " (school zone, 40 km/h school days)"
+                flg = FLAG_SPEED | (FLAG_RED_LIGHT if p["kind"] == "red" else 0)
+            cam = {"lat": p["lat"], "lon": p["lon"], "flg": flg, "str": label}
+            if p["dir"] is not None:
+                cam["dir"] = [p["dir"]]
             if p["speed_limit"]:
                 cam["spd"] = p["speed_limit"]
             f.write(json.dumps(cam) + "\n")
 
-    fields = ["kind", "suburb", "road", "school_zone", "lat", "lon", "speed_limit", "source", "comment"]
+    fields = ["kind", "suburb", "road", "school_zone", "lat", "lon", "dir", "speed_limit", "source", "comment"]
     with open(OUT / "nsw_speed_cameras.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fields, extrasaction="ignore")
         w.writeheader()

@@ -9,8 +9,3 @@ fixed,Normanhurst/Pennant Hills,NorthConnex Tunnel,,not a two-road intersection
 fixed,Rozelle / Annandale / Leichhardt,Rozelle Interchange,Added January 2024,not a two-road intersection
 fixed,Sydney,"Sydney Harbour Tunnel, between Cahill Expressway and Warringah Freeway",,segment ends not found in NSW road network
 fixed,Woolloomooloo / East Sydney,"Cross City Tunnel, between McLachlan Avenue and Harbour Street",,segment ends not found in NSW road network
-red,Dunolly,New England Highway and Bridgman Road,Added October 2022,roads do not meet clearly
-red,Fairfield West,Cumberland Highway and Thorney Road,Added December 2023,road name not found in NSW road network
-red,Kotara,Charlestown Road and Camley Avenue,Added November 2019,road name not found in NSW road network
-red,Surry Hills,South Dowling Street at Sydney Light Rail Crossing,Added April 2022,road name not found in NSW road network
-red,Wollongong,Princes Highway and Mangerton Road,Added December 2023,roads do not meet clearly
