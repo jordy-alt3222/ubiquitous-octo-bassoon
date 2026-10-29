@@ -1,0 +1,395 @@
+kind,suburb,road,school_zone,lat,lon,speed_limit,source,comment
+fixed,Auburn,"Parramatta Road, between Harbord Street and Duck Street",False,-33.83596257,151.0236212,60,TfNSW Open Data GPS (2021),
+fixed,Bar Point,"M1, between Jolls Bridge and Mt White Exit Ramp",False,-33.48820797,151.1838675,100,TfNSW Open Data GPS (2021),
+fixed,Ben Lomond,"New England Highway, between Ross Road and Ben Lomond Road",False,-30.00608908,151.7150055,100,TfNSW Open Data GPS (2021),
+fixed,Berkshire Park,"Richmond Road, between Llandilo Road and Sanctuary Drive",False,-33.66132172,150.7972901,80,TfNSW Open Data GPS (2021),
+fixed,Bexley North,"Bexley Road, between Kingsland Road North and Miller Avenue",False,-33.9424273,151.1187736,60,TfNSW Open Data GPS (2021),
+fixed,Blandford,"New England Highway, between Hayles Street and Mills Street",False,-31.78359945,150.8955526,70,TfNSW Open Data GPS (2021),
+fixed,Bomaderry,"Bolong Road, between Beinda Street and Coomea Street",False,-34.85783897,150.6054788,60,TfNSW Open Data GPS (2021),
+fixed,Bonnyrigg,"Elizabeth Drive, between Brown Road and Humphries Road",False,-33.89797227,150.8944633,60,TfNSW Open Data GPS (2021),
+fixed,Brighton-Le-Sands,"The Grand Parade, between Gordon Street and Bruce Street",False,-33.958703,151.157507,60,midpoint of segment from NSW road network,Added December 2023
+fixed,Bulli,"Princes Highway, between Grevillea Park Road and Black Diamond Place",False,-34.33154593,150.9137692,60,TfNSW Open Data GPS (2021),
+fixed,Burringbar,"Tweed Valley Way, between Blakeneys Road and Cooradilla Road",False,-28.401083,153.438162,80,TfNSW Open Data GPS (2021),
+fixed,Burwood Heights,"Hume Highway, between Kelso Street and Appian Way",False,-33.88782464,151.1047184,60,TfNSW Open Data GPS (2021),
+fixed,Camellia,"James Ruse Drive, between Victoria Road and Grand Avenue North",False,-33.81538472,151.022514,70,TfNSW Open Data GPS (2021),
+fixed,Canterbury,"Canterbury Road, between Gould Street and Jeffrey Street",False,-33.913881,151.114813,60,TfNSW Open Data GPS (2021),
+fixed,Caringbah,"Captain Cook Drive, between Cawarra Road and Gannons Road",False,-34.03560285,151.1313471,70,TfNSW Open Data GPS (2021),
+fixed,Carlingford,"Pennant Hills Road, between Evans Road and Coleman Avenue",False,-33.78267107,151.0491467,60,TfNSW Open Data GPS (2021),
+fixed,Charmhaven,"Pacific Highway, between Wallarah Creek and Lowana Avenue",False,-33.22036966,151.5060441,70,TfNSW Open Data GPS (2021),
+fixed,Clunes,"Bangalow Road, between Flatley Drive and Johnston Road",False,-28.73451,153.40462,50,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken.
+fixed,Concord West,"Concord Road, between Nirranda Street and Mepunga Street",False,-33.84951967,151.0899929,60,TfNSW Open Data GPS (2021),
+fixed,Darlinghurst,"Eastern Distributor , between Oxford Street and William Street",False,-33.877573,151.217214,80,midpoint of segment from NSW road network,
+fixed,Eastgardens / Maroubra,"Bunnerong Road, between Fitzgerald Avenue and Smith Street",False,-33.94709338,151.2288756,60,TfNSW Open Data GPS (2021),
+fixed,Eastgardens / Maroubra,"Bunnerong Road, between Fitzgerald Avenue and Smith Street",False,-33.94698527,151.2290104,60,TfNSW Open Data GPS (2021),
+fixed,Edgecliff,"New South Head Road, between Waratah Street and New Beach Road",False,-33.8764195,151.2303775,60,TfNSW Open Data GPS (2021),
+fixed,Engadine,"Heathcote Road, between Forum Drive and New Illawarra Road",False,-34.07328121,151.0055604,70,TfNSW Open Data GPS (2021),
+fixed,Ewingsdale,"Hinterland Way, between St Helena Road and Ewingsdale Road.",False,-28.64748547,153.5485293,100,TfNSW Open Data GPS (2021),
+fixed,Fairfield East,"Fairfield Street, between Scott Street and Mandarin Street",False,-33.869726,150.979134,60,TfNSW Open Data GPS (2021),
+fixed,Gordon,"Eastern Arterial Road, between Koola Avenue and Nicholson Avenue",False,-33.75206,151.17078,60,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken at site.
+fixed,Greystanes,"Greystanes Road, between Merrylands Road and Old Prospect Road",False,-33.82320759,150.9326137,60,TfNSW Open Data GPS (2021),
+fixed,Gwynneville,"M1 Princes Motorway (Northbound), between Northern Distrbutor Overpass and Gipps Road Overpass",False,-34.41477048,150.8813173,80,TfNSW Open Data GPS (2021),"M1 Princess Highway, Gwynneville has two cameras operating approximately 1,000 metres apart and infringing in different directions, therefore they are considered separate locations."
+fixed,Gwynneville,"M1 Princes Motorway (Southbound), between University Avenue Overpass and Mount Ousley Road",False,-34.40624849,150.8838636,80,TfNSW Open Data GPS (2021),"M1 Princess Highway, Gwynneville has two cameras operating approximately 1,000 metres apart and infringing in different directions, therefore they are considered separate locations."
+fixed,Kurrajong,"Bells Line of Road, between Queen Street and Bellbird Avenue",False,-33.53374295,150.6326618,60,TfNSW Open Data GPS (2021),
+fixed,Lane Cove,"Centennial Avenue, between Gentle Street and Figtree Street",False,-33.81286842,151.15824,60,TfNSW Open Data GPS (2021),
+fixed,Lansvale,"Hume Highway, between Henry Lawson Drive and Knight Street",False,-33.89143275,150.9655959,70,TfNSW Open Data GPS (2021),
+fixed,Mayfield West,"Pacific Highway, between Werribie Street and Tourle Street",False,-32.8922325,151.7298519,60,TfNSW Open Data GPS (2021),
+fixed,Mount Victoria,"Great Western Highway, between Mitchells Lookout Road and Ambermere Drive",False,-33.58287,150.24047,60,TfNSW Open Data GPS (2021),
+fixed,Narraweena,"Warringah Road, near the intersection with May Road",False,-33.756043,151.276273,70,TfNSW Open Data GPS (2021),
+fixed,Nords Wharf,"Pacific Highway, between Nords Wharf Road and Flowers Drive",False,-33.13393006,151.6131895,90,TfNSW Open Data GPS (2021),
+fixed,North Macksville,"Giinagay Way, between Florence Wilmont Drive and Watt Creek",False,-30.703546,152.923003,50,TfNSW Open Data GPS (2021),
+fixed,North Macksville,"Giinagay Way, between Bellview Drive and Ferry Street",False,-30.69696637,152.9652117,100,TfNSW Open Data GPS (2021),
+fixed,North Parramatta,"Pennant Hills Road, between Castle Street and Bellevue Street",False,-33.80057705,151.0082796,60,TfNSW Open Data GPS (2021),
+fixed,North Willoughby,"Eastern Valley Way, between Megalong Avenue and McClelland Street",False,-33.79406,151.20795,60,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken at site.
+fixed,North Wollongong,"Princes Highway, between Ajax Avenue and Exeter Avenue",False,-34.41141854,150.8926124,60,TfNSW Open Data GPS (2021),
+fixed,Ourimbah,"M1 Pacific Motorway, between Dogtrap Road Overpass and Ourimbah Creek Road",False,-33.35809178,151.3429571,110,TfNSW Open Data GPS (2021),
+fixed,Padstow,"Gibson Avenue, between Turvey Street and Bryant Street",False,-33.93987715,151.0274613,60,TfNSW Open Data GPS (2021),
+fixed,Peakhurst,"Henry Lawson Drive, between Belmore Road and Ogilvy Street",False,-33.9610236,151.0495263,60,TfNSW Open Data GPS (2021),
+fixed,Picnic Point,"Henry Lawson Drive, between Carinya Road and The River Road",False,-33.97902162,151.0098467,60,TfNSW Open Data GPS (2021),
+fixed,Rankin Park,"McCaffrey Drive, between Duval Street and Orara Street",False,-32.925096,151.682014,60,TfNSW Open Data GPS (2021),
+fixed,Ryde,"Blaxland Road, between Reservoir Lane and North Road",False,-33.80306634,151.1019372,60,TfNSW Open Data GPS (2021),
+fixed,Sandgate,"Pacific Highway, between Wallsend Road and Ironbark Creek",False,-32.85620069,151.7038844,80,TfNSW Open Data GPS (2021),
+fixed,Sandgate,"Pacific Highway, between Wallsend Road and Ironbark Creek",False,-32.85768723,151.7048722,80,TfNSW Open Data GPS (2021),
+fixed,Sans Souci,"The Grand Parade, between Alice Street and Ramsgate Road",False,-33.987488,151.146993,60,midpoint of segment from NSW road network,Added December 2023
+fixed,South Windsor,"George Street, between Rickaby Street and Yarrawonga Street",False,-33.62840855,150.7950062,60,TfNSW Open Data GPS (2021),
+fixed,Tenterfield,"New England Highway, between Duncan Street and George Street",False,-29.0400659,152.0160985,50,TfNSW Open Data GPS (2021),
+fixed,The Spit/Beauty Point,"Spit Road, between Parriwi Road and Upper Spit Road and between Central Avenue and Medusa Street",False,-33.81395,151.24386,60,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken at site.
+fixed,The Spit/Beauty Point,"Spit Road, between Parriwi Road and Upper Spit Road and between Central Avenue and Medusa Street",False,-33.80995,151.24531,60,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken at site.
+fixed,Ulmarra,"Big River Way, between River Street and George Street",False,-29.634024,153.026633,50,midpoint of segment from NSW road network,Added November 2018
+fixed,Urunga,"Giinagay Way, between Ranger Street and Hillside Drive",False,-30.50428,153.00846,50,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken at site.
+fixed,Valley Heights,"Great Western Highway, between The Valley Road and Sun Valley Road",False,-33.71183191,150.5919374,80,TfNSW Open Data GPS (2021),
+fixed,Wardell,"Blackwall Drive, between Riverside Drive and Carlisle Street",False,-28.94580095,153.4675675,80,TfNSW Open Data GPS (2021),
+fixed,Warrawong,"Northcliffe Drive, between Griffin Street and Kully Street",False,-34.49174959,150.8761139,60,TfNSW Open Data GPS (2021),
+fixed,West Pennant Hills,"Castle Hill Road, between Pennant Hills Road and Coonara Avenue",False,-33.74011786,151.0386616,60,TfNSW Open Data GPS (2021),
+fixed,Wollongbar,"Bruxner Highway, between Convernys Lane and McLeans Ridges Road",False,-28.81241201,153.3907865,80,TfNSW Open Data GPS (2021),
+fixed,Woodburn,"River Street, between Sussex Street and Richmond Street",False,-29.067581,153.351098,50,midpoint of segment from NSW road network,
+fixed,Yagoona,"Hume Highway, between Smith Street and Brennan Avenue",False,-33.90466286,151.0086742,70,TfNSW Open Data GPS (2021),
+fixed,Ashfield,"Hume Highway, between Murrell Street and Queen Street",True,-33.89017676,151.1279851,60,TfNSW Open Data GPS (2021),Ashfield Public School
+fixed,Bankstown,"Hume Highway, between Rookwood Road and Stacey Street",True,-33.90591876,151.0385979,60,TfNSW Open Data GPS (2021),"Bankstown North Public School, La Salle Catholic School"
+fixed,Bankstown,"Hume Highway, between Rookwood Road and Stacey Street",True,-33.90618282,151.0389152,60,TfNSW Open Data GPS (2021),"Bankstown North Public School, La Salle Catholic School"
+fixed,Beverly Hills,"King Georges Road, between Stoney Creek Road and Edgbaston Road",True,-33.95055554,151.0816667,60,TfNSW Open Data GPS (2021),Beverly Hills Girls High School
+fixed,Beverly Hills,"King Georges Road, between Stoney Creek Road and Edgbaston Road",True,-33.95055553,151.0819444,60,TfNSW Open Data GPS (2021),Beverly Hills Girls High School
+fixed,Bonnyrigg,"Cabramatta Road, between Katinka Street and Tarlington Parade",True,-33.893729,150.894911,60,TfNSW Open Data GPS (2021),Bonnyrigg High School and Our Lady of Mt Carmel Primary School
+fixed,Castle Hill,"Old Northern Road, between Telfer Road and Brisbane Road",True,-33.73182386,151.0133555,60,TfNSW Open Data GPS (2021),St Bernadette's Primary School
+fixed,Condell Park,"Edgar Street, between Augusta Street and Upper Railway Parade",True,-33.92514833,151.0127285,60,TfNSW Open Data GPS (2021),Condell Park Primary School
+fixed,Eastgardens/Maroubra,"Bunnerong Road, between Fitzgerald Avenue and Smith Street",True,-33.94709338,151.2288756,60,TfNSW Open Data GPS (2021),Marist College Pagewood
+fixed,Eastgardens/Maroubra,"Bunnerong Road, between Fitzgerald Avenue and Smith Street",True,-33.94698527,151.2290104,60,TfNSW Open Data GPS (2021),Marist College Pagewood
+fixed,Epping,"Carlingford Road, between Midson Road and Duntroon Ave",True,-33.77379,151.06815,60,TfNSW Open Data GPS (2021),Epping West Public SchoolCamera in warning mode. Alternative road works underway.
+fixed,Gateshead,"Pacific Highway, between Sydney Street and Macquarie Avenue",True,-32.98367474,151.6921763,60,TfNSW Open Data GPS (2021),"Hunter Sports High School, Gateshead Public School, St Mary's High School"
+fixed,Guildford,"Woodville Road, between Kenelda Avenue and Osgood Street",True,-33.84888891,150.9969444,70,TfNSW Open Data GPS (2021),Granville South Public School
+fixed,Guildford,"Woodville Road, between Kenelda Avenue and Osgood Street",True,-33.84898622,150.9971901,70,TfNSW Open Data GPS (2021),Granville South Public School
+fixed,Gymea,"President Avenue, between Koorabell Road and Gymea Bay South Road",True,-34.0375,151.08361,60,TfNSW Open Data GPS (2021),St Catherine Labore Primary School. Camera in warning mode. Alternative road works undertaken at site.
+fixed,Hurstville,"Forest Road, between Lily Street and Cronulla Street",True,-33.964232,151.111588,60,TfNSW Open Data GPS (2021),"Bethany College, Sydney Technical High School, Hurstville Boys High School and Hurstville Primary School"
+fixed,Kingswood,"Parker Street, between Copeland Street and Gascoigne Street",True,-33.75328526,150.7128596,70,TfNSW Open Data GPS (2021),St Dominic’s College
+fixed,Kingswood,"Parker Street, between Copeland Street and Gascoigne Street",True,-33.75285392,150.7131341,70,TfNSW Open Data GPS (2021),St Dominic’s College
+fixed,Kogarah,"Princes Highway, between Gray Street and President Avenue",True,-33.96785364,151.1363472,60,TfNSW Open Data GPS (2021),"St Patrick’s Primary School, Bethany College, James Cook Boys High School, Moorefield Girls High School, Kogarah Public School"
+fixed,Kogarah,"Princes Highway, between Gray Street and President Avenue",True,-33.96706137,151.1367476,60,TfNSW Open Data GPS (2021),"St Patrick’s Primary School, Bethany College, James Cook Boys High School, Moorefield Girls High School, Kogarah Public School"
+fixed,Lindfield,"Pacific Highway, between Eton Road and Gladstone Parade",True,-33.78114353,151.1703513,60,TfNSW Open Data GPS (2021),Lindfield Primary School
+fixed,Lindfield,"Pacific Highway, between Eton Road and Gladstone Parade",True,-33.78126253,151.1701605,60,TfNSW Open Data GPS (2021),Lindfield Primary School
+fixed,Liverpool,"Bigge Street, between Elizabeth Drive and Campbell Street",True,-33.91916668,150.9275,50,TfNSW Open Data GPS (2021),"All Saints Catholic Primary School, All Saints Catholic Girls College and All Saints Catholic Boys College"
+fixed,Lochinvar,"New England Highway, between Robert Road and Station Lane",True,-32.69960755,151.4581118,60,TfNSW Open Data GPS (2021),"Lochinvar Public School, St Patrick's Primary School, All Saints College - St Joseph's Campus"
+fixed,Maroubra,"Malabar Road, between Mons Avenue and Duncan Street",True,-33.94683202,151.2516715,50,TfNSW Open Data GPS (2021),"St Mary & St Joseph's Primary, Maroubra Bay"
+fixed,Maroubra,"Malabar Road, between Mons Avenue and Duncan Street",True,-33.94686715,151.2518953,50,TfNSW Open Data GPS (2021),"St Mary & St Joseph's Primary, Maroubra Bay"
+fixed,Merrylands,"Merrylands Road, between Chetwynd Road and Davies Street",True,-33.83499999,150.9822222,60,TfNSW Open Data GPS (2021),St. Margaret Mary's Primary School
+fixed,Miranda,"Kingsway, between Sylva Avenue and University Road",True,-34.03357161,151.0969542,60,TfNSW Open Data GPS (2021),Port Hacking High School and Miranda Public School
+fixed,Miranda,"Kingsway, between Sylva Avenue and University Road",True,-34.03379629,151.0969364,60,TfNSW Open Data GPS (2021),Port Hacking High School and Miranda Public School
+fixed,Moore Park,"Cleveland Street, between Anzac Parade and South Dowling Street",True,-33.89305552,151.2188889,50,TfNSW Open Data GPS (2021),Sydney Boys High School and Sydney Girls High School
+fixed,Moore Park,"Cleveland Street, between Anzac Parade and South Dowling Street",True,-33.89305557,151.2186111,50,TfNSW Open Data GPS (2021),Sydney Boys High School and Sydney Girls High School
+fixed,Mosman,"Macpherson Street, between Ourimbah Road and Montague Road",True,-33.82239064,151.2320488,50,TfNSW Open Data GPS (2021),Middle Harbour PS
+fixed,Narrabeen,"Pittwater Road, between Ocean Street and Devitt Street",True,-33.72000362,151.2981769,60,TfNSW Open Data GPS (2021),Narrabeen Lakes Primary School
+fixed,Narrabeen,"Pittwater Road, between Ocean Street and Devitt Street",True,-33.72057823,151.2980167,60,TfNSW Open Data GPS (2021),Narrabeen Lakes Primary School
+fixed,North Curl Curl,"Harbord Road, between Abbott Road and Brighton Street",True,-33.76416669,151.2797222,60,TfNSW Open Data GPS (2021),Freshwater Senior High School and Manly Selective Campus
+fixed,North Narrabeen,"Pittwater Road, between Garden Street and Namona Street",True,-33.70094101,151.2991867,70,TfNSW Open Data GPS (2021),"Narrabeen North Public School, Narrabeen Sports High School"
+fixed,North Narrabeen,"Pittwater Road, between Garden Street and Namona Street",True,-33.70216545,151.2984224,70,TfNSW Open Data GPS (2021),"Narrabeen North Public School, Narrabeen Sports High School"
+fixed,North Parramatta / Oatlands,"Pennant Hills Road, between Masons Drive and Suttor Avenue",True,-33.79341232,151.018726,60,TfNSW Open Data GPS (2021),"Burnside Public School, The Kings School, Redeemer Baptist School, Garfield Barwick School, American International School, Cumberland High School"
+fixed,North Parramatta / Oatlands,"Pennant Hills Road, between Masons Drive and Suttor Avenue",True,-33.79357428,151.0188313,60,TfNSW Open Data GPS (2021),"Burnside Public School, The Kings School, Redeemer Baptist School, Garfield Barwick School, American International School, Cumberland High School"
+fixed,Old Guilford,"Woodville Road, between Orchardleigh Street and Middleton Road",True,-33.86765966,150.9875982,70,TfNSW Open Data GPS (2021),Old Guildford Public School
+fixed,Old Guilford,"Woodville Road, between Orchardleigh Street and Middleton Road",True,-33.86739615,150.987915,70,TfNSW Open Data GPS (2021),Old Guildford Public School
+fixed,Ourimbah,"Pacific Highway, between Yates Road and Dog Trap Road",True,-33.35340304,151.3696063,60,TfNSW Open Data GPS (2021),Ourimbah Primary School
+fixed,Ourimbah,"Pacific Highway, between Yates Road and Dog Trap Road",True,-33.35340788,151.3696426,60,TfNSW Open Data GPS (2021),Ourimbah Primary School
+fixed,Penshurst,"Forest Road, between Penshurst Street and St Georges Street",True,-33.96333333,151.0858334,60,TfNSW Open Data GPS (2021),"Penshurst Girls campus - Georges River College, Penshurst Public school and St Declan's Primary School"
+fixed,Randwick,"Avoca Street, between Howard Street and Barker Road",True,-33.92284282,151.2400467,50,TfNSW Open Data GPS (2021),"Randwick Boys High School, Randwick Girls High School"
+fixed,Rosebery/Alexandria,"Botany Road, between Gardeners Road and Gillespie Street",True,-33.9209704,151.1970989,50,TfNSW Open Data GPS (2021),Gardeners Road Public School
+fixed,Rosebery/Alexandria,"Botany Road, between Gardeners Road and Gillespie Street",True,-33.92085491,151.1968724,50,TfNSW Open Data GPS (2021),Gardeners Road Public School
+fixed,Rydalmere,"Victoria Road, between Park Road and John Street",True,-33.81284539,151.0451275,70,TfNSW Open Data GPS (2021),Rydalmere Public School
+fixed,Rydalmere,"Victoria Road, between Park Road and John Street",True,-33.81264402,151.0441903,70,TfNSW Open Data GPS (2021),Rydalmere Public School
+fixed,Ryde,"Victoria Road, between Margaret Street and Cressy Road",True,-33.81959929,151.1174122,60,TfNSW Open Data GPS (2021),Holy Cross College Ryde and St Charle’s School Ryde School
+fixed,Ryde,"Victoria Road, between Margaret Street and Cressy Road",True,-33.81987705,151.11769,60,TfNSW Open Data GPS (2021),Holy Cross College Ryde and St Charle’s School Ryde School
+fixed,Strathfield,"The Boulevarde, between Torrington Parade and Russell Street",True,-33.87792312,151.0931962,60,TfNSW Open Data GPS (2021),"Trinity Grammar Preparatory School, Santa Sabina College, Santa Maria Del Monte, Meriden Senior and Junio"
+fixed,Toongabbie,"Fitzwilliam Road, between Reynolds Street and Binalong Road",True,-33.78629486,150.9657021,60,TfNSW Open Data GPS (2021),Toongabbie Public School
+fixed,Toongabbie,"Fitzwilliam Road, between Reynolds Street and Binalong Road",True,-33.78653841,150.9660488,60,TfNSW Open Data GPS (2021),Toongabbie Public School
+fixed,Wahroonga,"Pacific Highway, between Gilda Avenue and Woodville Avenue",True,-33.72287956,151.1184548,60,TfNSW Open Data GPS (2021),"Warrawee Public School, Knox Grammar, Abbotsleigh Senior Campus"
+fixed,Wahroonga,"Pacific Highway, between Gilda Avenue and Woodville Avenue",True,-33.72247323,151.1183653,60,TfNSW Open Data GPS (2021),"Warrawee Public School, Knox Grammar, Abbotsleigh Senior Campus"
+fixed,Wollongong,"Princes Highway, between Mount Keira Road and Highway Avenue",True,-34.42712237,150.8697969,60,TfNSW Open Data GPS (2021),"Illawarra Grammar School, Wollongong West Public School, St Theresa Primary School"
+fixed,Wyoming,"Henry Parry Drive, between Glennie Street and Dwyer Street",True,-33.41374332,151.3495707,60,TfNSW Open Data GPS (2021),Our Lady of the Rosary Primary School
+red,Albury,Borella Road and Young Street,True,-36.07518,146.92525,60,TfNSW Open Data GPS (2021),School zone/added May 2020
+red,Alexandria / Waterloo,McEvoy Street and Botany Road,False,-33.90148333,151.20085,50,TfNSW Open Data GPS (2021),
+red,Alexandria / Waterloo,McEvoy Street and Botany Road,False,-33.901451,151.201546,50,TfNSW Open Data GPS (2021),
+red,Alexandria /Zetland,Bourke Street and Botany Road,False,-33.905448,151.203116,50,TfNSW Open Data GPS (2021),
+red,Allawah / Kogarah Bay,Princes Highway and Park Rd,False,-33.978668,151.122791,70,TfNSW Open Data GPS (2021),
+red,Annandale,Johnston Street and Parramatta Road,False,-33.887912,151.167721,60,intersection from NSW road network,Added May 2026
+red,Ashcroft,Elizabeth Drive and Maxwells Avenue,False,-33.912508,150.904889,70,intersection from NSW road network,Added June 2025
+red,Ashfield,Hume Highway and Fredrick Street,False,-33.888045,151.117876,60,TfNSW Open Data GPS (2021),
+red,Auburn,Chisholm Road and Mona Street,False,-33.848376,151.021343,50,TfNSW Open Data GPS (2021),
+red,Auburn,Rawson Street and Northumberland Road,False,-33.849101,151.033268,50,TfNSW Open Data GPS (2021),
+red,Auburn,Rawson Street and Station Road,False,-33.850038,151.03496,50,TfNSW Open Data GPS (2021),
+red,Banksmeadow,Foreshore Road and Botany Road,False,-33.961967,151.21485,70,TfNSW Open Data GPS (2021),
+red,Bankstown,Meredith Street and Hume Highway,True,-33.907435,151.03327,60,TfNSW Open Data GPS (2021),School zone
+red,Bankstown,Stacey Street and Hume Highway,False,-33.906498,151.039902,,TfNSW Open Data GPS (2021),
+red,Bankstown,Rickard Road and Lady Cutler Avenue,False,-33.914598,151.040054,60,intersection from NSW road network,Added September 2022
+red,Bankstown,Chapel Road and Macauley Avenue,False,-33.923822,151.030415,60,intersection from NSW road network,Added September 2024
+red,Bass Hill,Hume Highway and Chester Hill Road,False,-33.89903234,150.9964705,70,TfNSW Open Data GPS (2021),Added from July 2018
+red,Bathurst,Stewart Street/Great Western Highway and Keppel Street,False,-33.41518,149.57299,60,TfNSW Open Data GPS (2021),Added April 2020
+red,Bathurst,Durham Street and Bentinck Street,False,-33.4177,149.58507,60,TfNSW Open Data GPS (2021),Added April 2020
+red,Baulkham Hills,Windsor Road and Seven Hills Road,False,-33.76151667,150.9926167,60,TfNSW Open Data GPS (2021),
+red,Baulkham Hills,Windsor Road and Seven Hills Road,False,-33.76228333,150.9930833,60,TfNSW Open Data GPS (2021),
+red,Beaconsfield / Alexandria,Collins Street and O'Riordan Street,False,-33.911362,151.197403,50,TfNSW Open Data GPS (2021),
+red,Belfield,Burwood Road and Punchbowl Road,False,-33.902363,151.083603,60,TfNSW Open Data GPS (2021),
+red,Belmore / Kingsgrove,Kingsgrove Road and Forsyth Street,False,-33.92945,151.098558,50,TfNSW Open Data GPS (2021),
+red,Bexley,Forest Road and Harrow Road,False,-33.948321,151.12775,60,TfNSW Open Data GPS (2021),
+red,Bexley,Harrow Road and Watkin Street,False,-33.952566,151.131741,60,TfNSW Open Data GPS (2021),
+red,Blacktown,Bungarribee Road and Balmoral Street / Reservoir Road,False,-33.776519,150.901258,60,TfNSW Open Data GPS (2021),
+red,Blacktown,Great Western Highway and Reservoir Road,False,-33.798404,150.897611,80,TfNSW Open Data GPS (2021),
+red,Blacktown,Kildare Street and Lancaster Street,True,-33.768824,150.892578,60,TfNSW Open Data GPS (2021),School zone
+red,Blacktown,Newton Road and Flushcombe Road,True,-33.773527,150.908426,60,TfNSW Open Data GPS (2021),School zone
+red,Blacktown,Prospect Highway and Blacktown Road,False,-33.79265,150.91914,60,TfNSW Open Data GPS (2021),Added January 2020
+red,Blacktown,Sunnyholt Road and Newton Road,False,-33.771465,150.911757,60,TfNSW Open Data GPS (2021),
+red,Blacktown,Third Avenue and Richmond Road,False,-33.766371,150.905782,60,TfNSW Open Data GPS (2021),
+red,Blacktown,Third Avenue and Prince Street,False,-33.765399,150.910773,60,TfNSW Open Data GPS (2021),
+red,Blakehurst,King Georges Road and Terry Street,False,-33.983135,151.109302,70,TfNSW Open Data GPS (2021),
+red,Blue Haven,Pacific Highway and Goorama Avenue,False,-33.213716,151.512191,70,intersection from NSW road network,Added September 2026
+red,Bondi Junction,Old South Head Road and Bondi Road,False,-33.890842,151.253824,50,TfNSW Open Data GPS (2021),
+red,Burwood,Parramatta Road and Burwood Road,False,-33.86903333,151.1055833,60,TfNSW Open Data GPS (2021),
+red,Burwood,Parramatta Road and Burwood Road,False,-33.86876667,151.1052,60,TfNSW Open Data GPS (2021),
+red,Burwood,Railway Parade and Burwood Road,False,-33.877479,151.103949,40,TfNSW Open Data GPS (2021),
+red,Cabramatta,Hume Highway and Cutler Road,False,-33.897322,150.952802,70,intersection from NSW road network,Added September 2024
+red,Cabramatta West,Cumberland Highway and Cabramatta Road West,False,-33.898886,150.919473,70,TfNSW Open Data GPS (2021),
+red,Cabramatta West,Cumberland Highway and Cabramatta Road West,False,-33.899725,150.918936,70,TfNSW Open Data GPS (2021),
+red,Campbelltown,Kellicar Road and Narellan Road,False,-34.072236,150.805293,60,TfNSW Open Data GPS (2021),
+red,Campbelltown,Kellicar Road and Narellan Road,False,-34.072035,150.80594,60,TfNSW Open Data GPS (2021),
+red,Campbelltown,Moore-Oxley Bypass / Appin Road and The Parkway,False,-34.074459,150.808577,60,TfNSW Open Data GPS (2021),
+red,Campbelltown,Moore-Oxley Bypass and Broughton Street,False,-34.06664,150.819252,60,TfNSW Open Data GPS (2021),
+red,Campbelltown,Moore-Oxley Bypass and Broughton Street,False,-34.066599,150.819836,60,TfNSW Open Data GPS (2021),
+red,Campbelltown,Narellan Road and Gilchrist Drive,False,-34.068075,150.802507,60,intersection from NSW road network,Added June 2026
+red,Campsie,Canterbury Road and Bexley Road,False,-33.918154,151.104657,60,TfNSW Open Data GPS (2021),
+red,Campsie,Canterbury Road and Thorncraft Parade,False,-33.920186,151.099487,60,TfNSW Open Data GPS (2021),
+red,Canley Heights,Cumberland Highway and Canley Vale Road,True,-33.883836,150.923628,70,TfNSW Open Data GPS (2021),School zone
+red,Canley Heights / Cabramatta,Cumberland Highway and St Johns Road,False,-33.888111,150.923039,70,TfNSW Open Data GPS (2021),
+red,Canley Vale,Canley Vale Road and Sackville Street,False,-33.885554,150.93686,60,TfNSW Open Data GPS (2021),
+red,Caringbah,The Kingsway and Gannons Road,False,-34.045942,151.133228,70,TfNSW Open Data GPS (2021),
+red,Castle Hill,Showground Road and Victoria Avenue,False,-33.724767,150.977632,60,TfNSW Open Data GPS (2021),
+red,Castle Hill,Pennant St and Castle Street,False,-33.731368,151.003974,60,TfNSW Open Data GPS (2021),
+red,Casula,Hume Highway and Holston Street,False,-33.940649,150.912444,70,intersection from NSW road network,Added December 2024
+red,Charlestown,Charlestown Road and Hillsborough Road,False,-32.95667211,151.6866573,60,TfNSW Open Data GPS (2021),Added from July 2018
+red,Charlestown,Pacific Highway and Madison Drive,False,-32.956116,151.704083,60,intersection from NSW road network,Added September 2022
+red,Chester Hill,Waldron Road and Hector Street,False,-33.883675,151.00649,60,TfNSW Open Data GPS (2021),
+red,Chester Hill,Waldron Road and Hector Street,False,-33.883855,151.007272,60,TfNSW Open Data GPS (2021),
+red,Chippendale,Abercrombie Street and Broadway,False,-33.884408,151.198648,50,TfNSW Open Data GPS (2021),
+red,Chullora,Rookwood Road and Muir Road,False,-33.891965,151.038551,80,TfNSW Open Data GPS (2021),
+red,Chullora/Greenacre,Hume Highway at Sherman Street / Shellcote Road,False,-33.894101,151.053876,70,intersection from NSW road network,Added April 2022
+red,Claremont Meadows,Great Western Highway and Werrington Road,False,-33.76819,150.75789,80,TfNSW Open Data GPS (2021),Added May 2020
+red,Coffs Harbour,Pacific Highway and Bray Street,False,-30.28376982,153.1267167,60,TfNSW Open Data GPS (2021),Added from July 2018
+red,Coffs Harbour,Pacific Highway and Combine Street,False,-30.30078349,153.1106106,60,TfNSW Open Data GPS (2021),Added from July 2018
+red,Coffs Harbour,Pacific Highway and Halls Road,False,-30.305892,153.10168,60,intersection from NSW road network,Added October 2024
+red,Concord,Broughton Street and Crane Street,False,-33.861433,151.10623,50,TfNSW Open Data GPS (2021),
+red,Condell Park,Edgar Street and Marion Street,False,-33.915916,151.014023,60,TfNSW Open Data GPS (2021),
+red,Coniston,Springhill Road and Masters Road,False,-34.446146,150.87573,80,TfNSW Open Data GPS (2021),
+red,Coniston,Springhill Road and Masters Road,False,-34.446028,150.876095,80,TfNSW Open Data GPS (2021),
+red,Corrimal,Memorial Drive and Railway Street,False,-34.373566,150.900709,80,intersection from NSW road network,Added June 2020
+red,Crows Nest,Pacific Highway and Hume Street,False,-33.826097,151.199186,60,intersection from NSW road network,
+red,Croydon Park,Georges River Road and Croydon Avenue,False,-33.894633,151.11099,60,TfNSW Open Data GPS (2021),
+red,Croydon Park,Burwood Road and Georges River Road,False,-33.897486,151.099615,60,intersection from NSW road network,Added August 2024
+red,Dapto,Princes Highway and Moombara Street,False,-34.495262,150.793333,50,intersection from NSW road network,Added August 2022
+red,Darlinghurst,Oxford Street and Crown Street,False,-33.879455,151.215372,50,TfNSW Open Data GPS (2021),
+red,Darlinghurst,Oxford Street and Crown Street,False,-33.879094,151.215134,50,TfNSW Open Data GPS (2021),
+red,Dee Why,Pittwater Road and Harbord Road,False,-33.758421,151.280916,60,TfNSW Open Data GPS (2021),
+red,Doyalson,Pacific Highway and Wyee Road,False,-33.199471,151.522591,100,intersection from NSW road network,Added September 2026
+red,Drummoyne,Victoria Road and Lyons Road,False,-33.851198,151.154595,60,TfNSW Open Data GPS (2021),
+red,Earlwood / Kingsgrove,Bexley Road and William Street,False,-33.928021,151.108939,60,TfNSW Open Data GPS (2021),
+red,Eastern Creek,Great Western Highway and Rooty Hill Road South,False,-33.788493,150.853669,80,TfNSW Open Data GPS (2021),
+red,Eastgardens,Wentworth Avenue and Banks Avenue,False,-33.945434,151.221608,70,intersection from NSW road network,Added November 2023
+red,Eastwood,Blaxland Road and May Street,False,-33.788626,151.085751,60,TfNSW Open Data GPS (2021),
+red,Eastwood,Rutledge Street and Shaftsbury Road,True,-33.793398,151.078279,60,TfNSW Open Data GPS (2021),School zone
+red,Epping,Carlingford Road and Rawson Street,False,-33.77115,151.080575,60,TfNSW Open Data GPS (2021),
+red,Ermington / Rydalmere,Victoria Road and Spurway Street,False,-33.814233,151.055999,70,TfNSW Open Data GPS (2021),
+red,Fairfield,Sackville Street and Hamilton Road,False,-33.872813,150.945605,60,TfNSW Open Data GPS (2021),
+red,Fairfield,The Horsley Drive and Polding Street,False,-33.864415,150.954514,60,TfNSW Open Data GPS (2021),
+red,Fairfield Heights,Hamilton Road and The Boulevarde,False,-33.872385,150.9372,50,TfNSW Open Data GPS (2021),
+red,Figtree,Princes Highway and O'Briens Rd,False,-34.438881,150.857774,60,TfNSW Open Data GPS (2021),
+red,Five Dock,Parramatta Road and Arlington Street,False,-33.872838,151.125958,60,TfNSW Open Data GPS (2021),
+red,Five Dock,Ramsay Road and Fairlight Street,False,-33.870113,151.130631,60,TfNSW Open Data GPS (2021),
+red,Gladesville /Hunters Hill,Ryde Road and Pittwater Road,False,-33.824305,151.132611,60,TfNSW Open Data GPS (2021),
+red,Gosford,Donnison Street and Henry Parry Drive,False,-33.427279,151.344216,50,intersection from NSW road network,Added October 2025
+red,Granville,Parramatta Road and Good Street,False,-33.830543,151.012097,60,TfNSW Open Data GPS (2021),
+red,Granville,Woodville Road and M4 On Ramp,False,-33.82788,151.00461,60,TfNSW Open Data GPS (2021),
+red,Greenacre,Roberts Road and Juno Parade,False,-33.908191,151.06418,70,TfNSW Open Data GPS (2021),
+red,Greenacre,Waterloo Road and Rawson Road,False,-33.902835,151.057923,60,intersection from NSW road network,Added February 2020
+red,Greenacre,Roberts Road and Wiley Avenue,False,-33.915735,151.063001,60,intersection from NSW road network,Added June 2022
+red,Greenfield Park,Smithfield Road and Myrtle Road,False,-33.872688,150.900041,60,intersection from NSW road network,Added May 2020
+red,Greystanes,Cumberland Highway and Merrylands Road,False,-33.830034,150.960491,70,TfNSW Open Data GPS (2021),
+red,Guildford,Woodville Road and Guildford Road,False,-33.855902,150.994868,70,TfNSW Open Data GPS (2021),
+red,Guildford,Rawson Road and Blaxcell Street,False,-33.863021,151.00623,60,intersection from NSW road network,Added June 2022
+red,Haberfield,Dobroyd Pde and Timbrell Drive / Mortley Avenue,False,-33.870756,151.142217,60,TfNSW Open Data GPS (2021),
+red,Haberfield,Parramatta Road and Sloane Street,False,-33.887387,151.141724,60,TfNSW Open Data GPS (2021),
+red,Haberfield,Ramsay Street and Wattle Street,False,-33.87485,151.134598,60,TfNSW Open Data GPS (2021),
+red,Hamilton,Tudor Street and Beaumont Street,False,-32.924204,151.74726,60,TfNSW Open Data GPS (2021),
+red,Hamilton,Donald Street and Beaumont Street,False,-32.919729,151.747777,60,intersection from NSW road network,Added October 2022
+red,Hamilton East,Pacific Highway and Parry Street,False,-32.926876,151.757796,60,TfNSW Open Data GPS (2021),
+red,Hamlyn Terrace,Pacific Highway and Minnesota Road,False,-33.262809,151.464678,70,intersection from NSW road network,Added December 2025
+red,Haymarket,George Street and Pitt Street,False,-33.882861,151.203981,50,TfNSW Open Data GPS (2021),
+red,Haymarket,George Street and Pitt Street,False,-33.882643,151.204378,50,TfNSW Open Data GPS (2021),
+red,Heatherbrae,Pacific Highway and Hank Street,False,-32.79139,151.724714,80,intersection from NSW road network,Added December 2025
+red,Hinchinbrook,Banks Road and South Liverpool Road,False,-33.910862,150.875157,50,intersection from NSW road network,Added December 2023
+red,Homebush,Parramatta Road and Underwood Road,False,-33.864469,151.083488,60,intersection from NSW road network,Added November 2022
+red,Homebush West,Homebush Bay Drive and M4 Eastbound On Ramp,False,-33.855944,151.071924,80,TfNSW Open Data GPS (2021),
+red,Homebush West / Strathfield,Arthur Street and Centenary Drive,False,-33.867599,151.063807,80,TfNSW Open Data GPS (2021),
+red,Hoxton Park,Hoxton Park Road and Cowpasture Road,False,-33.9246,150.84848,70,TfNSW Open Data GPS (2021),Added September 2019
+red,Jerrabomberra,Lanyon Drive and Tompsitt Drive,False,-35.377308,149.188954,100,intersection from NSW road network,Added June 2023
+red,Kanwal,Wallarah Road and Walker Avenue,False,-33.253542,151.4936,50,intersection from NSW road network,Added December 2023
+red,Kensington,Anzac Parade and Todman Avenue,False,-33.909919,151.223291,50,TfNSW Open Data GPS (2021),Re-installed November 2020 following light rail construction
+red,Kingsgrove,Stoney Creek Road and Patrick Street,False,-33.951196,151.09138,60,TfNSW Open Data GPS (2021),
+red,Kirrawee,President Avenue and Acacia Road,False,-34.034763,151.066413,70,TfNSW Open Data GPS (2021),
+red,Kotara / Adamstown,Park Avenue and Northcott Drive,False,-32.940335,151.712118,50,TfNSW Open Data GPS (2021),
+red,Lake Munmorah,Pacific Highway and Elizabeth Bay Drive,False,-33.190097,151.57737,80,intersection from NSW road network,Added September 2022
+red,Lakemba,Punchbowl Road and Wangee Road,False,-33.911377,151.073162,60,TfNSW Open Data GPS (2021),
+red,Lambton,Griffiths Road and Turton Road,False,-32.914583,151.725936,60,TfNSW Open Data GPS (2021),
+red,Lane Cove,Figtree Street and Centennial Avenue,False,-33.81394,151.15536,60,TfNSW Open Data GPS (2021),Added September 2019
+red,Lane Cove North,Epping Road and Centennial Avenue,False,-33.810788,151.163786,80,TfNSW Open Data GPS (2021),
+red,Lane Cove North,Pacific Highway and Mowbray Road,False,-33.805444,151.179329,60,intersection from NSW road network,Added October 2024
+red,Lansdowne / Villawood,Woodville Road and Hume Highway,False,-33.888925,150.973789,60,TfNSW Open Data GPS (2021),
+red,Lansdowne / Villawood,Woodville Road and Hume Highway,False,-33.889992,150.972628,70,TfNSW Open Data GPS (2021),
+red,Leichhardt,Foster Street and Marion Street,False,-33.8842,151.147612,50,intersection from NSW road network,Added May 2022
+red,Leichhardt / Petersham,Parramatta Road and West Street,False,-33.889916,151.149349,60,TfNSW Open Data GPS (2021),
+red,Lidcombe,Olympic Drive and Vaughan Street,False,-33.865136,151.041569,70,TfNSW Open Data GPS (2021),
+red,Lilyfield,City West Link Road and James Street,False,-33.875086,151.155788,70,TfNSW Open Data GPS (2021),
+red,Lindfield,Archbold Road and Tryon Road,False,-33.771074,151.179092,60,intersection from NSW road network,Added June 2022
+red,Liverpool,Copeland Street / Hume Highway and Elizabeth Drive,False,-33.919025,150.9196,60,TfNSW Open Data GPS (2021),
+red,Liverpool,Hume Highway and Hoxton Park Road,False,-33.928038,150.918027,60,TfNSW Open Data GPS (2021),
+red,Liverpool,Memorial Avenue and Bathurst Street,False,-33.924521,150.920698,50,TfNSW Open Data GPS (2021),
+red,Liverpool,Moore Street and Bathurst Street,False,-33.922154,150.921151,50,TfNSW Open Data GPS (2021),
+red,Liverpool,Elizabeth Drive and Flowerdale Road,False,-33.915346,150.909688,70,intersection from NSW road network,Added September 2023
+red,Maroubra Junction,Anzac Parade and Boyce Road,False,-33.93988,151.239244,50,TfNSW Open Data GPS (2021),
+red,Marrickville,Sydenham Road and Victoria Road,False,-33.909568,151.162081,60,TfNSW Open Data GPS (2021),
+red,Mascot,O'Riordan Street and Coward Street,False,-33.924603,151.190366,50,TfNSW Open Data GPS (2021),
+red,Mascot,O'Riordan Street and Gardeners Road,False,-33.921053,151.191684,50,TfNSW Open Data GPS (2021),
+red,Mascot,Wentworth Avenue and Sutherland Street,False,-33.93394,151.19925,60,TfNSW Open Data GPS (2021),Added February 2020
+red,Mascot,Coward Street and Bourke Road,False,-33.924347,151.187218,50,intersection from NSW road network,Added June 2022
+red,Mayfield West,Pacific Highway / Maitland Road and Maud Street,False,-32.890059,151.726633,60,TfNSW Open Data GPS (2021),
+red,Mays Hill,Great Western Highway and Coleman Street / Hawkesbury Road,False,-33.818278,150.982002,60,TfNSW Open Data GPS (2021),
+red,Mays Hill,Great Western Highway and Coleman Street / Hawkesbury Road,False,-33.81764,150.981714,60,TfNSW Open Data GPS (2021),
+red,Merrylands,Woodville Road and Louis Street,False,-33.8398174,150.9993556,70,TfNSW Open Data GPS (2021),Added from July 2018
+red,Merrylands West,Merrylands Road and Sherwood Road,False,-33.832451,150.96988,60,TfNSW Open Data GPS (2021),
+red,Milperra,Milperra Road / Newbridge Road and Henry Lawson Drive,False,-33.929359,150.979692,70,TfNSW Open Data GPS (2021),
+red,Milperra,Henry Lawson Drive and M5 South Western Motorway,False,-33.944549,150.982381,100,intersection from NSW road network,Added December 2021
+red,Milperra,Henry Lawson Drive and Pozieres Avenue,False,-33.941745,150.983014,60,intersection from NSW road network,Added November 2022
+red,Milperra,Milperra Road and Nancy Ellis Leebold Drive,False,-33.930798,150.995508,70,intersection from NSW road network,Added February 2024
+red,Miranda,The Kingsway and Port Hacking Road,False,-34.03506667,151.1128167,60,TfNSW Open Data GPS (2021),
+red,Moore Park,Anzac Parade and Cleveland Street / Lang Road,False,-33.89464,151.221637,60,TfNSW Open Data GPS (2021),
+red,Moore Park,Anzac Parade and Moore Park Rd,False,-33.886839,151.219003,80,TfNSW Open Data GPS (2021),
+red,Moore Park,Anzac Parade and Moore Park Rd,False,-33.886409,151.219003,60,TfNSW Open Data GPS (2021),
+red,Moorebank,Newbridge Road and Stockton Avenue,False,-33.929234,150.948529,70,TfNSW Open Data GPS (2021),
+red,Mosman,Military Road and Cowles Road,False,-33.824447,151.238658,60,TfNSW Open Data GPS (2021),
+red,Mount Druitt,George Street and Great Western Highway,False,-33.78144,150.82395,80,TfNSW Open Data GPS (2021),Added September 2019
+red,Mount Druitt,Great Western Highway and Carlisle Avenue,False,-33.779018,150.814018,80,TfNSW Open Data GPS (2021),
+red,Naremburn,Willoughby Road and Chandos Street,False,-33.821865,151.201011,50,TfNSW Open Data GPS (2021),
+red,North Ryde,Epping Road and Wicks Road,False,-33.791496,151.130017,60,TfNSW Open Data GPS (2021),
+red,North Ryde,Lane Cove Road and Coxs Road,True,-33.793378,151.119951,70,TfNSW Open Data GPS (2021),School zone
+red,North Ryde,Lane Cove Road and Coxs Road,True,-33.793277,151.119479,70,TfNSW Open Data GPS (2021),School zone
+red,North Ryde,Lane Cove Road and Coxs Road,True,-33.793034,151.119952,70,TfNSW Open Data GPS (2021),School zone
+red,North Ryde,Lane Cove Road and Twin Road,False,-33.797766,151.115017,70,intersection from NSW road network,Added August 2025
+red,North Sydney / Neutral Bay,Falcon Street and Merlin Street,False,-33.829902,151.21536,60,TfNSW Open Data GPS (2021),
+red,Northmead,Briens Road and Redbank Road,False,-33.795427,150.990153,70,TfNSW Open Data GPS (2021),
+red,Nowra,East Street and Moss Street,False,-34.87220758,150.6058119,70,TfNSW Open Data GPS (2021),Added from July 2018
+red,Nowra,East Street and Plunkett Street,False,-34.87896,150.604598,70,intersection from NSW road network,Added August 2026
+red,Oakhurst,Richmond Road and M7 Southbound On Ramp,False,-33.733478,150.849438,100,TfNSW Open Data GPS (2021),
+red,Old Toongabbie / Northmead,Old Windsor Road and Cumberland Highway,False,-33.793959,150.983149,70,TfNSW Open Data GPS (2021),
+red,Paddington,Moore Park Road and Oxford Street / Lang Road,False,-33.889736,151.232499,60,TfNSW Open Data GPS (2021),
+red,Parklea / Glenwood,Old Windsor Road and Sunnyholt Road,False,-33.721085,150.937967,80,TfNSW Open Data GPS (2021),
+red,Parramatta,Great Western Highway and Marsden Street,False,-33.819269,150.999915,60,TfNSW Open Data GPS (2021),
+red,Parramatta,Marsden Street and Macquarie Street,False,-33.814854,151.00191,40,TfNSW Open Data GPS (2021),
+red,Parramatta,O'Connell Street and Argyle Street,False,-33.815943,150.999395,60,TfNSW Open Data GPS (2021),
+red,Parramatta,Victoria Road and Church Street,False,-33.808757,151.005638,60,TfNSW Open Data GPS (2021),
+red,Pennant Hills,Pennant Hills Road and Beecroft Road,True,-33.740444,151.060871,80,TfNSW Open Data GPS (2021),School zone
+red,Penrith,Parker Street and Jamison Street,False,-33.764347,150.709649,70,TfNSW Open Data GPS (2021),
+red,Penrith,Mulgoa Road and Ransley Street,False,-33.757018,150.686172,60,intersection from NSW road network,Added August 2023
+red,Petersham,Gordon Street and New Canterbury Road,False,-33.896422,151.152442,60,TfNSW Open Data GPS (2021),
+red,Plumpton,Jersey Road and Hyatts Road,False,-33.74407,150.83481,60,TfNSW Open Data GPS (2021),Added October 2019
+red,Port Kembla,Five Islands Road and Flinders Street,False,-34.473017,150.886272,60,intersection from NSW road network,Added September 2024
+red,Port Macquarie,Gordon Street and Grant Street,False,-31.43301,152.9149,60,TfNSW Open Data GPS (2021),Added March 2020
+red,Prestons,Camden Valley Way and the M5 South Western Motorway,False,-33.956877,150.876618,100,intersection from NSW road network,Added July 2022
+red,Prospect,Great Western Highway and Clunies Ross Street,False,-33.805152,150.927916,80,TfNSW Open Data GPS (2021),
+red,Ramsgate,Rocky Point Road and Ramsgate Road,False,-33.984013,151.136393,60,TfNSW Open Data GPS (2021),
+red,Randwick,Alison Road and Avoca Street,False,-33.913259,151.242287,50,TfNSW Open Data GPS (2021),
+red,Randwick,Darley Road and Avoca Street / York Road,False,-33.903022,151.244762,50,TfNSW Open Data GPS (2021),
+red,Redfern / Surry Hills,Cleveland Street and South Dowling Street,False,-33.891974,151.216463,50,TfNSW Open Data GPS (2021),
+red,Richmond,March Street and East Market Street,False,-33.599044,150.751741,60,TfNSW Open Data GPS (2021),
+red,Rockdale,Princes Highway and Bay Street,False,-33.95307,151.137407,60,TfNSW Open Data GPS (2021),
+red,Rockdale,Princes Highway and Bay Street,False,-33.952803,151.137707,60,TfNSW Open Data GPS (2021),
+red,Rockdale,West Botany Street and Bestic Street,False,-33.949753,151.148993,60,TfNSW Open Data GPS (2021),
+red,Rooty Hill,Woodstock Avenue and M7 Northbound Off Ramp,False,-33.760375,150.846828,100,TfNSW Open Data GPS (2021),
+red,Roselands,King Georges Road and Moorefields Road,False,-33.939975,151.075464,60,TfNSW Open Data GPS (2021),
+red,Roselands / Wiley Park,Canterbury Road and King Georges Road,False,-33.929356,151.073011,60,TfNSW Open Data GPS (2021),
+red,Roselands / Wiley Park,Canterbury Road and King Georges Road,False,-33.929551,151.071556,60,TfNSW Open Data GPS (2021),
+red,Roseville,Archbold Road and Boundary Street,False,-33.784248,151.189472,60,intersection from NSW road network,Added July 2022
+red,Rooty Hill,Sherbrooke Street and Railway Street,False,-33.7702144,150.8350648,60,TfNSW Open Data GPS (2021),Added from July 2018
+red,Rouse Hill / Kellyville Ridge,Windsor Road and Schofields Road,False,-33.690424,150.922269,80,intersection from NSW road network,Added July 2022
+red,Rozelle,Victoria Road and Evans Street,False,-33.865183,151.172069,60,TfNSW Open Data GPS (2021),
+red,Rozelle,Victoria Road and Wellington Street,False,-33.862815,151.168722,60,TfNSW Open Data GPS (2021),
+red,Rozelle,Victoria Road and Darling Street,False,-33.863889,151.170089,60,intersection from NSW road network,Added December 2023
+red,Rushcutters Bay,Craigend Street and McLachlan Avenue,False,-33.876918,151.228798,60,TfNSW Open Data GPS (2021),
+red,Ryde,Victoria Road and Devlin Street,False,-33.816027,151.103451,60,TfNSW Open Data GPS (2021),
+red,Seven Hills,Abbott Road and Prospect Highway,False,-33.768286,150.943411,60,TfNSW Open Data GPS (2021),
+red,Silverwater,Holker Street and Silverwater Road,False,-33.8301888,151.0496425,70,TfNSW Open Data GPS (2021),Added July 2018
+red,Silverwater,M4 Eastbound Off Ramp and Silverwater Road,False,-33.842261,151.044364,90,TfNSW Open Data GPS (2021),
+red,Silverwater / Auburn,Silverwater Road and M4 Westbound On Ramp,False,-33.842082,151.044495,90,TfNSW Open Data GPS (2021),
+red,Silverwater / Auburn,Silverwater Road and M4 Westbound On Ramp,False,-33.843557,151.043127,70,TfNSW Open Data GPS (2021),
+red,Smithfield,Cumberland Highway and The Horsley Drive,False,-33.853333,150.941174,70,TfNSW Open Data GPS (2021),
+red,Smithfield,Polding Street and The Boulevarde,False,-33.861903,150.938796,60,TfNSW Open Data GPS (2021),
+red,Smithfield,The Horsley Drive and Gipps Street,False,-33.850998,150.922517,60,TfNSW Open Data GPS (2021),
+red,Smithfield,Victoria Street and Hassall Street,False,-33.848982,150.922953,60,TfNSW Open Data GPS (2021),
+red,South Wentworthville,Cumberland Highway and Old Prospect Road,False,-33.817305,150.962803,70,TfNSW Open Data GPS (2021),
+red,St Marys,Great Western Highway at Charles Hackett Drive / Pages Road,False,-33.769462,150.768572,60,TfNSW Open Data GPS (2021),
+red,St Marys,Great Western Highway at Charles Hackett Drive / Pages Road,False,-33.769671,150.768902,60,TfNSW Open Data GPS (2021),
+red,St Marys,Mamre Road and Saddington Street,True,-33.772929,150.773105,60,TfNSW Open Data GPS (2021),School zone
+red,St Marys,Mamre Road and M4 Western Motorway,False,-33.784183,150.77095,110,intersection from NSW road network,Added April 2022
+red,St Peters,Princes Highway and Sydney Park Road,False,-33.907357,151.181345,50,TfNSW Open Data GPS (2021),
+red,Surry Hills,Crown Street and Albion Street,False,-33.883634,151.214255,40,TfNSW Open Data GPS (2021),
+red,Surry Hills,Foveaux Street and Crown Street,False,-33.885198,151.214246,40,TfNSW Open Data GPS (2021),
+red,Surry Hills,South Dowling Street and Fitzroy Street / Moore Park Road,False,-33.886275,151.217811,80,TfNSW Open Data GPS (2021),
+red,Surry Hills,South Dowling Street and Fitzroy Street / Moore Park Road,False,-33.885784,151.218139,80,TfNSW Open Data GPS (2021),
+red,Surry Hills / Redfern,Cleveland Street and Chalmers Street,True,-33.88988,151.2061,50,TfNSW Open Data GPS (2021),School zone
+red,Sydney,Elizabeth Street and Park Street,False,-33.873458,151.209802,80,TfNSW Open Data GPS (2021),
+red,Sydney Olympic Park,Australia Avenue and Sarah Durack Avenue,False,-33.849998,151.073645,60,intersection from NSW road network,Added November 2025
+red,Thornleigh,Pennant Hills Road and The Comenarra Parkway / Parkes Street,False,-33.731005,151.080715,70,TfNSW Open Data GPS (2021),
+red,Towradgi,Memorial Drive and Towradgi Road,False,-34.383521,150.900243,80,intersection from NSW road network,Added June 2020
+red,Tweed Heads South,Minjungbal Drive and Rivendell Drive,False,-28.205853,153.544533,60,intersection from NSW road network,Added November 2019
+red,Tweed Heads West,Gold Coast Highway and Cordyline Drive,False,-28.178644,153.521327,60,intersection from NSW road network,Added December 2019
+red,Ultimo,Wattle Street and William Henry Street,False,-33.879053,151.195721,50,intersection from NSW road network,
+red,Ultimo,Harris Street and William Henry Street,False,-33.877873,151.198658,50,intersection from NSW road network,Added December 2022
+red,Unanderra,Princes Highway and Five Islands Road,False,-34.449572,150.849659,60,TfNSW Open Data GPS (2021),
+red,Wahroonga,Pennant Hills Road and M1 Motorway,False,-33.719969,151.106172,70,intersection from NSW road network,Added June 2025
+red,Waitara,Pacific Highway and Romsey Street,True,-33.710292,151.102728,60,TfNSW Open Data GPS (2021),School zone
+red,Wallsend,Thomas Street and Metcalfe Street,False,-32.906082,151.671472,60,TfNSW Open Data GPS (2021),
+red,Warilla,Shellharbour Road and George Street,False,-34.552408,150.860045,70,intersection from NSW road network,Added December 2024
+red,Warrawong,Cowper Street and King Street / Grand Pacific Drive,False,-34.485159,150.887656,60,TfNSW Open Data GPS (2021),
+red,Warwick Farm,Hume Highway and Bigge Street,False,-33.914318,150.928652,70,TfNSW Open Data GPS (2021),
+red,Warwick Farm,Hume Highway and Mannix Parade,False,-33.9138197,150.931716,70,TfNSW Open Data GPS (2021),Added July 2018
+red,Waterloo,McEvoy Street and Elizabeth Street,False,-33.900255,151.205728,50,TfNSW Open Data GPS (2021),
+red,Wentworthville,Great Western Highway and Station Street,False,-33.815378,150.969323,80,TfNSW Open Data GPS (2021),
+red,West Pennant Hills,Pennant Hills Road and Eaton Road,False,-33.754204,151.047587,70,TfNSW Open Data GPS (2021),Re-installed November 2020 following Northconnex construction
+red,West Pymble,Ryde Road and Lady Game Drive,False,-33.773127,151.135317,70,TfNSW Open Data GPS (2021),
+red,West Ryde,Victoria Road and Bowden Street,False,-33.813573,151.096335,60,intersection from NSW road network,Added November 2021
+red,Wetherill Park,Davis Road and Liverpool T-Way,False,-33.836784,150.911467,70,intersection from NSW road network,Added April 2025
+red,Wiley Park,Lakemba Street and King Georges Road,False,-33.92132,151.0676,60,TfNSW Open Data GPS (2021),Added January 2020
+red,Wiley Park,The Boulevarde and King Georges Road,True,-33.922829,151.068784,60,TfNSW Open Data GPS (2021),School zone
+red,Wiley Park,Punchbowl Road and King Georges Road,False,-33.917508,151.065106,60,intersection from NSW road network,Added July 2024
+red,Windang,Windang Road and Boronia Avenue,False,-34.530135,150.868979,60,TfNSW Open Data GPS (2021),
+red,Windsor,Macquarie Street and Hawkesbury Valley Way,False,-33.61215,150.815459,60,TfNSW Open Data GPS (2021),
+red,Wollongong,Corrimal Street and Burelli Street,False,-34.427145,150.899935,50,TfNSW Open Data GPS (2021),
+red,Wollongong,Princes Highway and Gladstone Avenue,False,-34.425962,150.887237,50,TfNSW Open Data GPS (2021),
+red,Woollahra,Queen Street and Ocean Street,False,-33.887909,151.239713,50,TfNSW Open Data GPS (2021),
+red,Woolloomooloo,William Street and Crown Street,False,-33.874377,151.216514,80,TfNSW Open Data GPS (2021),
+red,Woolloomooloo,Bourke Street and William Street,False,-33.87459,151.21808,80,TfNSW Open Data GPS (2021),Added October 2019
+red,Woolooware,Captain Cook Drive and Foreshore Boulevard,False,-34.039352,151.138967,70,TfNSW Open Data GPS (2021),
+red,Woolooware,Captain Cook Drive and Foreshore Boulevard,False,-34.039054,151.138353,70,TfNSW Open Data GPS (2021),
+red,Yagoona,Rookwood Road and Brunker Road,False,-33.898708,151.037513,70,TfNSW Open Data GPS (2021),
+red,Yagoona,Hume Highway and Cooper Road,False,-33.907697,151.025973,60,intersection from NSW road network,Added October 2024
