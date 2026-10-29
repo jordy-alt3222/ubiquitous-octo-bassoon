@@ -55,7 +55,7 @@ def place(entry):
         return entry, [], "street not found in NSW road network"
     road = road.intersection(area.buffer(150 / 111_320))
     merged = linemerge(road) if road.geom_type == "MultiLineString" else road
-    parts = [g for g in getattr(merged, "geoms", [merged]) if isinstance(g, LineString)]
+    parts = [g for g in getattr(merged, "geoms", [merged]) if isinstance(g, LineString) and not g.is_empty]
     points = [p for part in parts for p in sample(part)]
     return entry, points, None if points else "street not inside the listed suburbs"
 
@@ -67,8 +67,14 @@ def main():
             if street.strip():
                 entries.append((r["suburbs"], re.sub(r"\s+", " ", street.strip())))
 
+    def safe_place(entry):
+        try:
+            return place(entry)
+        except Exception as e:  # one bad geometry or failed lookup shouldn't stop the build
+            return entry, [], f"error: {e}"
+
     with ThreadPoolExecutor(WORKERS) as pool:
-        results = list(pool.map(place, entries))
+        results = list(pool.map(safe_place, entries))
 
     grid, placed, skipped = {}, [], []
     cell = DEDUPE_M / 111_320
