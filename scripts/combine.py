@@ -1,7 +1,8 @@
 """Merge the camera and mobile-street ExCam files into one file for Highway Radar.
 
 Mobile-street points within NEAR_M of a camera are dropped so the app doesn't alert twice.
-Output: output/NSW_All_Cameras_Oct2026.excam
+Outputs: output/NSW_All_Cameras_Oct2026.excam (everything)
+         output/NSW_Cameras_No_Mobile_Oct2026.excam (without the mobile speed camera streets)
 """
 import datetime
 import json
@@ -15,12 +16,19 @@ from camlib import ROOT
 OUT = ROOT / "output"
 NEAR_M = 150
 OUTPUT_NAME = "NSW_All_Cameras_Oct2026.excam"
+NO_MOBILE_NAME = "NSW_Cameras_No_Mobile_Oct2026.excam"
 
 
 def read(name):
     with lzma.open(OUT / name, "rt", encoding="utf-8") as f:
         lines = [json.loads(line) for line in f]
     return lines[1:]
+
+
+def write(name, title, date, lines):
+    with lzma.open(OUT / name, "wt", encoding="utf-8") as f:
+        for line in [{"_meta": {"name": title, "date": date}}] + lines:
+            f.write(json.dumps(line) + "\n")
 
 
 def main():
@@ -39,13 +47,11 @@ def main():
         if not any(nswgeo.metres(p, q) < NEAR_M for q in near):
             kept.append(m)
 
-    meta = {"_meta": {"name": "NSW All Cameras Oct 2026",
-                      "date": datetime.date.today().isoformat()}}
-    with lzma.open(OUT / OUTPUT_NAME, "wt", encoding="utf-8") as f:
-        for line in [meta] + cameras + kept:
-            f.write(json.dumps(line) + "\n")
+    today = datetime.date.today().isoformat()
+    write(OUTPUT_NAME, "NSW All Cameras Oct 2026", today, cameras + kept)
+    write(NO_MOBILE_NAME, "NSW Cameras (no mobile) Oct 2026", today, cameras)
     print(f"{len(cameras)} cameras + {len(kept)} mobile street points "
-          f"({len(mobile) - len(kept)} dropped near cameras) -> {OUTPUT_NAME}")
+          f"({len(mobile) - len(kept)} dropped near cameras) -> {OUTPUT_NAME}; {len(cameras)} cameras -> {NO_MOBILE_NAME}")
 
 
 if __name__ == "__main__":

@@ -10,11 +10,13 @@ Copy it to your phone and import it in Highway Radar as a custom camera database
 - **413 camera points:** fixed, red-light and average-speed cameras, described below.
 - **20,844 points along mobile speed camera streets**, labelled "Possible mobile speed camera".
 
-The two parts are also available separately:
-- [`output/nsw_speed_cameras.excam`](output/nsw_speed_cameras.excam): the cameras only.
-- [`output/nsw_mobile_speed_camera_streets.excam`](output/nsw_mobile_speed_camera_streets.excam): the mobile streets only.
+**Without mobile cameras:** [`output/NSW_Cameras_No_Mobile_Oct2026.excam`](output/NSW_Cameras_No_Mobile_Oct2026.excam)
+has the 413 camera points and none of the mobile street points.
 
-Use these if you want to turn the mobile alerts off in the app while keeping the cameras.
+The mobile streets are also available on their own, in
+[`output/nsw_mobile_speed_camera_streets.excam`](output/nsw_mobile_speed_camera_streets.excam).
+
+Mobile phone detection cameras are in none of these files, because TfNSW doesn't publish their locations.
 
 ## What's in it
 
@@ -98,7 +100,7 @@ pip install -r requirements.txt
 python3 scripts/extract_pdfs.py   # sources/*.pdf -> data/tfnsw/*.csv
 python3 scripts/build.py          # cameras -> output/nsw_speed_cameras.excam
 python3 scripts/build_mobile.py   # mobile streets -> output/nsw_mobile_speed_camera_streets.excam
-python3 scripts/combine.py        # both -> output/NSW_All_Cameras_Oct2026.excam
+python3 scripts/combine.py        # -> output/NSW_All_Cameras_Oct2026.excam and NSW_Cameras_No_Mobile_Oct2026.excam
 ```
 
 `scripts/find_tunnels.py` regenerates the approximate tunnel rows in `data/osm/site_positions.csv`.
