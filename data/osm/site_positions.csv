@@ -4,3 +4,13 @@ red,Wollongong,Princes Highway and Mangerton Road,-34.426081,150.8780408,290,131
 red,Fairfield West,Cumberland Highway and Thorney Road,-33.87403,150.9255448,15,12282646646,OSM speed camera node
 red,Kotara,Charlestown Road and Camley Avenue,-32.9406589,151.6880532,,6965047478,OSM speed camera node on Charlestown Road
 red,Surry Hills,South Dowling Street at Sydney Light Rail Crossing,-33.889936,151.217399,,,where South Dowling Street crosses the light rail in OSM
+fixed,Bardwell Park / Arncliffe,"M5 Tunnel, between Bexley Road and Marsh Street",-33.935473,151.132154,,,approximate: middle of OSM 'M5 East Tunnel' (3 ways)
+fixed,Haberfield / St Peters,WestConnex M4-M8 Link Tunnel,-33.905268,151.178389,,,approximate: middle of OSM 'M8 Motorway Tunnel' (14 ways)
+fixed,Homebush / Haberfield,WestConnex M4 East Tunnel,-33.871689,151.11342,,,approximate: middle of OSM 'M4 East Tunnel' (8 ways)
+fixed,Kingsgrove / St Peters,WestConnex M8 Tunnel,-33.938528,151.140669,,,approximate: middle of OSM 'M8 Motorway Tunnel' (14 ways)
+fixed,Lane Cove Tunnel,"Lane Cove Tunnel, between Mowbray Road and the Pacific Highway",-33.810163,151.161183,,,approximate: middle of OSM 'Lane Cove Tunnel' (6 ways)
+fixed,Normanhurst/Pennant Hills,NorthConnex Tunnel,-33.728437,151.082169,,,approximate: middle of OSM 'NorthConnex' (3 ways)
+fixed,Rozelle / Annandale / Leichhardt,Rozelle Interchange,-33.866036,151.183505,,,approximate: middle of OSM 'Rozelle Interchange' (2 ways)
+fixed,Sydney,"Sydney Harbour Tunnel, between Cahill Expressway and Warringah Freeway",-33.851561,151.213373,,,approximate: middle of OSM 'Sydney Harbour Tunnel' (1 ways)
+fixed,Woolloomooloo / East Sydney,"Cross City Tunnel, between McLachlan Avenue and Harbour Street",-33.872833,151.217836,,,approximate: middle of OSM 'Cross City Tunnel' (8 ways)
+fixed,Cowan,"Pacific Highway, between Pacific Motorway Underpass and Brooklyn Road",-33.573008,151.183357,,,"approximate: midpoint of the 7 km Pacific Highway segment in the NSW road network (camera not mapped in OSM)"

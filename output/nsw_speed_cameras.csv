@@ -1,6 +1,7 @@
 kind,suburb,road,school_zone,lat,lon,dir,speed_limit,source,comment
 fixed,Auburn,"Parramatta Road, between Harbord Street and Duck Street",False,-33.83596257,151.0236212,,60,TfNSW Open Data GPS (2021),
 fixed,Bar Point,"M1, between Jolls Bridge and Mt White Exit Ramp",False,-33.48820797,151.1838675,,100,TfNSW Open Data GPS (2021),
+fixed,Bardwell Park / Arncliffe,"M5 Tunnel, between Bexley Road and Marsh Street",False,-33.935473,151.132154,,,OpenStreetMap: approximate: middle of OSM 'M5 East Tunnel' (3 ways),
 fixed,Ben Lomond,"New England Highway, between Ross Road and Ben Lomond Road",False,-30.00608908,151.7150055,,100,TfNSW Open Data GPS (2021),
 fixed,Berkshire Park,"Richmond Road, between Llandilo Road and Sanctuary Drive",False,-33.66132172,150.7972901,,80,TfNSW Open Data GPS (2021),
 fixed,Bexley North,"Bexley Road, between Kingsland Road North and Miller Avenue",False,-33.9424273,151.1187736,,60,TfNSW Open Data GPS (2021),
@@ -18,6 +19,7 @@ fixed,Carlingford,"Pennant Hills Road, between Evans Road and Coleman Avenue",Fa
 fixed,Charmhaven,"Pacific Highway, between Wallarah Creek and Lowana Avenue",False,-33.22036966,151.5060441,,70,TfNSW Open Data GPS (2021),
 fixed,Clunes,"Bangalow Road, between Flatley Drive and Johnston Road",False,-28.73451,153.40462,,50,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken.
 fixed,Concord West,"Concord Road, between Nirranda Street and Mepunga Street",False,-33.84951967,151.0899929,,60,TfNSW Open Data GPS (2021),
+fixed,Cowan,"Pacific Highway, between Pacific Motorway Underpass and Brooklyn Road",False,-33.573008,151.183357,,,OpenStreetMap: approximate: midpoint of the 7 km Pacific Highway segment in the NSW road network (camera not mapped in OSM),Added July 2025
 fixed,Darlinghurst,"Eastern Distributor , between Oxford Street and William Street",False,-33.877573,151.217214,,80,midpoint of segment from NSW road network,
 fixed,Eastgardens / Maroubra,"Bunnerong Road, between Fitzgerald Avenue and Smith Street",False,-33.94709338,151.2288756,,60,TfNSW Open Data GPS (2021),
 fixed,Eastgardens / Maroubra,"Bunnerong Road, between Fitzgerald Avenue and Smith Street",False,-33.94698527,151.2290104,,60,TfNSW Open Data GPS (2021),
@@ -29,14 +31,19 @@ fixed,Gordon,"Eastern Arterial Road, between Koola Avenue and Nicholson Avenue",
 fixed,Greystanes,"Greystanes Road, between Merrylands Road and Old Prospect Road",False,-33.82320759,150.9326137,,60,TfNSW Open Data GPS (2021),
 fixed,Gwynneville,"M1 Princes Motorway (Northbound), between Northern Distrbutor Overpass and Gipps Road Overpass",False,-34.41477048,150.8813173,,80,TfNSW Open Data GPS (2021),"M1 Princess Highway, Gwynneville has two cameras operating approximately 1,000 metres apart and infringing in different directions, therefore they are considered separate locations."
 fixed,Gwynneville,"M1 Princes Motorway (Southbound), between University Avenue Overpass and Mount Ousley Road",False,-34.40624849,150.8838636,,80,TfNSW Open Data GPS (2021),"M1 Princess Highway, Gwynneville has two cameras operating approximately 1,000 metres apart and infringing in different directions, therefore they are considered separate locations."
+fixed,Haberfield / St Peters,WestConnex M4-M8 Link Tunnel,False,-33.905268,151.178389,,,OpenStreetMap: approximate: middle of OSM 'M8 Motorway Tunnel' (14 ways),Added January 2023
+fixed,Homebush / Haberfield,WestConnex M4 East Tunnel,False,-33.871689,151.11342,,,OpenStreetMap: approximate: middle of OSM 'M4 East Tunnel' (8 ways),Added September 2019
+fixed,Kingsgrove / St Peters,WestConnex M8 Tunnel,False,-33.938528,151.140669,,,OpenStreetMap: approximate: middle of OSM 'M8 Motorway Tunnel' (14 ways),Added August 2020
 fixed,Kurrajong,"Bells Line of Road, between Queen Street and Bellbird Avenue",False,-33.53374295,150.6326618,,60,TfNSW Open Data GPS (2021),
 fixed,Lane Cove,"Centennial Avenue, between Gentle Street and Figtree Street",False,-33.81286842,151.15824,,60,TfNSW Open Data GPS (2021),
+fixed,Lane Cove Tunnel,"Lane Cove Tunnel, between Mowbray Road and the Pacific Highway",False,-33.810163,151.161183,,,OpenStreetMap: approximate: middle of OSM 'Lane Cove Tunnel' (6 ways),
 fixed,Lansvale,"Hume Highway, between Henry Lawson Drive and Knight Street",False,-33.89143275,150.9655959,,70,TfNSW Open Data GPS (2021),
 fixed,Mayfield West,"Pacific Highway, between Werribie Street and Tourle Street",False,-32.8922325,151.7298519,,60,TfNSW Open Data GPS (2021),
 fixed,Mount Victoria,"Great Western Highway, between Mitchells Lookout Road and Ambermere Drive",False,-33.58287,150.24047,,60,TfNSW Open Data GPS (2021),
 fixed,Narraweena,"Warringah Road, near the intersection with May Road",False,-33.756043,151.276273,,70,TfNSW Open Data GPS (2021),
 fixed,Nords Wharf,"Pacific Highway, between Nords Wharf Road and Flowers Drive",False,-33.13393006,151.6131895,,90,TfNSW Open Data GPS (2021),
 fixed,North Macksville,"Giinagay Way, between Florence Wilmont Drive and Watt Creek",False,-30.703546,152.923003,,50,TfNSW Open Data GPS (2021),
+fixed,Normanhurst/Pennant Hills,NorthConnex Tunnel,False,-33.728437,151.082169,,,OpenStreetMap: approximate: middle of OSM 'NorthConnex' (3 ways),
 fixed,North Macksville,"Giinagay Way, between Bellview Drive and Ferry Street",False,-30.69696637,152.9652117,,100,TfNSW Open Data GPS (2021),
 fixed,North Parramatta,"Pennant Hills Road, between Castle Street and Bellevue Street",False,-33.80057705,151.0082796,,60,TfNSW Open Data GPS (2021),
 fixed,North Willoughby,"Eastern Valley Way, between Megalong Avenue and McClelland Street",False,-33.79406,151.20795,,60,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken at site.
@@ -46,11 +53,13 @@ fixed,Padstow,"Gibson Avenue, between Turvey Street and Bryant Street",False,-33
 fixed,Peakhurst,"Henry Lawson Drive, between Belmore Road and Ogilvy Street",False,-33.9610236,151.0495263,,60,TfNSW Open Data GPS (2021),
 fixed,Picnic Point,"Henry Lawson Drive, between Carinya Road and The River Road",False,-33.97902162,151.0098467,,60,TfNSW Open Data GPS (2021),
 fixed,Rankin Park,"McCaffrey Drive, between Duval Street and Orara Street",False,-32.925096,151.682014,,60,TfNSW Open Data GPS (2021),
+fixed,Rozelle / Annandale / Leichhardt,Rozelle Interchange,False,-33.866036,151.183505,,,OpenStreetMap: approximate: middle of OSM 'Rozelle Interchange' (2 ways),Added January 2024
 fixed,Ryde,"Blaxland Road, between Reservoir Lane and North Road",False,-33.80306634,151.1019372,,60,TfNSW Open Data GPS (2021),
 fixed,Sandgate,"Pacific Highway, between Wallsend Road and Ironbark Creek",False,-32.85620069,151.7038844,,80,TfNSW Open Data GPS (2021),
 fixed,Sandgate,"Pacific Highway, between Wallsend Road and Ironbark Creek",False,-32.85768723,151.7048722,,80,TfNSW Open Data GPS (2021),
 fixed,Sans Souci,"The Grand Parade, between Alice Street and Ramsgate Road",False,-33.987488,151.146993,,60,midpoint of segment from NSW road network,Added December 2023
 fixed,South Windsor,"George Street, between Rickaby Street and Yarrawonga Street",False,-33.62840855,150.7950062,,60,TfNSW Open Data GPS (2021),
+fixed,Sydney,"Sydney Harbour Tunnel, between Cahill Expressway and Warringah Freeway",False,-33.851561,151.213373,,,OpenStreetMap: approximate: middle of OSM 'Sydney Harbour Tunnel' (1 ways),
 fixed,Tenterfield,"New England Highway, between Duncan Street and George Street",False,-29.0400659,152.0160985,,50,TfNSW Open Data GPS (2021),
 fixed,The Spit/Beauty Point,"Spit Road, between Parriwi Road and Upper Spit Road and between Central Avenue and Medusa Street",False,-33.81395,151.24386,,60,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken at site.
 fixed,The Spit/Beauty Point,"Spit Road, between Parriwi Road and Upper Spit Road and between Central Avenue and Medusa Street",False,-33.80995,151.24531,,60,TfNSW Open Data GPS (2021),Camera in warning mode. Alternate road works undertaken at site.
@@ -62,6 +71,7 @@ fixed,Warrawong,"Northcliffe Drive, between Griffin Street and Kully Street",Fal
 fixed,West Pennant Hills,"Castle Hill Road, between Pennant Hills Road and Coonara Avenue",False,-33.74011786,151.0386616,,60,TfNSW Open Data GPS (2021),
 fixed,Wollongbar,"Bruxner Highway, between Convernys Lane and McLeans Ridges Road",False,-28.81241201,153.3907865,,80,TfNSW Open Data GPS (2021),
 fixed,Woodburn,"River Street, between Sussex Street and Richmond Street",False,-29.067581,153.351098,,50,midpoint of segment from NSW road network,
+fixed,Woolloomooloo / East Sydney,"Cross City Tunnel, between McLachlan Avenue and Harbour Street",False,-33.872833,151.217836,,,OpenStreetMap: approximate: middle of OSM 'Cross City Tunnel' (8 ways),
 fixed,Yagoona,"Hume Highway, between Smith Street and Brennan Avenue",False,-33.90466286,151.0086742,,70,TfNSW Open Data GPS (2021),
 fixed,Ashfield,"Hume Highway, between Murrell Street and Queen Street",True,-33.89017676,151.1279851,,60,TfNSW Open Data GPS (2021),Ashfield Public School
 fixed,Bankstown,"Hume Highway, between Rookwood Road and Stacey Street",True,-33.90591876,151.0385979,,60,TfNSW Open Data GPS (2021),"Bankstown North Public School, La Salle Catholic School"

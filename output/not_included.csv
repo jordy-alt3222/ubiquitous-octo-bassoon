@@ -1,11 +1,1 @@
 kind,suburb,road,comment,reason
-fixed,Bardwell Park / Arncliffe,"M5 Tunnel, between Bexley Road and Marsh Street",,road name not found in NSW road network
-fixed,Cowan,"Pacific Highway, between Pacific Motorway Underpass and Brooklyn Road",Added July 2025,segment ends not found in NSW road network
-fixed,Haberfield / St Peters,WestConnex M4-M8 Link Tunnel,Added January 2023,not a two-road intersection
-fixed,Homebush / Haberfield,WestConnex M4 East Tunnel,Added September 2019,not a two-road intersection
-fixed,Kingsgrove / St Peters,WestConnex M8 Tunnel,Added August 2020,not a two-road intersection
-fixed,Lane Cove Tunnel,"Lane Cove Tunnel, between Mowbray Road and the Pacific Highway",,suburb not found in NSW suburb boundaries
-fixed,Normanhurst/Pennant Hills,NorthConnex Tunnel,,not a two-road intersection
-fixed,Rozelle / Annandale / Leichhardt,Rozelle Interchange,Added January 2024,not a two-road intersection
-fixed,Sydney,"Sydney Harbour Tunnel, between Cahill Expressway and Warringah Freeway",,segment ends not found in NSW road network
-fixed,Woolloomooloo / East Sydney,"Cross City Tunnel, between McLachlan Avenue and Harbour Street",,segment ends not found in NSW road network

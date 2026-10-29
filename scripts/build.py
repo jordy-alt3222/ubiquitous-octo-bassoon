@@ -115,7 +115,8 @@ def main():
             found = [(round(p.y, 6), round(p.x, 6), note)]
         for lat, lon, source in found:
             points.append({**site, "lat": lat, "lon": lon, "source": source, "dir": direction,
-                           "speed_limit": nswgeo.speed_limit(lat, lon)})
+                           # A tunnel's midpoint lies under surface streets with other limits.
+                           "speed_limit": None if "approximate" in source else nswgeo.speed_limit(lat, lon)})
 
     # Average speed sections. Only those enforced for light vehicles, with both ends
     # mapped in OpenStreetMap, are listed in data/osm/average_speed_cameras.csv.
@@ -140,6 +141,8 @@ def main():
                 label = f"{p['road']}, {p['suburb']}"
                 if p["school_zone"]:
                     label += " (school zone, 40 km/h school days)"
+                if "approximate" in p["source"]:
+                    label += " (approximate position)"
                 flg = FLAG_SPEED | (FLAG_RED_LIGHT if p["kind"] == "red" else 0)
             cam = {"lat": p["lat"], "lon": p["lon"], "flg": flg, "str": label}
             if p["dir"] is not None:

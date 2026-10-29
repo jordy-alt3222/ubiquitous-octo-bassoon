@@ -14,16 +14,16 @@ def clean(cell):
     return re.sub(r"\s+", " ", (cell or "").replace("\n", " ")).strip()
 
 
-def table_rows(pdf_path):
+def table_rows(pdf_path, ncols=3):
     with pdfplumber.open(pdf_path) as pdf:
         for page in pdf.pages:
             for table in page.extract_tables():
                 for row in table:
                     cells = [clean(c) for c in row if c is not None]
-                    # The red-light PDF pads its first page with empty columns.
-                    while len(cells) > 3 and "" in cells[1:]:
+                    # Some PDFs pad their first page with empty columns.
+                    while len(cells) > ncols and "" in cells:
                         cells.remove("")
-                    if len(cells) == 3 and cells[0] and cells[0].upper() not in ("LOCATION", "SUBURB/TOWN"):
+                    if len(cells) == ncols and cells[0] and cells[0].upper() not in ("LOCATION", "SUBURB/TOWN", "SUBURB"):
                         yield cells
 
 
@@ -57,6 +57,9 @@ def main():
         red.append([loc, road, comment, int(is_removed(comment)),
                     int(bool(re.search(r"school zone", comment, re.I)))])
     write("red_light_speed_cameras.csv", ["location", "roads", "comment", "removed", "school_zone"], red)
+
+    mobile = list(table_rows(SRC / "crs_mobile_speed_cameras.pdf", ncols=2))
+    write("mobile_speed_camera_locations.csv", ["suburbs", "streets"], mobile)
 
 
 if __name__ == "__main__":
