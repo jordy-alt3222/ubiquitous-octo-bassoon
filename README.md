@@ -4,17 +4,25 @@ A camera database of New South Wales fixed speed cameras and red-light speed cam
 Android app [Highway Radar](https://highwayradar.com), in its
 [ExCam format](https://highwayradar.com/excam).
 
-**File to import:** [`output/nsw_speed_cameras.excam`](output/nsw_speed_cameras.excam)
+**File to import:** [`output/NSW_All_Cameras_Oct2026.excam`](output/NSW_All_Cameras_Oct2026.excam)
 
-Copy it to your phone and import it in Highway Radar as a custom camera database.
+Copy it to your phone and import it in Highway Radar as a custom camera database. It holds 21,257 points:
+- **413 camera points:** fixed, red-light and average-speed cameras, described below.
+- **20,844 points along mobile speed camera streets**, labelled "Possible mobile speed camera".
+
+The two parts are also available separately:
+- [`output/nsw_speed_cameras.excam`](output/nsw_speed_cameras.excam): the cameras only.
+- [`output/nsw_mobile_speed_camera_streets.excam`](output/nsw_mobile_speed_camera_streets.excam): the mobile streets only.
+
+Use these if you want to turn the mobile alerts off in the app while keeping the cameras.
 
 ## What's in it
 
-The database has 403 camera points. They cover 355 of the 365 fixed and red-light sites that Transport for NSW (TfNSW) lists as active, plus one average-speed section.
+The camera file has 413 points. They cover all 365 fixed and red-light sites that Transport for NSW (TfNSW) lists as active, plus one average-speed section.
 
 | Type | Points | ExCam `flg` |
 |---|---|---|
-| Fixed speed camera (incl. 38 school-zone sites) | 122 | 1 (speed) |
+| Fixed speed camera (incl. 38 school-zone sites and 10 approximate positions) | 132 | 1 (speed) |
 | Red-light speed camera | 277 | 3 (speed + red light) |
 | Average-speed section Kew–Port Macquarie (Pacific Hwy), both directions | 4 | 4 (section start) / 8 (section end) |
 
@@ -35,24 +43,31 @@ else it is left out, so the app alerts in both directions.
 | Intersection of the two named roads in the NSW Spatial Services road network (red-light sites added since 2021) | 59 |
 | Midpoint of the "between A and B" segment in the NSW road network (fixed sites added or renamed since 2021) | 5 |
 | OpenStreetMap camera nodes or crossings (`data/osm/`): 5 red-light sites the road network couldn't place, plus the average-speed cameras | 9 |
+| **Approximate:** the middle of each tunnel in OpenStreetMap (9 tunnels: M5, M4 East, M8, M4-M8 Link, Rozelle, NorthConnex, Lane Cove, Harbour, Cross City), and the midpoint of the 7 km Cowan segment. These are labelled "(approximate position)" and have no `spd`. | 10 |
 
 [`output/nsw_speed_cameras.csv`](output/nsw_speed_cameras.csv) lists every point with its source. The 64
 road-network points were checked against both named roads (all within 13 m) and against
 OpenStreetMap reverse geocoding.
 
+### Mobile speed camera streets
+
+TfNSW lists mobile camera locations as streets within suburbs (`sources/crs_mobile_speed_cameras.pdf`, Sep 2026, 2,473
+entries). A mobile camera can be anywhere on the listed street, so `scripts/build_mobile.py` places a point every 1 km along
+each street inside its listed suburbs, using the NSW road network. Points closer than 300 m to each other are merged.
+In the combined file, points within 150 m of a fixed or red-light camera are dropped. These points carry no speed limit.
+
+Of the 3,265 street entries, 78 could not be placed ([`output/mobile_not_included.csv`](output/mobile_not_included.csv)). Most are
+tourist-route names such as Fossickers Way or Remembrance Driveway, which the road network stores under local street names.
+
 ### Not included
 
-- **10 active sites with no position** ([`output/not_included.csv`](output/not_included.csv)). Nine are tunnel cameras:
-  M5, M4 East, M8, M4-M8 Link, Rozelle Interchange, NorthConnex, Lane Cove, Sydney Harbour and Cross City. No source places
-  them; OpenStreetMap maps the tunnels only as whole enforcement sections, and a point inside a long tunnel would be a
-  guess. The tenth is Pacific Highway at Cowan, whose segment starts at an underpass rather than a street.
+
 - **Other average-speed sections.** TfNSW publishes the sections (`sources/crs_average_speed_cameras_map.pdf`) but
   not where the cameras are. Of the two sections that fine cars, only Kew–Port Macquarie has both ends mapped in
   OpenStreetMap. Coolac–Gundagai is missing its southbound Gundagai camera. The other 30 sections fine heavy
   vehicles only.
 - **Live Traffic NSW cameras** (livetraffic.com/traffic-cameras). These are traffic-view webcams, not enforcement
   cameras.
-- **Mobile speed cameras.** They are published as street names only, with no positions.
 - **Cameras TfNSW marks as removed or decommissioned.**
 
 ## Sources
@@ -81,7 +96,11 @@ When TfNSW publishes new PDFs, replace the files in `sources/` (keep the file na
 ```sh
 pip install -r requirements.txt
 python3 scripts/extract_pdfs.py   # sources/*.pdf -> data/tfnsw/*.csv
-python3 scripts/build.py          # -> output/
+python3 scripts/build.py          # cameras -> output/nsw_speed_cameras.excam
+python3 scripts/build_mobile.py   # mobile streets -> output/nsw_mobile_speed_camera_streets.excam
+python3 scripts/combine.py        # both -> output/NSW_All_Cameras_Oct2026.excam
 ```
 
-The first run takes about 10 minutes. Map service responses are cached in `data/cache/`.
+`scripts/find_tunnels.py` regenerates the approximate tunnel rows in `data/osm/site_positions.csv`.
+
+The first run takes about an hour, mostly for the mobile streets. Map service responses are cached in `data/cache/`.

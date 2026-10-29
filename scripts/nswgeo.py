@@ -96,11 +96,17 @@ ROAD_ALIASES = {
 def _name_candidates(road):
     name = re.sub(r"\s+", " ", road.upper().strip(" ."))
     name = ROAD_ALIASES.get(name, name)
-    words = name.split()
-    if len(words) > 1 and words[-1].lower() in ROAD_TYPES:
-        yield " ".join(words[:-1]), words[-1]
-    # Some names are stored whole with no road type, e.g. "THE GRAND PARADE".
-    yield name, None
+    # Route numbers ("M31 Hume Motorway") aren't part of the stored name, and some roads
+    # are listed without the "The" they are stored with ("Bucketts Way").
+    bare = re.sub(r"^[AMB]\d+\s+", "", name)
+    variants = [name] + ([bare] if bare != name else [])
+    variants += ["THE " + v for v in variants if not v.startswith("THE ")]
+    for v in variants:
+        words = v.split()
+        if len(words) > 1 and words[-1].lower() in ROAD_TYPES:
+            yield " ".join(words[:-1]), words[-1]
+        # Some names are stored whole with no road type, e.g. "THE GRAND PARADE".
+        yield v, None
 
 
 def road_lines(road, area, margin_m=800):
