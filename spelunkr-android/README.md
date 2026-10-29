@@ -40,6 +40,41 @@ starting at the right second. The next tape is always queued. If buffering leave
 behind where you should be, it catches up. If the device clock is more than 3 s off, the app corrects it
 using the server's `Date` header.
 
+## Can't stream? Use SIGNAL CHECK
+
+This part is not on the website. It was added so you can see whether the app is reaching the Internet Archive.
+
+- **Link indicator.** It appears under the Guide's preview and above the Watch control bar:
+  - green "ARCHIVE.ORG ▼ 1.2 Mbit/s" while video data arrives;
+  - green "ARCHIVE.ORG OK · 40s BUFFERED" while enough video is already downloaded;
+  - amber "WAITING FOR ARCHIVE.ORG 12s" while nothing is arriving;
+  - red "NO SIGNAL FROM ARCHIVE.ORG" when a tape failed.
+
+  It is driven by a counter on every byte the player downloads, so green means data is really arriving.
+- **Tuning and NO SIGNAL screens.** While a tape loads, you see how much has arrived and how fast. After 15 s it
+  shows the site's own "THE ARCHIVE IS RUNNING SLOW" line. NO SIGNAL now says why the tape failed and when the
+  app will try again. Possible reasons include:
+  - can't find archive.org (no internet, or the network blocks it);
+  - archive.org didn't answer in time;
+  - the HTTP status archive.org returned;
+  - the secure connection failed (the date and time are wrong);
+  - the device can't decode the video.
+- **SIGNAL** (top bar, Watch bar, or SIGNAL CHECK on the home screen's error message). It tests each link in
+  turn:
+  - this device's network, and whether Android has confirmed it reaches the internet;
+  - the Spelunkr schedule feed and its backup;
+  - the device clock compared with internet time;
+  - a real 2 MB download of the tape on air from archive.org: which server answered, how fast it answered, the
+    speed, and the speed the tape needs.
+
+  The "Right now" panel shows what the player is doing that second.
+- **Logcat.** Every tune, the server reached, catch-ups and failures are written to `adb logcat -s Spelunkr`.
+
+The player also allows archive.org more time than ExoPlayer's default: 15 s to connect and 20 s per read, instead
+of 8 s. After a failure it waits 5 s, then 10, 20, 40 and at most 60 s before retrying. It catches up to live
+at most once a minute, so a slow line can't trap it in a loop. A tape that is shorter than its listing moves on
+to the next tape instead of reloading.
+
 ## Phone vs TV: one codebase
 
 Everything is shared: data, schedule, player, view model, and every screen. The differences are small and

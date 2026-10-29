@@ -64,6 +64,7 @@ fun WatchScreen(
     onRewind: () -> Unit,
     onForward: () -> Unit,
     onSpelunk: () -> Unit,
+    onSignal: () -> Unit,
 ) {
     val isTv = LocalIsTv.current
     var controls by remember { mutableStateOf(false) }
@@ -117,8 +118,8 @@ fun WatchScreen(
     ) {
         VideoSurface(player, Modifier.fillMaxSize())
         when {
-            state.noSignal -> NoSignal(large = true)
-            state.tuning -> TuningSlate(tuned, large = true)
+            state.noSignal -> NoSignal(state.link, large = true)
+            state.tuning -> TuningSlate(tuned, state.link, large = true)
         }
 
         val airing = state.airing ?: schedule?.airingAt(now)
@@ -161,6 +162,9 @@ fun WatchScreen(
                     .background(Brush.verticalGradient(listOf(Color.Transparent, Color(0xDD000000))))
                     .padding(horizontal = 16.dp, vertical = 12.dp),
             ) {
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                    LinkIndicator(state, large = isTv)
+                }
                 if (airing != null) ProgressRow(elapsedMs = now - airing.startMs, totalMs = airing.durationMs)
                 Row(
                     Modifier.fillMaxWidth().padding(top = 8.dp).horizontalScroll(rememberScrollState()),
@@ -178,6 +182,7 @@ fun WatchScreen(
                     SpelunkrButton("◀◀ 15S", onRewind)
                     SpelunkrButton("15S ▶▶", onForward, enabled = !state.live || state.paused)
                     SpelunkrButton("SPELUNK", onSpelunk, gold = true)
+                    SpelunkrButton("SIGNAL", onSignal)
                     Spacer(Modifier.width(8.dp))
                     LiveBadge(state.live, state.behindLiveMs, state.paused)
                 }

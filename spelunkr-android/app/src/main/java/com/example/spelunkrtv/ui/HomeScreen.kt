@@ -46,6 +46,7 @@ fun HomeScreen(
     player: Player,
     onTuneIn: () -> Unit,
     onRetry: () -> Unit,
+    onSignal: () -> Unit,
 ) {
     val isTv = LocalIsTv.current
     val tuneInFocus = remember { FocusRequester() }
@@ -77,8 +78,8 @@ fun HomeScreen(
         ) {
             VideoSurface(player, Modifier.fillMaxSize())
             when {
-                playerState.noSignal -> NoSignal()
-                playerState.tuning -> TuningSlate(tuned)
+                playerState.noSignal -> NoSignal(playerState.link)
+                playerState.tuning -> TuningSlate(tuned, playerState.link)
             }
             if (tuned != null) {
                 Text(
@@ -101,7 +102,10 @@ fun HomeScreen(
             is Lineup.Failed -> {
                 Text("TECHNICAL DIFFICULTIES", style = spelunkrText(20.sp, Palette.Yellow))
                 Text(lineup.message, style = spelunkrText(12.sp, Palette.Muted), textAlign = TextAlign.Center)
-                SpelunkrButton("TRY AGAIN", onRetry, gold = true)
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    SpelunkrButton("TRY AGAIN", onRetry, gold = true)
+                    SpelunkrButton("SIGNAL CHECK", onSignal)
+                }
             }
             is Lineup.Ready -> {
                 val hours = lineup.channels.sumOf { it.videoSeconds } / 3600

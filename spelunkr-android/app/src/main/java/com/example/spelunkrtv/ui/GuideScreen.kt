@@ -119,7 +119,7 @@ fun TopBar(now: Long, current: Screen, onNavigate: (Screen) -> Unit, showClock: 
             }
         }
         Spacer(Modifier.weight(1f))
-        listOf(Screen.Home to "HOME", Screen.Guide to "GUIDE", Screen.Directory to "DIRECTORY").forEach { (screen, label) ->
+        listOf(Screen.Home to "HOME", Screen.Guide to "GUIDE", Screen.Directory to "DIRECTORY", Screen.Signal to "SIGNAL").forEach { (screen, label) ->
             SpelunkrButton(label, { onNavigate(screen) }, gold = screen == current, modifier = Modifier.padding(start = 6.dp))
         }
         if (showClock) {
@@ -147,8 +147,8 @@ private fun PreviewBox(
             Box(size.clickable(enabled = !isTv, onClick = onWatch)) {
                 VideoSurface(player, Modifier.fillMaxSize())
                 when {
-                    state.noSignal -> NoSignal()
-                    state.tuning -> TuningSlate(tuned)
+                    state.noSignal -> NoSignal(state.link)
+                    state.tuning -> TuningSlate(tuned, state.link)
                 }
             }
             Row(Modifier.fillMaxWidth().padding(top = 6.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -156,7 +156,7 @@ private fun PreviewBox(
                 Text("CH ${tuned?.dialLabel ?: "--"}", style = spelunkrText(20.sp), modifier = Modifier.padding(horizontal = 10.dp))
                 SpelunkrButton("▲", onChannelUp)
                 Spacer(Modifier.weight(1f))
-                Text("SPELUNKR.TV", style = spelunkrText(11.sp, Palette.Yellow))
+                LinkIndicator(state, Modifier.padding(start = 8.dp))
             }
         }
     }

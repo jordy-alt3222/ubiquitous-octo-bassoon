@@ -25,6 +25,8 @@ object Palette {
     val Cyan = Color(0xFF7FE6E6)
     val Muted = Color(0xFFAEB8E8)
     val Live = Color(0xFFE53935)
+    val Ok = Color(0xFF3DDC84)
+    val Warn = Color(0xFFFFB300)
     val GoldTop = Color(0xFFD9661C)
     val GoldBottom = Color(0xFF5E2A14)
     val Selected = Brush.verticalGradient(listOf(Color(0xFFE07A1F), Color(0xFF8A3A12)))

@@ -46,6 +46,10 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
 import com.example.spelunkrtv.data.Channel
+import com.example.spelunkrtv.diagnostics.formatBits
+import com.example.spelunkrtv.diagnostics.formatBytes
+import com.example.spelunkrtv.player.LivePlayer
+import com.example.spelunkrtv.player.StreamLink
 import kotlinx.coroutines.delay
 
 /**
@@ -178,9 +182,12 @@ fun VideoSurface(player: Player, modifier: Modifier = Modifier) {
     )
 }
 
-/** ONE MOMENT PLEASE / TUNING... over the picture while a tape loads from the Archive. */
+/**
+ * ONE MOMENT PLEASE / TUNING... over the picture while a tape loads from the Archive, with what
+ * the line to the Archive is doing underneath, so a slow tape and a dead line look different.
+ */
 @Composable
-fun TuningSlate(channel: Channel?, modifier: Modifier = Modifier, large: Boolean = false) {
+fun TuningSlate(channel: Channel?, link: StreamLink, modifier: Modifier = Modifier, large: Boolean = false) {
     var dots by remember { mutableIntStateOf(1) }
     LaunchedEffect(Unit) {
         while (true) {
@@ -197,13 +204,63 @@ fun TuningSlate(channel: Channel?, modifier: Modifier = Modifier, large: Boolean
         if (channel != null) {
             Text("CH ${channel.dialLabel} · ${channel.name}", style = spelunkrText(if (large) 18.sp else 12.sp, Palette.Muted))
         }
+        val small = spelunkrText(if (large) 16.sp else 10.sp, Color.White, shadow = false)
+        val waited = link.waitingMs / 1000
+        Text(
+            if (link.bytes == 0L) "CALLING ARCHIVE.ORG… ${waited}s"
+            else "RECEIVING FROM ARCHIVE.ORG · ${formatBytes(link.bytes)} · ${formatBits(link.bitsPerSecond)}",
+            style = small,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(top = if (large) 16.dp else 6.dp, start = 8.dp, end = 8.dp),
+        )
+        if (waited >= SLOW_ARCHIVE_S) {
+            // The site's own words for a slow Archive.
+            Text(
+                "THE ARCHIVE IS RUNNING SLOW. TAPES MAY TAKE A WHILE TO START.",
+                style = small.copy(color = Palette.Yellow),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(horizontal = 8.dp),
+            )
+        }
     }
 }
 
+private const val SLOW_ARCHIVE_S = 15
+
+/** NO SIGNAL, with why in plain words and when the app tries again. */
 @Composable
-fun NoSignal(modifier: Modifier = Modifier, large: Boolean = false) {
-    Box(modifier.fillMaxSize().background(Color.Black), contentAlignment = Alignment.Center) {
+fun NoSignal(link: StreamLink, modifier: Modifier = Modifier, large: Boolean = false) {
+    Column(
+        modifier.fillMaxSize().background(Color.Black).padding(12.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
         Text("NO SIGNAL", style = spelunkrText(if (large) 44.sp else 22.sp, Color.White))
+        val small = spelunkrText(if (large) 16.sp else 10.sp, Palette.Muted, shadow = false)
+        link.error?.let { Text(it, style = small.copy(color = Color.White), textAlign = TextAlign.Center, maxLines = 3) }
+        Text("TRYING AGAIN IN ${(link.retryInMs + 999) / 1000}s", style = small, modifier = Modifier.padding(top = 4.dp))
+    }
+}
+
+/**
+ * The line to the Internet Archive at a glance: green while video arrives or is safely
+ * buffered, amber while the app waits for archive.org, red when it can't get a tape.
+ */
+@Composable
+fun LinkIndicator(state: LivePlayer.State, modifier: Modifier = Modifier, large: Boolean = false) {
+    val link = state.link
+    val (color, text) = when {
+        state.noSignal -> Palette.Live to "NO SIGNAL FROM ARCHIVE.ORG"
+        state.tuning && !link.receiving && link.waitingMs >= 1_000 -> Palette.Warn to "WAITING FOR ARCHIVE.ORG ${link.waitingMs / 1000}s"
+        link.receiving -> Palette.Ok to "ARCHIVE.ORG ▼ ${formatBits(link.bitsPerSecond)}"
+        state.tuning -> Palette.Warn to "CALLING ARCHIVE.ORG"
+        state.airing != null -> Palette.Ok to "ARCHIVE.ORG OK · ${link.bufferedMs / 1000}s BUFFERED"
+        else -> Palette.Muted to "NOT TUNED"
+    }
+    Row(modifier, verticalAlignment = Alignment.CenterVertically) {
+        Box(Modifier.size(if (large) 12.dp else 8.dp).background(color))
+        Spacer(Modifier.width(6.dp))
+        Text(text, style = spelunkrText(if (large) 15.sp else 11.sp, color, shadow = false), maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
 }
 

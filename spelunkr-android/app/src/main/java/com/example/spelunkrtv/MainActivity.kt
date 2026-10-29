@@ -47,6 +47,7 @@ import com.example.spelunkrtv.ui.GuideScreen
 import com.example.spelunkrtv.ui.HomeScreen
 import com.example.spelunkrtv.ui.LocalIsTv
 import com.example.spelunkrtv.ui.Palette
+import com.example.spelunkrtv.ui.SignalScreen
 import com.example.spelunkrtv.ui.SpelunkrButton
 import com.example.spelunkrtv.ui.WatchScreen
 import com.example.spelunkrtv.ui.spelunkrText
@@ -148,6 +149,7 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
     val now by vm.now.collectAsStateWithLifecycle()
     val dial by vm.dial.collectAsStateWithLifecycle()
     val stillWatching by vm.stillWatching.collectAsStateWithLifecycle()
+    val signal by vm.signal.collectAsStateWithLifecycle()
     val channels = (lineup as? Lineup.Ready)?.channels.orEmpty()
     val player = vm.player.player
 
@@ -155,7 +157,10 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
 
     Box(Modifier.fillMaxSize().background(Palette.Purple)) {
         when (screen) {
-            Screen.Home -> HomeScreen(lineup, tuned, playerState, player, onTuneIn = vm::tuneIn, onRetry = vm::load)
+            Screen.Home -> HomeScreen(
+                lineup, tuned, playerState, player,
+                onTuneIn = vm::tuneIn, onRetry = vm::load, onSignal = { vm.open(Screen.Signal) },
+            )
             Screen.Guide -> GuideScreen(
                 channels = channels,
                 schedules = schedules,
@@ -186,6 +191,15 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
                 onRewind = vm.player::rewind15,
                 onForward = vm.player::forward15,
                 onSpelunk = vm::spelunk,
+                onSignal = { vm.open(Screen.Signal) },
+            )
+            Screen.Signal -> SignalScreen(
+                rows = signal,
+                tuned = tuned,
+                state = playerState,
+                now = now,
+                onNavigate = vm::open,
+                onTestAgain = vm::checkSignal,
             )
             Screen.Directory -> DirectoryScreen(channels, now, onNavigate = vm::open, onOpen = vm::openChannelPage)
             Screen.ChannelPage -> pageChannel?.let { channel ->

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SIGNAL CHECK: which network is up, and whether Android has confirmed it reaches the internet. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- One APK for phones and TVs: neither a touchscreen nor the TV (leanback) feature is required,
          so the Play Store offers it to both, and a TV without a touchscreen can install it. -->

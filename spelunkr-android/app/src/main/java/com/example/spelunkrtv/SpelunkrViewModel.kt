@@ -5,6 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.spelunkrtv.data.BroadcastRepository
 import com.example.spelunkrtv.data.Channel
+import com.example.spelunkrtv.diagnostics.CheckRow
+import com.example.spelunkrtv.diagnostics.SignalCheck
+import com.example.spelunkrtv.diagnostics.TapeUnderTest
 import com.example.spelunkrtv.player.LivePlayer
 import com.example.spelunkrtv.schedule.ChannelSchedule
 import kotlinx.coroutines.Job
@@ -18,7 +21,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 
-enum class Screen { Home, Guide, Watch, Directory, ChannelPage }
+enum class Screen { Home, Guide, Watch, Directory, ChannelPage, Signal }
 
 sealed interface Lineup {
     data object Loading : Lineup
@@ -67,6 +70,12 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
 
     private var tuneJob: Job? = null
     private var previewJob: Job? = null
+
+    private val signalCheck = SignalCheck(app)
+    private val _signal = MutableStateFlow<List<CheckRow>>(emptyList())
+    /** The latest SIGNAL CHECK, row by row as each link is tested. */
+    val signal: StateFlow<List<CheckRow>> = _signal.asStateFlow()
+    private var signalJob: Job? = null
 
     init {
         load()
@@ -182,6 +191,17 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
         if (screen == Screen.Home) backStack.clear()
         backStack.addLast(screen)
         show(screen)
+        if (screen == Screen.Signal) checkSignal()
+    }
+
+    /** Tests each link from this device to the Internet Archive, using the tape on air. */
+    fun checkSignal() {
+        signalJob?.cancel()
+        signalJob = viewModelScope.launch {
+            val state = player.state.value
+            val tape = state.airing?.let { TapeUnderTest(it.program.videoUrl, state.link.tapeBitsPerSecond) }
+            signalCheck.run(tape) { rows -> _signal.value = rows }
+        }
     }
 
     fun openChannelPage(channel: Channel) {
