@@ -66,13 +66,13 @@ fun HomeScreen(
             .verticalScroll(rememberScrollState())
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(10.dp),
+        verticalArrangement = Arrangement.spacedBy(if (isTv) 6.dp else 10.dp),
     ) {
-        Text("SPELUNKR", style = spelunkrText(if (isTv) 44.sp else 40.sp, Palette.Yellow))
+        Text("SPELUNKR", style = spelunkrText(if (isTv) 36.sp else 40.sp, Palette.Yellow))
 
         // The little TV set, playing a random channel with the sound off.
         Box(
-            Modifier.size(width = if (isTv) 300.dp else 260.dp, height = if (isTv) 180.dp else 156.dp)
+            Modifier.size(width = if (isTv) 260.dp else 260.dp, height = 156.dp)
                 .background(Color(0xFF1E1E22)).border(3.dp, Color(0xFF3A3A40)).padding(12.dp),
         ) {
             VideoSurface(player, Modifier.fillMaxSize())
@@ -115,7 +115,7 @@ fun HomeScreen(
             }
         }
 
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(if (isTv) 0.dp else 8.dp))
         Text("Spelunkr is free to watch. No account, no ads.", style = spelunkrText(13.sp), textAlign = TextAlign.Center)
         Text("ALL PROGRAMMING COURTESY OF THE INTERNET ARCHIVE", style = spelunkrText(12.sp, Palette.Yellow), textAlign = TextAlign.Center)
     }

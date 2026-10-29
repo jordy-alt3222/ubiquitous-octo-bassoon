@@ -25,8 +25,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusProperties
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
@@ -65,8 +68,9 @@ fun SpelunkrButton(
         modifier
             .background(fill)
             .border(if (focused) 3.dp else 1.dp, if (focused) Palette.Yellow else Palette.Rim)
+            .remoteFocusable()
             .clickable(interactionSource = interaction, indication = null, enabled = enabled, onClick = onClick)
-            .padding(horizontal = if (isTv) 14.dp else 12.dp, vertical = if (isTv) 6.dp else 10.dp),
+            .padding(horizontal = if (isTv) 14.dp else 12.dp, vertical = if (isTv) 4.dp else 10.dp),
         contentAlignment = Alignment.Center,
     ) {
         Text(
@@ -75,6 +79,23 @@ fun SpelunkrButton(
             maxLines = 1,
             color = if (enabled) Color.Unspecified else Palette.Muted,
         )
+    }
+}
+
+/**
+ * Compose lets a clickable take focus only in key mode. A TV can start in touch mode, so on TV
+ * every focus stop is made focusable outright: the guide can then land on the tuned channel
+ * before the first button press.
+ */
+@Composable
+fun Modifier.remoteFocusable(): Modifier =
+    if (LocalIsTv.current) focusProperties { canFocus = true } else this
+
+/** Focus something a lazy list may not have laid out yet: keep asking for a few frames. */
+suspend fun FocusRequester.requestFocusSoon() {
+    repeat(30) {
+        withFrameNanos { }
+        if (runCatching { requestFocus() }.getOrDefault(false)) return
     }
 }
 

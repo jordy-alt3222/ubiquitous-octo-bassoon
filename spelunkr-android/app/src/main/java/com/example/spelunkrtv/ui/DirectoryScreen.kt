@@ -40,7 +40,7 @@ import com.example.spelunkrtv.schedule.ChannelSchedule
 fun DirectoryScreen(channels: List<Channel>, now: Long, onNavigate: (Screen) -> Unit, onOpen: (Channel) -> Unit) {
     val isTv = LocalIsTv.current
     val first = remember { FocusRequester() }
-    LaunchedEffect(channels.isNotEmpty()) { if (isTv && channels.isNotEmpty()) runCatching { first.requestFocus() } }
+    LaunchedEffect(channels.isNotEmpty()) { if (isTv && channels.isNotEmpty()) first.requestFocusSoon() }
     Column(Modifier.fillMaxSize().background(Palette.Sky)) {
         TopBar(now, Screen.Directory, onNavigate, showClock = isTv)
         LazyVerticalGrid(
@@ -57,6 +57,7 @@ fun DirectoryScreen(channels: List<Channel>, now: Long, onNavigate: (Screen) -> 
                         .then(if (channel == channels.first()) Modifier.focusRequester(first) else Modifier)
                         .background(Palette.Panel)
                         .border(3.dp, if (focused) Palette.Yellow else Palette.Rim)
+                        .remoteFocusable()
                         .clickable(interactionSource = interaction, indication = null) { onOpen(channel) }
                         .padding(10.dp),
                 ) {

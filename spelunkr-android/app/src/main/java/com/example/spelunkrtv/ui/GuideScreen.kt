@@ -42,7 +42,6 @@ import com.example.spelunkrtv.Screen
 import com.example.spelunkrtv.data.Channel
 import com.example.spelunkrtv.player.LivePlayer
 import com.example.spelunkrtv.schedule.ChannelSchedule
-import kotlinx.coroutines.delay
 
 private const val HALF_HOUR = 30 * 60_000L
 
@@ -179,7 +178,7 @@ fun InfoPanel(
             Text("PLEASE STAND BY", style = spelunkrText(18.sp, Palette.Yellow))
             return@Panel
         }
-        Column(if (compact) Modifier else Modifier.fillMaxHeight()) {
+        Column {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 PixelLogo(channel, 30.dp)
                 Spacer(Modifier.width(8.dp))
@@ -201,8 +200,8 @@ fun InfoPanel(
             Row(verticalAlignment = Alignment.Bottom) {
                 Text(
                     airing.program.title,
-                    style = spelunkrText(if (compact) 16.sp else 20.sp),
-                    maxLines = if (compact) 1 else 2,
+                    style = spelunkrText(18.sp),
+                    maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.weight(1f, fill = false),
                 )
@@ -218,19 +217,30 @@ fun InfoPanel(
                 )
             }
             ProgressRow(elapsedMs = now - airing.startMs, totalMs = airing.durationMs)
-            if (!compact) {
-                Text("UP NEXT", style = spelunkrText(13.sp, Palette.Yellow), modifier = Modifier.padding(top = 4.dp))
-                schedule.upNext(now, 2).forEach { next ->
-                    Row {
-                        Text(timeOfDay(next.startMs), style = spelunkrText(14.sp, Palette.Yellow), modifier = Modifier.width(90.dp))
-                        Text(next.program.title, style = spelunkrText(14.sp), maxLines = 1, overflow = TextOverflow.Ellipsis)
-                    }
-                }
-            }
-            if (!compact) Spacer(Modifier.weight(1f))
-            Row(Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            val buttons = @Composable {
                 SpelunkrButton("WATCH", onWatch, gold = true)
                 SpelunkrButton("VIEW CHANNEL", { onViewChannel(channel) })
+            }
+            if (compact) {
+                Row(Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) { buttons() }
+            } else {
+                // Wide: the keys sit beside UP NEXT, so a 540dp-high TV screen keeps everything in view.
+                Row(Modifier.padding(top = 4.dp), verticalAlignment = Alignment.Bottom) {
+                    Column(Modifier.weight(1f)) {
+                        Text("UP NEXT", style = spelunkrText(13.sp, Palette.Yellow))
+                        schedule.upNext(now, 2).forEach { next ->
+                            Row {
+                                Text(timeOfDay(next.startMs), style = spelunkrText(14.sp, Palette.Yellow), modifier = Modifier.width(90.dp))
+                                Text(next.program.title, style = spelunkrText(14.sp), maxLines = 1, overflow = TextOverflow.Ellipsis)
+                            }
+                        }
+                    }
+                    Column(
+                        Modifier.padding(start = 8.dp),
+                        verticalArrangement = Arrangement.spacedBy(4.dp),
+                        horizontalAlignment = Alignment.End,
+                    ) { buttons() }
+                }
             }
         }
     }
@@ -276,8 +286,7 @@ fun GuideGrid(
         if (!isTv || firstFocusId == null) return@LaunchedEffect
         val index = channels.indexOfFirst { it.id == firstFocusId }.coerceAtLeast(0)
         listState.scrollToItem(index)
-        delay(50)
-        runCatching { focusTarget.requestFocus() }
+        focusTarget.requestFocusSoon()
     }
 
     Column(modifier.border(3.dp, Palette.Rim).background(Palette.PanelDeep)) {
@@ -337,6 +346,7 @@ private fun GuideRow(
             .then(if (tuned) Modifier.background(Palette.Selected) else Modifier.background(Palette.Panel))
             .border(if (focused) 3.dp else 0.5.dp, if (focused) Palette.Yellow else Palette.Rim)
             .onFocusChanged { if (it.isFocused) onFocus?.invoke(channel) }
+            .remoteFocusable()
             .clickable(interactionSource = interaction, indication = null) { onSelect(channel) },
         verticalAlignment = Alignment.CenterVertically,
     ) {
