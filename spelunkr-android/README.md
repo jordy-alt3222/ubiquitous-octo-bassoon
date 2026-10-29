@@ -84,6 +84,23 @@ echo "sdk.dir=$HOME/Android/Sdk" > local.properties
 
 Or open the `spelunkr-android` folder in Android Studio and press Run.
 
+### Release APK
+
+`./gradlew assembleRelease` builds a shrunk (R8) release APK of about 2 MB. To sign it, put these properties
+in `~/.gradle/gradle.properties`, never in the repo:
+
+```properties
+spelunkr.keystore=/path/to/spelunkr-release.jks
+spelunkr.keystore.password=…
+spelunkr.key.alias=spelunkr
+spelunkr.key.password=…
+```
+
+Without them the release APK comes out unsigned, and Android won't install it. To make a key:
+`keytool -genkeypair -keystore spelunkr-release.jks -alias spelunkr -keyalg RSA -keysize 4096 -validity 10000`.
+Keep the keystore. Every later version must be signed with the same key, or it can't be installed over the
+earlier one.
+
 Stack: Kotlin 2.4, AGP 9.5 (built-in Kotlin), Jetpack Compose (BOM 2026.09), Media3 ExoPlayer 1.11,
 kotlinx.serialization, lifecycle ViewModel / StateFlow. `minSdk` 23, `targetSdk` 36. The UI uses plain
 Compose foundation and Material 3 text, not `androidx.tv` components, so the same composables run on both form

@@ -17,9 +17,26 @@ android {
         versionName = "1.0"
     }
 
+    // Release signing comes from Gradle properties (~/.gradle/gradle.properties or -P flags), never
+    // from the repo: spelunkr.keystore, spelunkr.keystore.password, spelunkr.key.alias,
+    // spelunkr.key.password. Without them, assembleRelease builds an unsigned APK.
+    val keystore = providers.gradleProperty("spelunkr.keystore").orNull
+    signingConfigs {
+        if (keystore != null) {
+            create("release") {
+                storeFile = file(keystore)
+                storePassword = providers.gradleProperty("spelunkr.keystore.password").get()
+                keyAlias = providers.gradleProperty("spelunkr.key.alias").get()
+                keyPassword = providers.gradleProperty("spelunkr.key.password").get()
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (keystore != null) signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
