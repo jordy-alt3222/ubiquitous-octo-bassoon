@@ -17,7 +17,7 @@ import kotlin.math.abs
 
 /** A channel as the app shows it. */
 /** Categories in the order the guide shows them. */
-val CATEGORIES = listOf("REWIND", "ARCHIVE", "CARTOONS", "KIDS", "FILM", "TV", "TV SERIES", "MUSIC", "EDUCATIONAL", "OTHER", "PREVIEW")
+val CATEGORIES = listOf("MY MIX", "DECADES", "REWIND", "ARCHIVE", "CARTOONS", "KIDS", "FILM", "TV", "TV SERIES", "MUSIC", "EDUCATIONAL", "OTHER", "PREVIEW")
 const val PREVIEW = "PREVIEW"
 
 fun categoryOf(family: String?): String = when (family) {
@@ -30,6 +30,8 @@ fun categoryOf(family: String?): String = when (family) {
     "kids" -> "KIDS"
     "tv" -> "TV"
     "music" -> "MUSIC"
+    "decades" -> "DECADES"
+    "mine" -> "MY MIX"
     else -> "OTHER"
 }
 

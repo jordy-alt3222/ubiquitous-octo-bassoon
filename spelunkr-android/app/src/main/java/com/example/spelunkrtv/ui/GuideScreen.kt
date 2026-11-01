@@ -127,7 +127,7 @@ fun TopBar(now: Long, current: Screen, onNavigate: (Screen) -> Unit, showClock: 
         }
         Spacer(Modifier.weight(1f))
         listOf(Screen.Home to "HOME", Screen.Guide to "GUIDE", Screen.Directory to "DIRECTORY", Screen.Setup to "SETUP").forEach { (screen, label) ->
-            val on = screen == current || (screen == Screen.Setup && current == Screen.Signal)
+            val on = screen == current || (screen == Screen.Setup && (current == Screen.Signal || current == Screen.MyDial))
             SpelunkrButton(label, { onNavigate(screen) }, gold = on, modifier = Modifier.padding(start = 6.dp))
         }
         if (showClock) {

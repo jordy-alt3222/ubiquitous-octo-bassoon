@@ -13,8 +13,8 @@ android {
         applicationId = "com.example.spelunkrtv"
         minSdk = 23
         targetSdk = 36
-        versionCode = 5
-        versionName = "1.4"
+        versionCode = 6
+        versionName = "1.5"
     }
 
     // Release signing comes from Gradle properties (~/.gradle/gradle.properties or -P flags), never

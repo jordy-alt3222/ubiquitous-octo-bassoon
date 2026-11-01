@@ -47,6 +47,7 @@ import com.example.spelunkrtv.ui.GuideScreen
 import com.example.spelunkrtv.ui.HomeScreen
 import com.example.spelunkrtv.ui.LocalIsTv
 import com.example.spelunkrtv.ui.Palette
+import com.example.spelunkrtv.ui.MyDialScreen
 import com.example.spelunkrtv.ui.SetupScreen
 import com.example.spelunkrtv.ui.SignalScreen
 import com.example.spelunkrtv.ui.SpelunkrButton
@@ -154,6 +155,7 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
     val setup by vm.setup.collectAsStateWithLifecycle()
     val savedIndexBytes by vm.savedIndexBytes.collectAsStateWithLifecycle()
     val category by vm.category.collectAsStateWithLifecycle()
+    val decades by vm.decades.collectAsStateWithLifecycle()
     val channels = (lineup as? Lineup.Ready)?.channels.orEmpty()
     val player = vm.player.player
 
@@ -208,7 +210,10 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
                 onNavigate = vm::open,
                 onChange = vm::changeSetup,
                 onClearSaved = vm::clearSavedIndexes,
+                decades = decades,
+                dialSize = vm.sourceChannels.count { it.id !in setup.hidden } to vm.sourceChannels.size,
             )
+            Screen.MyDial -> MyDialScreen(vm.sourceChannels, setup, now, onNavigate = vm::open, onChange = vm::changeSetup)
             Screen.Signal -> SignalScreen(
                 rows = signal,
                 tuned = tuned,

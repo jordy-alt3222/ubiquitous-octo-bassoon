@@ -12,6 +12,11 @@ import com.example.spelunkrtv.diagnostics.SignalCheck
 import com.example.spelunkrtv.diagnostics.TapeUnderTest
 import com.example.spelunkrtv.player.LivePlayer
 import com.example.spelunkrtv.schedule.ChannelSchedule
+import com.example.spelunkrtv.schedule.Dial
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,7 +28,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 
-enum class Screen { Home, Guide, Watch, Directory, ChannelPage, Signal, Setup }
+enum class Screen { Home, Guide, Watch, Directory, ChannelPage, Signal, Setup, MyDial }
 
 sealed interface Lineup {
     data object Loading : Lineup
@@ -43,12 +48,22 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
     private val _savedIndexBytes = MutableStateFlow(0L)
     val savedIndexBytes: StateFlow<Long> = _savedIndexBytes.asStateFlow()
 
+    /** The channels and schedules as the lineup gives them. */
+    private val _source = MutableStateFlow<Lineup>(Lineup.Loading)
+    private val _sourceSchedules = MutableStateFlow<Map<String, ChannelSchedule>>(emptyMap())
+    val sourceChannels: List<Channel> get() = (_source.value as? Lineup.Ready)?.channels.orEmpty()
+
+    /** The dial: the lineup as TV SETUP shapes it (decades, MY DIAL, decade channels, MY MIX). */
     private val _lineup = MutableStateFlow<Lineup>(Lineup.Loading)
     val lineup: StateFlow<Lineup> = _lineup.asStateFlow()
 
     /** Schedules arrive one channel at a time; the guide shows "ADJUSTING THE ANTENNA…" until then. */
     private val _schedules = MutableStateFlow<Map<String, ChannelSchedule>>(emptyMap())
     val schedules: StateFlow<Map<String, ChannelSchedule>> = _schedules.asStateFlow()
+
+    /** Decades the lineup has tapes from, with how many, for WATCH BY DECADE. */
+    private val _decades = MutableStateFlow<Map<Int, Int>>(emptyMap())
+    val decades: StateFlow<Map<Int, Int>> = _decades.asStateFlow()
 
     private val _now = MutableStateFlow(repo.now())
     val now: StateFlow<Long> = _now.asStateFlow()
@@ -102,36 +117,127 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun load() {
+        _source.value = Lineup.Loading
         _lineup.value = Lineup.Loading
         viewModelScope.launch {
             val channels = try {
                 repo.channels(withPreviews = setup.value.previewChannels)
             } catch (e: Exception) {
-                _lineup.value = Lineup.Failed(e.message ?: "unknown error")
+                _source.value = Lineup.Failed(e.message ?: "unknown error")
+                _lineup.value = _source.value
                 return@launch
             }
-            _lineup.value = Lineup.Ready(channels)
+            _source.value = Lineup.Ready(channels)
+            rebuildDial()
             // The home screen's little TV plays a random channel, sound off, like the site's.
-            if (_tuned.value == null && channels.isNotEmpty()) {
+            if (_tuned.value == null && this@SpelunkrViewModel.channels.isNotEmpty()) {
                 player.muted = _screen.value == Screen.Home
-                tune(channels.random())
+                tune(this@SpelunkrViewModel.channels.random())
             }
-            val gate = Semaphore(6)
-            channels.forEach { channel ->
-                launch {
-                    gate.withPermit { scheduleOrNull(channel) }
-                }
-            }
+            loadSources(channels)
         }
     }
 
-    private suspend fun scheduleOrNull(channel: Channel): ChannelSchedule? {
-        _schedules.value[channel.id]?.let { return it }
+    private fun loadSources(channels: List<Channel>) {
+        viewModelScope.launch {
+            val gate = Semaphore(6)
+            channels.map { channel -> launch { gate.withPermit { loadSource(channel) } } }.joinAll()
+        }
+    }
+
+    /** One lineup channel's schedule, fetched once; the dial is rebuilt as each arrives. */
+    private suspend fun loadSource(channel: Channel): ChannelSchedule? {
+        _sourceSchedules.value[channel.id]?.let { return it }
         return try {
-            repo.schedule(channel).also { s -> _schedules.update { it + (channel.id to s) } }
+            repo.schedule(channel).also { s ->
+                _sourceSchedules.update { it + (channel.id to s) }
+                rebuildDial()
+            }
         } catch (e: Exception) {
             null
         }
+    }
+
+    /** The schedule a dial channel plays, waiting for the lineup schedules it is built from. */
+    private suspend fun scheduleFor(channel: Channel): ChannelSchedule? {
+        _schedules.value[channel.id]?.let { return it }
+        val source = sourceChannels.firstOrNull { it.id == channel.id }
+        if (source != null) {
+            loadSource(source)
+        } else {
+            // A decade channel or MY MIX: built from many channels at once.
+            coroutineScope { sourceChannels.map { async { loadSource(it) } }.awaitAll() }
+            rebuildDial()
+        }
+        return _schedules.value[channel.id]
+    }
+
+    /**
+     * Shapes the dial from the lineup and TV SETUP. Lineup channels are cut down to the chosen
+     * decades (and dropped if that leaves nothing) or taken off by MY DIAL; decade channels and
+     * MY MIX are added once every schedule they draw on has arrived.
+     */
+    private fun rebuildDial() {
+        val sources = (_source.value as? Lineup.Ready)?.channels ?: return
+        val setup = setup.value
+        val loaded = _sourceSchedules.value
+        val now = repo.now()
+        val tapes = sources.associate { c -> c.id to loaded[c.id]?.programsAt(now).orEmpty() }
+        val allLoaded = sources.all { it.id in loaded }
+
+        val dial = ArrayList<Channel>()
+        val schedules = HashMap<String, ChannelSchedule>()
+        for (c in sources) {
+            if (c.id in setup.hidden) continue
+            val schedule = loaded[c.id]
+            when {
+                setup.decades.isEmpty() -> {
+                    dial += c
+                    schedule?.let { schedules[c.id] = it }
+                }
+                schedule == null -> dial += c // still arriving: kept until we know
+                else -> Dial.filtered(tapes.getValue(c.id), setup.decades)?.let { s ->
+                    val kept = s.programsAt(now)
+                    dial += c.copy(items = kept.size, videoSeconds = kept.sumOf { it.durationMs } / 1000)
+                    schedules[c.id] = s
+                }
+            }
+        }
+        val counts = tapes.values.flatten().distinctBy { it.videoUrl }.mapNotNull { Dial.decadeOf(it) }
+            .groupingBy { it }.eachCount().filterValues { it >= MIN_DECADE_TAPES }.toSortedMap()
+        _decades.value = counts
+        if (allLoaded && setup.decadeChannels) {
+            val everything = tapes.values.flatten()
+            for (decade in counts.keys.filter { setup.decades.isEmpty() || it in setup.decades }) {
+                val id = "decade-$decade"
+                val schedule = Dial.mix(id, everything, setOf(decade)) ?: continue
+                schedules[id] = schedule
+                dial += Channel(
+                    id = id, name = Dial.decadeName(decade), dial = Dial.decadeDial(decade),
+                    color = DECADE_COLORS[(decade / 10) % DECADE_COLORS.size],
+                    description = "Every channel's tapes from the ${decade}s, mixed into one.",
+                    family = "decades", logoRows = emptyList(), items = schedule.programsAt(now).size,
+                    videoSeconds = schedule.programsAt(now).sumOf { it.durationMs } / 1000,
+                    versions = emptyList(),
+                )
+            }
+        }
+        val mixSources = sources.filter { it.id in setup.myMix }
+        if (mixSources.isNotEmpty() && mixSources.all { it.id in loaded }) {
+            val mix = Dial.mix(MY_MIX, mixSources.flatMap { tapes.getValue(it.id) }, setup.decades.ifEmpty { null })
+            if (mix != null) {
+                schedules[MY_MIX] = mix
+                dial += Channel(
+                    id = MY_MIX, name = "MY MIX", dial = MY_MIX_DIAL, color = 0xFFFFC107,
+                    description = "Your own channel: " + mixSources.joinToString(", ") { it.name } + ", mixed into one.",
+                    family = "mine", logoRows = emptyList(), items = mix.programsAt(now).size,
+                    videoSeconds = mix.programsAt(now).sumOf { it.durationMs } / 1000,
+                    versions = emptyList(),
+                )
+            }
+        }
+        _schedules.value = schedules
+        _lineup.value = Lineup.Ready(dial.sortedBy { it.dial })
     }
 
     private val channels: List<Channel>
@@ -186,19 +292,24 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
         setupStore.update(change)
         player.apply(setup.value)
         refreshSavedIndexBytes()
-        if (before.previewChannels != setup.value.previewChannels) {
+        val after = setup.value
+        if (before.previewChannels != after.previewChannels) {
             if (_category.value == com.example.spelunkrtv.data.PREVIEW) _category.value = null
             reloadChannels()
+        } else if (before.decades != after.decades || before.decadeChannels != after.decadeChannels ||
+            before.hidden != after.hidden || before.myMix != after.myMix
+        ) {
+            rebuildDial()
         }
     }
 
-    /** Re-reads the dial (preview channels on or off) without interrupting the channel on. */
+    /** Re-reads the lineup (preview channels on or off) without interrupting the channel on. */
     private fun reloadChannels() {
         viewModelScope.launch {
             val list = runCatching { repo.channels(withPreviews = setup.value.previewChannels) }.getOrNull() ?: return@launch
-            _lineup.value = Lineup.Ready(list)
-            val gate = Semaphore(6)
-            list.forEach { channel -> launch { gate.withPermit { scheduleOrNull(channel) } } }
+            _source.value = Lineup.Ready(list)
+            rebuildDial()
+            loadSources(list)
         }
     }
 
@@ -227,7 +338,7 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
         tuneJob?.cancel()
         tuneJob = viewModelScope.launch {
             player.stop()
-            val schedule = scheduleOrNull(channel) ?: return@launch
+            val schedule = scheduleFor(channel) ?: return@launch
             if (_tuned.value?.id == channel.id) player.tune(schedule)
         }
     }
@@ -355,6 +466,11 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     companion object {
+        const val MY_MIX = "my-mix"
+        private const val MY_MIX_DIAL = 999
+        /** A decade needs this many tapes to be offered. */
+        private const val MIN_DECADE_TAPES = 5
+        private val DECADE_COLORS = longArrayOf(0xFF8D6E63, 0xFF26A69A, 0xFFEF6C00, 0xFF7E57C2, 0xFFEC407A, 0xFF29B6F6, 0xFF9CCC65, 0xFFFFCA28, 0xFF5C6BC0, 0xFFE53935)
         const val ASLEEP_AFTER_MS = 4 * 60 * 60 * 1000L
         private const val PREVIEW_SETTLE_MS = 600L
         private const val DIAL_SETTLE_MS = 1_500L

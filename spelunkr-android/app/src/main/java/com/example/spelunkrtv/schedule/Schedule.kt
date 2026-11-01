@@ -96,6 +96,9 @@ class ChannelSchedule(versions: List<ScheduleVersion>) {
         require(this.versions.isNotEmpty()) { "no published version" }
     }
 
+    /** The tapes of the schedule in force at [t], in their order. */
+    fun programsAt(t: Long): List<Program> = versionAt(t).programs
+
     private fun versionAt(t: Long): ScheduleVersion =
         versions.lastOrNull { it.effectiveAtMs <= t }
             ?: versions.minWith(compareBy<ScheduleVersion> { it.effectiveAtMs }.thenByDescending { it.v })

@@ -20,6 +20,14 @@ data class TvSetup(
     val server: Server = Server.FASTEST,
     /** Channels the site has scheduled but not yet put on its dial. */
     val previewChannels: Boolean = true,
+    /** WATCH BY DECADE: only tapes from these decades (1980 = the 80s); empty means every decade. */
+    val decades: Set<Int> = emptySet(),
+    /** A channel per decade, mixing every channel's tapes from it. */
+    val decadeChannels: Boolean = true,
+    /** MY DIAL: channels taken off the dial. */
+    val hidden: Set<String> = emptySet(),
+    /** MY DIAL: channels mixed into MY MIX. */
+    val myMix: Set<String> = emptySet(),
 ) {
     enum class PictureShape { FIT, FILL, STRETCH }
     enum class Sound { SURROUND, STEREO }
@@ -51,6 +59,10 @@ class SetupStore(context: Context) {
             .putString("preload", next.preload.name)
             .putString("server", next.server.name)
             .putBoolean("previewChannels", next.previewChannels)
+            .putString("decades", next.decades.joinToString(","))
+            .putBoolean("decadeChannels", next.decadeChannels)
+            .putString("hidden", next.hidden.joinToString(","))
+            .putString("myMix", next.myMix.joinToString(","))
             .apply()
     }
 
@@ -66,8 +78,15 @@ class SetupStore(context: Context) {
             preload = enumOr(prefs.getString("preload", null), d.preload),
             server = enumOr(prefs.getString("server", null), d.server),
             previewChannels = prefs.getBoolean("previewChannels", d.previewChannels),
+            decades = list("decades").mapNotNull { it.toIntOrNull() }.toSet(),
+            decadeChannels = prefs.getBoolean("decadeChannels", d.decadeChannels),
+            hidden = list("hidden").toSet(),
+            myMix = list("myMix").toSet(),
         )
     }
+
+    private fun list(key: String): List<String> =
+        prefs.getString(key, null).orEmpty().split(',').filter { it.isNotBlank() }
 
     private inline fun <reified E : Enum<E>> enumOr(name: String?, default: E): E =
         enumValues<E>().firstOrNull { it.name == name } ?: default

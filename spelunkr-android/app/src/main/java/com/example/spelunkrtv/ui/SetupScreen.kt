@@ -40,6 +40,8 @@ fun SetupScreen(
     onNavigate: (Screen) -> Unit,
     onChange: ((TvSetup) -> TvSetup) -> Unit,
     onClearSaved: () -> Unit,
+    decades: Map<Int, Int> = emptyMap(),
+    dialSize: Pair<Int, Int> = 0 to 0,
 ) {
     val isTv = LocalIsTv.current
     val firstChoice = remember { FocusRequester() }
@@ -60,13 +62,54 @@ fun SetupScreen(
                     style = spelunkrText(13.sp, shadow = false),
                 )
 
+                Section("WATCH BY DECADE") {
+                    Text("DECADES", style = spelunkrText(14.sp, Palette.Cyan))
+                    Text(
+                        "Pick one or more: every channel then plays only its tapes from those years, and channels with " +
+                            "none drop off the dial. ALL plays everything. Tapes without a known year only play under ALL.",
+                        style = spelunkrText(12.sp, shadow = false),
+                    )
+                    Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                        SpelunkrButton(
+                            "ALL",
+                            { onChange { it.copy(decades = emptySet()) } },
+                            gold = setup.decades.isEmpty(),
+                            modifier = Modifier.focusRequester(firstChoice),
+                        )
+                        decades.forEach { (decade, count) ->
+                            SpelunkrButton(
+                                "${com.example.spelunkrtv.schedule.Dial.decadeName(decade).removePrefix("THE ")} · $count",
+                                { onChange { s -> s.copy(decades = if (decade in s.decades) s.decades - decade else s.decades + decade) } },
+                                gold = decade in setup.decades,
+                            )
+                        }
+                        if (decades.isEmpty()) Text("Counting tapes…", style = spelunkrText(12.sp, Palette.Muted))
+                    }
+                    Choice(
+                        "DECADE CHANNELS",
+                        "Adds a channel for each decade (THE 70s on 970, THE 80s on 980…) mixing every channel's tapes " +
+                            "from it, in the DECADES category.",
+                        listOf(true to "ON", false to "OFF"),
+                        setup.decadeChannels, wide,
+                    ) { v -> onChange { it.copy(decadeChannels = v) } }
+                }
+
+                Section("MY DIAL") {
+                    Text(
+                        "Choose which channels are on your dial (${dialSize.first} of ${dialSize.second} now), and star the " +
+                            "ones to mix into your own channel, MY MIX, on 999.",
+                        style = spelunkrText(12.sp, shadow = false),
+                    )
+                    SpelunkrButton("CHOOSE CHANNELS", { onNavigate(Screen.MyDial) }, gold = true)
+                }
+
                 Section("PICTURE") {
                     Choice(
                         "SHAPE",
                         "How a tape fills the screen when you watch. FIT shows all of it. FILL crops the edges to fill the " +
                             "screen. STRETCH fills it by stretching.",
                         listOf(PictureShape.FIT to "FIT", PictureShape.FILL to "FILL", PictureShape.STRETCH to "STRETCH"),
-                        setup.shape, wide, firstChoice,
+                        setup.shape, wide,
                     ) { v -> onChange { it.copy(shape = v) } }
                     Choice(
                         "MATCH FRAME RATE",

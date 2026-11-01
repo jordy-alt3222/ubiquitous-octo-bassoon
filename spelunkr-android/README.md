@@ -162,6 +162,27 @@ and the app always plays that copy untouched.
 | Server | FASTEST / ARCHIVE.ORG | Time both Archive servers and use the faster, or let archive.org choose. |
 | Preview channels | SHOW / HIDE | The site's scheduled-but-unlisted channels (WARP ZONE, WAKU WAKU), in the PREVIEW category. |
 
+### Watch by decade, and MY DIAL
+
+- **DECADES** (TV SETUP › WATCH BY DECADE): pick one or more decades. Every channel then plays only its tapes
+  from those years, and channels with none drop off the dial. A tape's decade comes from the year in its title,
+  "(1991)" or "(Dec. '99)", when there is one, since that is when it aired. Otherwise it comes from its year
+  field. Tapes with no year at all only play under ALL. On 1 Nov 2026 the SPELUNKR lineup had 5,040 tapes:
+  909 from the 90s and 653 from the 80s, down to 43 from the 1920s, plus 1,425 with no year.
+- **DECADE CHANNELS:** one channel per decade (THE 80s on 980, THE 90s on 990, THE 2000s on 900…) mixing every
+  channel's tapes from it, in the DECADES category.
+- **MY DIAL:** switch channels on or off the dial, and star channels to mix into **MY MIX** (999), your own
+  channel.
+
+These channels are built on the device (`schedule/Dial.kt`) from the lineup's own tapes. Each is scheduled from
+one fixed epoch in a fixed, seeded order, so they are live too: anyone with the same choices sees the same tape
+at the same second. They don't follow the website's timing.
+
+Why not the official app: Spelunkr's own APK (spelunkr.tv/app) is "the website, full screen, in TV form".
+It is a wrapper around spelunkr.tv, its code isn't published, and Spelunkr distributes it only themselves.
+Changing it would mean repackaging their app and altering their live site, so these features are built into
+this app instead.
+
 The guide and directory have category keys (REWIND, ARCHIVE, FILM, TV SERIES, EDUCATIONAL, OTHER, PREVIEW,
 from each channel's own type). CH ▲ / ▼ stays inside the category picked.
 
