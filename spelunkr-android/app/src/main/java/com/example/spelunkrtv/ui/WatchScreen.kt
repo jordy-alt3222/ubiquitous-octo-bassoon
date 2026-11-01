@@ -41,6 +41,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.Player
 import com.example.spelunkrtv.data.Channel
+import com.example.spelunkrtv.data.TvSetup
 import com.example.spelunkrtv.player.LivePlayer
 import com.example.spelunkrtv.schedule.ChannelSchedule
 import kotlinx.coroutines.delay
@@ -64,8 +65,9 @@ fun WatchScreen(
     onRewind: () -> Unit,
     onForward: () -> Unit,
     onSpelunk: () -> Unit,
-    onSignal: () -> Unit,
+    onSetup: () -> Unit,
     onGoLive: () -> Unit,
+    shape: TvSetup.PictureShape = TvSetup.PictureShape.FIT,
 ) {
     val isTv = LocalIsTv.current
     var controls by remember { mutableStateOf(false) }
@@ -117,7 +119,7 @@ fun WatchScreen(
                 },
             ),
     ) {
-        VideoSurface(player, Modifier.fillMaxSize())
+        VideoSurface(player, Modifier.fillMaxSize(), shape)
         when {
             state.noSignal -> NoSignal(state.link, large = true)
             state.tuning -> TuningSlate(tuned, state.link, large = true)
@@ -183,7 +185,7 @@ fun WatchScreen(
                     SpelunkrButton("◀◀ 15S", onRewind)
                     SpelunkrButton("15S ▶▶", onForward, enabled = !state.live || state.paused)
                     SpelunkrButton("SPELUNK", onSpelunk, gold = true)
-                    SpelunkrButton("SIGNAL", onSignal)
+                    SpelunkrButton("SETUP", onSetup)
                     // Behind live (a stall, or the viewer's own rewind): one key says how far, and goes back.
                     if (!state.live && !state.paused && state.airing != null) {
                         SpelunkrButton("-${runtime(state.behindLiveMs)} · GO LIVE", onGoLive)

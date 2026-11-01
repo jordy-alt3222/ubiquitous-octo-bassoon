@@ -16,10 +16,25 @@ import java.net.URL
 import kotlin.math.abs
 
 /** A channel as the app shows it. */
+/** Categories in the order the guide shows them. */
+val CATEGORIES = listOf("REWIND", "ARCHIVE", "FILM", "TV SERIES", "EDUCATIONAL", "OTHER", "PREVIEW")
+const val PREVIEW = "PREVIEW"
+
+fun categoryOf(family: String?): String = when (family) {
+    "rewind" -> "REWIND"
+    "archive" -> "ARCHIVE"
+    "film" -> "FILM"
+    "tv-series" -> "TV SERIES"
+    "educational" -> "EDUCATIONAL"
+    else -> "OTHER"
+}
+
 data class Channel(
     val id: String,
     val name: String,
     val dial: Int,
+    /** Scheduled on the site but not yet on its dial. */
+    val preview: Boolean = false,
     val color: Long,
     val description: String,
     val family: String?,
@@ -28,6 +43,9 @@ data class Channel(
     val videoSeconds: Long,
     internal val versions: List<VersionRef>,
 ) {
+    /** The guide's categories, from the kind of channel the site says it is. */
+    val category: String get() = if (preview) PREVIEW else categoryOf(family)
+
     /** "02", "35", "600": how the site prints a dial number. */
     val dialLabel: String get() = if (dial < 100) dial.toString().padStart(2, '0') else dial.toString()
 }
@@ -48,16 +66,32 @@ class BroadcastRepository {
 
     fun now(): Long = System.currentTimeMillis() + clockSkewMs
 
-    suspend fun channels(): List<Channel> {
+    /**
+     * Every channel on the dial. With [withPreviews], also the channels the site has scheduled but
+     * not yet put on its dial (its own test channels, with no real programmes, are left out).
+     * A preview channel without a dial number gets the next free one.
+     */
+    suspend fun channels(withPreviews: Boolean = false): List<Channel> {
         val lineup = json.decodeFromString<Lineup>(fetch("lineup.json", measureSkew = true))
-        return lineup.channels
-            .filter { !it.debugOnly && !it.comingSoon && it.dial != null && it.versions.isNotEmpty() }
-            .sortedBy { it.dial }
+        val public = lineup.channels.filter { !it.debugOnly && !it.comingSoon && it.dial != null && it.versions.isNotEmpty() }
+        val previews = if (!withPreviews) emptyList() else lineup.channels.filter {
+            it.debugOnly && !it.comingSoon && it.versions.isNotEmpty() && (it.stats?.videoSeconds ?: 0) >= MIN_PREVIEW_SECONDS
+        }.sortedBy { it.id }
+        val taken = (public + previews).mapNotNull { it.dial }.toMutableSet()
+        var free = (taken.filter { it < 100 }.maxOrNull() ?: 0) + 1
+        val dials = previews.associate { dto ->
+            dto.id to (dto.dial?.takeIf { it !in public.mapNotNull { p -> p.dial } } ?: run {
+                while (free in taken) free++
+                free.also { taken += it }
+            })
+        }
+        return (public + previews)
             .map { dto ->
                 Channel(
                     id = dto.id,
                     name = dto.name,
-                    dial = dto.dial!!,
+                    dial = dto.dial?.takeIf { dto !in previews } ?: dials.getValue(dto.id),
+                    preview = dto in previews,
                     color = parseColor(dto.color),
                     description = dto.description,
                     family = dto.family,
@@ -67,6 +101,7 @@ class BroadcastRepository {
                     versions = dto.versions,
                 )
             }
+            .sortedBy { it.dial }
     }
 
     suspend fun schedule(channel: Channel): ChannelSchedule {
@@ -149,5 +184,7 @@ class BroadcastRepository {
         const val LIVE_BASE = "https://jbuopkuluyfjwgsrigry.supabase.co/storage/v1/object/public/broadcast/"
         const val SNAPSHOT_BASE = "https://spelunkr.tv/broadcast/"
         private const val SKEW_TOLERANCE_MS = 3_000L
+        /** Less than an hour of programmes is one of the site's test channels, not a channel. */
+        private const val MIN_PREVIEW_SECONDS = 3_600L
     }
 }

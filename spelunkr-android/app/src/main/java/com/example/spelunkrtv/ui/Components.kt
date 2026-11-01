@@ -7,6 +7,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.layout.Arrangement
@@ -46,6 +47,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
 import com.example.spelunkrtv.data.Channel
+import com.example.spelunkrtv.data.TvSetup
 import com.example.spelunkrtv.diagnostics.formatBits
 import com.example.spelunkrtv.diagnostics.formatBytes
 import com.example.spelunkrtv.player.LivePlayer
@@ -161,12 +163,17 @@ private fun lerpColor(a: Color, b: Color, t: Float) = Color(
 /** The video picture. One player feeds whichever screen is showing. */
 @OptIn(UnstableApi::class)
 @Composable
-fun VideoSurface(player: Player, modifier: Modifier = Modifier) {
+fun VideoSurface(player: Player, modifier: Modifier = Modifier, shape: TvSetup.PictureShape = TvSetup.PictureShape.FIT) {
+    val resize = when (shape) {
+        TvSetup.PictureShape.FIT -> AspectRatioFrameLayout.RESIZE_MODE_FIT
+        TvSetup.PictureShape.FILL -> AspectRatioFrameLayout.RESIZE_MODE_ZOOM
+        TvSetup.PictureShape.STRETCH -> AspectRatioFrameLayout.RESIZE_MODE_FILL
+    }
     AndroidView(
         factory = { context ->
             PlayerView(context).apply {
                 useController = false
-                resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT
+                resizeMode = resize
                 setShutterBackgroundColor(android.graphics.Color.BLACK)
                 setKeepContentOnPlayerReset(false)
                 // The remote drives the app, not the view: keep focus out of it.
@@ -176,7 +183,10 @@ fun VideoSurface(player: Player, modifier: Modifier = Modifier) {
                 this.player = player
             }
         },
-        update = { it.player = player },
+        update = {
+            it.player = player
+            it.resizeMode = resize
+        },
         onRelease = { it.player = null },
         modifier = modifier.background(Color.Black),
     )
@@ -307,4 +317,20 @@ fun FamilyTag(family: String?) {
         overflow = TextOverflow.Clip,
         modifier = Modifier.padding(start = 6.dp),
     )
+}
+
+/** The guide's categories, each with how many channels it holds; ALL shows the whole dial. */
+@Composable
+fun CategoryBar(channels: List<Channel>, selected: String?, onPick: (String?) -> Unit, modifier: Modifier = Modifier) {
+    val counts = channels.groupingBy { it.category }.eachCount()
+    Row(
+        modifier.horizontalScroll(androidx.compose.foundation.rememberScrollState()),
+        horizontalArrangement = Arrangement.spacedBy(6.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        SpelunkrButton("ALL ${channels.size}", { onPick(null) }, gold = selected == null)
+        com.example.spelunkrtv.data.CATEGORIES.filter { it in counts }.forEach { category ->
+            SpelunkrButton("$category ${counts[category]}", { onPick(category) }, gold = selected == category)
+        }
+    }
 }

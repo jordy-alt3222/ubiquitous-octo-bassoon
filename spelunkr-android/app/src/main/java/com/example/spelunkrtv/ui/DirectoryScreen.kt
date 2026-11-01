@@ -37,12 +37,23 @@ import com.example.spelunkrtv.schedule.ChannelSchedule
 
 /** DIRECTORY: every channel on the dial, with what it is about. */
 @Composable
-fun DirectoryScreen(channels: List<Channel>, now: Long, onNavigate: (Screen) -> Unit, onOpen: (Channel) -> Unit) {
+fun DirectoryScreen(
+    channels: List<Channel>,
+    now: Long,
+    onNavigate: (Screen) -> Unit,
+    onOpen: (Channel) -> Unit,
+    category: String? = null,
+    onPickCategory: (String?) -> Unit = {},
+) {
+    val all = channels
+    @Suppress("NAME_SHADOWING")
+    val channels = if (category == null) all else all.filter { it.category == category }
     val isTv = LocalIsTv.current
     val first = remember { FocusRequester() }
     LaunchedEffect(channels.isNotEmpty()) { if (isTv && channels.isNotEmpty()) first.requestFocusSoon() }
     Column(Modifier.fillMaxSize().background(Palette.Sky)) {
         TopBar(now, Screen.Directory, onNavigate, showClock = isTv)
+        CategoryBar(all, category, onPickCategory, Modifier.fillMaxWidth().padding(start = 12.dp, end = 12.dp, top = 8.dp))
         LazyVerticalGrid(
             columns = GridCells.Adaptive(if (isTv) 280.dp else 300.dp),
             contentPadding = PaddingValues(12.dp),

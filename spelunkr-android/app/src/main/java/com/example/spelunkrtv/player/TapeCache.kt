@@ -13,10 +13,12 @@ import androidx.media3.datasource.DataSpec
 import androidx.media3.datasource.cache.Cache
 import androidx.media3.datasource.cache.CacheDataSink
 import androidx.media3.datasource.cache.CacheDataSource
+import androidx.media3.datasource.cache.CacheEvictor
+import androidx.media3.datasource.cache.CacheSpan
 import androidx.media3.datasource.cache.CacheWriter
 import androidx.media3.datasource.cache.ContentMetadataMutations
-import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
+import java.util.TreeSet
 import com.example.spelunkrtv.schedule.Program
 import java.io.File
 import java.util.concurrent.ConcurrentHashMap
@@ -31,7 +33,10 @@ import java.util.concurrent.Executors
  */
 @OptIn(UnstableApi::class)
 object TapeCache {
-    private const val MAX_BYTES = 300L * 1024 * 1024
+    const val NORMAL_LIMIT = 300L * 1024 * 1024
+    /** WHOLE DIAL keeps every channel's index, so it gets more room. */
+    const val WHOLE_DIAL_LIMIT = 1024L * 1024 * 1024
+    private val evictor = AdjustableLruEvictor(NORMAL_LIMIT)
     /** Atom headers next to the index (ftyp, free, uuid, the mdat header) come along too. */
     internal const val INDEX_MARGIN = 64L * 1024
     /** Where an index that sits at the end of its file starts, kept with the cached file. */
@@ -45,7 +50,7 @@ object TapeCache {
     fun get(context: Context): Cache = cache ?: synchronized(this) {
         cache ?: SimpleCache(
             File(context.applicationContext.cacheDir, "tape-indexes"),
-            LeastRecentlyUsedCacheEvictor(MAX_BYTES),
+            evictor,
             StandaloneDatabaseProvider(context.applicationContext),
         ).also { cache = it }
     }
@@ -70,6 +75,22 @@ object TapeCache {
         // ...or at the end of the file, where it was seen last time.
         val at = cache.getContentMetadata(key).get(INDEX_AT, -1L)
         return at > 0 && cache.isCached(key, at, size) && cache.isCached(key, 0, HEAD_BYTES)
+    }
+
+    /** How much room the saved indexes may take; shrinking drops the oldest at once. */
+    fun setLimit(context: Context, bytes: Long) {
+        evictor.maxBytes = bytes
+        evictor.trim(get(context))
+    }
+
+    /** Bytes used by saved indexes, for TV SETUP. */
+    fun bytesUsed(context: Context): Long = runCatching { get(context).cacheSpace }.getOrDefault(0)
+
+    /** TV SETUP's CLEAR: forget every saved index. */
+    fun clear(context: Context) {
+        val cache = get(context)
+        cache.keys.toList().forEach { runCatching { cache.removeResource(it) } }
+        Log.i(LivePlayer.TAG, "Cleared every saved tape index")
     }
 
     /** Drops what is kept of [program]'s file, after it turned out wrong. */
@@ -264,5 +285,47 @@ class TapeWarmer(private val context: Context, upstream: DataSource.Factory) {
     private companion object {
         const val RETRY_FAILED_MS = 5 * 60_000L
         const val MAX_ATOMS = 8
+    }
+}
+
+/** Least recently used goes first, like Media3's evictor, but with a limit that can change. */
+@OptIn(UnstableApi::class)
+private class AdjustableLruEvictor(@Volatile var maxBytes: Long) : CacheEvictor {
+    private val spans = TreeSet<CacheSpan>(compareBy<CacheSpan> { it.lastTouchTimestamp }.thenBy { it })
+    private var size = 0L
+
+    override fun requiresCacheSpanTouches() = true
+    override fun onCacheInitialized() = Unit
+
+    override fun onStartFile(cache: Cache, key: String, position: Long, length: Long) {
+        if (length != C.LENGTH_UNSET.toLong()) evict(cache, length)
+    }
+
+    @Synchronized
+    override fun onSpanAdded(cache: Cache, span: CacheSpan) {
+        spans.add(span)
+        size += span.length
+        evict(cache, 0)
+    }
+
+    @Synchronized
+    override fun onSpanRemoved(cache: Cache, span: CacheSpan) {
+        spans.remove(span)
+        size -= span.length
+    }
+
+    @Synchronized
+    override fun onSpanTouched(cache: Cache, oldSpan: CacheSpan, newSpan: CacheSpan) {
+        onSpanRemoved(cache, oldSpan)
+        onSpanAdded(cache, newSpan)
+    }
+
+    fun trim(cache: Cache) = evict(cache, 0)
+
+    @Synchronized
+    private fun evict(cache: Cache, required: Long) {
+        while (size + required > maxBytes && spans.isNotEmpty()) {
+            cache.removeSpan(spans.first())
+        }
     }
 }

@@ -9,15 +9,18 @@ import androidx.annotation.OptIn
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
+import androidx.media3.common.MimeTypes
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.common.Timeline
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.datasource.ResolvingDataSource
-import androidx.media3.exoplayer.DefaultLoadControl
+import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
+import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
+import com.example.spelunkrtv.data.TvSetup
 import com.example.spelunkrtv.schedule.Airing
 import com.example.spelunkrtv.schedule.ChannelSchedule
 import com.example.spelunkrtv.schedule.Program
@@ -53,42 +56,40 @@ class LivePlayer(private val context: Context, private val clock: () -> Long) {
 
     private val counter = ByteCounter()
     private val locator = ArchiveLocator(userAgent(context))
+    /** TV SETUP's DOWNLOAD BOOST: how many connections one big read may use. */
+    @Volatile private var connections = TvSetup().connections
+    private val smoothness = SmoothnessControl()
+    private val trackSelector = DefaultTrackSelector(context)
 
-    /** archive.org, then straight to the tape's storage server once it is known. */
-    private val network = ResolvingDataSource.Factory(
-        WholeResponses.Factory(
-            DefaultHttpDataSource.Factory()
-                .setUserAgent(userAgent(context))
-                // The Archive can take a while to start a big tape; ExoPlayer's default is 8 s.
-                .setConnectTimeoutMs(CONNECT_TIMEOUT_MS)
-                .setReadTimeoutMs(READ_TIMEOUT_MS)
-                .setTransferListener(counter),
-        ),
-    ) { spec -> spec.withUri(locator.resolve(spec.uri)) }
-
-    private val warmer = TapeWarmer(
-        context,
+    /**
+     * archive.org, straight to the tape's faster storage server once it is known, complete
+     * responses only, and big reads spread over several connections.
+     */
+    private fun network(listener: ByteCounter?) = ParallelDataSource.Factory(
         ResolvingDataSource.Factory(
             WholeResponses.Factory(
                 DefaultHttpDataSource.Factory()
                     .setUserAgent(userAgent(context))
+                    // The Archive can take a while to start a big tape; ExoPlayer's default is 8 s.
                     .setConnectTimeoutMs(CONNECT_TIMEOUT_MS)
-                    .setReadTimeoutMs(READ_TIMEOUT_MS),
+                    .setReadTimeoutMs(READ_TIMEOUT_MS)
+                    .setTransferListener(listener),
             ),
         ) { spec -> spec.withUri(locator.resolve(spec.uri)) },
-    )
+    ) { connections }
 
-    val player: ExoPlayer = ExoPlayer.Builder(context)
+    private val warmer = TapeWarmer(context, network(listener = null))
+
+    val player: ExoPlayer = ExoPlayer.Builder(
+        context,
+        // If the TV's first-choice decoder won't start, try its others before giving up.
+        DefaultRenderersFactory(context).setEnableDecoderFallback(true),
+    )
         .setMediaSourceFactory(
-            DefaultMediaSourceFactory(context).setDataSourceFactory(TapeCache.playerDataSource(context, network)),
+            DefaultMediaSourceFactory(context).setDataSourceFactory(TapeCache.playerDataSource(context, network(counter))),
         )
-        .setLoadControl(
-            DefaultLoadControl.Builder()
-                // Bank up to two minutes when the line allows, and after a stall refill ten
-                // seconds rather than five, so a slow line plays in longer runs and stops less.
-                .setBufferDurationsMs(MIN_BUFFER_MS, MAX_BUFFER_MS, START_BUFFER_MS, RESTART_BUFFER_MS)
-                .build(),
-        )
+        .setTrackSelector(trackSelector)
+        .setLoadControl(smoothness)
         .setAudioAttributes(
             AudioAttributes.Builder().setUsage(C.USAGE_MEDIA).setContentType(C.AUDIO_CONTENT_TYPE_MOVIE).build(),
             /* handleAudioFocus = */ true,
@@ -237,7 +238,8 @@ class LivePlayer(private val context: Context, private val clock: () -> Long) {
             warmer.stop()
             return
         }
-        programs.forEach { locator.lookUp(it.videoUrl) }
+        // Where they live is enough for preloading; servers are timed only for a tape about to play.
+        programs.forEach { locator.lookUp(it.videoUrl, time = false) }
         warmer.warm(programs)
     }
 
@@ -281,6 +283,28 @@ class LivePlayer(private val context: Context, private val clock: () -> Long) {
 
     /** Both storage servers for the tape at [videoUrl], with their measured speed. Blocking. */
     fun servers(videoUrl: String): List<ArchiveLocator.Server> = locator.servers(videoUrl)
+
+    /** TV SETUP, applied at once; nothing here changes the picture or sound the tape carries. */
+    fun apply(setup: TvSetup) {
+        connections = setup.connections
+        smoothness.smoothness = setup.smoothness
+        locator.chooseFastest = setup.server == TvSetup.Server.FASTEST
+        player.videoChangeFrameRateStrategy =
+            if (setup.matchFrameRate) C.VIDEO_CHANGE_FRAME_RATE_STRATEGY_ONLY_IF_SEAMLESS else C.VIDEO_CHANGE_FRAME_RATE_STRATEGY_OFF
+        trackSelector.parameters = trackSelector.buildUponParameters()
+            // Tunneling hands timing to the TV's video hardware: smoother on many sets, so it's offered.
+            .setTunnelingEnabled(setup.tunneling)
+            .apply {
+                when (setup.sound) {
+                    // Dolby (AC-3) when a tape has it and the TV or soundbar takes it; the original otherwise.
+                    TvSetup.Sound.SURROUND -> setPreferredAudioMimeTypes(MimeTypes.AUDIO_E_AC3, MimeTypes.AUDIO_AC3)
+                        .setMaxAudioChannelCount(Int.MAX_VALUE)
+                    TvSetup.Sound.STEREO -> setPreferredAudioMimeTypes(MimeTypes.AUDIO_AAC).setMaxAudioChannelCount(2)
+                }
+            }
+            .build()
+        TapeCache.setLimit(context, if (setup.preload == TvSetup.Preload.WHOLE_DIAL) TapeCache.WHOLE_DIAL_LIMIT else TapeCache.NORMAL_LIMIT)
+    }
 
     /** JUMP TO LIVE: back to the second everyone else is watching. */
     fun goLive() {
@@ -474,10 +498,6 @@ class LivePlayer(private val context: Context, private val clock: () -> Long) {
         const val LIVE_SLACK_MS = 2_000L
         const val CONNECT_TIMEOUT_MS = 15_000
         const val READ_TIMEOUT_MS = 20_000
-        private const val MIN_BUFFER_MS = 60_000
-        private const val MAX_BUFFER_MS = 120_000
-        private const val START_BUFFER_MS = 2_500
-        private const val RESTART_BUFFER_MS = 10_000
         private const val WARM_WHEN_BUFFERED_MS = 20_000L
         private const val SYNC_LEAD_MS = 1_500L
         private const val SYNC_MIN_MS = 1_500L

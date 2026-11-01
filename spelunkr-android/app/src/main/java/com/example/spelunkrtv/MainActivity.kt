@@ -47,6 +47,7 @@ import com.example.spelunkrtv.ui.GuideScreen
 import com.example.spelunkrtv.ui.HomeScreen
 import com.example.spelunkrtv.ui.LocalIsTv
 import com.example.spelunkrtv.ui.Palette
+import com.example.spelunkrtv.ui.SetupScreen
 import com.example.spelunkrtv.ui.SignalScreen
 import com.example.spelunkrtv.ui.SpelunkrButton
 import com.example.spelunkrtv.ui.WatchScreen
@@ -150,6 +151,9 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
     val dial by vm.dial.collectAsStateWithLifecycle()
     val stillWatching by vm.stillWatching.collectAsStateWithLifecycle()
     val signal by vm.signal.collectAsStateWithLifecycle()
+    val setup by vm.setup.collectAsStateWithLifecycle()
+    val savedIndexBytes by vm.savedIndexBytes.collectAsStateWithLifecycle()
+    val category by vm.category.collectAsStateWithLifecycle()
     val channels = (lineup as? Lineup.Ready)?.channels.orEmpty()
     val player = vm.player.player
 
@@ -175,6 +179,8 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
                 onViewChannel = vm::openChannelPage,
                 onChannelUp = vm::channelUp,
                 onChannelDown = vm::channelDown,
+                category = category,
+                onPickCategory = vm::pickCategory,
             )
             Screen.Watch -> WatchScreen(
                 tuned = tuned,
@@ -191,8 +197,17 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
                 onRewind = vm.player::rewind15,
                 onForward = vm.player::forward15,
                 onSpelunk = vm::spelunk,
-                onSignal = { vm.open(Screen.Signal) },
+                onSetup = { vm.open(Screen.Setup) },
                 onGoLive = vm.player::goLive,
+                shape = setup.shape,
+            )
+            Screen.Setup -> SetupScreen(
+                setup = setup,
+                savedIndexBytes = savedIndexBytes,
+                now = now,
+                onNavigate = vm::open,
+                onChange = vm::changeSetup,
+                onClearSaved = vm::clearSavedIndexes,
             )
             Screen.Signal -> SignalScreen(
                 rows = signal,
@@ -202,7 +217,10 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
                 onNavigate = vm::open,
                 onTestAgain = vm::checkSignal,
             )
-            Screen.Directory -> DirectoryScreen(channels, now, onNavigate = vm::open, onOpen = vm::openChannelPage)
+            Screen.Directory -> DirectoryScreen(
+                channels, now, onNavigate = vm::open, onOpen = vm::openChannelPage,
+                category = category, onPickCategory = vm::pickCategory,
+            )
             Screen.ChannelPage -> pageChannel?.let { channel ->
                 ChannelPage(
                     channel = channel,

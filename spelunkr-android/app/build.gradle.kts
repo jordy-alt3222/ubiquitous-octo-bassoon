@@ -49,6 +49,11 @@ android {
     buildFeatures {
         compose = true
     }
+
+    testOptions.unitTests.all { test ->
+        // Robolectric fetches Android's runtime from Maven Central; -Probolectric.repo=<url> points it at a mirror.
+        (project.findProperty("robolectric.repo") as String?)?.let { test.systemProperty("robolectric.dependency.repo.url", it) }
+    }
 }
 
 dependencies {
@@ -68,4 +73,6 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 
     testImplementation(libs.junit)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.test.core)
 }

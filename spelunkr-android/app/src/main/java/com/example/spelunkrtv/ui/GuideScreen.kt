@@ -60,8 +60,11 @@ fun GuideScreen(
     onViewChannel: (Channel) -> Unit,
     onChannelUp: () -> Unit,
     onChannelDown: () -> Unit,
+    category: String? = null,
+    onPickCategory: (String?) -> Unit = {},
 ) {
     val isTv = LocalIsTv.current
+    val shown = if (category == null) channels else channels.filter { it.category == category }
     BoxWithConstraints(Modifier.fillMaxSize().background(Palette.Sky)) {
         val wide = maxWidth >= 720.dp
         Column(Modifier.fillMaxSize()) {
@@ -84,8 +87,12 @@ fun GuideScreen(
                 preview(Modifier.fillMaxWidth())
                 info(Modifier.fillMaxWidth().padding(horizontal = 8.dp))
             }
+            CategoryBar(
+                channels, category, onPickCategory,
+                Modifier.fillMaxWidth().padding(horizontal = if (wide) 16.dp else 8.dp).padding(top = 4.dp),
+            )
             GuideGrid(
-                channels = channels,
+                channels = shown,
                 schedules = schedules,
                 now = now,
                 tunedId = tuned?.id,
@@ -119,8 +126,9 @@ fun TopBar(now: Long, current: Screen, onNavigate: (Screen) -> Unit, showClock: 
             }
         }
         Spacer(Modifier.weight(1f))
-        listOf(Screen.Home to "HOME", Screen.Guide to "GUIDE", Screen.Directory to "DIRECTORY", Screen.Signal to "SIGNAL").forEach { (screen, label) ->
-            SpelunkrButton(label, { onNavigate(screen) }, gold = screen == current, modifier = Modifier.padding(start = 6.dp))
+        listOf(Screen.Home to "HOME", Screen.Guide to "GUIDE", Screen.Directory to "DIRECTORY", Screen.Setup to "SETUP").forEach { (screen, label) ->
+            val on = screen == current || (screen == Screen.Setup && current == Screen.Signal)
+            SpelunkrButton(label, { onNavigate(screen) }, gold = on, modifier = Modifier.padding(start = 6.dp))
         }
         if (showClock) {
             Text(clockText(now), style = spelunkrText(16.sp), modifier = Modifier.padding(start = 16.dp))

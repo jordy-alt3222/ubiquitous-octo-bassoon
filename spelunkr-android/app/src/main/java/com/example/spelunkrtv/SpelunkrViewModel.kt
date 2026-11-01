@@ -5,6 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.spelunkrtv.data.BroadcastRepository
 import com.example.spelunkrtv.data.Channel
+import com.example.spelunkrtv.data.SetupStore
+import com.example.spelunkrtv.data.TvSetup
+import com.example.spelunkrtv.player.TapeCache
 import com.example.spelunkrtv.diagnostics.CheckRow
 import com.example.spelunkrtv.diagnostics.SignalCheck
 import com.example.spelunkrtv.diagnostics.TapeUnderTest
@@ -21,7 +24,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 
-enum class Screen { Home, Guide, Watch, Directory, ChannelPage, Signal }
+enum class Screen { Home, Guide, Watch, Directory, ChannelPage, Signal, Setup }
 
 sealed interface Lineup {
     data object Loading : Lineup
@@ -32,6 +35,14 @@ sealed interface Lineup {
 class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
     private val repo = BroadcastRepository()
     val player = LivePlayer(app, repo::now)
+
+    private val setupStore = SetupStore(app)
+    /** TV SETUP: how tapes are fetched and shown, never their quality. */
+    val setup: StateFlow<TvSetup> = setupStore.setup
+
+    /** Room taken by saved tape indexes, for TV SETUP. */
+    private val _savedIndexBytes = MutableStateFlow(0L)
+    val savedIndexBytes: StateFlow<Long> = _savedIndexBytes.asStateFlow()
 
     private val _lineup = MutableStateFlow<Lineup>(Lineup.Loading)
     val lineup: StateFlow<Lineup> = _lineup.asStateFlow()
@@ -78,6 +89,7 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
     private var signalJob: Job? = null
 
     init {
+        player.apply(setup.value)
         load()
         viewModelScope.launch {
             while (isActive) {
@@ -94,7 +106,7 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
         _lineup.value = Lineup.Loading
         viewModelScope.launch {
             val channels = try {
-                repo.channels()
+                repo.channels(withPreviews = setup.value.previewChannels)
             } catch (e: Exception) {
                 _lineup.value = Lineup.Failed(e.message ?: "unknown error")
                 return@launch
@@ -126,25 +138,82 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
     private val channels: List<Channel>
         get() = (_lineup.value as? Lineup.Ready)?.channels.orEmpty()
 
+    /** The guide's category; null shows every channel. */
+    private val _category = MutableStateFlow<String?>(null)
+    val category: StateFlow<String?> = _category.asStateFlow()
+
+    fun pickCategory(category: String?) {
+        _category.value = category
+    }
+
+    /** What CH ▲ / ▼ walk through: the category picked, while the channel on is in it. */
+    private val dialChannels: List<Channel>
+        get() {
+            val pick = _category.value ?: return channels
+            val inIt = channels.filter { it.category == pick }
+            return if (inIt.any { it.id == _tuned.value?.id }) inIt else channels
+        }
+
     /**
      * What to fetch ahead while the tape on screen plays comfortably, like the site's neighbour
      * warming: the next tape on this channel, so the change of programme doesn't stall, then
      * what is on the channels either side, so CH ▲ / ▼ start quickly.
      */
     private fun warmAhead() {
+        val preload = setup.value.preload
         val list = channels
         val index = list.indexOfFirst { it.id == _tuned.value?.id }
-        if (index < 0 || _screen.value == Screen.Home) return
+        if (preload == TvSetup.Preload.OFF || index < 0 || _screen.value == Screen.Home) return
         val now = repo.now()
         val schedules = _schedules.value
+        // NEXT DOOR: the channels either side. WHOLE DIAL: every channel, nearest first.
+        val reach = if (preload == TvSetup.Preload.WHOLE_DIAL) list.size / 2 else 1
         val programs = buildList {
             schedules[list[index].id]?.upNext(now, 1)?.firstOrNull()?.let { add(it.program) }
-            for (step in intArrayOf(1, -1)) {
-                val neighbour = list[((index + step) % list.size + list.size) % list.size]
-                schedules[neighbour.id]?.airingAt(now)?.let { add(it.program) }
+            for (distance in 1..reach) {
+                for (step in intArrayOf(distance, -distance)) {
+                    val neighbour = list[((index + step) % list.size + list.size) % list.size]
+                    schedules[neighbour.id]?.airingAt(now)?.let { add(it.program) }
+                }
             }
         }
         player.warm(programs)
+    }
+
+    // --- TV SETUP -----------------------------------------------------------------------------
+
+    fun changeSetup(change: (TvSetup) -> TvSetup) {
+        val before = setup.value
+        setupStore.update(change)
+        player.apply(setup.value)
+        refreshSavedIndexBytes()
+        if (before.previewChannels != setup.value.previewChannels) {
+            if (_category.value == com.example.spelunkrtv.data.PREVIEW) _category.value = null
+            reloadChannels()
+        }
+    }
+
+    /** Re-reads the dial (preview channels on or off) without interrupting the channel on. */
+    private fun reloadChannels() {
+        viewModelScope.launch {
+            val list = runCatching { repo.channels(withPreviews = setup.value.previewChannels) }.getOrNull() ?: return@launch
+            _lineup.value = Lineup.Ready(list)
+            val gate = Semaphore(6)
+            list.forEach { channel -> launch { gate.withPermit { scheduleOrNull(channel) } } }
+        }
+    }
+
+    fun clearSavedIndexes() {
+        viewModelScope.launch(kotlinx.coroutines.Dispatchers.IO) {
+            TapeCache.clear(getApplication())
+            refreshSavedIndexBytes()
+        }
+    }
+
+    private fun refreshSavedIndexBytes() {
+        viewModelScope.launch(kotlinx.coroutines.Dispatchers.IO) {
+            _savedIndexBytes.value = TapeCache.bytesUsed(getApplication())
+        }
     }
 
     // --- Tuning ------------------------------------------------------------------------------
@@ -178,7 +247,7 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
     fun channelDown() = step(-1)
 
     private fun step(by: Int) {
-        val list = channels
+        val list = dialChannels
         if (list.isEmpty()) return
         val index = list.indexOfFirst { it.id == _tuned.value?.id }
         tune(list[((if (index < 0) 0 else index + by) % list.size + list.size) % list.size])
@@ -214,6 +283,7 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
         backStack.addLast(screen)
         show(screen)
         if (screen == Screen.Signal) checkSignal()
+        if (screen == Screen.Setup) refreshSavedIndexBytes()
     }
 
     /** Tests each link from this device to the Internet Archive, using the tape on air. */

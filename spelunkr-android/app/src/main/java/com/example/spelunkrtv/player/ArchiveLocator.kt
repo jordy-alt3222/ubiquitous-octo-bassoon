@@ -22,32 +22,42 @@ import java.util.concurrent.TimeUnit
  */
 class ArchiveLocator(private val userAgent: String) {
     data class Server(val host: String, val bitsPerSecond: Long?)
-    private class Location(val servers: List<Server>, val dir: String)
+    private class Location(val hosts: List<String>, val dir: String)
     private class Speed(val bitsPerSecond: Long?, val at: Long)
 
     private val located = ConcurrentHashMap<String, Future<Location?>>()
+    private val measured = ConcurrentHashMap<String, Future<*>>()
     private val speeds = ConcurrentHashMap<String, Speed>()
     private val avoidedAt = ConcurrentHashMap<String, Long>()
     private val lookups = Executors.newFixedThreadPool(2) { r -> Thread(r, "spelunkr-locate").apply { isDaemon = true } }
     private val probes = Executors.newFixedThreadPool(4) { r -> Thread(r, "spelunkr-probe").apply { isDaemon = true } }
+    /** Timings wait on lookups and probes, so they get threads of their own. */
+    private val timers = Executors.newFixedThreadPool(2) { r -> Thread(r, "spelunkr-time").apply { isDaemon = true } }
+
+    /** TV SETUP's SERVER: FASTEST plays straight from the faster server; ARCHIVE.ORG lets archive.org choose. */
+    @Volatile var chooseFastest = true
 
     /**
      * The address to read [uri] from: the faster storage server once known, or the archive.org
      * address. Runs on the player's loading threads, so it may wait briefly for a lookup.
      */
     fun resolve(uri: Uri): Uri {
-        val file = parse(uri)?.second ?: return uri
+        if (!chooseFastest) return uri
+        val (identifier, file) = parse(uri) ?: return uri
+        val deadline = now() + RESOLVE_WAIT_MS
         val location = try {
             locate(uri.toString()).get(RESOLVE_WAIT_MS, TimeUnit.MILLISECONDS)
         } catch (e: Exception) {
             null
         } ?: return uri
+        // A timing under way for this tape is worth the rest of the wait.
+        measured[identifier]?.let { runCatching { it.get((deadline - now()).coerceAtLeast(0), TimeUnit.MILLISECONDS) } }
         val now = now()
-        val server = location.servers
-            .filter { s -> avoidedAt[s.host]?.let { now - it > AVOID_MS } ?: true }
-            .maxByOrNull { speeds[it.host]?.bitsPerSecond ?: it.bitsPerSecond ?: 0L }
+        val host = location.hosts
+            .filter { h -> avoidedAt[h]?.let { now - it > AVOID_MS } ?: true }
+            .maxByOrNull { h -> speeds[h]?.takeIf { now - it.at < SPEED_FRESH_MS }?.bitsPerSecond ?: 0L }
             ?: return uri
-        return Uri.parse("https://${server.host}${location.dir}/$file")
+        return Uri.parse("https://$host${location.dir}/$file")
     }
 
     /**
@@ -55,11 +65,12 @@ class ArchiveLocator(private val userAgent: String) {
      * than [bitsPerSecond] (any answering server will do when that is 0).
      */
     fun hasFasterThan(uri: String, host: String?, bitsPerSecond: Long): Boolean {
+        if (!chooseFastest) return false
         val location = located[parse(Uri.parse(uri))?.first]?.takeIf { it.isDone }?.let { runCatching { it.get() }.getOrNull() } ?: return false
         val now = now()
-        return location.servers.any { s ->
-            val speed = speeds[s.host]?.bitsPerSecond ?: s.bitsPerSecond
-            s.host != host && (avoidedAt[s.host]?.let { now - it > AVOID_MS } ?: true) && speed != null && speed > bitsPerSecond
+        return location.hosts.any { h ->
+            val speed = speeds[h]?.bitsPerSecond
+            h != host && (avoidedAt[h]?.let { now - it > AVOID_MS } ?: true) && speed != null && speed > bitsPerSecond
         }
     }
 
@@ -71,15 +82,19 @@ class ArchiveLocator(private val userAgent: String) {
         Log.i(LivePlayer.TAG, "Avoiding $host for a few minutes")
     }
 
-    /** Starts finding (and timing) the servers for the tape at [videoUrl], if no one has yet. */
-    fun lookUp(videoUrl: String) {
+    /**
+     * Starts finding the servers for the tape at [videoUrl], if no one has yet, and with [time]
+     * also times them: worth it for a tape about to play, not for each one being preloaded.
+     */
+    fun lookUp(videoUrl: String, time: Boolean = true) {
         locate(videoUrl)
+        if (time) measure(videoUrl)
     }
 
     private fun locate(videoUrl: String): Future<Location?> {
-        val (identifier, file) = parse(Uri.parse(videoUrl)) ?: return CompletedNull
+        val identifier = parse(Uri.parse(videoUrl))?.first ?: return CompletedNull
         located[identifier]?.let { return it }
-        val task = lookups.submit<Location?> { find(identifier, file) }
+        val task = lookups.submit<Location?> { find(identifier) }
         val raced = located.putIfAbsent(identifier, task)
         if (raced != null) {
             task.cancel(true)
@@ -88,41 +103,56 @@ class ArchiveLocator(private val userAgent: String) {
         return task
     }
 
-    /** Both servers' measured speed for the tape at [videoUrl], for SIGNAL CHECK. Blocking. */
-    fun servers(videoUrl: String): List<Server> =
-        runCatching { locate(videoUrl).get(SIGNAL_WAIT_MS, TimeUnit.MILLISECONDS)?.servers }.getOrNull().orEmpty()
-            .map { it.copy(bitsPerSecond = speeds[it.host]?.bitsPerSecond ?: it.bitsPerSecond) }
+    private fun measure(videoUrl: String) {
+        val (identifier, file) = parse(Uri.parse(videoUrl)) ?: return
+        measured[identifier]?.takeIf { !it.isDone }?.let { return }
+        val location = locate(videoUrl)
+        measured[identifier] = timers.submit { runCatching { location.get(FIELD_WAIT_MS, TimeUnit.MILLISECONDS) }.getOrNull()?.let { time(identifier, it, file) } }
+    }
 
-    private fun find(identifier: String, file: String): Location? {
+    /** Both servers' measured speed for the tape at [videoUrl], for SIGNAL CHECK. Blocking. */
+    fun servers(videoUrl: String): List<Server> {
+        lookUp(videoUrl, time = true)
+        val identifier = parse(Uri.parse(videoUrl))?.first ?: return emptyList()
+        runCatching { measured[identifier]?.get(SIGNAL_WAIT_MS, TimeUnit.MILLISECONDS) }
+        val location = runCatching { locate(videoUrl).get(SIGNAL_WAIT_MS, TimeUnit.MILLISECONDS) }.getOrNull() ?: return emptyList()
+        return location.hosts.map { Server(it, speeds[it]?.bitsPerSecond) }
+    }
+
+    /** Where the item lives: archive.org's metadata d1, d2 and dir, fetched side by side. */
+    private fun find(identifier: String): Location? {
         return try {
             val fields = listOf("d1", "d2", "dir").associateWith { name -> probes.submit<String?> { field(identifier, name) } }
                 .mapValues { (_, f) -> runCatching { f.get(FIELD_WAIT_MS, TimeUnit.MILLISECONDS) }.getOrNull() }
             val dir = fields["dir"]?.takeIf { DIR.matches(it) && ".." !in it }?.trimEnd('/')
             val hosts = listOfNotNull(fields["d1"], fields["d2"]).filter { HOST.matches(it) }.distinct()
             // No answer: this item plays from its archive.org address, as before. Not asked again.
-            if (dir == null || hosts.isEmpty()) return null
-            // Race the same small read from each server. The first to finish sets the pace; the
-            // other gets a second more, and if it can't finish by then it counts as slow.
-            val race = ExecutorCompletionService<Pair<String, Long?>>(probes)
-            hosts.forEach { host -> race.submit { host to speedOf(host, dir, file) } }
-            val results = HashMap<String, Long?>()
-            var deadline = now() + PROBE_WAIT_MS
-            repeat(hosts.size) {
-                val done = race.poll((deadline - now()).coerceAtLeast(0), TimeUnit.MILLISECONDS) ?: return@repeat
-                val (host, speed) = runCatching { done.get() }.getOrNull() ?: return@repeat
-                results[host] = speed
-                if (speed != null) deadline = minOf(deadline, now() + PROBE_GRACE_MS)
-            }
-            val timed = hosts.map { Server(it, results[it]) }
-            timed.forEach { s -> speeds[s.host] = Speed(s.bitsPerSecond, now()) }
-            Log.i(LivePlayer.TAG, "$identifier is on " + timed.joinToString(" / ") { s ->
-                "${s.host} (${s.bitsPerSecond?.let { "${it / 1000} kbit/s" } ?: "no answer"})"
-            })
-            Location(timed, dir)
+            if (dir == null || hosts.isEmpty()) null else Location(hosts, dir)
         } catch (e: Exception) {
             Log.i(LivePlayer.TAG, "Couldn't find the servers for $identifier ($e); using archive.org")
             null
         }
+    }
+
+    /**
+     * Races the same small read from each server. The first to finish sets the pace; the other
+     * gets a second more, and if it can't finish by then it counts as slow.
+     */
+    private fun time(identifier: String, location: Location, file: String) {
+        val race = ExecutorCompletionService<Pair<String, Long?>>(probes)
+        location.hosts.forEach { host -> race.submit { host to speedOf(host, location.dir, file) } }
+        var deadline = now() + PROBE_WAIT_MS
+        repeat(location.hosts.size) {
+            val done = race.poll((deadline - now()).coerceAtLeast(0), TimeUnit.MILLISECONDS) ?: return@repeat
+            val (host, speed) = runCatching { done.get() }.getOrNull() ?: return@repeat
+            speeds[host] = Speed(speed, now())
+            if (speed != null) deadline = minOf(deadline, now() + PROBE_GRACE_MS)
+        }
+        // Whoever didn't finish in time counts as slow for now.
+        location.hosts.filter { speeds[it]?.let { s -> now() - s.at < PROBE_WAIT_MS * 2 } != true }.forEach { speeds[it] = Speed(null, now()) }
+        Log.i(LivePlayer.TAG, "$identifier is on " + location.hosts.joinToString(" / ") { h ->
+            "$h (${speeds[h]?.bitsPerSecond?.let { "${it / 1000} kbit/s" } ?: "no answer"})"
+        })
     }
 
     /** Reads the first [PROBE_BYTES] of the file from one server; null if it fails or stalls. */
