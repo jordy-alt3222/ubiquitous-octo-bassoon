@@ -17,7 +17,7 @@ import kotlin.math.abs
 
 /** A channel as the app shows it. */
 /** Categories in the order the guide shows them. */
-val CATEGORIES = listOf("REWIND", "ARCHIVE", "FILM", "TV SERIES", "EDUCATIONAL", "OTHER", "PREVIEW")
+val CATEGORIES = listOf("REWIND", "ARCHIVE", "CARTOONS", "KIDS", "FILM", "TV", "TV SERIES", "MUSIC", "EDUCATIONAL", "OTHER", "PREVIEW")
 const val PREVIEW = "PREVIEW"
 
 fun categoryOf(family: String?): String = when (family) {
@@ -26,6 +26,10 @@ fun categoryOf(family: String?): String = when (family) {
     "film" -> "FILM"
     "tv-series" -> "TV SERIES"
     "educational" -> "EDUCATIONAL"
+    "cartoons" -> "CARTOONS"
+    "kids" -> "KIDS"
+    "tv" -> "TV"
+    "music" -> "MUSIC"
     else -> "OTHER"
 }
 
@@ -54,7 +58,7 @@ data class Channel(
  * Reads the same public broadcast files spelunkr.tv reads: first from the live bucket, then from
  * the snapshot the site serves next to its pages. No key or account is needed for either.
  */
-class BroadcastRepository {
+class BroadcastRepository : Broadcast {
     private val json = Json { ignoreUnknownKeys = true }
     private val schedules = HashMap<String, ChannelSchedule>()
     private val scheduleLock = Mutex()
@@ -64,14 +68,14 @@ class BroadcastRepository {
     var clockSkewMs: Long = 0
         private set
 
-    fun now(): Long = System.currentTimeMillis() + clockSkewMs
+    override fun now(): Long = System.currentTimeMillis() + clockSkewMs
 
     /**
      * Every channel on the dial. With [withPreviews], also the channels the site has scheduled but
      * not yet put on its dial (its own test channels, with no real programmes, are left out).
      * A preview channel without a dial number gets the next free one.
      */
-    suspend fun channels(withPreviews: Boolean = false): List<Channel> {
+    override suspend fun channels(withPreviews: Boolean): List<Channel> {
         val lineup = json.decodeFromString<Lineup>(fetch("lineup.json", measureSkew = true))
         val public = lineup.channels.filter { !it.debugOnly && !it.comingSoon && it.dial != null && it.versions.isNotEmpty() }
         val previews = if (!withPreviews) emptyList() else lineup.channels.filter {
@@ -104,7 +108,7 @@ class BroadcastRepository {
             .sortedBy { it.dial }
     }
 
-    suspend fun schedule(channel: Channel): ChannelSchedule {
+    override suspend fun schedule(channel: Channel): ChannelSchedule {
         scheduleLock.withLock { schedules[channel.id] }?.let { return it }
         val versions = coroutineScope {
             channel.versions.map { ref -> async { loadVersion(ref) } }.awaitAll()

@@ -69,7 +69,7 @@ fun HomeScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(if (isTv) 6.dp else 10.dp),
     ) {
-        Text("SPELUNKR", style = spelunkrText(if (isTv) 36.sp else 40.sp, Palette.Yellow))
+        Text(com.example.spelunkrtv.data.Brand.name, style = spelunkrText(if (isTv) 36.sp else 40.sp, Palette.Yellow))
 
         // The little TV set, playing a random channel with the sound off.
         Box(
@@ -91,7 +91,7 @@ fun HomeScreen(
         }
 
         Text(
-            "We are a free alternative TV network\nbuilt from the Internet Archive's forgotten videos.",
+            com.example.spelunkrtv.data.Brand.about,
             style = spelunkrText(16.sp),
             textAlign = TextAlign.Center,
         )
@@ -120,7 +120,7 @@ fun HomeScreen(
         }
 
         Spacer(Modifier.height(if (isTv) 0.dp else 8.dp))
-        Text("Spelunkr is free to watch. No account, no ads.", style = spelunkrText(13.sp), textAlign = TextAlign.Center)
+        Text("${com.example.spelunkrtv.data.Brand.guideName} is free to watch. No account, no ads.", style = spelunkrText(13.sp), textAlign = TextAlign.Center)
         Text("ALL PROGRAMMING COURTESY OF THE INTERNET ARCHIVE", style = spelunkrText(12.sp, Palette.Yellow), textAlign = TextAlign.Center)
     }
 }

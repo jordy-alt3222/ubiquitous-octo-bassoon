@@ -92,6 +92,11 @@ class SignalCheck(private val context: Context) {
 
     /** The schedule, live feed first and then the site's own copy, as the app loads it. */
     private fun schedule(): Pair<CheckRow, Long?> {
+        if (com.example.spelunkrtv.data.Brand.isRu) {
+            // The schedule ships with ru-splunker; archive.org's clock stands in for the time check.
+            val r = runCatching { get("https://archive.org/") }.getOrNull()
+            return CheckRow(SCHEDULE, Verdict.Ok, "Built into ru-splunker; no schedule server needed") to r?.serverTime
+        }
         val live = runCatching { get(BroadcastRepository.LIVE_BASE + "lineup.json") }
         live.getOrNull()?.let { r ->
             if (r.code in 200..299) return CheckRow(SCHEDULE, Verdict.Ok, "Live feed · ${channelCount(r.body)} channels · answered in ${r.firstByteMs} ms") to r.serverTime

@@ -125,7 +125,7 @@ fun SetupScreen(
                     ) { v -> onChange { it.copy(server = v) } }
                 }
 
-                Section("CHANNELS") {
+                if (!com.example.spelunkrtv.data.Brand.isRu) Section("CHANNELS") {
                     Choice(
                         "PREVIEW CHANNELS",
                         "Channels the site has scheduled but not yet put on its dial (now WARP ZONE and WAKU WAKU). " +

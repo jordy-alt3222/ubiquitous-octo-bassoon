@@ -513,7 +513,7 @@ class LivePlayer(private val context: Context, private val clock: () -> Long) {
         /** Says who is asking, so the Archive can tell this app's traffic apart. */
         fun userAgent(context: Context): String {
             val version = runCatching { context.packageManager.getPackageInfo(context.packageName, 0).versionName }.getOrNull()
-            return "SPELUNKR-Android/${version ?: "?"} (unofficial; Media3)"
+            return "${com.example.spelunkrtv.data.Brand.name}-Android/${version ?: "?"} (unofficial; Media3)"
         }
     }
 }

@@ -121,7 +121,7 @@ fun TopBar(now: Long, current: Screen, onNavigate: (Screen) -> Unit, showClock: 
         Spacer(Modifier.width(8.dp))
         if (showClock) {
             Column {
-                Text("Spelunkr", style = spelunkrText(15.sp, Palette.Yellow))
+                Text(com.example.spelunkrtv.data.Brand.guideName, style = spelunkrText(15.sp, Palette.Yellow))
                 Text("TV Guide", style = spelunkrText(15.sp, Palette.Yellow))
             }
         }
@@ -407,6 +407,6 @@ private fun Ticker(channelCount: Int) {
     ) {
         Text("$channelCount CHANNELS · ♥ DONATE TO THE ARCHIVE", style = spelunkrText(14.sp))
         Spacer(Modifier.weight(1f))
-        Text("Like cable TV, but weirder. SPELUNKR.TV", style = spelunkrText(14.sp, Palette.Yellow))
+        Text(com.example.spelunkrtv.data.Brand.tagline, style = spelunkrText(14.sp, Palette.Yellow))
     }
 }

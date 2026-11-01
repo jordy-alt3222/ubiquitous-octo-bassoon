@@ -1,0 +1,3458 @@
+{
+ "epochMs": 1793491200000,
+ "channels": [
+  {
+   "id": "multiki",
+   "dial": 1,
+   "name": "МУЛЬТИКИ",
+   "family": "cartoons",
+   "color": "#E53935",
+   "description": "Soviet cartoons: Soyuzmultfilm and friends, from the hand-drawn classics to the clay and puppet ones.",
+   "items": [
+    {
+     "id": "MUSHROOMHOUSE.CARTOONWithEnglishSubtitles",
+     "file": "MUSHROOM - HOUSE. CARTOON with English subtitles.mp4",
+     "duration": 607,
+     "title": "The Mushroom House (Грибной дом)  Soviet cartoon  with English subtitles",
+     "year": null,
+     "moov": 187513,
+     "description": "A story written by Vladimir Suteyev."
+    },
+    {
+     "id": "Aibolit-i-Barmalei-soviet",
+     "file": "aibolit i barmalei.mp4",
+     "duration": 944,
+     "title": "Aibolit i Barmalei (Аиболит и Бармалеи)",
+     "year": null,
+     "moov": 718260,
+     "description": null
+    },
+    {
+     "id": "s-1-e-8-1080p",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E8_1080p.mp4",
+     "duration": 628,
+     "title": "Adventures of Captain Vrungel Episode 8 English Subtitles",
+     "year": null,
+     "moov": 444257,
+     "description": "HD upload of Episode 8 of \"Adventures of Captain Vrungel\"."
+    },
+    {
+     "id": "TheGirlAndTheDolphin1979DevochkaIDelfinENRUSubs",
+     "file": "The girl and the dolphin 1979 devochka i delfin EN & RU subs.mp4",
+     "duration": 608,
+     "title": "The Girl And The Dolphin 1979 Devochka I Delfin EN & RU Subs",
+     "year": null,
+     "moov": 187917,
+     "description": "This is the story of a great friendship between a dolphin and a child"
+    },
+    {
+     "id": "Dva-Bileta-v-Indiju-soviet",
+     "file": "dva bileta v indiju.mp4",
+     "duration": 1137,
+     "title": "Dva Bileta v Indiju (Два Билета в Индию)",
+     "year": null,
+     "moov": 1077477,
+     "description": null
+    },
+    {
+     "id": "Wook-soviet",
+     "file": "wook.mp4",
+     "duration": 3879,
+     "title": "Wook (Wоок)",
+     "year": null,
+     "moov": 2939357,
+     "description": null
+    },
+    {
+     "id": "Zolotoe-Peryshko-soviet",
+     "file": "zolotoe peryshko.mp4",
+     "duration": 1174,
+     "title": "Zolotoe Peryshko (Золотое Перышко)",
+     "year": null,
+     "moov": 893461,
+     "description": null
+    },
+    {
+     "id": "Baba-Yaga-Protiv-2-soviet",
+     "file": "baba-yaga protiv 2.mp4",
+     "duration": 547,
+     "title": "Baba-Yaga Protiv 2 (Баба-Ыага Против 2)",
+     "year": null,
+     "moov": 408858,
+     "description": null
+    },
+    {
+     "id": "Karlik-Nos-soviet",
+     "file": "karlik nos.mp4",
+     "duration": 4734,
+     "title": "Karlik Nos (Карлик Нос)",
+     "year": null,
+     "moov": 3560621,
+     "description": null
+    },
+    {
+     "id": "Teremok-soviet",
+     "file": "teremok.mp4",
+     "duration": 332,
+     "title": "Teremok (Теремок)",
+     "year": null,
+     "moov": 315418,
+     "description": null
+    },
+    {
+     "id": "verify-your-clock",
+     "file": "Verify Your Clock.mp4",
+     "duration": 528,
+     "title": "Verify Your Clock|Soyuzmultfilm|1960's",
+     "year": "1963",
+     "moov": 163104,
+     "description": "Animated film chronicle, about the useful use of time"
+    },
+    {
+     "id": "Fm-Vampiry-Geony-soviet",
+     "file": "fm vampiry geony.mp4",
+     "duration": 575,
+     "title": "Fm Vampiry Geony (Фм Вампиры Геоны)",
+     "year": null,
+     "moov": 502988,
+     "description": null
+    },
+    {
+     "id": "the-holiday-of-the-new-year-tree-1991-ntsc-original-pitch-correction",
+     "file": "The Holiday of the New Year Tree.ia.mp4",
+     "duration": 3707,
+     "title": "The Holiday of the New Year Tree (Праздник новогодней ёлки) (1991) [NTSC/original pitch correction]",
+     "year": "1991",
+     "moov": 2322239,
+     "description": "The collection consists of cartoons on Christmas theme that can create a fabulous mood and anticipation of the favorite holiday. The first is called \"When Christmas trees are lit\". It tells about the miracles that occur with a normal girl and a boy, who called Santa Claus. Сборник состоит из мультфи"
+    },
+    {
+     "id": "Neznaika-Na-Lune-Rus-1-Of-3-soviet",
+     "file": "neznaika na lune rus 1 of 3.mp4",
+     "duration": 2999,
+     "title": "Neznaika Na Lune Rus 1 Of 3 (Незнаика На Луне Рус 1 Оф 3)",
+     "year": null,
+     "moov": 2278723,
+     "description": null
+    },
+    {
+     "id": "masters-of-russian-animation-vol-7",
+     "file": "Masters of Russian Animation.ia.mp4",
+     "duration": 4457,
+     "title": "Masters of Russian Animation - Volume 7 (1997) [VHS]",
+     "year": "1997",
+     "moov": 1630826,
+     "description": "YouTube upload: https://youtu.be/mpm8x9ToAJ8 ------------------------------------------------------------------------------------------------------------- Films by Jove in association with Soyuzmultfilm Studios presents MASTERS of RUSSIAN ANIMATION ANDREI KHRJANOVSKY &amp; LEADERS OF STOP MOTION VOL"
+    },
+    {
+     "id": "Kapitan-Pronin-3-soviet",
+     "file": "kapitan pronin 3.mp4",
+     "duration": 430,
+     "title": "Kapitan Pronin 3 (Капитан Пронин 3)",
+     "year": null,
+     "moov": 363383,
+     "description": null
+    },
+    {
+     "id": "videoplayback-4_20210830_1925",
+     "file": "videoplayback (4).mp4",
+     "duration": 370,
+     "title": "У попа была собака (1982)",
+     "year": null,
+     "moov": 150788,
+     "description": "У попа была собака, потерянный мультфильм. Производство мультфильма велось на студии «Союзмультфильме». Режиссёром была Елена Пророкова. Мультфильм был выпущен в 1982-ом году ."
+    },
+    {
+     "id": "Doctor_Aybolit_1080p_20241007",
+     "file": "Доктор Айболит все серии 1080р.ia.mp4",
+     "duration": 4107,
+     "title": "Doctor Aybolit ENG | Доктор Айболит Все Серии 1080p",
+     "year": "1985",
+     "moov": 2979351,
+     "description": "«До́ктор Айболи́т» — гепталогия, созданная режиссёром Давидом Черкасским [ 1 ] по заказу Государственного комитета СССР по телевидению и радиовещанию , о докторе Айболите по мотивам произведений Корнея Ивановича Чуковского [ 2 ] « Айболит », « Бармалей », « Доктор Айболит », « Тараканище », « Муха-Ц"
+    },
+    {
+     "id": "nu-pagadi-1-ENG-transcript",
+     "file": "nu.pagadi.1.ENG.transcript.compressed.ia.mp4",
+     "duration": 568,
+     "title": "I'll Get You! (\"Nu Pogodi\") Episode #1 with English Subtitles",
+     "year": "1969",
+     "moov": 296877,
+     "description": "Title says it all, I made the transcript myself. (Note: QuickTime Movie is the highest quality file.)"
+    },
+    {
+     "id": "Alisa-v-Strane-Chudes-2-soviet",
+     "file": "alisa v strane chudes 2.mp4",
+     "duration": 607,
+     "title": "Alisa v Strane Chudes 2 (Алиса в Стране Чудес 2)",
+     "year": null,
+     "moov": 462443,
+     "description": null
+    },
+    {
+     "id": "Krot-v-Gorode-soviet",
+     "file": "krot v gorode.mp4",
+     "duration": 1711,
+     "title": "Krot v Gorode (Крот в Городе)",
+     "year": null,
+     "moov": 1630672,
+     "description": null
+    },
+    {
+     "id": "nu-pogodi-the-complete-series-1969-2006",
+     "file": "Nu, Pogodi! E20. The Countryside (2006).ia.mp4",
+     "duration": 652,
+     "title": "Nu, Pogodi!: The Complete Series (1969-2006)",
+     "year": "1969",
+     "moov": 418965,
+     "description": "Well, Just You Wait! (Russian: Ну, погоди!, romanized: Nu, pogodi!, Russian pronunciation: [nʊpəgɐˈdʲi]), also known as I'll get you! in official translations, is a Soviet and Russian series of animated short films produced by Soyuzmultfilm. In the 2014 all-Russian poll, Well, Just You Wait! won by "
+    },
+    {
+     "id": "the-snow-queen-1957-rus",
+     "file": "The_Snow_Queen_(1957)RUS.mp4",
+     "duration": 3634,
+     "title": "Snezhnaya Koroleva (1957)",
+     "year": "1957",
+     "moov": 1421039,
+     "description": "The Snow Queen (Снежная королева, Snezhnaya Koroleva) is a classic soviet film from 1957 directed by Lev Atamanov of Soyuzmultfilm , it retells the fairytale of the same name by Hans Christian Andersen . Video ripped from VK Link"
+    },
+    {
+     "id": "Malchik-s-Palchik-1977-soviet",
+     "file": "malchik s palchik 1977.mp4",
+     "duration": 1031,
+     "title": "Malchik s Palchik 1977 (Малчик с Палчик 1977)",
+     "year": null,
+     "moov": 786865,
+     "description": null
+    },
+    {
+     "id": "s-1-e-7-1080p",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E7_1080p.mp4",
+     "duration": 630,
+     "title": "Adventures of Captain Vrungel Episode 7 English Subtitles",
+     "year": null,
+     "moov": 443522,
+     "description": "HD upload of Episode 7 of \"Adventures of Captain Vrungel\"."
+    },
+    {
+     "id": "Aviatory-soviet",
+     "file": "aviatory.mp4",
+     "duration": 510,
+     "title": "Aviatory (Авиаторы)",
+     "year": null,
+     "moov": 388074,
+     "description": null
+    },
+    {
+     "id": "Lesnye-Puteshestvenniki-soviet",
+     "file": "lesnye puteshestvenniki.mp4",
+     "duration": 1219,
+     "title": "Lesnye Puteshestvenniki (Лесные Путешественники)",
+     "year": null,
+     "moov": 925979,
+     "description": null
+    },
+    {
+     "id": "Molodilnie-Yablochki-soviet",
+     "file": "molodilnie yablochki.mp4",
+     "duration": 1155,
+     "title": "Molodilnie Yablochki (Молодилние Ыаблочки)",
+     "year": null,
+     "moov": 853603,
+     "description": null
+    },
+    {
+     "id": "Alisa-v-Strane-Chudes-3-soviet",
+     "file": "alisa v strane chudes 3.mp4",
+     "duration": 608,
+     "title": "Alisa v Strane Chudes 3 (Алиса в Стране Чудес 3)",
+     "year": null,
+     "moov": 462959,
+     "description": null
+    },
+    {
+     "id": "Ezhik-v-Tumane-soviet",
+     "file": "ezhik v tumane.mp4",
+     "duration": 596,
+     "title": "Ezhik v Tumane (Ежик в Тумане)",
+     "year": null,
+     "moov": 445908,
+     "description": null
+    },
+    {
+     "id": "Bozhestvo-soviet",
+     "file": "bozhestvo.mp4",
+     "duration": 256,
+     "title": "Bozhestvo (Божество)",
+     "year": null,
+     "moov": 214928,
+     "description": null
+    },
+    {
+     "id": "Pastushka-i-Trubochist-soviet",
+     "file": "pastushka i trubochist.mp4",
+     "duration": 1694,
+     "title": "Pastushka i Trubochist (Пастушка и Трубочист)",
+     "year": null,
+     "moov": 1289009,
+     "description": null
+    },
+    {
+     "id": "WHOWILLGETTHEPRIZEUSSRCartoon1979withEnglishSu",
+     "file": "WHO WILL GET THE PRIZE, USSR, cartoon, 1979 (with English su.mp4",
+     "duration": 550,
+     "title": "WHO WILL GET THE PRIZE Soviet cartoon with English subs",
+     "year": null,
+     "moov": 169728,
+     "description": "This cartoon was released on the eve of the Summer Olympic Games in Moscow, 1980. Here we see the story of the Misha bear. Misha is the mascot of the Olympic Games in 1980."
+    },
+    {
+     "id": "DifferentWheels1964RaznyeKolesaEnglishSubtitlesRussia",
+     "file": "Different wheels 1964 Raznye Kolesa English subtitles Russia.mp4",
+     "duration": 600,
+     "title": "Different wheels 1964 (разное колеса) Soviet cartoon with English subtitles",
+     "year": null,
+     "moov": 185120,
+     "description": "Animation directed by Leonid Amalrik, script by Vladimir Suteyev."
+    },
+    {
+     "id": "soviet-animation",
+     "file": "Soviet Animation/Перевал.ia.mp4",
+     "duration": 1796,
+     "title": "Soviet Animation",
+     "year": null,
+     "moov": 1439616,
+     "description": "This is a collection of Soviet Era animation."
+    },
+    {
+     "id": "Winni-Pooh-i-Den-Zabot-soviet",
+     "file": "winni pooh i den zabot.mp4",
+     "duration": 1167,
+     "title": "Winni Pooh i Den Zabot (Wинни Поох и Ден Забот)",
+     "year": null,
+     "moov": 862773,
+     "description": null
+    },
+    {
+     "id": "shooting-range-1979-en-sub",
+     "file": "Shooting Range -1979- EN sub.mp4",
+     "duration": 1158,
+     "title": "Shooting Range 1979",
+     "year": "1979",
+     "moov": 369466,
+     "description": "An unemployed American gets a job in a shooting gallery as a live target. The greedy capitalist owner charges patrons double for the chance to shoot at a human being. Animated short from 1979. With English subtitles for the opening credits. No dialogue is spoken in the short- signs are shown in both"
+    },
+    {
+     "id": "Fantadroms-02-Sals-soviet",
+     "file": "fantadroms 02 sals.mp4",
+     "duration": 425,
+     "title": "Fantadroms 02 Sals (Фантадромс 02 Салс)",
+     "year": null,
+     "moov": 324979,
+     "description": null
+    },
+    {
+     "id": "s-1-e-3-1080p",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E3_1080p.mp4",
+     "duration": 594,
+     "title": "Adventures of Captain Vrungel Episode 3 English Subtitles",
+     "year": null,
+     "moov": 422894,
+     "description": "HD upload of Episode 3 of \"Adventures of Captain Vrungel\" with English subtitles."
+    },
+    {
+     "id": "VasilisaTheBeautifull1977VasilisaPrekrasnayaENES",
+     "file": "Vasilisa the beautifull 1977 Vasilisa Prekrasnaya EN & ES & .mp4",
+     "duration": 1078,
+     "title": "Vasilisa The Beautiful 1977 Vasilisa Prekrasnaya",
+     "year": null,
+     "moov": 332136,
+     "description": "Vasilisa the beautiful 1977 Soviet cartoon film with subtitles"
+    },
+    {
+     "id": "Alisa-v-Zazerkalie-3-soviet",
+     "file": "alisa v zazerkalie 3.mp4",
+     "duration": 606,
+     "title": "Alisa v Zazerkalie 3 (Алиса в Зазеркалие 3)",
+     "year": null,
+     "moov": 461358,
+     "description": null
+    },
+    {
+     "id": "Koshkin-Dom-1958-soviet",
+     "file": "koshkin dom 1958.mp4",
+     "duration": 1739,
+     "title": "Koshkin Dom 1958 (Кошкин Дом 1958)",
+     "year": null,
+     "moov": 1319222,
+     "description": null
+    },
+    {
+     "id": "Bolshoj-Secret-Dlia-Malenkoj-Kompanii-soviet",
+     "file": "bolshoj secret dlia malenkoj kompanii.mp4",
+     "duration": 968,
+     "title": "Bolshoj Secret Dlia Malenkoj Kompanii (Болшой Сецрет Длиа Маленкой Компании)",
+     "year": null,
+     "moov": 736781,
+     "description": null
+    },
+    {
+     "id": "Mojdodyr-soviet",
+     "file": "mojdodyr.mp4",
+     "duration": 993,
+     "title": "Mojdodyr (Мойдодыр)",
+     "year": null,
+     "moov": 750922,
+     "description": null
+    },
+    {
+     "id": "s-1-e-2-1080p",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E2_1080p.mp4",
+     "duration": 602,
+     "title": "Adventures of Captain Vrungel Episode 2 English Subtitles",
+     "year": null,
+     "moov": 425007,
+     "description": "HD upload of Episode 2 of \"Adventures of Captain Vrungel\" with English subs."
+    },
+    {
+     "id": "Kot-v-Sapogah-Garri-Bardin-soviet",
+     "file": "kot v sapogah garri bardin.mp4",
+     "duration": 1629,
+     "title": "Kot v Sapogah Garri Bardin (Кот в Сапогах Гарри Бардин)",
+     "year": null,
+     "moov": 1229910,
+     "description": null
+    },
+    {
+     "id": "passion-of-spies-1967_engsubs",
+     "file": "Passion of Spies (1967).mp4",
+     "duration": 1240,
+     "title": "Passion Of Spies (1967) w/ English Subs",
+     "year": "1967",
+     "moov": 546880,
+     "description": "Known in original Russian as Шпионские Страсти ( Shpionskiye Strasti ), this short film satirizes the spy war genre, featuring a group of foreign spies attempting to smuggle a tape out of the Soviet Union, with the KGB officials in hot pursuit and with a variety of twist and turns."
+    },
+    {
+     "id": "12-Mesyacev-soviet",
+     "file": "12 mesyacev.mp4",
+     "duration": 2444,
+     "title": "12 Mesyacev (12 Месыацев)",
+     "year": null,
+     "moov": 1830787,
+     "description": null
+    },
+    {
+     "id": "Umka-soviet",
+     "file": "umka.mp4",
+     "duration": 581,
+     "title": "Umka (Умка)",
+     "year": null,
+     "moov": 495590,
+     "description": null
+    },
+    {
+     "id": "Staraja-Plastinka-soviet",
+     "file": "staraja plastinka.mp4",
+     "duration": 877,
+     "title": "Staraja Plastinka (Старая Пластинка)",
+     "year": null,
+     "moov": 828671,
+     "description": null
+    },
+    {
+     "id": "Sasiedzi-Pat-a-Mat-a-Je-To-Collection-5-soviet",
+     "file": "sasiedzi pat a mat a je to collection 5.mp4",
+     "duration": 4212,
+     "title": "Sasiedzi Pat a Mat a Je To Collection 5 (Сасиедзи Пат а Мат а Йе То Цоллецтион 5)",
+     "year": null,
+     "moov": 3186141,
+     "description": null
+    },
+    {
+     "id": "38-Popugaev-soviet",
+     "file": "38 popugaev.mp4",
+     "duration": 480,
+     "title": "38 Popugaev (38 Попугаев)",
+     "year": null,
+     "moov": 364779,
+     "description": null
+    },
+    {
+     "id": "the-adventures-of-the-magic-globe-or-witchs-tricks-1991-ntsc-original-pitch-correction",
+     "file": "The Adventures of the Magic Globe or Witch's Tricks.ia.mp4",
+     "duration": 4091,
+     "title": "The Adventures of the Magic Globe or Witch's Tricks (Приключения волшебного глобуса, или Проделки ведьмы) (1991) [NTSC/o",
+     "year": "1991",
+     "moov": 2818003,
+     "description": "This collection includes such cartoons as \"The Boy from Naples\", \"The Walnut Switch\", \"Woe Is Not a Problem\" and \"Cinderella\". So, the first story is about a good boy, a good sorceress and an insidious enchantress who disturbs them. The main character has to cope with all the machinations of the wit"
+    },
+    {
+     "id": "v-Strane-Nevyuchennyx-Urokov-soviet",
+     "file": "v strane nevyuchennyx urokov.mp4",
+     "duration": 1144,
+     "title": "v Strane Nevyuchennyx Urokov (в Стране Невыученныx Уроков)",
+     "year": null,
+     "moov": 872518,
+     "description": null
+    },
+    {
+     "id": "Korol-Obezian-Cd2-soviet",
+     "file": "korol obezian cd2.mp4",
+     "duration": 6418,
+     "title": "Korol Obezian Cd2 (Корол Обезиан Цд2)",
+     "year": null,
+     "moov": 3928351,
+     "description": null
+    },
+    {
+     "id": "disney-segaentertaimentanimatedshort-1992-1",
+     "file": "DisneySEGAentertaimentanimatedshort1992-1.mp4",
+     "duration": 269,
+     "title": "Disney/SEGA Entertainment - Macaroni Madness (1992) (Fanmade)",
+     "year": "1992",
+     "moov": 193355,
+     "description": "Video Rating: PG (by Semi-Nude Girl scene and Violence) For @BlazeJohnson28 Taken from VHS and Laserdisc of Disney/SEGA Entertainment's Aladdin (1992) Trivia: Macaroni Madness (1992) (From Unreleased 1992 Ukrainian film directed by David Cherkassky \"Сумасшедшие макароны\", in English title for U.S.A."
+    },
+    {
+     "id": "Kak-Petya-Pyatochkin-Slonikov-Schital-soviet",
+     "file": "kak petya pyatochkin slonikov schital.mp4",
+     "duration": 601,
+     "title": "Kak Petya Pyatochkin Slonikov Schital (Как Петыа Пыаточкин Слоников Считал)",
+     "year": null,
+     "moov": 453066,
+     "description": null
+    },
+    {
+     "id": "kitten-named-woof-subbed",
+     "file": "Kitten Named Woof Subbed.mp4",
+     "duration": 2560,
+     "title": "Kitten Named Woof English Subtitled",
+     "year": "1976",
+     "moov": 1078527,
+     "description": "This is a fully subbed version of all 5 episodes of the classic Soviet animated series \" Котёнок по имени Гав\" (Kotyonok po imeni Gav). The series used to be available with subtitles online, but it has been removed from every source I could find, other than a few episodes on random websites. It's a "
+    },
+    {
+     "id": "Baba-Yaga-Protiv-1-soviet",
+     "file": "baba-yaga protiv 1.mp4",
+     "duration": 532,
+     "title": "Baba-Yaga Protiv 1 (Баба-Ыага Против 1)",
+     "year": null,
+     "moov": 394474,
+     "description": null
+    },
+    {
+     "id": "s-1-e-13-1080p",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E13_1080p.mp4",
+     "duration": 634,
+     "title": "Adventures of Captain Vrungel Episode 13 English Subtitles",
+     "year": null,
+     "moov": 445907,
+     "description": "HD upload of Episode 13 of \"Adventures of Captain Vrungel\" with subs."
+    },
+    {
+     "id": "Malysh-i-Karlson-soviet",
+     "file": "malysh i karlson.mp4",
+     "duration": 1115,
+     "title": "Malysh i Karlson (Малыш и Карлсон)",
+     "year": null,
+     "moov": 821938,
+     "description": null
+    },
+    {
+     "id": "Bibigon-soviet",
+     "file": "bibigon.mp4",
+     "duration": 1111,
+     "title": "Bibigon (Бибигон)",
+     "year": null,
+     "moov": 842026,
+     "description": null
+    },
+    {
+     "id": "s-1-e-10-1080p",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E10_1080p.mp4",
+     "duration": 635,
+     "title": "Adventures of Captain Vrungel Episode 10 English Subtitles",
+     "year": null,
+     "moov": 443525,
+     "description": "HD upload of Episode 10 of \"Adventures of Captain Vrungel\" with subs."
+    },
+    {
+     "id": "Kvaksha-soviet",
+     "file": "kvaksha.mp4",
+     "duration": 1096,
+     "title": "Kvaksha (Квакша)",
+     "year": null,
+     "moov": 1038924,
+     "description": null
+    },
+    {
+     "id": "Krot-Vo-Sne-soviet",
+     "file": "krot vo sne.mp4",
+     "duration": 1689,
+     "title": "Krot Vo Sne (Крот Во Сне)",
+     "year": null,
+     "moov": 1613652,
+     "description": null
+    },
+    {
+     "id": "Sasiedzi-Pat-a-Mat-a-Je-To-Collection-2-soviet",
+     "file": "sasiedzi pat a mat a je to collection 2.mp4",
+     "duration": 6449,
+     "title": "Sasiedzi Pat a Mat a Je To Collection 2 (Сасиедзи Пат а Мат а Йе То Цоллецтион 2)",
+     "year": null,
+     "moov": 4835593,
+     "description": null
+    },
+    {
+     "id": "1_20240530_20240530_0654",
+     "file": "Ну погоди! выпуск 1.ia.mp4",
+     "duration": 606,
+     "title": "«Ну, погоди!» [Well, Just You Wait!] (1969 - 16mm ORWO Print)",
+     "year": "1969",
+     "moov": 663119,
+     "description": "‎"
+    },
+    {
+     "id": "s-1-e-1-1080p_202408",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E1_1080p.mp4",
+     "duration": 609,
+     "title": "Adventures of Captain Vrungel Episode 1 English Subtitles",
+     "year": null,
+     "moov": 429162,
+     "description": "HD upload of Episode 1 of the Ukrainian cartoon \"Adventures of Captain Vrungel\"."
+    },
+    {
+     "id": "Russian_animation_The_Stolen_Sun.",
+     "file": "kradenoe_solntse_1943_512kb.mp4",
+     "duration": 670,
+     "title": "The Stolen Sun (Краденое солнце, Kradenoye solntse)",
+     "year": "1944",
+     "moov": 392371,
+     "description": "A 1944 film by Soyuzmultfilm; made in the Soviet Union in the darkest days of World War 2. See its page at animator.ru for more info (though they got the year of release and some of the crew wrong, unfortunately): http://animator.ru/db/?p=show_film&fid=2941 This film is in the public domain in Russi"
+    },
+    {
+     "id": "Fantik-soviet",
+     "file": "fantik.mp4",
+     "duration": 1117,
+     "title": "Fantik (Фантик)",
+     "year": null,
+     "moov": 953570,
+     "description": null
+    },
+    {
+     "id": "RIKKITIKKITAVI1965CartoonUSSRwithENGLISHSubtitle",
+     "file": "RIKKI TIKKI TAVI, 1965, cartoon, USSR (with ENGLISH subtitle.mp4",
+     "duration": 1168,
+     "title": "RIKKI TIKKI TAVI, 1965, Cartoon, USSR (with ENGLISH Subtitles)",
+     "year": null,
+     "moov": 359560,
+     "description": "The adventures of a mongoose, \" Rikki-Tikki-Tavi \" is a short story in The Jungle Book by Rudyard Kipling Directed by Alexandra Snezhko-Blotskaya at Soyuzmultfilm"
+    },
+    {
+     "id": "Alibaba-i-40-Razboinikov-soviet",
+     "file": "alibaba i 40 razboinikov.mp4",
+     "duration": 1736,
+     "title": "Alibaba i 40 Razboinikov (Алибаба и 40 Разбоиников)",
+     "year": null,
+     "moov": 1319079,
+     "description": null
+    },
+    {
+     "id": "Alisa-v-Strane-Chudes-1-soviet",
+     "file": "alisa v strane chudes 1.mp4",
+     "duration": 599,
+     "title": "Alisa v Strane Chudes 1 (Алиса в Стране Чудес 1)",
+     "year": null,
+     "moov": 454747,
+     "description": null
+    },
+    {
+     "id": "RussianWinnieThePoohWithEnglishSubtitles",
+     "file": "Russian Winnie-the-Pooh with English subtitles.mp4",
+     "duration": 616,
+     "title": "Russian \"Winnie-the-Pooh\"(Русский Винни-Пух)  with English subtitles",
+     "year": null,
+     "moov": 190264,
+     "description": "Based on the Winnie-the-Pooh story by A. A. Milne"
+    },
+    {
+     "id": "TwoTalesCartoonUSSR1962WithEnglishSubtitles",
+     "file": "two tales cartoon, USSR, 1962 (With English subtitles).mp4",
+     "duration": 925,
+     "title": "Two Tales Cartoon, USSR, 1962 ( With English Subtitles)",
+     "year": null,
+     "moov": 285100,
+     "description": "Two tales written by Vladimir Suteev Cartoon films animated by Leonid Amalrik"
+    },
+    {
+     "id": "THEDISOBEDIENTKITTENCartoonUSSR1953withEnglishS",
+     "file": "'THE DISOBEDIENT KITTEN' cartoon, USSR, 1953 (with English s.mp4",
+     "duration": 609,
+     "title": " THE DISOBEDIENT KITTEN' Cartoon, USSR, 1953 (with English subtitles) ",
+     "year": null,
+     "moov": 188015,
+     "description": "The naughty kitten didn't obey his mistress, got lost in the wood and, certainly, he was punished. He lost his way, got wet in the rain, and was frightened. But by the help of kind animals in the wood he came back home and promised \"never-never...\" to be naughty. Directed and written by Mstislav Pas"
+    },
+    {
+     "id": "Trubka-Mira-soviet",
+     "file": "trubka mira.mp4",
+     "duration": 583,
+     "title": "Trubka Mira (Трубка Мира)",
+     "year": null,
+     "moov": 496913,
+     "description": null
+    },
+    {
+     "id": "Kapitan-Pronin-1-soviet",
+     "file": "kapitan pronin 1.mp4",
+     "duration": 585,
+     "title": "Kapitan Pronin 1 (Капитан Пронин 1)",
+     "year": null,
+     "moov": 490803,
+     "description": null
+    },
+    {
+     "id": "AKECARTOONWithEnglishSubtitles",
+     "file": "СAKE - CARTOON with English subtitles.mp4",
+     "duration": 591,
+     "title": "The cake (торт)  Soviet cartoon with English subtitles",
+     "year": null,
+     "moov": 182569,
+     "description": "A Soviet cartoon film for children"
+    },
+    {
+     "id": "soyuzmultfilm-english-dub",
+     "file": "About the Hippopotamus Who Was Afraid of Vaccinations (1966, English dub).mp4",
+     "duration": 1090,
+     "title": "Soyuzmultfilm Animated Shorts: 13-Episode Compilation (1966-80, English dub)",
+     "year": null,
+     "moov": 1166307,
+     "description": "These animated shorts were produced by Soyuzmultfilm and dubbed into English by Filmexport ( Sovexportfilm )."
+    },
+    {
+     "id": "Kapitan-Pronin-2-soviet",
+     "file": "kapitan pronin 2.mp4",
+     "duration": 384,
+     "title": "Kapitan Pronin 2 (Капитан Пронин 2)",
+     "year": null,
+     "moov": 325139,
+     "description": null
+    },
+    {
+     "id": "Skazka-soviet",
+     "file": "skazka.mp4",
+     "duration": 527,
+     "title": "Skazka (Сказка)",
+     "year": null,
+     "moov": 465691,
+     "description": null
+    },
+    {
+     "id": "Krot-Kinozvezda-soviet",
+     "file": "krot kinozvezda.mp4",
+     "duration": 1667,
+     "title": "Krot Kinozvezda (Крот Кинозвезда)",
+     "year": null,
+     "moov": 1583869,
+     "description": null
+    },
+    {
+     "id": "s-1-e-9-1080p",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E9_1080p.mp4",
+     "duration": 610,
+     "title": "Adventures of Captain Vrungel Episode 9 English Subtitles",
+     "year": null,
+     "moov": 428731,
+     "description": "HD upload of Episode 9 of \"Adventures of Captain Vrungel\"."
+    },
+    {
+     "id": "s-1-e-4-1080p",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E4_1080p.mp4",
+     "duration": 635,
+     "title": "Adventures of Captain Vrungel Episode 4 English Subtitles",
+     "year": null,
+     "moov": 448834,
+     "description": "HD upload of Episode 4 of \"Adventures of Captain Vrungel\"."
+    },
+    {
+     "id": "Cheburashka-soviet",
+     "file": "cheburashka.mp4",
+     "duration": 1140,
+     "title": "Cheburashka (Чебурашка)",
+     "year": null,
+     "moov": 867614,
+     "description": null
+    },
+    {
+     "id": "Armenfilm-v-Sinem-More-v-Beloj-Pene-soviet",
+     "file": "armenfilm v sinem more v beloj pene.mp4",
+     "duration": 464,
+     "title": "Armenfilm v Sinem More v Beloj Pene (Арменфилм в Синем Море в Белой Пене)",
+     "year": null,
+     "moov": 409413,
+     "description": null
+    },
+    {
+     "id": "nu-pogodi-soyuzmultfilm-english-dub",
+     "file": "Nu, Pogodi! - Episode 03 (English dub).mp4",
+     "duration": 598,
+     "title": "Nu, Pogodi!: 7-Episode Compilation (English dub)",
+     "year": null,
+     "moov": 639169,
+     "description": "These animated shorts in the Nu, Pogodi! series were produced by Soyuzmultfilm and dubbed into English by Filmexport ( Sovexportfilm )."
+    },
+    {
+     "id": "ABAGFULLOFAPPLESCartoonUSSR1974withEnglishSubt",
+     "file": "A BAG FULL OF APPLES, cartoon, USSR, 1974 (with English subt.mp4",
+     "duration": 1158,
+     "title": "A BAG FULL OF APPLES, Cartoon, USSR, 1974 (with English Subs",
+     "year": null,
+     "moov": 356647,
+     "description": "Based on a story written by Vladimir Suteev"
+    },
+    {
+     "id": "TheatThatWalkedByHimself.FilmingJ.R.Kipling.Russia1",
+     "file": "The Сat that walked by himself. Filming J.R. Kipling. Russia-1.mp4",
+     "duration": 1236,
+     "title": "The Сat That Walked By Himself based on Just So Stories by Rudyard Kipling Russian cartoon with English subs",
+     "year": null,
+     "moov": 372075,
+     "description": "The Dog was wild, and the Horse was wild, and the Cow was wild, and the Sheep was wild, and the Pig was wild—as wild as wild could be—and they walked in the Wet Wild Woods by their wild lones. But the wildest of all the wild animals was the Cat . He walked by himself , and all places were alike to h"
+    },
+    {
+     "id": "Otel-e-soviet",
+     "file": "otel e.mp4",
+     "duration": 1728,
+     "title": "Otel e (Отел е)",
+     "year": null,
+     "moov": 1291409,
+     "description": null
+    },
+    {
+     "id": "1080p_20230629",
+     "file": "Остров сокровищ [Оригинал]_1080p.mp4",
+     "duration": 6677,
+     "title": "Treasure Island 1988 English Subtitles HD",
+     "year": "1988",
+     "moov": 14546141,
+     "description": "They say if you want something, you gotta do it yourself, and in this case, what I wanted was a higher-quality upload of Treasure Island 1988 that has full English subtitles. Since I don't speak Russian, full credit must be given to the two English translations on Youtube which I based this on, one "
+    },
+    {
+     "id": "Ush-Kogda-Medvezhonok-Prosnetsya-soviet",
+     "file": "ush kogda medvezhonok prosnetsya.mp4",
+     "duration": 938,
+     "title": "Ush Kogda Medvezhonok Prosnetsya (Уш Когда Медвежонок Проснецыа)",
+     "year": null,
+     "moov": 815985,
+     "description": null
+    },
+    {
+     "id": "Chipollino",
+     "file": "chipollino.mp4",
+     "duration": 2262,
+     "title": "Chipollino",
+     "year": "1961",
+     "moov": 1447663,
+     "description": "Characters of fairy tale are vegetables or fruit: shoemaker Vinogradinka (Grape), the godfather the Pumpkin, the girl the Radish, boy Vishenka (Cherry) etc. The main character a boy-onion Chipollino who struggles against oppressions of poor men from outside rich men - the signor of the Tomato, the p"
+    },
+    {
+     "id": "there-will-come-soft-rains-1984",
+     "file": "There Will Come Soft Rains (1984).mp4",
+     "duration": 619,
+     "title": "There Will Come Soft Rains ( 1984) English subtitles",
+     "year": "1984",
+     "moov": 255472,
+     "description": "In this animated short based on a short story from Ray Bradbury, the viewer observes a computer-controlled house in the near future and learns of the fates of its occupants. With English subtitles"
+    },
+    {
+     "id": "1982-1_202606",
+     "file": "1967-1971 Маугли [viju TV1000 HD].mp4",
+     "duration": 5736,
+     "title": "Союзмультфильм. Золотая коллекция HD",
+     "year": null,
+     "moov": 2878664,
+     "description": "1948 Цветик-семицветик / The Flower with Seven Colors 1956 Гадкий утенок / The Ugly Duckling 1956 Двенадцать месяцев / The Twelve Months 1957 Снежная королева / The Snow Queen 1958 Кошкин дом / The Cat's House 1958 Петя и Красная Шапочка / Petia and Little Red Riding Hood 1959 Приключения Буратино /"
+    },
+    {
+     "id": "Neposlushnaya-Mama-soviet",
+     "file": "neposlushnaya mama.mp4",
+     "duration": 544,
+     "title": "Neposlushnaya Mama (Непослушнаыа Мама)",
+     "year": null,
+     "moov": 480044,
+     "description": null
+    },
+    {
+     "id": "disobedience_festival",
+     "file": "Disobedience.Festival.1977.DVDRIP.x264.AC3.KJNU.mp4",
+     "duration": 2956,
+     "title": "Disobedience Festival (1977)",
+     "year": "1977",
+     "moov": 2036369,
+     "description": "Disobedience Festival (original Russian title Праздник непослушания, which transliterates to Prazdnik neposlushaniya ) is a 1977 Soviet stop-motion animated children's comedy film directed by Yulian Kalisher. Based on a play by Sergey Mikhalkov, the film revolves around parents abandoning their diso"
+    },
+    {
+     "id": "TheWolfAndThe7LittleGoats1957VolkI7KozljatEnglis",
+     "file": "The wolf and the 7 little goats 1957 Volk i 7 kozljat Englis.mp4",
+     "duration": 608,
+     "title": "The Wolf and the Seven Little Kids (Волк и Семь маленьких коз)  Soviet cartoon 1957 with English subtitles",
+     "year": null,
+     "moov": 187672,
+     "description": "The Wolf and the Seven Little Kids\" - a Soviet cartoon, created in 1957, directed by animator Peter N. Nosov at the studio \"Soyuzmultfilm\""
+    },
+    {
+     "id": "1973_20230618",
+     "file": "Лиса и заяц (1973).mp4",
+     "duration": 735,
+     "title": "Лиса и Заяц (1973)",
+     "year": null,
+     "moov": 500228,
+     "description": "Мультипликационный фильм по русской народной сказке в пересказе Владимира Даля."
+    },
+    {
+     "id": "two-greek-dubbed-russian-cartoons-give-me-back-rex-masha-and-the-bear",
+     "file": "Two Greek Dubbed Russian Cartoons (Give Me Back, Rex & Masha and the Bear).mp4",
+     "duration": 1480,
+     "title": "Two Greek Dubbed Russian Cartoons (Give Me Back, Rex & The Girl and The Bear)",
+     "year": null,
+     "moov": 904601,
+     "description": "These cartoons were originally produced by Soyuzmultfilm with Russian language and they were dubbed in Greek on VHS published by Star Video in Greece back in 1997. Give Me Back, Rex tells the story of a dog named Rex who died from pneumonia after rescuing a boy from the cracked ice. The doctor finds"
+    },
+    {
+     "id": "Tri-Tipa-i-Skripach-soviet",
+     "file": "tri tipa i skripach.mp4",
+     "duration": 451,
+     "title": "Tri Tipa i Skripach (Три Типа и Скрипач)",
+     "year": null,
+     "moov": 344107,
+     "description": null
+    },
+    {
+     "id": "volshebnik-01-Elli-v-volshebnoj-Strane-soviet",
+     "file": "volshebnik 01 elli v volshebnoj strane.mp4",
+     "duration": 1413,
+     "title": "volshebnik 01 Elli v volshebnoj Strane (волшебник 01 Елли в волшебной Стране)",
+     "year": null,
+     "moov": 1228615,
+     "description": null
+    },
+    {
+     "id": "Tri-Porosenka-soviet",
+     "file": "tri porosenka.mp4",
+     "duration": 509,
+     "title": "Tri Porosenka (Три Поросенка)",
+     "year": null,
+     "moov": 441321,
+     "description": null
+    },
+    {
+     "id": "Konek-Gorbunok-soviet",
+     "file": "konek-gorbunok.mp4",
+     "duration": 3379,
+     "title": "Konek-Gorbunok (Конек-Горбунок)",
+     "year": null,
+     "moov": 2569469,
+     "description": null
+    },
+    {
+     "id": "miscellaneous-soyuzmultfilm-shorts-english-dub",
+     "file": "About the Hippopotamus Who Was Afraid of Vaccinations (1966, English dub).mp4",
+     "duration": 1090,
+     "title": "Miscellaneous Soyuzmultfilm shorts (English dub)",
+     "year": null,
+     "moov": 1166307,
+     "description": "These animated shorts were produced by Soyuzmultfilm and dubbed into English by Filmexport ( Sovexportfilm )."
+    },
+    {
+     "id": "Argonavty-soviet",
+     "file": "argonavty.mp4",
+     "duration": 1156,
+     "title": "Argonavty (Аргонавты)",
+     "year": null,
+     "moov": 1016370,
+     "description": null
+    },
+    {
+     "id": "the-nutcracker-1973-soyuzmultfilm",
+     "file": "The Nutcracker (1973, Soyuzmultfilm).mp4",
+     "duration": 1525,
+     "title": "The Nutcracker (1973, Soyuzmultfilm)",
+     "year": "1973",
+     "moov": 1158599,
+     "description": "The Nutcracker is a 1973 Soviet/Russian animated film from the Soyuzmultfilm studio directed by Boris Stepantsev and based partly on Pyotr Tchaikovsky's 1892 ballet The Nutcracker, but more closely on E.T.A. Hoffmann's 1816 short story \"The Nutcracker and the Mouse King\" which inspired the ballet."
+    },
+    {
+     "id": "the-return-to-treasure-island-1992-english-and-greek-dubs",
+     "file": "The Return to Treasure Island (1992).mp4",
+     "duration": 4430,
+     "title": "The Return to Treasure Island (1992, English and Greek dubs)",
+     "year": "1992",
+     "moov": 3340411,
+     "description": "Treasure Island ( Russian : Остров Сокровищ , romanized : Ostrov Sokrovishch ) is a Soviet -Ukrainian, two-part, live-action/animated adventure comedy television film adaptation of Robert Louis Stevenson 's adventure novel Treasure Island (1883). It was created by order of the USSR's state televisio"
+    },
+    {
+     "id": "SovietAnimationTheTreeAndTheCatEngSubtitles1",
+     "file": "Soviet animation The Tree and the Cat + Eng subtitles-1.mp4",
+     "duration": 570,
+     "title": "Soviet Animation The Tree And The Cat with Eng Subtitles ",
+     "year": null,
+     "moov": 175765,
+     "description": "This is story about the tree. Or rather, about the tree and the cat. Because if not for the cat the tree will not know the joy of having friends..."
+    },
+    {
+     "id": "stephen-kings-battleground-srazhenie-soviet-ukrainian-animation",
+     "file": "Stephen King's Battleground (Сражение) Srazhenie - Soviet Ukrainian Animation.mp4",
+     "duration": 589,
+     "title": "Stephen King's Battleground (Сражение) Srazhenie Soviet Ukrainian Animation",
+     "year": "1986",
+     "moov": 181941,
+     "description": "This is an animated short from USSR Ukraine studio Kievnauchfilm. Titled Srazhenie (The Battle) it is based on Stephen King's short story Battleground. Animation dates to 1986. Short story is from 1978."
+    },
+    {
+     "id": "Alisa-v-Zazerkalie-1-soviet",
+     "file": "alisa v zazerkalie 1.mp4",
+     "duration": 576,
+     "title": "Alisa v Zazerkalie 1 (Алиса в Зазеркалие 1)",
+     "year": null,
+     "moov": 438294,
+     "description": null
+    },
+    {
+     "id": "s-1-e-5-1080p",
+     "file": "Приключения капитана Врунгеля_[Оригинал]_S1_E5_1080p.mp4",
+     "duration": 577,
+     "title": "Adventures of Captain Vrungel Episode 5 English Subtitles",
+     "year": null,
+     "moov": 408064,
+     "description": "HD upload of Episode 5 of \"Adventures of Captain Vrungel\"."
+    },
+    {
+     "id": "Sledstvie-Vedut-Kolobki-soviet",
+     "file": "sledstvie vedut kolobki.mp4",
+     "duration": 1747,
+     "title": "Sledstvie Vedut Kolobki (Следствие Ведут Колобки)",
+     "year": null,
+     "moov": 1523396,
+     "description": null
+    },
+    {
+     "id": "Gusi-Lebedi-soviet",
+     "file": "gusi-lebedi.mp4",
+     "duration": 1113,
+     "title": "Gusi-Lebedi (Гуси-Лебеди)",
+     "year": null,
+     "moov": 839681,
+     "description": null
+    },
+    {
+     "id": "give-me-back-rex-and-other-russian-cartoons",
+     "file": "1. Give Me Back, Rex.ia.mp4",
+     "duration": 935,
+     "title": "Give Me Back, Rex & Other Russian Cartoons (Soyuzmultfilm)",
+     "year": null,
+     "moov": 763008,
+     "description": "4 cartoons including: Give Me Back, Rex The Girl and the Bear The Duckling Who Couldn't Play Football Who Will Get the Prize? - featuring Misha the Bear of the 1980 Moscow Olympics All produced by Soyuzmultfilm in Moscow, Russia"
+    },
+    {
+     "id": "Prikluchenija-Buratino-soviet",
+     "file": "prikluchenija buratino.mp4",
+     "duration": 3861,
+     "title": "Prikluchenija Buratino (Приклучения Буратино)",
+     "year": null,
+     "moov": 2914745,
+     "description": null
+    },
+    {
+     "id": "Razluchennye-soviet",
+     "file": "razluchennye.mp4",
+     "duration": 1663,
+     "title": "Razluchennye (Разлученные)",
+     "year": null,
+     "moov": 1243869,
+     "description": null
+    },
+    {
+     "id": "Karlson-Vernulsya-soviet",
+     "file": "karlson vernulsya.mp4",
+     "duration": 1150,
+     "title": "Karlson Vernulsya (Карлсон Вернулсыа)",
+     "year": null,
+     "moov": 867169,
+     "description": null
+    },
+    {
+     "id": "ANALIVETOYCartoonUSSR1982withENGLISHSubtitles",
+     "file": "'AN ALIVE TOY', cartoon, USSR, 1982 (with ENGLISH subtitles).mp4",
+     "duration": 567,
+     "title": "' AN ALIVE TOY', Cartoon, USSR, 1982 (with ENGLISH Subtitles)",
+     "year": null,
+     "moov": 175203,
+     "description": "A Soviet children cartoon about a little girl and how she found a live toy in the form of a hare Directed by Leonid Kayukov Written by Michael Lipskerov, Vladimir Pekar"
+    }
+   ]
+  },
+  {
+   "id": "kinozal",
+   "dial": 2,
+   "name": "КИНОЗАЛ",
+   "family": "film",
+   "color": "#8D6E63",
+   "description": "Soviet cinema: Mosfilm, Lenfilm and the studios of the republics. Comedies, war films, the ones everyone quotes.",
+   "items": [
+    {
+     "id": "1957-704x-396-2002-k",
+     "file": "Дон Кихот (1957)  704x396 2002K.ia.mp4",
+     "duration": 6093,
+     "title": "Дон Кихот  (1957)",
+     "year": "1957",
+     "moov": 3761230,
+     "description": "Год: 1957 Страна: СССР Производство: Ленфильм Жанр: приключения, экранизация, комедия, мелодрама Режиссер: Григорий Козинцев Актеры: Николай Черкасов, Юрий Толубеев, Людмила Касьянова, Серафима Бирман, Светлана Григорьева, Василий Максимов, Виктор Колпаков, Тамилла Агамирова, Георгий Вицин, Бруно Фр"
+    },
+    {
+     "id": "15AWESOMETrailerForUNBELIEVABLEADVENTURESOfITALIANSInRUSSIA",
+     "file": "15 - AWESOME Trailer for UNBELIEVABLE ADVENTURES of ITALIANS in RUSSIA.mp4",
+     "duration": 223,
+     "title": "AWESOME Trailer For UNBELIEVABLE ADVENTURES Of ITALIANS In RUSSIA",
+     "year": null,
+     "moov": 233840,
+     "description": "EDITING by AL-DU A lot MORE & NEW Videos on My Second Channel: www.dailymotion.com/aldu-show If You Like my Videos - please, support me directly on PATREON: www.patreon.com/The_ALDU_Show THANK YOU! YOUTUBE Channel: https://www.youtube.com/channel/UCGdVVLFAMVt-UY5a0xobsJw INSTAGRAM: https://www.insta"
+    },
+    {
+     "id": "1955-720x-540-2002-k_20221007",
+     "file": "Неоконченная повесть (1955) 720x540 2002K.ia.mp4",
+     "duration": 5605,
+     "title": "Неоконченная повесть  (1955)",
+     "year": "1955",
+     "moov": 3460262,
+     "description": "Год: 1955 Страна: СССР Производство: Ленфильм Жанр: мелодрама Режиссер: Фридрих Эрмлер Актеры: Элина Быстрицкая, Сергей Бондарчук, Софья Гиацинтова, Евгений Самойлов, Евгений Лебедев, Александр Лариков, Герман Хованов, Юрий Толубеев, Эраст Гарин Талантливого кораблестроителя Ершова настигла беда - п"
+    },
+    {
+     "id": "tchaikovsky-1970",
+     "file": "Tchaikovsky_2.mp4",
+     "duration": 4509,
+     "title": "Tchaikovsky (1970)",
+     "year": "1970",
+     "moov": 3374770,
+     "description": "Tchaikovsky ( Чайковский) is a Soviet biographical film about Pyotr Ilyich Tchaikovsky, the famous Russian composer. Pyotr Ilyich Tchaikovsky - Innokenty Smoktunovsky Nadezhda von Meck - Antonina Shuranova Władysław Pachulski - Kirill Lavrov Nikolai Rubinstein - Vladislav Strzhelchik Aliosha - Yevge"
+    },
+    {
+     "id": "M450x334",
+     "file": "Девушка_моей_мечты_m450x334.mp4",
+     "duration": 5626,
+     "title": "Девушка Моей Мечты M 450x 334",
+     "year": null,
+     "moov": 3597897,
+     "description": "Наиболее известная роль Марии Рекк, популярной звезды нацистского кино благодаря своей «нордической» внешности. Темпераментной звезде Юлии Кёстнер надоели поклонники и слава, решает бежать из театра тайком в отпуск. Оказавшись по нелепой случайности без денег билета и практически без одежды она стуч"
+    },
+    {
+     "id": "formula-of-love-1984",
+     "file": "Formula of Love (1984).ia.mp4",
+     "duration": 5411,
+     "title": "Formula Of Love (1984)",
+     "year": "1984",
+     "moov": 3648423,
+     "description": "Формула любви A young aristocrat, Aleksei Fedyashev, is languishing in his family’s country estate, spending his days reading poetry and confessing his love… to a statue. Upon hearing that famous Count Cagliostro is touring Russia and has created quite a buzz in high society with his “magic”, he dec"
+    },
+    {
+     "id": "12_20250425",
+     "file": "Семнадцать мгновений весны-09.mp4",
+     "duration": 4728,
+     "title": "Семнадцать мгновений весны / Seventeen Moments of Spring",
+     "year": "1973",
+     "moov": 3597292,
+     "description": "Год выпуска: 1973 Жанр: Война Продолжительность: 817 мин. (12 серий) Режиссер: Татьяна Лиознова В ролях: Вячеслав Тихонов,Евгений Кузнецов,Михаил Жарковский,Фриц Дитц, Вильгельм Бурмайер, Николай Прокопович, Юрий Визбор, Олег Табаков, Константин Желдин, Эмилия Мильтон, Ростислав Плятт, Леонид Бронев"
+    },
+    {
+     "id": "1967_20211029",
+     "file": "Вий (1967) Константин Ершов.ia.mp4",
+     "duration": 4402,
+     "title": "Viy (Вий), 1967 (rus. with eng. subtitles)",
+     "year": null,
+     "moov": 3465050,
+     "description": "Based on the story by Gogol."
+    },
+    {
+     "id": "the-cranes-are-flying-1957",
+     "file": "The Cranes Are Flying (1957).mp4",
+     "duration": 5810,
+     "title": "The Cranes Are Flying (1957)",
+     "year": "1957",
+     "moov": 4190678,
+     "description": "This landmark film by the virtuosic Mikhail Kalatozov was heralded as a revelation in the post-Stalin Soviet Union and the international cinema community alike. It tells the story of Veronica (Tatiana Samoilova) and Boris (Alexei Batalov), a couple who are blissfully in love until World War II tears"
+    },
+    {
+     "id": "menq-enq-mer-sarer.-.-1969-.",
+     "file": "Мы и наши горы _ Մենք ենք, մեր սարերը _ Menq enq, mer sarer. Арменфильм. 1969 г. (армянский язык).mp4",
+     "duration": 5394,
+     "title": "Мы И Наши Горы Մենք Ենք, Մեր Սարերը Menq Enq, Mer Sarer. Арменфильм. 1969 Г. (армянский Язык)",
+     "year": null,
+     "moov": 4043806,
+     "description": "English Subtitles for Menq enq mer sarere."
+    },
+    {
+     "id": "jolly-fellows-1934",
+     "file": "Jolly Fellows (1934).mp4",
+     "duration": 5410,
+     "title": "Jolly Fellows - Весёлые ребята (1934)",
+     "year": "1934",
+     "moov": 2493187,
+     "description": "1934 Soviet film directed by Grigori Aleksandrov starring jazz singer Leonid Utyosov and singer Lyubov Orlova, the first recognized star of Soviet cinema and the director's wife. Both actors rose to fame after the success of the film in the Soviet Union, and Aleksandrov was awarded a Soviet Order fo"
+    },
+    {
+     "id": "yt-1s.com-the-adventures-of-lolo-the-penguin-hardsub-version",
+     "file": "yt1s.com - The Adventures of Lolo the Penguin HARDSUB VERSION.ia.mp4",
+     "duration": 4685,
+     "title": "The Adventures Of Lolo The Penguin(1986) ENGLISH HARDSUB VERSION",
+     "year": "1986",
+     "moov": 3910855,
+     "description": "DISCRETION: THIS IS THE ORIGINAL RUSSIAN LANGUAGE VERSION! THIS VERSION IS COMPLETELY UNEDITED! WARNING: THIS FILM CONTAINS SCENES OF VIOLENCE! THERE IS BLOOD IN THIS FILM! THIS VIDEO DEALS WITH POACHING IN THE FINAL PART! THIS FILM IS NOT FOR THE FAINT OF HEART! Original Russian Title: Priklyucheni"
+    },
+    {
+     "id": "the-asthentic-syndrome",
+     "file": "1989 - Kira Muratova - The Asthenic Syndrome (1080p).mp4",
+     "duration": 9216,
+     "title": "The Asthenic Syndrome - Астенический синдром (1989, dir. Kira Muratova, 1080p, ENG Sub)",
+     "year": "1989",
+     "moov": 8634375,
+     "description": "The Asthenic Syndrome - \"Астенический синдром\" - directed by Kira Muratova (1989), 1080p. English hard-sub. In the old days it was called hypochrondria, or black melancholia. Now, apparently, it’s termed the Asthenic Syndrome. Whatever it is, Nikolai, a teacher of epicly indifferent pupils, has got "
+    },
+    {
+     "id": "1958-720x-540-2002-k_20221007",
+     "file": "Дорогой мой человек (1958) 720x540 2002K.ia.mp4",
+     "duration": 6110,
+     "title": "Дорогой мой человек  (1958)",
+     "year": "1958",
+     "moov": 3772186,
+     "description": "Год: 1958 Страна: СССР Производство: Ленфильм Жанр: драма, военный фильм Режиссер: Иосиф Хейфиц Актеры: Алексей Баталов, Инна Макарова, Пётр Константинов, Юрий Медведев, Петр Кирюткин, Берта Виноградова, Лидия Штыкан, Цецилия Мансурова, Валентина Журавская, Леонид Быков, Борис Чирков, Иван Переверзе"
+    },
+    {
+     "id": "blockland-kino-spokoynaya-noch-calm-night",
+     "file": "blockland-kino-spokoynaya-noch-calm-night.mp4",
+     "duration": 381,
+     "title": "Кино - Спокойная Ночь + Blockland",
+     "year": "1988",
+     "moov": 420895,
+     "description": "The song Кино - Спокойная Ночь (Kino - Spokoynaya Noch'; Kino - Calm Night) with a rain storm from Conan's Farming 2 on the game Blockland I happened to play this song during a rain storm as I was playing on the server and saw a good fit with the song and the imagery, so I made a full video of it. T"
+    },
+    {
+     "id": "kino-viktor-coj-gruppa-krovi-na-rukave",
+     "file": "Kino Viktor Coj Gruppa krovi na rukave.ia.mp4",
+     "duration": 2867,
+     "title": "Кино (Виктор Цой) «Группа крови»",
+     "year": "1989",
+     "moov": 2186661,
+     "description": "Кино (Виктор Цой) «Группа крови» 01 Закрой за мной дверь 02 Группа крови 03 Война 04 Спокойная ночь 05 Мама,мы все сошли с ума 06 Бошетунмай 07 В наших глазах 08 Попробуй спеть вместе со мной 09 Прохожий 10 Дальше действовать будем мы 11 Легенда"
+    },
+    {
+     "id": "battleship-potemkin-1925_202510",
+     "file": "Battleship Potemkin 1925.ia.mp4",
+     "duration": 4297,
+     "title": "Battleship Potemkin (1925)",
+     "year": "1925",
+     "moov": 3159229,
+     "description": "Battleship Potemkin, sometimes rendered as Battleship Potyomkin, is a 1925 Soviet silent epic film produced by Mosfilm. Directed and co-written by Sergei Eisenstein, it presents a dramatization of the mutiny that occurred in 1905 when the crew of the Russian battleship Potemkin rebelled against thei"
+    },
+    {
+     "id": "1955_20221005",
+     "file": "Отелло (1955).ia.mp4",
+     "duration": 6185,
+     "title": "Отелло  (1955)",
+     "year": "1955",
+     "moov": 6380139,
+     "description": "Год: 1955 Страна: СССР Производство : Мосфильм Жанр: драма, экранизация Режиссер : Сергей Юткевич Актеры: Сергей Бондарчук, Андрей Попов, Ирина Скобцева, Владимир Сошальский, Евгений Весник, Антонина Максимова, Евгений Тетерин, Михаил Трояновский, Алексей Кельберер, Николай Бриллинг Экранизация траг"
+    },
+    {
+     "id": "LastInch",
+     "file": "posl_duim.mp4",
+     "duration": 5085,
+     "title": "Last inch",
+     "year": null,
+     "moov": 2773544,
+     "description": "Post-war years, coast of the North Africa. To jobless pilot Ben Esli offer for the big money dangerous work â underwater shootings of sharks. Ben and his son Devi who has asked the father to take of it with self, fly on distant deserted seacoast. During shootings Ben receives a serious trauma, and t"
+    },
+    {
+     "id": "1958-720x-540-2002-k_20221005",
+     "file": "Идиот (1958)  720x540 2002K.ia.mp4",
+     "duration": 6958,
+     "title": "Идиот  (1958)",
+     "year": "1958",
+     "moov": 4295382,
+     "description": "Год: 1958 Страна: СССР Производство: Мосфильм Жанр: драма, экранизация Режиссер: Иван Пырьев Актеры: Юрий Яковлев, Юлия Борисова, Никита Подгорный, Леонид Пархоменко, Раиса Максимова, Вера Пашенная, Николай Пажитнов, Клавдия Половикова, Иван Любезнов, Людмила Иванова , Владимир Муравьёв, Сергей Март"
+    },
+    {
+     "id": "1956-1280x-720-2717-k",
+     "file": "Карнавальная ночь (1956) 1280x720 2717K.ia.mp4",
+     "duration": 4350,
+     "title": "Карнавальная ночь  (1956)",
+     "year": "1956",
+     "moov": 2687045,
+     "description": "Год: 1956 Страна: СССР Производство: Мосфильм Жанр: комедия, мелодрама, музыкальный фильм Режиссер: Эльдар Рязанов Актеры: Игорь Ильинский, Людмила Гурченко, Юрий Белов, Тамара Носова, Георгий Куликов, Сергей Филиппов, Ольга Власова, Андрей Тутышкин, Геннадий Юдин, Владимир Зельдин, Борис Петкер Едв"
+    },
+    {
+     "id": "480-p_20250531",
+     "file": "Kaveh1961_www.zphonar.com.ia.mp4",
+     "duration": 5506,
+     "title": "Znamja kuzneca 1961 \"Kaveh\" Tajik Persian epic Shahname film - Soviet Movies",
+     "year": "1961",
+     "moov": 4016766,
+     "description": "Kaveh 1961 Tajik Persian epic Shahname film - Soviet Movies Uploaded by Zarin Pakhshe Honar \"Golden Art Distribution\" company. Originally it was made in Russian language back then by the force of soviet dictatorship but in 2008 the national TV of Tajikistan dubbed it into Persian language which is t"
+    },
+    {
+     "id": "a-forgotten-melody-for-a-flute",
+     "file": "A Forgotten Melody for a Flute.mp4",
+     "duration": 8191,
+     "title": "A Forgotten Melody for a Flute (1987, Directed by Eldar Ryazanov) – Soviet Romantic Comedy-Drama",
+     "year": "1987",
+     "moov": 5006686,
+     "description": "A Forgotten Melody for a Flute (1987) is a Soviet romantic comedy-drama directed by Eldar Ryazanov , adapted from his own play co-written with Emil Braginsky. The story follows a high-ranking bureaucrat, Leonid Filimonov, whose life and moral compass are shaken after a heart ailment brings him close"
+    },
+    {
+     "id": "720_20220802",
+     "file": "Брат_720.mp4",
+     "duration": 5723,
+     "title": "Брат 720",
+     "year": "1997",
+     "moov": 4269023,
+     "description": "«Брат» — российский художественный фильм в жанре криминальной драмы . Четвёртый фильм режиссёра Алексея Балабанова . Первая часть дилогии (продолжение — « Брат 2 ») о герое 1990-х годов Даниле Багрове , роль которого сыграл Сергей Бодров-мл. Фильм включён в список «100 главных русских фильмов по вер"
+    },
+    {
+     "id": "2-720_202208",
+     "file": "Брат 2_720.mp4",
+     "duration": 7360,
+     "title": "Брат 2 720",
+     "year": "2000",
+     "moov": 5442068,
+     "description": "«Брат 2» — российский криминальный фильм 2000 года режиссёра Алексея Балабанова с Сергеем Бодровым-мл. в главной роли. Продолжение фильма « Брат ». С 5 марта 2022 года было объявлено, что фильм «Брат-2» выпустят в повторный прокат в России [3] . Повторная премьера проката фильма состоялась 24 марта "
+    },
+    {
+     "id": "54274-russian-subway-footage",
+     "file": "54274 Russian Subway Footage.mp4",
+     "duration": 222,
+     "title": "MOSCOW METROPOLITAN SUBWAY  1970s SOVIET EDUCATIONAL FILM   METRO 54274",
+     "year": null,
+     "moov": 129974,
+     "description": "Moscow Metropolitan, a cinematographic excerpt for the secondary-school pupils post-1976. This is an instructional and promotional movie about the convenience of the Moscow Metropolitan / Metro transit system (subway). Shown are several subway stations, two of the 6 types of commonly-circulating sub"
+    },
+    {
+     "id": "the-last-bolshevik-1993-dir.-chris-marker",
+     "file": "The Last Bolshevik (1993) dir. Chris Marker.mp4",
+     "duration": 7238,
+     "title": "The Last Bolshevik ( 1993) Dir. Chris Marker",
+     "year": null,
+     "moov": 3009049,
+     "description": "\"The Last Bolshevik (Original Title: Le Tombeau d'Alexandre ) is a 1992 French documentary film about director Aleksandr Medvedkin , directed by Chris Marker"
+    },
+    {
+     "id": "EveningsOnTheFarmNearDikankaThe",
+     "file": "vechera_na_hutore_bliz_dikanki.mp4",
+     "duration": 3961,
+     "title": "Evenings on the farm near Dikanka, the.",
+     "year": "1961",
+     "moov": 3356988,
+     "description": "It is an immortal masterpiece of great Russian writer Nikolay Vasilevich Gogol (1809â1852). Action is developed on the eve of Christmas in Malorussia (so in olden time in Russia named Ukraine), in village Dikanka. There live smith Vakula, mother of its Solokha - a witch who likes to fly on a broom, "
+    },
+    {
+     "id": "the-magic-voyage-of-sinbad_202606",
+     "file": "The Magic Voyage Of Sinbad.ia.mp4",
+     "duration": 4697,
+     "title": "The Magic Voyage of Sinbad (1962)",
+     "year": "1962",
+     "moov": 5158783,
+     "description": "Dir: Aleksandr Ptushko Release: 1962 Genre: Fantasy American-dubbed, re-edited version of the 1953 Soviet fantasy film Sadko. Produced by Roger Corman's Filmgroup in 1962, it's shorter by 8 minutes, all music is removed, the names of characters are changed. If you enjoyed this film, please consider "
+    },
+    {
+     "id": "vid-20250930-135844-047",
+     "file": "VID_20250930_135844_047.ia.mp4",
+     "duration": 157,
+     "title": "Наталия Верич - Мой Блуждающий Огонь [клип 1995, полная версия]",
+     "year": "1995",
+     "moov": 195128,
+     "description": "клип был оцифрован и обнаружен на одной кассете купленной в санкт петербурге, запись датируется 1997 годом [отсутствует концовка]"
+    },
+    {
+     "id": "velikiy-perelom-fridrikh-ermler-1945",
+     "file": "Velikiy perelom (Fridrikh Ermler, 1945).mp4",
+     "duration": 6012,
+     "title": "The Turning Point",
+     "year": "1945",
+     "moov": 4569165,
+     "description": "The film tells the story of those who took part in the Battle of Stalingrad in 1942, which became a turning point in the Great Patriotic War. For five months, the city resisted the Nazi offensive. Surrendering Stalingrad to the enemy would have meant losing the war, but holding on to the city seemed"
+    },
+    {
+     "id": "agony-elem-klimov-1981",
+     "file": "Агония - Элем Климов [Agony - Elem Klimov] - 1981 DVDRIP.mp4",
+     "duration": 8523,
+     "title": "Agony: The Life and Death of Rasputin (Агония) - 1981 [DVDRIP]",
+     "year": "1981",
+     "moov": 9284086,
+     "description": "Monk. Heretic. Messiah. Madman. Russian monk Grigori Rasputin rises to power, which corrupts him along the way. His sexual perversions and madness ultimately leads to his gruesome assassination. __________________________________________________________________________________ The DVD was split into"
+    },
+    {
+     "id": "1955_20221007",
+     "file": "Два капитана (1955).ia.mp4",
+     "duration": 5502,
+     "title": "Два капитана  (1955)",
+     "year": "1955",
+     "moov": 4172330,
+     "description": "Год: 1955 Страна: СССР Производство : Ленфильм Жанр: экранизация, приключения Режиссер: Владимир Венгеров Актеры: Александр Михайлов, Ольга Заботкина, Анатолий Адоскин, Евгений Лебедев, Борис Беляев, Людмила Безуглая, Борис Аракелов, Эдуард Кузнецов, Инна Кондратьева, Леонид Галлис, Бруно Фрейндлих,"
+    },
+    {
+     "id": "1991_20210830",
+     "file": "Заряженные смертью 1991 СССР Шпионский Приключения.mp4",
+     "duration": 5771,
+     "title": "Заряженные Смертью 1991 СССР Шпионский Приключения (Charged with death 1991 movie)",
+     "year": "1991",
+     "moov": 2582723,
+     "description": "https://youtu.be/nv9MC0O76GM watch on YouTube for captions, this is a 1991 movie out of the soviet union, its the one with the USCG Mi-24 HIND in it, a good watch"
+    },
+    {
+     "id": "kultura-40",
+     "file": "ДВЕНАДЦАТАЯ НОЧЬ (Kultura 40).mp4",
+     "duration": 5113,
+     "title": "Twelfth Night (Двенадцатая ночь) 1955",
+     "year": "1955",
+     "moov": 3892988,
+     "description": "A 1955 Soviet Film Production of the Shakespeare play, Twelfth Night, from 1955 by Yan Frid and A. Abramov"
+    },
+    {
+     "id": "three-poplars-at-plyushchikha",
+     "file": "Three Poplars at Plyushchikha.ia.mp4",
+     "duration": 4466,
+     "title": "Three Poplars at Plyushchikha (Три Тополя На Плющихе) with English Subtitles",
+     "year": "1968",
+     "moov": 3488712,
+     "description": "Three Poplars at Plyuschika (Три Тополя На Плющихе) by Tatiana Lioznova with English Subtitles."
+    },
+    {
+     "id": "lenfilm-sherlockholmes",
+     "file": "The Adventures of Sherlock Holmes and Dr. Watson (1986) ＂The Twentieth Century Approaches Part 1.mp4",
+     "duration": 4638,
+     "title": "Lenfilm - The Adventures of Sherlock Holmes and Dr. Watson (Soviet Version) (1980)",
+     "year": null,
+     "moov": 3531460,
+     "description": "Soviet production of Sherlock Holmes"
+    },
+    {
+     "id": "Obiknoveny_faschizm",
+     "file": "Obyknovennyj_fashizm_Part1of2.mp4",
+     "duration": 4081,
+     "title": "Obiknoveny_faschizm",
+     "year": null,
+     "moov": 3019341,
+     "description": "Obiknoveny faschizm"
+    },
+    {
+     "id": "oblomov_202510",
+     "file": "Oblomov.ia.mp4",
+     "duration": 8206,
+     "title": "Oblomov (1980, Directed by Nikita Mikhalkov) – A Few Days from the Life of I. I. Oblomov",
+     "year": "1980",
+     "moov": 7604456,
+     "description": "Oblomov (Russian title: Несколько дней из жизни И. И. Обломова , “A Few Days from the Life of I. I. Oblomov”) is a Soviet-era drama directed by Nikita Mikhalkov , adapted from Ivan Goncharov’s novel. The film centres on Ilya Ilyich Oblomov, a nobleman whose inertia and reflective disposition pit him"
+    },
+    {
+     "id": "ordinary-miracle",
+     "file": "Ordinary Miracle.ia.mp4",
+     "duration": 8259,
+     "title": "Ordinary Miracle (1978)",
+     "year": "1978",
+     "moov": 8897054,
+     "description": "A wizard invents characters who all come to life and start to arrive at his house: a King, his servants, a princes, a bear trapped in a man’s body - the usual lot. The Plot mainly rotates around the bear, who the wizard had turned into a man. The Bear, who wishes to be a bear once again, can turn in"
+    },
+    {
+     "id": "ReciprocalCourse",
+     "file": "otvetn_hod.mp4",
+     "duration": 4772,
+     "title": "Reciprocal course",
+     "year": null,
+     "moov": 3054252,
+     "description": "Reciprocal course"
+    },
+    {
+     "id": "1957_20221010",
+     "file": "Телеграмма (1957).ia.mp4",
+     "duration": 1871,
+     "title": "Телеграмма  (1957)",
+     "year": "1957",
+     "moov": 1425653,
+     "description": "Год: 1957 Страна: СССР Производство: Мосфильм Жанр: короткометражка, драма Режиссер: Юрий Щербаков Актеры: Вера Попова, Лидия Смирнова, Николай Сергеев, Геннадий Юхтин, Нина Гуляева, Алла Будницкая, Светлана Коновалова, Анатолий Чемодуров Телефильм по мотивам одноименного рассказа К. Паустовского. В"
+    },
+    {
+     "id": "CommissionedOfficersofitsery",
+     "file": "Officery_512kb.mp4",
+     "duration": 5436,
+     "title": "Commissioned officers (Ofitsery)",
+     "year": "1971",
+     "moov": 3130462,
+     "description": "There is such trade - to protect the Native land! Cast: George Yumatov, Vasily Lanovoy, Alina Pokrovskaya, Alexander Voevodin, Andrey Gromov, Natalia Rychagova, Musa Krepkogorskaya, Evgenie Vesnik, Vladimir Druzhnikov, Valery Ryzhakov."
+    },
+    {
+     "id": "the.-contract.-1985.-vhsrip.x-264.-ac-3.-kjnu",
+     "file": "The.Contract.1985.VHSRIP.x264.AC3.KJNU.mp4",
+     "duration": 621,
+     "title": "Contract (1985)",
+     "year": "1985",
+     "moov": 428682,
+     "description": "\"Bearded contract employee goes on a \"giant bouquet of flowers\" planet and prefers friendship with the robot because all inhabitants are creepy psychos.\" Directed by Vladimir Tarasov."
+    },
+    {
+     "id": "war-and-peace-1966",
+     "file": "War and Peace, Part I - Andrei Bolkonsky.ia.mp4",
+     "duration": 8827,
+     "title": "War and Peace (1966)",
+     "year": "1966",
+     "moov": 7673999,
+     "description": "War and Peace was a 1965–1967 Soviet epic war drama film co-written and directed by Sergei Bondarchuk, adapted from Leo Tolstoy's 1869 novel. Released in four installments throughout 1965 and 1967, the film starred Bondarchuk in the leading role of Pierre Bezukhov, alongside Vyacheslav Tikhonov and "
+    },
+    {
+     "id": "LiveAndDead-2",
+     "file": "zhivye.i.mertvye.2.mp4",
+     "duration": 5692,
+     "title": "Live and dead -2",
+     "year": null,
+     "moov": 3639827,
+     "description": "The Soviet two-part feature film"
+    },
+    {
+     "id": "1953_20221028",
+     "file": "Отцы и дети (1958).ia.mp4",
+     "duration": 5779,
+     "title": "Фильмы 1950-59г. к/с Ленфильм",
+     "year": null,
+     "moov": 3347518,
+     "description": "Алеко (1953) 60 мин. фильм-опера, музыкальный фильм, экранизация Алеша Птицын вырабатывает характер (1953) 68 мин. детский Балтийская слава (1957) 88 мин. историко-революционная драма Белинский (1951) 95 мин. биография Бессмертная песня (1957) 72 мин . революционная драма Большая семья (1954) 100 ми"
+    },
+    {
+     "id": "20251128_20251128_1719",
+     "file": "фильм про войну.mp4",
+     "duration": 4442,
+     "title": "Берем все на себя 16:9",
+     "year": "1980",
+     "moov": 1324980,
+     "description": "СССР 1980 год версия 16:9 жанр: военный"
+    },
+    {
+     "id": "1986_20260413",
+     "file": "Верю в радугу (1986).mp4",
+     "duration": 3778,
+     "title": "Верю в радугу (1986)",
+     "year": "1986",
+     "moov": 2416539,
+     "description": "Это музыкальная фантазия, у которой нет классического сюжета: по сути, это сборник концертных номеров, где певица предстаёт в разных образах. DVDRip Концерт музыкальной оперы"
+    },
+    {
+     "id": "ImmortalGarrison",
+     "file": "bessm_garnizon.mp4",
+     "duration": 5404,
+     "title": "Immortal garrison",
+     "year": null,
+     "moov": 3457144,
+     "description": "The film is devoted unprecedented feat of defenders of the Brest fortress."
+    },
+    {
+     "id": "red-devils-1923",
+     "file": "Red Devils (1923).mp4",
+     "duration": 5089,
+     "title": "Red Devils (1923)",
+     "year": "1923",
+     "moov": 4603860,
+     "description": "A soviet action adventure film from 1923. Misha, Dunyasha, and Tom Jackson join the Red Army to fight the dastardly Nestor Makhno. I have found what I regard to be the best picture, soundtrack, and subtitles and combined them here."
+    },
+    {
+     "id": "SingleSwimming",
+     "file": "odinochnoe_plavanie.mp4",
+     "duration": 5426,
+     "title": "Single swimming",
+     "year": null,
+     "moov": 3470317,
+     "description": "Events occur in 1980th years during cold war. On border of Silent and Indian oceans there is desert island from which territory investigation of the Navy of the USSR registers start of cruise missile from underground mine."
+    },
+    {
+     "id": "1958-720x-540-2002-k",
+     "file": "Последний дюйм (1958)  720x540 2002K.ia.mp4",
+     "duration": 5054,
+     "title": "Последний Дюйм  (1958)",
+     "year": "1958",
+     "moov": 3121586,
+     "description": "Год: 1958 Страна: СССР Производство: Ленфильм Жанр: драма, приключения, экранизация Режиссеры: Теодор Вульфович, Никита Курихин Актеры: Николай Крюков, Слава Муратов, Михаил Глузский, Алиага Агаев, Мухлис Джани-Заде, Алексей Розанов По одноименному рассказу Джеймса Олдриджа. Американскому летчику Бе"
+    },
+    {
+     "id": "ya-tebya-pomnyu-i-remember-you-english-subs",
+     "file": "Ya Tebya Pomnyu (I Remember You) (English Subs).mp4",
+     "duration": 5224,
+     "title": "Ya Tebya Pomnyu (I Remember You) (English Subs)",
+     "year": "1985",
+     "moov": 5650162,
+     "description": "Genre:Drama Fantasy Period Drama Suspense Adventure Released:1985 Duration:1 Hour Age Rating:13 Type:Asian Drama Media:Movie Credit to Ali Khamraev (NOT MINE)"
+    },
+    {
+     "id": "1955-720x-540-2002-k_202210",
+     "file": "Попрыгунья (1955) 720x540 2002K.ia.mp4",
+     "duration": 5142,
+     "title": "Попрыгунья  (1955)",
+     "year": "1955",
+     "moov": 3174794,
+     "description": "Смотреть другие фильмы по произведениям А.П.Чехова Год: 1955 Страна: СССР Производство: Мосфильм Жанр: драма, мелодрама, экранизация Режиссер : Самсон Самсонов Актеры: Сергей Бондарчук, Людмила Целиковская, Владимир Дружников, Евгений Тетерин, А. Алексин, Александр Бобровский (III), Василий Бокарев,"
+    },
+    {
+     "id": "20250514_20250514_0558",
+     "file": "Сборник «Новогодний концерт. Популярные песни советского кино».ia.mp4",
+     "duration": 11850,
+     "title": "Сборник «Новогодний концерт. Популярные песни советского кино»",
+     "year": null,
+     "moov": 9034296,
+     "description": "Сборник «Новогодний концерт. Популярные песни советского кино» 00:00:00 (01) О.Анофриев - Есть только миг (кф Земля Санникова) 00:03:39 (02) Н.Рыбников - Увертюра 'Увольнение' (кa Девушка без адреса) 00:05:18 (03) А.Ведищева - Песенка о медведях (кф Кавказская пленница) 00:08:12 (04) Ленинградский К"
+    },
+    {
+     "id": "veter-s-porogov-1930",
+     "file": "veter s porogov (1930).mp4",
+     "duration": 3808,
+     "title": "Veter S Porogov (Wind Across The Rapids)",
+     "year": "1930",
+     "moov": 1124999,
+     "description": "Genre:Drama Fantasy Adventure Released:1930 Duration:1 Hour Age Rating:10 Type:Asian Drama Media:Movie Credit to Arnold Kordyum (NOT MINE)"
+    },
+    {
+     "id": "1957-720x-540-2002-k",
+     "file": "Коммунист (1957) 720x540 2002K.ia.mp4",
+     "duration": 6328,
+     "title": "Коммунист  (1957)",
+     "year": "1957",
+     "moov": 3907298,
+     "description": "Год: 1957 Страна: СССР Производство: Мосфильм Жанр: драма, мелодрама Режиссер: Юлий Райзман Актеры: Евгений Урбанский, Софья Павлова, Борис Смирнов, Евгений Шутов, Сергей Яковлев, Валентин Зубков, Виктор Колпаков, Владимир Адлеров, Аркадий Смирнов Один из лучших фильмов советского кинематографа. Это"
+    },
+    {
+     "id": "keshka_i_terroristy",
+     "file": "Кешка и террористы [S-VHSRip] [НТН-4 Master Tape].mp4",
+     "duration": 1002,
+     "title": "Кешка и террористы (1993)",
+     "year": "1993",
+     "moov": 747736,
+     "description": "Данный фильм ранее считался утерянным. В 2023 году на торрент-трекере « RuTracker.org » была опубликована раздача , представляющая собой оцифровку S-VHS-кассеты, приобретённой у региональной новосибирской телекомпании « НТН-4 », на которую был записан данный фильм. Выражается благодарность пользоват"
+    },
+    {
+     "id": "1959_20221005",
+     "file": "Василий Суриков (1959).ia.mp4",
+     "duration": 5295,
+     "title": "Василий Суриков  (1959)",
+     "year": "1959",
+     "moov": 3979457,
+     "description": "Год: 1959 Страна: СССР Производство: Мосфильм Жанр: биография, драма Режиссер: Анатолий Рыбаков Актеры: Евгений Лазарев, Лариса Кадочникова, Леонид Галлис, Геннадий Юдин, Георгий Вицин, Иван Кудрявцев, Анатолий Федоринов, Владимир Марута, Владимир Белокуров, Георгий Черноволенко, Николай Сергеев, Ан"
+    },
+    {
+     "id": "LiveAndDead-1",
+     "file": "zhivye.i.mertvye.1.mp4",
+     "duration": 5626,
+     "title": "Live and dead -1",
+     "year": null,
+     "moov": 3598619,
+     "description": "The Soviet two-part feature film"
+    },
+    {
+     "id": "713AsksLanding",
+     "file": "713.prosit.posadku.mp4",
+     "duration": 4413,
+     "title": "Race 713th asks landing",
+     "year": null,
+     "moov": 2824176,
+     "description": "Race 713th asks landing."
+    },
+    {
+     "id": "nostalghia-1983",
+     "file": "Nostalgia.1983.1080p.BluRay.x264.AAC-[YTS.MX].mp4",
+     "duration": 7539,
+     "title": "Nostalghia (1983)",
+     "year": "1983",
+     "moov": 5115335,
+     "description": "Russian Poet, Andrei Gorchakov, and his translator travel to Italy to research the life of an 18th-century composer."
+    },
+    {
+     "id": "bed-and-sofa-tretya-meshchanskaya-1927",
+     "file": "Третья Мещанская Bed and Sofa Tretya Meshchanskaya 1927.mp4",
+     "duration": 5223,
+     "title": "Третья Мещанская (1927)",
+     "year": "1927",
+     "moov": 2198647,
+     "description": "A Soviet silent film, in which life changes for a Moscow couple after they allow an old friend of the husband’s to move in. The film features a frank portrayal of sexual manners in the 1920s as well as the living conditions in Moscow at the time. Abram Room had intended not only to make a picture ex"
+    },
+    {
+     "id": "ldManHotabych1956",
+     "file": "staric_hotabych1956.mp4",
+     "duration": 4852,
+     "title": "Old man Hottabych",
+     "year": "1956",
+     "moov": 4351117,
+     "description": "The fantastic comedy is removed on the fairy tale of Lazar Lagin with the same name. 12-year-old Moscow schoolboy Volka, bathing in the Moskva River, finds any ancient sealed vessel. Boyish curiosity is so strong that at the first opportunity of Volka opens it, and from a vessel there is a fantastic"
+    },
+    {
+     "id": "um-acidente-de-caca-the-shooting-party-1978-russo-drama-movie",
+     "file": "Um Acidente de Caça (The Shooting Party) - 1978.mp4",
+     "duration": 6446,
+     "title": "Um Acidente de Caça (The Shooting Party) - 1978 (Legendado - PT/Br)",
+     "year": "1978",
+     "moov": 2423957,
+     "description": "UM ACIDENTE DE CAÇA (1978) - Legendado [720p] Adaptado da novela de Anton Tchekhov , publicada como folhetim em 1884-85 e considerada precursora do romance policial psicológico, o filme penetra no vazio moral da aristocracia decadente ao narrar o drama da jovem Olga, filha de um servo, e cobiçada po"
+    },
+    {
+     "id": "1959_20220731",
+     "file": "Шинель (1959).ia.mp4",
+     "duration": 4237,
+     "title": "Шинель (1959)",
+     "year": "1959",
+     "moov": 2616754,
+     "description": null
+    },
+    {
+     "id": "InAZoneOfSpecialAttention",
+     "file": "v_zone_vnimania.mp4",
+     "duration": 5537,
+     "title": "In a zone of special attention",
+     "year": null,
+     "moov": 3541318,
+     "description": "In a zone of special attention"
+    },
+    {
+     "id": "vepri-suitsida",
+     "file": "Вепри Суицида_ Е. Юфит.ia.mp4",
+     "duration": 274,
+     "title": "Вепри Суицида Евгений Юфит",
+     "year": "1988",
+     "moov": 203351,
+     "description": "некрореализм"
+    },
+    {
+     "id": "1956-720x-540-2002-k",
+     "file": "Сорок первый (1956) 720x540 2002K.ia.mp4",
+     "duration": 5230,
+     "title": "Сорок первый  (1956)",
+     "year": "1956",
+     "moov": 3229250,
+     "description": "Год: 1956 Страна: СССР Производство: Мосфильм Жанр: драма, военный фильм, экранизация Режиссер: Григорий Чухрай Актеры: Изольда Извицкая, Олег Стриженов, Николай Крючков, Николай Дупак, Георгий Шаповалов, Пётр Любешкин, Лев Ковылин, Юрий Романов, Даниил Нетребин, Асанбек (Арсен) Умуралиев, Анатолий "
+    },
+    {
+     "id": "WhiteSunOfTheDesert",
+     "file": "WhiteSunOfTheDesert.mp4",
+     "duration": 4806,
+     "title": "White Sun of the Desert",
+     "year": "1970",
+     "moov": 4132756,
+     "description": "\"White Sun of the Desert\" (Beloye solntse pustyni). It is the Soviet film, easterly \"western\". In the movie narrate about adventures of Red Army man Fyodor Sukhov. He rescues from gangster Abdullah its harem in days of civil war. One of the most known films in the history of the Soviet cinema. Many "
+    },
+    {
+     "id": "1959_20221005_202210",
+     "file": "Белые ночи (1959).mp4",
+     "duration": 5423,
+     "title": "Белые ночи  (1959)",
+     "year": "1959",
+     "moov": 4071102,
+     "description": "Год: 1959 Страна: СССР Производство: Мосфильм Жанр: экранизация, драма Режиссер: Иван Пырьев Актеры: Людмила Марченко, Олег Стриженов, Анатолий Федоринов, Вера Попова, Светлана Харитонова Романтическая драма по одноименной повести Ф.М.Достоевского. События излагаются от лица рассказчика – Мечтателя "
+    },
+    {
+     "id": "scorsese-soy-cuba",
+     "file": "Martin Scorsese on I Am Cuba.mp4",
+     "duration": 1582,
+     "title": "Martin Scorsese on I Am Cuba",
+     "year": null,
+     "moov": 1423789,
+     "description": "Martin Scorsese discusses his involvement in rereleasing I Am Cuba ."
+    },
+    {
+     "id": "54904-russian-film-liberation-of-zcechslovakia-mos",
+     "file": "54904 Russian Film  Liberation Of Zcechslovakia_mos.mp4",
+     "duration": 426,
+     "title": "SOVIET FILM  WWII LIBERATION OF CZECHOSLOVAKIA   PRAGUE, KOSICE, BRATISLAVA MAY, 1945  54904",
+     "year": null,
+     "moov": 32707,
+     "description": "This is a Soviet educational / propaganda movie used for the history lessons in the 10th Grade, and one of a series showing the liberation of various Eastern European countries from the Wehrmacht by the Red Army. This one is movie No. 16 in the series, \"Liberation of Czechoslovakia\". It depicts the "
+    },
+    {
+     "id": "1969_20220530",
+     "file": "Рудольфио. Динара Асанова 1969.mp4",
+     "duration": 1408,
+     "title": "Рудольфио. Динара Асанова 1969",
+     "year": "1969",
+     "moov": 551741,
+     "description": "«Рудольфио», киностудия «Ленфильм», СССР, 1969 г. Сценарий и режиссер: Динара Асанова. В главных ролях: Елена Наумкина, Юрий Визбор. Композитор: Евгений Крылатов. Короткометражный фильм. Драма. История любви девочки Ио к взрослому человеку - чуткому интеллигентному Рудольфу. Тяготясь чрезмерным вним"
+    },
+    {
+     "id": "seventeen-moments-of-spring-english-subtitles",
+     "file": "Seventeen Moments of Spring part 9.mp4",
+     "duration": 4728,
+     "title": "Seventeen Moments Of Spring with English Subtitles",
+     "year": "1973",
+     "moov": 3597335,
+     "description": "The full series of Seventeen Moments of Spring (1973) dir. Tatiana Lioznova with English subtitles by me."
+    },
+    {
+     "id": "1947_20230109",
+     "file": "Золушка (1947).mp4",
+     "duration": 4910,
+     "title": "Золушка (1947) Цветная версия",
+     "year": "1947",
+     "moov": 6151347,
+     "description": "Страна: СССР Производство: Ленфильм Год: 1947 Жанр: сказка, музыкальный фильм, экранизация Режиссер: Надежда Кошеверова, Михаил Шапиро Актеры: Янина Жеймо, Алексей Консовский, Эраст Гарин, Фаина Раневская, Елена Юнгер, Тамара Сезеневская, Василий Меркурьев, Александр Румнев, Варвара Мясникова, Игорь"
+    },
+    {
+     "id": "sad-zhelaniy-the-garden-of-desires",
+     "file": "Sad Zhelaniy (The Garden of Desires).mp4",
+     "duration": 5573,
+     "title": "Sad Zhelaniy (The Garden Of Desires)",
+     "year": "1987",
+     "moov": 5982458,
+     "description": "Genre:Drama Adventure Fantasy Released:1987 Duration:1 Hour Age Rating:6 Type:Asian Drama Media:Movie Credit to Ali Khamraev (NOT MINE)"
+    },
+    {
+     "id": "walking_through_suffering_mosfilm195759",
+     "file": "3. Хмурое утро.1959.mp4",
+     "duration": 5943,
+     "title": "Walking Through Torments",
+     "year": "1957",
+     "moov": 4514107,
+     "description": "In 1957-1959, Mosfilm studios released the screen adaptations of the famous Tolstoy novel \"Walking Through Torments\". The films became the official version of the Russian Civil War. The trilogy of novels The Road to Calvary (Russian: Хождение по мукам), also translated as Ordeal trace the fate of th"
+    },
+    {
+     "id": "the-night-before-christmas-1961",
+     "file": "The.Night.Before.Christmas.1961.BDRIP.576p.x264.AC3.KJNU.mp4",
+     "duration": 4129,
+     "title": "Evenings on a Farm Near Dikanka (1961)",
+     "year": "1961",
+     "moov": 2849872,
+     "description": "A blacksmith wants the Tsar's slippers to impress the girl he loves. Meanwhile the devil is stealing the moon and wreaking havoc on the blacksmith's small village. Directed by Aleksandr Rou."
+    },
+    {
+     "id": "noites-brancas-1960-legendado-web-dl-drama-movie",
+     "file": "Noites Brancas (1960 - Legendado) [1080p.WEB-DL].ia.mp4",
+     "duration": 5743,
+     "title": "Noites Brancas (1960) - Legendado [1080p.WEB-DL]",
+     "year": "1960",
+     "moov": 3850405,
+     "description": "São Petersburgo , década de 40 do século XIX. Nas noites brancas de verão, às margens do rio Neva, Nastenka ( Lyudimila Marchenko ) conhece um jovem Sonhador ( Oleg Strizhenov ). Durante cinco noites, caminhando pela cidade, os dois jovens falam sobre si mesmos, suas desilusões e desejos, e se apaix"
+    },
+    {
+     "id": "yablochko-1946",
+     "file": "Die optischen Umlegungen 1946 ⧸ ＂Оптические перекладки＂ 1946 [VWago_DebqE].mp4",
+     "duration": 293,
+     "title": "Yablochko (1946)",
+     "year": "1946",
+     "moov": 235652,
+     "description": "\"Yablochko\" is an experimental short film from 1946, produced as part of a research project by the Soyuzdetfilm (Союздетфильм) studio to explore new methods of combined filming techniques. Under the title \"Optical Transfers,\" it was shown at film institutes as an educational tool. The pianist plays "
+    },
+    {
+     "id": "20210102_20210102_0722",
+     "file": "Хозяин тайги.ia.mp4",
+     "duration": 4714,
+     "title": "Хозяин Тайги",
+     "year": null,
+     "moov": 3758021,
+     "description": "Фильм об участковом уполномоченном старшине Сеpёжкине, несущем службу в сибиpской тайге. На огромной территории он единственный \"страж порядка\". Происходит ограбление местного магазина - унесли дорогие товары и трехдневную выручку. Один из сплавщиков, Ипатов, прошлой ночью \"гулял\" по поводу рождения"
+    },
+    {
+     "id": "nestormakhnopayasansdukraine",
+     "file": "makhno_paysan_ukraine_helene_chatelain_1996.mp4",
+     "duration": 3593,
+     "title": "Nestor Makhno Paysan d'Ukraine / Peasant from Ukraine (1996) (EN, NL subtitles) [1080p upscale]",
+     "year": "1996",
+     "moov": 2993477,
+     "description": "Specs Upscaled to 1080p using TopazLabs Video Enhance AI v.2.3.0 on the Artemis Low Quality model Video source 1080p Joseph Redman Note - Most video players display the subtitles correctly (mpv, mplayer, VLC etc.) and the video without buffering Add/correct a translation FRANÇAIS • Portrait de l'ana"
+    },
+    {
+     "id": "i-am-cuba-1964",
+     "file": "I am Cuba (1964).mp4",
+     "duration": 8480,
+     "title": "I Am Cuba (1964)",
+     "year": "1964",
+     "moov": 5809231,
+     "description": "Both a landmark of radical political cinema and one of the most visually ravishing films ever made, this legendary hymn to revolution shimmers across the screen like a fever dream of rebellion. The result of an extraordinarily ambitious collaboration between the Soviet and Cuban film industries, dir"
+    },
+    {
+     "id": "the-very-same-munchhausen-1979",
+     "file": "The Very Same Munchhausen (1979).ia.mp4",
+     "duration": 8047,
+     "title": "The Very Same Munchhausen (1979)",
+     "year": "1979",
+     "moov": 8705818,
+     "description": "A philosophical and poetic portrait of the famous (or maybe infamous?) Baron Munchhausen. His crazy, yet very merriment, stories, views and behavior is what sets him apart from others. He becomes alienated from the society that failed to grasp his brilliance. In fact, his brilliance is what underlin"
+    },
+    {
+     "id": "1941._20260205_1152",
+     "file": "1941._Фронтовые_подруги.mp4",
+     "duration": 5248,
+     "title": "Фронтовые Подруги (1941)",
+     "year": "1941",
+     "moov": 4347131,
+     "description": "The film portrays the work of a frontline hospital during the Soviet-Finnish war."
+    },
+    {
+     "id": "1958_20220829",
+     "file": "Кочубей (1958).mp4",
+     "duration": 6132,
+     "title": "Кочубей (1958)",
+     "year": "1958",
+     "moov": 4634008,
+     "description": null
+    },
+    {
+     "id": "32IvanVasylievichChangesOccupationFAKETRAILER",
+     "file": "32 - Ivan Vasylievich Changes Occupation FAKE TRAILER.mp4",
+     "duration": 161,
+     "title": "\"Ivan Vasylievich Changes Occupation\" FAKE TRAILER",
+     "year": null,
+     "moov": 169624,
+     "description": "EDITING by AL-DU A lot MORE & NEW Videos on My Second Channel: www.dailymotion.com/aldu-show If You Like my Videos - please, support me directly on PATREON: www.patreon.com/The_ALDU_Show THANK YOU! YOUTUBE Channel: https://www.youtube.com/channel/UCGdVVLFAMVt-UY5a0xobsJw INSTAGRAM: https://www.insta"
+    },
+    {
+     "id": "road-to-the-stars-1957-480p-25fps-h-264-128kbit-aac",
+     "file": "Road To The Stars (1957) (480p_25fps_H264-128kbit_AAC).ia.mp4",
+     "duration": 2932,
+     "title": "Road To The Stars (1957) (Doroga k zvezdam) (English hardsubbed subtitles) (480p 25fps H.264 128kbit AAC)",
+     "year": "1957",
+     "moov": 2277186,
+     "description": "Road to the Stars (Russian: Дорога к звёздам /dərɐɡˈa ɡ_zvʲˈɵzdəm/) is a 1957, Soviet film directed by Pavel Klushantsev. It combines elements of science education films and speculative science fiction. The film was groundbreaking for its use of special effects to depict life in space. The first hal"
+    },
+    {
+     "id": "guerra-e-pace-bondarchuk-1966-italiano-integrale",
+     "file": "Guerra_e_pace_Bondarchuk_parte_2.mp4",
+     "duration": 10260,
+     "title": "Guerra e pace (Vojna i mir, 1966–1967) – versione integrale italiana",
+     "year": "1966",
+     "moov": 7721693,
+     "description": "Versione integrale italiana in tre parti del film sovietico “Vojna i mir” (Guerra e pace), diretto da Sergej Bondarčuk e prodotto da Mosfilm tra il 1965 e il 1967, tratto dal romanzo di Lev Tolstoj. Durata complessiva: 6 ore, 43 minuti e 13 secondi. Caratteristiche: video MPEG-2 PAL 720×576 anamorfi"
+    },
+    {
+     "id": "the-secret-aesthetics-of-the-martian-spies-2",
+     "file": "The Secret Aesthetics of the Martian Spies 2.mp4",
+     "duration": 3887,
+     "title": "The Secret Aesthetics of the Martian Spies 2 / Тайная эстетика марсианских шпионов 2",
+     "year": "1998",
+     "moov": 1519809,
+     "description": "This is not a real movie, but an unfinished version of it! Это не настоящий фильм, а его недоделанная версия!"
+    },
+    {
+     "id": "TheCommanderOfHappyPike",
+     "file": "komandir_sh_chyki.mp4",
+     "duration": 5725,
+     "title": "The commander of happy Pike",
+     "year": null,
+     "moov": 3662522,
+     "description": "In 1942 when Germans prepared for capture of Murmansk, the Soviet command has decided to stir up activity of Northern fleet. The submarine crew Â«Ð©-721Â» carries out problem on destruction of enemy transport with soldiers and ammunition. During performance of fighting problem aboard the evacuated c"
+    },
+    {
+     "id": "1986.-web-dl.-2160p.-ivi.-sdr.-rus",
+     "file": "Курьер.1986.WEB-DL.2160p.IVI.SDR.Rus.mp4",
+     "duration": 5220,
+     "title": "Курьер / Courier (1986)",
+     "year": "1986",
+     "moov": 4406312,
+     "description": "Страна: СССР Студия: Мосфильм Жанр: драма, мелодрама, комедия Год выпуска: 1986 Продолжительность: 01:27:00 Субтитры: русские Оригинальная аудиодорожка: русский Режиссер: Карен Шахназаров В ролях: Федор Дунаевский, Анастасия Немоляева, Олег Басилашвили, Инна Чурикова, Светлана Крючкова, Александр Па"
+    },
+    {
+     "id": "InTheBeginningOfTheGloriousDeeds",
+     "file": "Piter_start_1.mp4",
+     "duration": 3926,
+     "title": "In the beginning of the glorious deeds",
+     "year": "1980",
+     "moov": 2141861,
+     "description": "The Russian name is \"V nachale slavnykh del\". This film is the continuation of \"Youth of Peter the Great\" Director: Sergey Gerasimov Cast: Dmitri Zolotukhin, Tamara Makarova, Natalya Bondarchuk, Nikolay Yeryomenko (jr.), Oleg Strizhenov, Vadim Spiridonov..."
+    },
+    {
+     "id": "1984_20220724",
+     "file": "Прежде чем расстаться 1984.ia.mp4",
+     "duration": 4755,
+     "title": "Прежде Чем Расстаться 1984",
+     "year": "1984",
+     "moov": 2695062,
+     "description": null
+    },
+    {
+     "id": "TheAirportFromAnOfficeInput",
+     "file": "aeroport_so_sl_vhoda.mp4",
+     "duration": 4838,
+     "title": "The airport from an office input",
+     "year": null,
+     "moov": 3094606,
+     "description": "The airport of the big regional city. One of usual though also extremely dangerous situations becomes serious test for protagonists of a picture â the chief of change of Tuzhina and the chief of air field service Myagkov."
+    },
+    {
+     "id": "TheSovietStory_201502",
+     "file": "The Soviet Story (2008).x264.multisub.mp4",
+     "duration": 5133,
+     "title": "The Soviet Story ( 2008) ",
+     "year": null,
+     "moov": 3947318,
+     "description": "The Soviet Story ( 2008)"
+    },
+    {
+     "id": "57524-history-of-the-communist-party-the-defeat-of-the-nazis-vwr",
+     "file": "57524 History Of The Communist Party The Defeat Of The Nazis_vwr.mp4",
+     "duration": 403,
+     "title": "SOVIET FILM  DEFEAT OF GERMAN ARMY AT STALINGRAD WWII 57524",
+     "year": null,
+     "moov": 234465,
+     "description": "This Soviet film, presented in Russian, shows the defeat of the German Sixth Army at Stalingrad in 1943. The Battle of Stalingrad (23 August 1942 – 2 February 1943) was the largest confrontation of World War II, in which Germany and its allies fought the Soviet Union for control of the city of Stali"
+    },
+    {
+     "id": "aelita-queen-of-mars-1924-dvd",
+     "file": "Aelita Queen of Mars (1924) {imdb-tt0014646} [DVD][AC3 5.1][x264].mp4",
+     "duration": 4837,
+     "title": "Aelita: Queen Of Mars (1924)",
+     "year": "1924",
+     "moov": 3676394,
+     "description": "Aelita (Russian: Аэли́та, pronounced [ɐɛˈlʲitə]), also known as Aelita: Queen of Mars, is a 1924 Soviet silent science fiction film directed by Yakov Protazanov and produced at the Mezhrabpom-Rus film studio. It was based on Alexei Tolstoy's 1923 novel of the same name. Nikolai Tseretelli and Valent"
+    },
+    {
+     "id": "Dead_Mans_Letters",
+     "file": "final_QP_veryslow.ia.mp4",
+     "duration": 5204,
+     "title": "\"Dead Man's Letters\" / \"Письма мертвого человека\" (1986) Konstantin Lopushansky",
+     "year": "1986",
+     "moov": 3596304,
+     "description": "In a world after the nuclear apocalypse a scholar helps a small group of children and adults survive, staying with them in the basement of the former museum of history. In his mind he writes letters to his son — though it is obvious that they will never be read."
+    },
+    {
+     "id": "8EPICMichaelBayVSLeonidGaidaiBATTLE",
+     "file": "8 - EPIC Michael Bay VS Leonid Gaidai BATTLE.mp4",
+     "duration": 133,
+     "title": "EPIC Michael Bay VS Leonid Gaidai BATTLE",
+     "year": null,
+     "moov": 155173,
+     "description": "EDITING by AL-DU A lot MORE & NEW Videos on My Second Channel: www.dailymotion.com/aldu-show If You Like my Videos - please, support me directly on PATREON: www.patreon.com/The_ALDU_Show THANK YOU! YOUTUBE Channel: https://www.youtube.com/channel/UCGdVVLFAMVt-UY5a0xobsJw INSTAGRAM: https://www.insta"
+    },
+    {
+     "id": "1958-720x-540-2002-k_202210",
+     "file": "Мистер Икс (1958)  720x540 2002K.ia.mp4",
+     "duration": 5332,
+     "title": "Мистер Икс  (1958)",
+     "year": "1958",
+     "moov": 3292662,
+     "description": "Год: 1958 Страна: СССР Производство: Ленфильм Жанр: музыкальный фильм Режиссер: Юлий (Юзеф) Хмельницкий Актеры: Георг Отс, Марина Юрасова, Анатолий Королькевич, Зоя Виноградова, Николай Каширский, Гликерия Богданова-Чеснокова, Григорий Ярон, Оскар Линд, Давид Волосов, Ефим Копелян, Георгий Кульбуш М"
+    },
+    {
+     "id": "Chapaev",
+     "file": "chapaev.mp4",
+     "duration": 5431,
+     "title": "Chapaev",
+     "year": null,
+     "moov": 2962773,
+     "description": "Â«ChapaevÂ» â the Soviet feature film of 1934. On I International Moscow film festival in 1935 Sergey Eisenstein was which chairman of jury, founders of \"Chapaeva\" have received the first award."
+    },
+    {
+     "id": "YouthOfPiterTheGreatThe",
+     "file": "Piter_youth_1.mp4",
+     "duration": 4107,
+     "title": "Youth of Peter the Great, The",
+     "year": "1980",
+     "moov": 2240682,
+     "description": "The original nane of this film (Germ.) - \"Peters Jugend\" The Russian name is \"Yunost Petra\". Director: Sergey Gerasimov Cast: Dmitri Zolotukhin, Tamara Makarova, Natalya Bondarchuk, Nikolay Yeryomenko (jr.), Oleg Strizhenov, Vadim Spiridonov..."
+    },
+    {
+     "id": "mosfilms-adaptation-of-fyodor-dostoevskys-white-nights-1959-subtitled-in-literar",
+     "file": "Mosfilm's Adaptation of Fyodor Dostoevsky's White Nights 1959 Subtitled in Literary Arabic Translations.ia.mp4",
+     "duration": 5743,
+     "title": "Mosfilm's Adaptation Of Fyodor Dostoevsky's White Nights 1959 Subtitled In Literary Arabic Translations  ترجمة عربية أدب",
+     "year": null,
+     "moov": 3981126,
+     "description": "Arabic Localization of \"White Nights\" (Белые ночи, 1959) This is a fan-made Arabic subtitle and localization project for the 1959 Soviet film White Nights (Белые ночи), directed by Ivan Pyryev, based on Fyodor Dostoevsky's short story of the same name. Originally produced by Mosfilm Studios. All rig"
+    },
+    {
+     "id": "kino-viktor-coj-chernyj-aljbom",
+     "file": "Kino Viktor Coj Chernyj aljbom.ia.mp4",
+     "duration": 2563,
+     "title": "Кино (Виктор Цой) «Черный альбом»",
+     "year": "1990",
+     "moov": 1954803,
+     "description": "Кино (Виктор Цой) «Черный альбом» 01 Следи за собой 02 Красно-желтые дни 03 Нам с тобой 04 Звезда 05 Кукушка 06 Когда твоя девушка больна 07 Кончится Лето 08 Муравейник"
+    },
+    {
+     "id": "jubilee.-1983.-dvdrip.x-264.-ac-3.-kjnu",
+     "file": "Jubilee.1983.DVDRIP.x264.AC3.KJNU.mp4",
+     "duration": 1860,
+     "title": "Jubilee (1983)",
+     "year": "1983",
+     "moov": 1271061,
+     "description": "AKA Anniversary Celebrations \"Animators from the distant future fly to another planet to celebrate the 100th anniversary of Soviet animation. Once in a meteor shower, the spaceship makes an emergency landing on an unknown planet, where live monsters with the ability to transform. Unknown formless cr"
+    },
+    {
+     "id": "neveroyatniy_sluchay",
+     "file": "Невероятный случай (1989).mp4",
+     "duration": 3897,
+     "title": "Невероятный случай | 1989 | ТаджикФильм",
+     "year": "1989",
+     "moov": 3260428,
+     "description": "Невероятный случай — найденный фильм, снятый режиссёром Рашидом Маликовым на студии Таджикфильм в 1989 году. Сюжет фильма: Троица инопланетян, прибывшая на Землю с целью выяснить состояние интеллекта ее жителей, обосновалась в походной палатке неподалеку от небольшого таджикского села. Местный парен"
+    },
+    {
+     "id": "telohranytel-the-bodyguard-english-subs",
+     "file": "Telohranytel (The Bodyguard) (English Subs).mp4",
+     "duration": 5103,
+     "title": "Telohranytel (The Bodyguard) (English Subs)",
+     "year": "1979",
+     "moov": 5516279,
+     "description": "Genre:Western History Drama Fantasy War Action Released:1979 Duration:1 Hour Age Rating:16 Type:Asian Drama Media:Movie Credit to Ali Khamraev (NOT MINE)"
+    },
+    {
+     "id": "from-spring-to-summer",
+     "file": "Утомлённое солнце (1988).mp4",
+     "duration": 5243,
+     "title": "봄부터 여름까지 ☆ Утомлённое Солнце (From Spring to Summer) (1988)",
+     "year": "1988",
+     "moov": 2049749,
+     "description": "A co-production between North Korea and the Soviet Union, \"From Spring to Summer\" (in 봄부터 여름까지 Korean), (in Утомлённое Солнце Russian). Produced by Mosfilm (Мосфильм) and Korean Film (조선영화), released in 1988."
+    },
+    {
+     "id": "muzhestvo",
+     "file": "Мужество_ Е. Юфит.ia.mp4",
+     "duration": 197,
+     "title": "Мужество Евгений Юфит",
+     "year": "1989",
+     "moov": 153005,
+     "description": "некрореализм"
+    },
+    {
+     "id": "humanoid-woman-1981_202405",
+     "file": "A1_t00.mp4",
+     "duration": 5488,
+     "title": "Humanoid Woman (1981 - DVD Rip)",
+     "year": "1981",
+     "moov": 4166611,
+     "description": "Через тернии к звёздам (English: To the Stars by Hard Ways, or Through the Thorns to the Stars) is a 1981 Soviet science fiction film directed by Richard Viktorov and based on a novel by Kir Bulychov. A heavily-edited English-dubbed version was produced by American film distributor Sandy Frank, enti"
+    },
+    {
+     "id": "1958_20221005",
+     "file": "У тихой пристани (1958).ia.mp4",
+     "duration": 4136,
+     "title": "У тихой пристани  (1958)",
+     "year": "1958",
+     "moov": 3116953,
+     "description": "Год: 1958 Страна: СССР Производство: Мосфильм Жанр: комедия Режиссеры: Эдуард Абалов, Тамаз Мелиава Актеры: Владимир Ратомский, Василий Меркурьев, Татьяна Гурецкая, Афанасий Белов, Анатолий Кубацкий, Борис Новиков, Эммануил Геллер, Елизавета Лилина, Павел Волков, Валентин Брылеев, Александр Гумбург,"
+    },
+    {
+     "id": "three-days-1991",
+     "file": "ThreeDays_1991.ia.mp4",
+     "duration": 4548,
+     "title": "Three days / Trys dienos / Три дня (1991)",
+     "year": "1991",
+     "moov": 3457946,
+     "description": "Two young men leave a neglected but cozy native nook for a strange seaport town Kenigsberg. There they meet two girls the outsiders like themselves. Any attempt to find a normal human contact leads to misunderstanding. Or perhaps they are also lonely and unhappy. The realities, provoking a forced in"
+    },
+    {
+     "id": "1955-720x-540-2002-k",
+     "file": "Максим Перепелица (1955)  720x540 2002K.ia.mp4",
+     "duration": 5228,
+     "title": "Максим Перепелица  (1955)",
+     "year": "1955",
+     "moov": 3228574,
+     "description": "Год: 1955 Страна: СССР Производство: Ленфильм Жанр: комедия, экранизация Режиссер: Анатолий Граник Актеры: Леонид Быков, Николай Яковченко, Александр Борисов, Георгий Осипенко, Людмила Сосюра, Таисия Литвиненко, Нина Тамарова, Василий Фущич, Владимир Ефимов, Георгий Вицин, Павел Усовниченко, Анатоли"
+    },
+    {
+     "id": "papa-umer-ded-moroz",
+     "file": "Y2Mate.is - Папа, умер Дед Мороз(1991)-r8VRF-0UotM-360p-1655197013006.mp4",
+     "duration": 4572,
+     "title": "Папа, Умер Дед Мороз (Daddy, Santa Claus is Dead)",
+     "year": "1991",
+     "moov": 2008246,
+     "description": "Евгений Юфит фильм"
+    },
+    {
+     "id": "1978-no-11",
+     "file": "Советский воин 1978 №11.mp4",
+     "duration": 600,
+     "title": "Советский Воин 1978 #11",
+     "year": null,
+     "moov": 506006,
+     "description": "?v=ylpNEb31k4U"
+    },
+    {
+     "id": "tajna-doma-no-5",
+     "file": "Тайна дома №5.mp4",
+     "duration": 905,
+     "title": "Тайна дома №5 (1912)",
+     "year": "1912",
+     "moov": 1119708,
+     "description": "Чёрно-белый немой фильм ужасов Российской Империи, считающийся одним из самых первых фильмов о вампирах с мистическим уклоном. Был снят на московском отделении студии «Братья Пате» режиссёром Кайем Ганзеном. Премьера состоялась 1 декабря 1912 года. Сюжет: Обаятельная и хитрая куртизанка Эльза с легк"
+    },
+    {
+     "id": "keshka_i_gumanoid",
+     "file": "Кешка и гуманоид (1993).mp4",
+     "duration": 1052,
+     "title": "Кешка и гуманоид (1993)",
+     "year": "1993",
+     "moov": 801955,
+     "description": "Ранее считавшийся утерянным белорусский фильм 1993 года студии «Исповедь» и «Юнтелефильм» и являющийся последней частью из цикла фильмов про Кешку. Был найден и опубликован на RuTracker . Выражается благодарность пользователям: alex_wallace, Hanway, ALEKS KV, VCD, HORIZON, BillyDOS, 1ststack, xfiles"
+    }
+   ]
+  },
+  {
+   "id": "skazki",
+   "dial": 3,
+   "name": "СКАЗКИ",
+   "family": "kids",
+   "color": "#7E57C2",
+   "description": "Fairy-tale films and children's television: Rowe's skazki, Yeralash, and the evening cartoon slot.",
+   "items": [
+    {
+     "id": "alenkiy-tsvetochek-1977",
+     "file": "The Scarlet Flower (1977) -- Irina Povolotskaya.mp4",
+     "duration": 4070,
+     "title": "Аленький Цветочек / The Scarlet Flower (1977)",
+     "year": "1978",
+     "moov": 2805854,
+     "description": "A merchant is living in a fairytale Russia of hundreds of years ago. When he is making a journey to the market his three daughters each ask for a present to be brought back. He is then captured by a monster... Directed by Irina Povolotskaya."
+    },
+    {
+     "id": "the-snow-maiden-snegurochka-1969",
+     "file": "The Snow Maiden [Snegurochka] (1969).ia.mp4",
+     "duration": 5277,
+     "title": "The Snow Maiden [Snegurochka] (1969)",
+     "year": "1969",
+     "moov": 5715540,
+     "description": "Russia. Directed by Pavel Kadochnikov. Starring Eugenia Filonova, Evgeniy Zharikov, Irina Gubanova, Boris Khimichev, Pavel Kadochnikov. Based on the play by Aleksandr Ostrovskiy. Russian language with English subtitles. Plot: The daughter of Father Frost leaves her home in the forest to try living a"
+    },
+    {
+     "id": "the-purple-ball-1988",
+     "file": "The Purple Ball (1988).mp4",
+     "duration": 4413,
+     "title": "The Purple Ball (1988)",
+     "year": "1988",
+     "moov": 3984250,
+     "description": "Russia. Directed by Pavel Arsenov. Starring Natalya Guseva, Vyacheslav Nevinnyy, Aleksandr Gusev, Svetlana Kharitonova, Igor Yasulovich. Based on the novel by Kir Bulychyov. Also known as LILAC BALL. Original title Lilovyy Shar . Russian language with English subtitles. Plot: Crewmembers of a spaces"
+    },
+    {
+     "id": "sm-1988",
+     "file": "SM-1988.mp4",
+     "duration": 1039,
+     "title": "Седой медведь",
+     "year": "1988",
+     "moov": 414660,
+     "description": "« Седой медведь » — советский рисованный мультипликационный фильм 1988 года студии «Союзмультфильм», снятый по одноимённой сказке сибирского писателя Владимира Галкина."
+    },
+    {
+     "id": "nupogodiolimpijskie",
+     "file": "wilk i zajac olimpijskie zmagania/Avseq05.ia.mp4",
+     "duration": 563,
+     "title": "Wilk i zając - Olimpijskie zmagania",
+     "year": "1980",
+     "moov": 592045,
+     "description": "Wilk i zając - Olimpijskie zmagania - I'll get you! - The Olympic Games - Nu, pogodi! Олимпиада-80 - Old Soviet era fairy taile in Polish"
+    },
+    {
+     "id": "along-unknown-paths-1982",
+     "file": "Along Unknown Paths (1982).mp4",
+     "duration": 3984,
+     "title": "Along Unknown Paths (1982)",
+     "year": "1982",
+     "moov": 2945270,
+     "description": "Russia. Directed by Mikhail Yuzovsky. Starring Roman Monastyrsky, Tatyana Pelttser, Leonid Kharitonov, Tatyana Aksyuta, Aleksandr Filippenko. Original title Tam, na nevedomykh dorozhkakh... Russian language with English subtitles. Plot: A boy becomes lost in a forest and finds himself in a fairy-tal"
+    },
+    {
+     "id": "bremen-town-musicians-1969-and-1973",
+     "file": "3455474731600 (online-video-cutter.com).mp4",
+     "duration": 1227,
+     "title": "Bremen town musicians (1969 and 1973)",
+     "year": "1969",
+     "moov": 1380718,
+     "description": "This is Gennady Gladkov's Bremen town musicians animated musical film"
+    },
+    {
+     "id": "dioxins-bhopal-usa",
+     "file": "Dioxins and PCBs in Food and Humans – Yesterday, Today and Tomorrow.ia.mp4",
+     "duration": 2682,
+     "title": "dioxins, bhopal USA!",
+     "year": null,
+     "moov": 1779721,
+     "description": "dioxin in the daily items you consume!!! population control of dumb masses the warnings were in Georgia Guide-stones the crazy christians bombed out of existence! screaming antichrist bullshit: The world consists of billions of people all serving their agenda and could not be more antichrist than if"
+    },
+    {
+     "id": "schastlivy_prints",
+     "file": "schastlivy_prints.ia.mp4",
+     "duration": 948,
+     "title": "The Happy Prince (Счастливый принц) (1992)",
+     "year": "1992",
+     "moov": 842745,
+     "description": "This is the only last project before Nathan Lerner passed away at October 20 but he's the one who direct the 15 minute stop motion animation and of course...this is the only animation after the end of USSR. - I feel like I'm on a nightmare fuel when the statue of the Prince is moving and he's talkin"
+    },
+    {
+     "id": "skazka-pro-kolobka",
+     "file": "Skazka_pro_Kolobka.ia.mp4",
+     "duration": 555,
+     "title": "Сказка про колобка",
+     "year": null,
+     "moov": 446635,
+     "description": "Союзмультфильм. Есть книжка про этому мультфильму: Сказка про Колобка Автор: Червинская Н. ; Художник: Курицын А.П. Выходные данные: М.: Алтей, 1993.- 14 с."
+    },
+    {
+     "id": "vasilisa-the-beautiful-1940",
+     "file": "Vasilisa the Beautiful (1940).ia.mp4",
+     "duration": 4373,
+     "title": "Vasilisa the Beautiful (1940)",
+     "year": "1940",
+     "moov": 3370011,
+     "description": "Russia. Directed by Alexander Row (sometimes rendered as Aleksandr Rou). Starring Valentina Sorogozhskaya, Sergey Stolyarov, Lev Potyomkin, Nikita Kondratyev. Original title Vasilisa Prekrasnaya . Russian language with English subtitles. Plot: The youngest of three brothers seeking wives becomes bet"
+    },
+    {
+     "id": "swanlake1981",
+     "file": "Swan Lake (1981)/Swan Lake (1981).mp4",
+     "duration": 4465,
+     "title": "(Sekai meisaku dôwa: Hakuchô no mizûmi) Swan Lake (1981)",
+     "year": "1981",
+     "moov": 3784528,
+     "description": "*English Subtitles* Принц влюбляется в принцессу, проклятую превращаться в лебедя днем, но их любовь находится под угрозой колдуна, который держит ее в тюрьме. A prince falls in love with a princess cursed to change into a swan by day, but their love is threatened by the sorcerer who keeps her impri"
+    },
+    {
+     "id": "magicword",
+     "file": "magicword.ia.mp4",
+     "duration": 4139,
+     "title": "Magic Word (Честное Волшебное) 1975",
+     "year": null,
+     "moov": 3011688,
+     "description": "Soviet Fairy Tale Movie"
+    },
+    {
+     "id": "the-snow-queen-1957_202501",
+     "file": "The Snow Queen 1957.ia.mp4",
+     "duration": 3634,
+     "title": "The Snow Queen 1957 ★★★★ CC: Animation [1:00:34] Russian",
+     "year": "1957",
+     "moov": 2986112,
+     "description": "The Snow Queen (Russian: Снежная королева, romanized: Snezhnaya Koroleva) is a 1957 Soviet animated musical fantasy film directed by Lev Atamanov. It is the ninth full-length animated production by Soyuzmultfilm and is based on the 1844 fable “The Snow Queen” by Hans Christian Andersen. The Snow Que"
+    }
+   ]
+  },
+  {
+   "id": "fantastika",
+   "dial": 4,
+   "name": "ФАНТАСТИКА",
+   "family": "film",
+   "color": "#00ACC1",
+   "description": "Soviet science fiction: spaceships, distant planets and quiet philosophical robots.",
+   "items": [
+    {
+     "id": "the.-pass.-1988.-bdrip.-576p.x-264.-aac",
+     "file": "The.Pass.1988.BDRIP.576p.x264.AAC.mp4",
+     "duration": 1872,
+     "title": "The Pass aka Перевал (1988)",
+     "year": "1988",
+     "moov": 1580507,
+     "description": "A starship crashed on an uninhabited planet and its crew had to abandon it. Years later the survivors and their children try to return to the ship and send a distress signal. But for that they must go through a very dangerous mountain passage. Uploader Notes: Thanks to florentdrive2 aka @coltranefan"
+    },
+    {
+     "id": "pavel-klushantsev-to-the-stars-2000",
+     "file": "Pavel Klushantsev - To the Stars! (2000).mp4",
+     "duration": 1612,
+     "title": "Pavel Klushantsev - To The Stars! (2000) AI Upscale",
+     "year": "2000",
+     "moov": 1755650,
+     "description": "Pavel Klushantsev - To The Stars! (2000) (Павел Клушанцев - к звёздам!), a documentary on Soviet science fiction director Pavel Klushantsev. Ripped &amp; upscaled from the Video Dimensions DVD release of Road to the Stars. English subtitles are embedded in the .mkv file and included as a separate .s"
+    },
+    {
+     "id": "PlanetaBurPlanetOfStorms1962",
+     "file": "Planeta Bur - Planet Of Storms (1962).mp4",
+     "duration": 4714,
+     "title": "Planeta Bur Planet Of Storms ( 1962)",
+     "year": "1962",
+     "moov": 3015523,
+     "description": "Планета Бурь ¨Planeta Bur¨¨Planet of Storms¨ is a 1962 Soviet science fiction film directed by Pavel Klushantsev."
+    },
+    {
+     "id": "stalker-1979_202602",
+     "file": "Stalker (1979).mp4",
+     "duration": 9713,
+     "title": "Stalker (1979)",
+     "year": "1979",
+     "moov": 6708040,
+     "description": "Stalker (en ruso: Сталкер; conocida en algunos países de habla hispana como La Zona) es una película soviética de ciencia ficción de 1979 dirigida por Andréi Tarkovski. Está basada –en términos generales– en el libro Picnic extraterrestre de los hermanos Arkadi y Borís Strugatski. Stalker significa "
+    },
+    {
+     "id": "el-viaje-cosmico-1936",
+     "file": "El viaje cósmico (1936).ia.mp4",
+     "duration": 3913,
+     "title": "Cosmic Journey (1936) - sub esp.",
+     "year": "1936",
+     "moov": 2520581,
+     "description": "In 1946, the Soviet space program is undergoing turmoil. Professor Sedikh, who is planning to lead the first manned exploration to the moon, is denounced by his rival Professor Karin as being too old and too mentally unstable for the mission. Professor Sedikh, aided by his assistant Marina and a you"
+    },
+    {
+     "id": "veld-1987",
+     "file": "Вельд 1987 Оцифрованная фильмокопия 35mm Film Scan HD_376891921_456240003_1080p.mp4",
+     "duration": 5033,
+     "title": "Вельд / The Veldt (1987)",
+     "year": "1987",
+     "moov": 2886219,
+     "description": "Adaptation of three short stories by Ray Bradbury. An atmosphere of hostility forms inside an unnamed city, and the citizens are unsettled by the materialization of ghosts and the memories of their loved ones. Directed by Nazim Tulyahodzhayev."
+    },
+    {
+     "id": "1965-ingenieur-garins-hyperboloid",
+     "file": "1965 Ingenieur Garins Hyperboloid.mp4",
+     "duration": 5460,
+     "title": "1965 Ingenieur Garins Hyperboloid",
+     "year": "1965",
+     "moov": 3941646,
+     "description": "Sowjetischer Science fiction Film von 1965 nach dem Roman 'Geheimnisvolle Strahlen' von Alexei Tolstoi aus dem Jahre 1927."
+    },
+    {
+     "id": "moon-rainbow-1983",
+     "file": "Moon Rainbow (1983) English-dubbed.ia.mp4",
+     "duration": 7196,
+     "title": "Moon Rainbow (1983)",
+     "year": "1983",
+     "moov": 7728429,
+     "description": "Russia. Directed by Andrei Yermash. Starring Vladimir Gostyukhin, Igor Starygin, Vasily Livanov, Yuri Solomin, Vladimir Kenigson, Georgy Taratorkin, Natalya Saiko, Grazhina Baykshtitte. Original title Lunnaya Raduga . Based on the novel by Sergei Pavlov. I offer here two viewing options, the origina"
+    },
+    {
+     "id": "phaeton-the-son-of-the-sun-1972",
+     "file": "Phaeton - The Son of the Sun (1972).mp4",
+     "duration": 983,
+     "title": "Phaeton - The Son of the Sun (1972)",
+     "year": "1972",
+     "moov": 888958,
+     "description": "Russia. Directed by Vasiliy Livanov. Original title Phaethon: Syn Solntsa . Russian language with optional English subtitles. Plot: A space expedition seems to find confirmation for elements of ancient cosmogonies."
+    },
+    {
+     "id": "rains1984",
+     "file": "rains1984.mp4",
+     "duration": 627,
+     "title": "There Will Be Soft Rains (1984) Soviet animated adaptation",
+     "year": "1984",
+     "moov": 365693,
+     "description": "\"There Will Be Soft Rains\" (1984), a haunting adaptation of Ray Bradbury's short story by Uzbek film director Nazim Tulyakhodzhaev. While researching this, I found many copies of the short animation online, but they were of relatively poor copy. This is a combination of the highest quality version I"
+    },
+    {
+     "id": "kosmicheskiy-reys-1936",
+     "file": "Kosmicheskiy Reys (1936).mp4",
+     "duration": 3914,
+     "title": "Kosmicheskiy Reys (1936)",
+     "year": "1936",
+     "moov": 2969655,
+     "description": "Russia. Directed by Vasily Zhuravlyov. Starring Sergey Komarov, Ksenia Moskalenko, Vassili Gaponenko, Vasili Kovrigin. Also known as COSMIC JOURNEY or SPACE VOYAGE. Silent with Russian language intertitles and optional English subtitles. Plot: An aged scientist overcomes all obstacles, including the"
+    },
+    {
+     "id": "orions-loop-1981",
+     "file": "Orion's Loop (1981).mp4",
+     "duration": 4828,
+     "title": "Orion's Loop (1981)",
+     "year": "1981",
+     "moov": 4042937,
+     "description": "Russia. Directed by Vasily Levin. Starring Leonid Bakshtayev, Gennady Shkuratov, Anatoly Mateshko, Ludmila Smorodina. Original title Petlya Oriona . Russian language with English subtitles. Plot: A space flight is dispatched to investigate a radiation belt approaching Earth and encounters alien life"
+    },
+    {
+     "id": "the-sky-calls-1959ru",
+     "file": "nebo zovyot (1959)ru/The Sky Calls (1959)ru.ia.mp4",
+     "duration": 4392,
+     "title": "Nebo Zovyot (The Sky Calls)1959 ",
+     "year": "1959",
+     "moov": 4592313,
+     "description": "The Sky Calls, also known as Nebo Zovyot, is a 1959 Soviet science fiction film about a scientific expedition preparing to be the first to land on Mars. The story follows the Soviet spaceship Homeland as it encounters an American ship, Typhoon, which is also aiming for Mars, leading to a series of c"
+    },
+    {
+     "id": "here-there-be-tygers-zdes-mogut-voditsya-tigry-russian-animation-science-fiction",
+     "file": "Here There Be Tygers (Zdes mogut voditsya tigry) [Russian Animation Science Fiction Ray Bradbury Story English Subtitles 1989].mp4",
+     "duration": 610,
+     "title": "Here There Be Tygers (Zdes Mogut Voditsya Tigry)[Russian Animation] - Ray Bradbury [English Subtitles]",
+     "year": "1989",
+     "moov": null,
+     "description": "A Soviet animated adaptation of the Ray Bradbury story Here There Be Tygers, made in 1989. Directed by Vladimir Samsonov."
+    },
+    {
+     "id": "the-silence-of-dr.-ivens-1974",
+     "file": "The Silence of Dr. Ivens (1974).mp4",
+     "duration": 4578,
+     "title": "The Silence of Dr. Ivens (1974)",
+     "year": "1974",
+     "moov": 3412484,
+     "description": "Russia. Directed by Budimir Metalnikov. Starring Sergei Bondarchuk, Zhanna Bolotova, Irina Skobtseva. Original title Molchaniye Doktora Ivensa . Russian language with English subtitles. Plot: After being abducted by aliens, a scientist is left a changed man."
+    },
+    {
+     "id": "to-the-stars-by-hard-ways-1981",
+     "file": "To the Stars by Hard Ways (1981) pt 1.mp4",
+     "duration": 4453,
+     "title": "To the Stars by Hard Ways (1981)",
+     "year": "1981",
+     "moov": 4041582,
+     "description": "Russia. Directed by Richard Viktorov. Starring Yelena Metyolkina, Uldis Lieldidzs, Vadim Ledogorov, Nadezhda Sementsova, Yelena Fadeyeva, Vladimir Fyodorov. Original title Cherez ternii k zvyozdam . US title: HUMANOID WOMAN. Russian language with English subtitles. Plot: A woman created in a laborat"
+    },
+    {
+     "id": "the-mystery-of-the-third-planet-1981",
+     "file": "The Mystery of the Third Planet (1981).mp4",
+     "duration": 2840,
+     "title": "The Mystery of the Third Planet (1981)",
+     "year": "1981",
+     "moov": 2609406,
+     "description": "Russia. Directed by Roman Kachanov. Based on the book by Kir Bulychyov. Original title Tayna Tretey Planety . Russian language with English subtitles. Plot: Crewmembers of a spaceship collecting rare animals for zoos get involved with dangerous interplanetary outlaws."
+    },
+    {
+     "id": "heart-of-a-dog-1988",
+     "file": "Heart of a Dog Sobachye Serdtse (1988) Part 2.mp4",
+     "duration": 3931,
+     "title": "Heart of a Dog (1988)",
+     "year": "1988",
+     "moov": 3563304,
+     "description": "Russia. Directed by Vladimir Bortko. Starring Evgeniy Evstigneev, Vladimir Tolokonnikov. Original title Sobache Serdtse . Based on the novel by Mikhail Bulgakov. Russian language with English subtitles (embedded in the Matroska file). Plot: A stray dog is taken in by an eccentric scientist and becom"
+    },
+    {
+     "id": "moskva.kassiopeja-esperanto",
+     "file": "moskva.kassiopeja.mp4",
+     "duration": 4792,
+     "title": "moskva.kassiopeja -  ESPERANTO SUB",
+     "year": "1974",
+     "moov": 3633234,
+     "description": "EO: Pluraj infanoj iras al dumviva kosmomisio al Kasiopeo ĉar ili ne volas iri al lernejo. EN: Several children go to a lifelong space mission to Cassiopeia because they don't want to go to school. ES: Varios niños van a una misión espacial de por vida a Casiopea porque no quieren ir a la escuela."
+    },
+    {
+     "id": "solaris.-1971.720p.-blu-ray.x-264-yts.-am",
+     "file": "Solaris.1971.720p.BluRay.x264-[YTS.AM].mp4",
+     "duration": 10014,
+     "title": "Solaris [Солярис] 1972 Subbed EN",
+     "year": "1972",
+     "moov": 7300397,
+     "description": "The classic Andrei Tarkosvky Movie adaptation \"Solaris\" A psychologist is sent to a station orbiting a distant planet to find out what drove his crew insane."
+    },
+    {
+     "id": "solaris-1968",
+     "file": "Solyaris (1968).mp4",
+     "duration": 8546,
+     "title": "Solaris (1968) [Russian TV adaptation]",
+     "year": "1968",
+     "moov": 6495152,
+     "description": "Russia. Directed by Boris Nierenburg. Starring Vasiliy Lanovoy, Antonina Pilyus, Vladimir Etush, Viktor Zozulin. Original title Solyaris . Based on the novel by Stanislav Lem. Russian language with optional English subtitles. Plot: A scientist sent to join two other men in a space station finds that"
+    },
+    {
+     "id": "the-sky-calls-1959",
+     "file": "The Sky Calls (1959).mp4",
+     "duration": 4405,
+     "title": "The Sky Calls (1959)",
+     "year": "1959",
+     "moov": 3845482,
+     "description": "Russia. Directed by Alexander Kozyr and Mikhail Karyukov. Starring Ivan Pereverzev, Alexander Shvorin, Konstantin Bartashevich. Original title Nebo Zovyot . US title (in reedited form): BATTLE BEYOND THE SUN. Russian language with English subtitles. Plot: Men and women of different backgrounds parti"
+    },
+    {
+     "id": "planeta.bur.-1961",
+     "file": "Planeta bur (1961)/mp4/Planeta.bur.1961.ia.mp4",
+     "duration": 4712,
+     "title": "Planeta Bur (1961)",
+     "year": "1962",
+     "moov": 2655617,
+     "description": "Planeta Bur ( Planet of Storms ) is a Soviet science fiction film directed by Pavel Klushantsev . The narrative follows a crew of Soviet cosmonauts aboard two spaceships, Sirius and Vega , on a mission to explore Venus. After the tragic destruction of the third ship, Capella , by a meteor, the remai"
+    },
+    {
+     "id": "solaris.-1971_20250828",
+     "file": "Solaris.1971.mp4",
+     "duration": 10014,
+     "title": "Solaris (1972) aka Solyaris",
+     "year": "1972",
+     "moov": 7300397,
+     "description": "A psychologist is sent to a station orbiting a distant planet in order to discover what has caused the crew to go insane. -IMDb"
+    },
+    {
+     "id": "TemptationOfB.russianScienceFictionFilmEnglishSubtitles",
+     "file": "Iskushenie.B.mp4",
+     "duration": 4738,
+     "title": "Temptation of B. aka Iskushenie B. [Russian Science Fiction Film English Subtitles]",
+     "year": "1990",
+     "moov": 4488547,
+     "description": "The story of a writer who accidentally stumbles across the elixir of immortality and the small group of immortals who have jealously guarded this secret for centuries... \"Iskushenie.B\" or \"Temptation of B.\" is a Russian science-fiction film, directed by Arkadi Sirenko and based on works by the famou"
+    },
+    {
+     "id": "stalker-1080p.x-265-vxt",
+     "file": "Stalker.1979.REMASTERED.1080p.BluRay.x265-VXT.ia.mp4",
+     "duration": 9713,
+     "title": "Сталкер",
+     "year": "1979",
+     "moov": 7194510,
+     "description": "В маленькой безымянной стране есть территория под названием Зона. Это необычная область, и в ней есть место, известное как Комната, где, как считается, исполняются желания. Правительство объявило Зону запретной зоной и опечатало ее. Это не остановило людей от входа в Зону. Писатель и профессор хотят"
+    },
+    {
+     "id": "engineer-garins-hyperboloid-1965",
+     "file": "Engineer Garin's Hyperboloid (1965).mp4",
+     "duration": 5460,
+     "title": "Engineer Garin's Hyperboloid (1965)",
+     "year": "1965",
+     "moov": 4541447,
+     "description": "Russia. Directed by Aleksandr Gintsburg. Starring Evgeniy Evstigneev, Vsevolod Safonov, Mikhail Astangov, Natalya Klimova. Original title Giperboloid inzhenera Garina . Based on the novel by Alexei Tolstoy. Russian language with English subtitles. Plot: The inventor of a new weapon of mass destructi"
+    },
+    {
+     "id": "the-big-space-journey-1975",
+     "file": "The Big Space Journey (1975) with hardcoded English subs.ia.mp4",
+     "duration": 3744,
+     "title": "The Big Space Journey (1975)",
+     "year": "1975",
+     "moov": 2764810,
+     "description": "Russia. Directed by Valentine (as spelled in the subtitles; spelled 'Valentin' on Internet Movie Database) Selivanov. Starring Mila Berlinskaja as Sveta, Seryozha Obrazov as Fedya, Igor Sakarov as Sasha. Also known as THE BIG SPACE TRAVEL. Original title Bolshoe Kosmicheskoe Puteshestvie . Russian l"
+    }
+   ]
+  },
+  {
+   "id": "goluboy-ekran",
+   "dial": 5,
+   "name": "ГОЛУБОЙ ЭКРАН",
+   "family": "tv",
+   "color": "#1E88E5",
+   "description": "Television from the Soviet years and the nineties, much of it off home VHS: shows, concerts, Song of the Year, adverts.",
+   "items": [
+    {
+     "id": "y-2-mate.is-im-skillful-in-love-and-pure-art-film-by-konstantin-seliverstov-6-pu",
+     "file": "Y2Mate.is - I’m Skillful in Love and Pure Art (film by Konstantin Seliverstov)-6Pu4lvg_snY-480p-1629282816245.ia.mp4",
+     "duration": 4216,
+     "title": "I’m Skillful In Love And Pure Art(1999)ENGLISH SUBBED",
+     "year": "1999",
+     "moov": 3336403,
+     "description": "The heroes of the film - artist, director, architect, choreographer and porn star - tell numerous stories about their sexual exploits. A bizarre synthesis of Decameron, Lolita and The Adventures of Baron Munchausen. FOR ADULTS ONLY! 18+"
+    },
+    {
+     "id": "prognoz-pogody-ort-24-04-1999",
+     "file": "Прогноз погоды. ОРТ. 24.04.1999.ia.mp4",
+     "duration": 146,
+     "title": "Прогноз погоды. ОРТ. 24.04.1999",
+     "year": "1999",
+     "moov": 182588,
+     "description": "Ведущая: Ирина Полякова Спонсор: Фастум гель"
+    },
+    {
+     "id": "kindzadza",
+     "file": "videoplayback.mp4",
+     "duration": 3811,
+     "title": "Kin-dza-dza!",
+     "year": "1986",
+     "moov": 1172548,
+     "description": "Two Russians push the wrong button on a strange device and end up on the telepathic planet Pluke with its strange societal norms."
+    },
+    {
+     "id": "tom-ja-fluffy",
+     "file": "том-и-флаффи-_-стония-1997-г-givefastlink.mp4",
+     "duration": 4405,
+     "title": "Tom And Fluffy / Tom Ja Fluffy / Том И Флаффи [Full Animated Movie, 1997] Rus. Dub.",
+     "year": "1997",
+     "moov": 2140741,
+     "description": "Estonian animated film Tom Ja Fluffy from 1997. I am unable to find the original Estonian language version, nor the English dub, entitled Tom And Fluffy. This is the Russian dub."
+    },
+    {
+     "id": "1998_20250906",
+     "file": "Реклама РТР 1998.mp4",
+     "duration": 469,
+     "title": "Реклама РТР 1996 г.",
+     "year": "1996",
+     "moov": 507023,
+     "description": "3 блока рекламы телеканала РТР, июль 1996 г."
+    },
+    {
+     "id": "TheVistaGroup-WindowToIsraelNationalGeographicRussia",
+     "file": "Window to Israel VHS • National Geographic, Russia 50 FPS 1980s.ia.mp4",
+     "duration": 4831,
+     "title": "1980s VHS • Window to Israel: National Geographic, Russia 60 FPS",
+     "year": null,
+     "moov": 5920858,
+     "description": "A Russian-language documentary in which the narrator recounts several weeks spent traveling through Israel, presenting the country to a Soviet audience. The film moves through Jerusalem, Tel Aviv, Jaffa, Eilat, Qumran, and the Negev, with extended attention to the religious significance of each loca"
+    },
+    {
+     "id": "2x-2-2007-2016-720p",
+     "file": "Все заставки и промо телеканала 2x2 2007-2016_720p.mp4",
+     "duration": 4221,
+     "title": "2X2 [Russian TV Channel]",
+     "year": "1989",
+     "moov": 3916997,
+     "description": "El Locomotion Ruso. None Recordings are Mines."
+    },
+    {
+     "id": "reklamnyj-blok-ort-1996-1",
+     "file": "Рекламный блок. ОРТ. 1996.ia.mp4",
+     "duration": 133,
+     "title": "Рекламный блок. ОРТ. 1996",
+     "year": "1996",
+     "moov": 163954,
+     "description": "Точная дата неизвестна. Содержание: L'Oreal Paris Elseve Tefal Domestos Центр \"ДАР\" Vena moda Austria Дольф Лундгрен. Под прицелом Вигорос"
+    },
+    {
+     "id": "opening-to-o-brother-where-art-thou-2001-vhs-russia",
+     "file": "Opening to O Brother, Where Art Thou 2001 VHS Russia.mp4",
+     "duration": 297,
+     "title": "Opening To O Brother, Where Art Thou 2001 VHS (Russia)",
+     "year": null,
+     "moov": 405758,
+     "description": "Here is the order: 1. Premier Multimedia Logo 2. Screwed Trailer (in Russian) 3. The Hard Way (1991) Trailer (in Russian) 4. Cry-Baby Trailer (in Russian) 5. O Brother, Where Art Thou? Trailer (in Russian) 6. Warning Screen (in Russian) 7. Premier Contact Information Screen (in Russian) 8. Video Ren"
+    },
+    {
+     "id": "20230329_20230329_1319",
+     "file": "ГОРОДОК.mp4",
+     "duration": 3168,
+     "title": "ГОРОДОК",
+     "year": "1997",
+     "moov": 1650551,
+     "description": "mono VHS transfer of PAL tape Attempted to get title with google lens"
+    },
+    {
+     "id": "goodbye-mary-poppins-1984",
+     "file": "Goodbye Mary Poppins (1984).ia.mp4",
+     "duration": 8267,
+     "title": "Goodbye, Mary Poppins (1984)",
+     "year": "1984",
+     "moov": 10359651,
+     "description": "Russia. Directed by Leonid Kvinikhidze. Starring Natalia Andreichenko. Original title Meri Poppins, do svidaniya . Based on the novel by P. L. Travers. Russian language with English subtitles. Plot: A magical nanny enters the lives of two children."
+    },
+    {
+     "id": "the-bakers-cat-1998",
+     "file": "The Baker's Cat (1998).mp4",
+     "duration": 595,
+     "title": "The Baker's Cat (1998)",
+     "year": "1998",
+     "moov": 183224,
+     "description": "Original story by Joan Aiken. This story has always had a soft spot in my heart, having read it in \"The Random House Book Bedtime Stories\" I decided to revisit my childhood. The Baker's Cat in particular being my favorite from the whole book (that I still own!) I went online to check for any adaptat"
+    },
+    {
+     "id": "hq-get.gt",
+     "file": "Наталья Верич - Мой Блуждающий Огонь Предмастер-Версия HQ [get.gt].mp4",
+     "duration": 199,
+     "title": "Наталья Верич - Мой Блуждающий Огонь [1995] ПОЛНАЯ ВЕРСИЯ НАЙДЕНА",
+     "year": "1995",
+     "moov": 60778,
+     "description": "НАЙДЕНО Киррил А и Антициклон - версия VHS с NBN записанная на кассету [выложу позже] ПОЗИТИВ - Данная версия [черновой монтаж]"
+    },
+    {
+     "id": "hello-i-am-your-aunt-1975",
+     "file": "Hello, I Am Your Aunt (1975).mp4",
+     "duration": 5849,
+     "title": "Hello, I Am Your Aunt! (1975)",
+     "year": "1975",
+     "moov": 4368658,
+     "description": "Russia. Directed by Viktor Titov. Starring Aleksandr Kalyagin, Tamara Nosova, Mikhail Lyubeznov, Oleg Shklovsky, Mikhail Kozakov. Original title Zdravstvuyte, ya vasha tyotya! Based on Brandon Thomas's 1892 British play Charley's Aunt . Russian language with English subtitles. Plot: A vagrant hiding"
+    },
+    {
+     "id": "hello-fools",
+     "file": "Hello Fools.ia.mp4",
+     "duration": 6728,
+     "title": "Hello, Fools! (1996, VHS) Russian, Very Rare, No English Subs, Full Feature Film",
+     "year": null,
+     "moov": 10601806,
+     "description": "Hello, Fools! (Russian: Привет, дуралеи!, romanized: Privet, duralei!) is a 1996 Russian film directed by Eldar Ryazanov. The film is a fantastical melodrama and comedy. Jura Kablukov is a cheerful, kind, but very unlucky man. He works as a cleaner of historical monuments in Moscow, together with hi"
+    },
+    {
+     "id": "novosti-sporta-ort-24-04-1999",
+     "file": "Новости спорта. ОРТ. 24.04.1999.mp4",
+     "duration": 199,
+     "title": "Новости спорта. ОРТ. 24.04.1999",
+     "year": "1999",
+     "moov": 247012,
+     "description": "Ведущий: Константин Выборнов"
+    },
+    {
+     "id": "baltic-fleet-yablochko-1966",
+     "file": "ЯБЛОЧКО Танцевальный ансамбль Балтийского флота [x52p_jbVvv8].mp4",
+     "duration": 209,
+     "title": "Baltic Fleet - Yablochko (1966)",
+     "year": "1966",
+     "moov": 153398,
+     "description": "The Baltic Fleet's Song and Dance Ensemble performs the sailor dance \"Yablochko.\" Leningrad Television, 1966. Film scanning and restoration by Triacetate TV. Матросский танец \"Яблочко\". Ленинградский военно-морской \"Голубой огонёк\". Ленинградское телевидение, 1966 год. Сканирование плёнки и восстано"
+    },
+    {
+     "id": "45646322",
+     "file": "45646322.mp4",
+     "duration": 5743,
+     "title": "Американский ниндзя(авт.перевод Андрей Гаврилов) 1985г.",
+     "year": null,
+     "moov": 4725782,
+     "description": "Американский ниндзя(авт.перевод Андрей Гаврилов) 1985г."
+    },
+    {
+     "id": "98_20230828",
+     "file": "архив ЛТВ муз тус Натали 98.mp4",
+     "duration": 1917,
+     "title": "Архив ЛТВ Муз Тус Натали 98 Natali Rudina",
+     "year": "1998",
+     "moov": 1599970,
+     "description": "Tv broadcast of concert from russian singer Natali Молодежная программа \"Курортный Компот\" рубрика \"Муз Тус\" интервью с Натали (концерт) 1998 Natalia Anatolievna Rudina (Russian: Наталья Анатольевна Рудина , born Minyaeva , Russian: Миняева , 31 March 1974 in Dzerzhinsk , [2] USSR ), better known by"
+    },
+    {
+     "id": "little-lulu-ep-21-harmony-gold-russian-overdub-1985",
+     "file": "Harmony Gold Lost Dub Ep 21.ia.mp4",
+     "duration": 1299,
+     "title": "Little Lulu Ep. 21 - Lost Harmony Gold Eng Dub (Russian Overdub) 1985",
+     "year": "1985",
+     "moov": 718556,
+     "description": "\"Little Lulu and Her Little Friends\" received an English dub in 1985 by Harmony Gold. Even more obscure than the ZIV dub, it is unknown whether it was shown on TV or if it had any home media releases. Subtitles are available from my YouTube upload of this episode: https://www.youtube.com/watch?v=KMW"
+    },
+    {
+     "id": "vremya-ort-24-04-1999",
+     "file": "Время. ОРТ. 24.04.1999.mp4",
+     "duration": 1559,
+     "title": "Время. ОРТ. 24.04.1999",
+     "year": "1999",
+     "moov": 1928695,
+     "description": "Ведущий: Кирилл Клейменов Основные темы: Бомбардировки в Югославии Ситуация на балканах НАТО Беженцы из Косово"
+    },
+    {
+     "id": "vhsrusmusic1996",
+     "file": "musique.mp4",
+     "duration": 9128,
+     "title": "Российские музыкальные клипы-1996",
+     "year": "1996",
+     "moov": 11246954,
+     "description": "Обработанные российские музыкальные клипы 1996 года в 50 FPS . Содержание клипов: EXE – Всё ясно Нэнси – Дым сигарет с ментолом Михаил Круг – Это было вчера Игорь Сарухаров – Рыжая звезда Алёна Апина – Соперница Органическая Леди – Дай мне любовь Алёна Апина – Ив Сен-Лоран Аркадий Укупник – Осенний "
+    },
+    {
+     "id": "12_20240727_202407",
+     "file": "реклама видео кассет и первого в СССР видео магнитофона ВМ - 12.mp4",
+     "duration": 1092,
+     "title": "Реклама Видео Кассет И Первого В СССР Видео Магнитофона ВМ 12",
+     "year": null,
+     "moov": 336397,
+     "description": "Soviet advertisement for video tapes and the VM-12 VCR. Made by Goskino (USSR state film board)."
+    },
+    {
+     "id": "1971_20260610",
+     "file": "_Гамера. Гамера против Зигры (1971).mp4",
+     "duration": 5373,
+     "title": "Gamera vs. Zigra (1971) RUS vhs",
+     "year": "1971",
+     "moov": 2146220,
+     "description": "Гамера. Гамера Против Зигры (1971)"
+    },
+    {
+     "id": "20230329_20230329_1320",
+     "file": "Божественная комедия.mp4",
+     "duration": 5470,
+     "title": "Божественная Комедия",
+     "year": "1996",
+     "moov": 3012217,
+     "description": "mono VHS transfer of PAL tape Attempted to get title with google lens"
+    },
+    {
+     "id": "the-agra-treasure-1983",
+     "file": "The Agra Treasure (1983) pt 2.mp4",
+     "duration": 4367,
+     "title": "The Adventures of Sherlock Holmes and Dr. Watson: The Agra Treasure (1983)",
+     "year": "1983",
+     "moov": 3316144,
+     "description": "Russia. Directed by Igor Maslennikov. Starring Vasiliy Livanov, Vitali Solomin, Ekaterina Zinchenko, Rina Zelyonaya, Viktor Proskurin, Sergey Shakurov, Pavel Kadochnikov, Borislav Brondukov. Based on the novel The Sign of Four by Sir Arthur Conan Doyle. Original title Priklyucheniya Sherloka Kholmsa"
+    },
+    {
+     "id": "reklamnyj-blok-ort-30-12-1999-3",
+     "file": "Рекламный блок. ОРТ. 30.12.1999 (3).mp4",
+     "duration": 199,
+     "title": "Рекламный блок. ОРТ. 30.12.1999 (3)",
+     "year": "1999",
+     "moov": 151470,
+     "description": "Содержание: Биттнер Nescafé Picnic Русское Лото Stimorol Галстена Konica Samsung Nestlé МТС Sprite"
+    },
+    {
+     "id": "vhs_sdvig_not_for_sale_festival_live_1989",
+     "file": "Сдвиг - Not For Sale - фестиваль Московской Рок-Лаборатории (ДК Горбунова, 28-29.10.1989) (Крупный План).mp4",
+     "duration": 9114,
+     "title": "Сдвиг - Not For Sale - фестиваль Московской Рок-Лаборатории (Крупный План) (VHSRip, HEVC)",
+     "year": "1989",
+     "moov": 6919858,
+     "description": "Сдвиг - Not For Sale - сезонный фестиваль Московской Рок-Лаборатории (ДК Горбунова, 28-29.10.1989) (Крупный План) Описание: [\"Сдвиг-Рок-Н-Ролл\" - это новый цикл видеопрограмм, представляющих лучшие рок-группы некоммерческой ориентации. \"Сдвиг-Рок-Н-Ролл\" - это совместная работа ВТПО \"Крупный План\" и"
+    },
+    {
+     "id": "that-very-munchhausen-1979",
+     "file": "That Very Munchhausen (1979) pt 1.mp4",
+     "duration": 4244,
+     "title": "That Very Munchhausen (1979)",
+     "year": "1980",
+     "moov": 3225720,
+     "description": "Russia. Directed by Mark Zaharov (according to the subtitles; it's spelled 'Zakharov' on Internet Movie Database). Starring Oleg Yankovskiy, Inna Churikova, Yelena Koreneva, Leonid Yarmolnik. Original title Tot Samyy Myunkhgauzen . Based on the stories by Rudolph Erich Raspe. Russian language with E"
+    },
+    {
+     "id": "klub_belyy_popugay_1996",
+     "file": "Клуб Белый Попугай (часть 1) (Видеосервис, 1996).mp4",
+     "duration": 4243,
+     "title": "Клуб Белый Попугай (часть 1) (Видеосервис, 1996) (VHSRip, MPG)",
+     "year": "1996",
+     "moov": 3508937,
+     "description": "Клуб \"Белый Попугай\" - юмористическая телепередача, представлявшая собой общение клуба любителей анекдотов. На неё приглашались многие известные артисты, в эфире рассказывались новые и давно известные анекдоты из уст артистов. Также нередко озвучивались анекдоты, почерпнутые из писем зрителей."
+    },
+    {
+     "id": "talkin-headz-the-metalheadz-documentary-vhs-1998-rus-kzndnb-720p",
+     "file": "talkin headz rus.mp4",
+     "duration": 3617,
+     "title": "Talkin' Headz (The Metalheadz Documentary) (VHS, 1998, RUS VO by KZNDNB, 720p)",
+     "year": "1998",
+     "moov": 2451011,
+     "description": "Спасибо KZNDNB и burggg !"
+    },
+    {
+     "id": "little-lulu-ep-23-harmony-gold-russian-overdub-1985",
+     "file": "Harmony Gold Lost Dub Ep 23.ia.mp4",
+     "duration": 1294,
+     "title": "Little Lulu Ep. 23 - Lost Harmony Gold Eng Dub (Russian Overdub) 1985",
+     "year": "1985",
+     "moov": 715708,
+     "description": "\"Little Lulu and Her Little Friends\" received an English dub in 1985 by Harmony Gold. Even more obscure than the ZIV dub, it is unknown whether it was shown on TV or if it had any home media releases. Subtitles are available from my YouTube upload of this episode: Originally uploaded February 22, 20"
+    },
+    {
+     "id": "excapefromkingdom",
+     "file": "Побег_из_королевства...(1988)_2.mp4",
+     "duration": 5694,
+     "title": "Escape from Kingdom (1988)",
+     "year": "1988",
+     "moov": 5605485,
+     "description": "This is the only copy I was able to find of this rare action film from Addy Sung (HIRED GUNS, KUNG FU FROM BEYOND THE GRAVE). It is English subtitled however it is dubbed over in Russian."
+    },
+    {
+     "id": "1998_20250906_202509",
+     "file": "Реклама ОРТ 1998.mp4",
+     "duration": 718,
+     "title": "Реклама ОРТ 1998 г.",
+     "year": "1998",
+     "moov": 1178632,
+     "description": "Программа передач канала ОРТ на 26 января 1998 г. и реклама."
+    },
+    {
+     "id": "ssr_vhs_1994",
+     "file": "Сам Себе Режиссёр - Избранное (1994).mp4",
+     "duration": 3689,
+     "title": "Сам Себе Режиссёр - Избранное (1994) (Varus Video, 1995) (VHSRip, MPG)",
+     "year": "1994",
+     "moov": 2831758,
+     "description": "Программа \"Сам себе режиссер\" - это развлекательное шоу, в основе которого лежит демонстрация любительского видео. Выпущена на видеокассетах от Varus Video в 1995 году."
+    },
+    {
+     "id": "moussorgky-khovanshchina-kiroy-opera-gergiev-act-i-ii",
+     "file": "Moussorgky Khovanshchina Kiroy Opera Gergiev Act III & IV & V.ia.mp4",
+     "duration": 6663,
+     "title": "Moussorgky Khovanshchina Kiroy Opera Gergiev",
+     "year": "1992",
+     "moov": 6854148,
+     "description": "A musical drama of the national history in five acts based on the edition of Pavel Limm with Dmitri Shostakovich's orchestration."
+    },
+    {
+     "id": "1_20221123_20221123_1439",
+     "file": "реклама орт.mp4",
+     "duration": 216,
+     "title": "Рекламный блок Первый канал/ОРТ 1997",
+     "year": "1997",
+     "moov": 160755,
+     "description": "Commercial break from a recorded broadcast of Channel 1 in Russia, 1997 Index: Заставка ОРТ с жирафом Mentos Castrol Балтика Александр Бушков Gallina Blanca Podravka \"Золотой петух\" Nescafe Pampers Plus Chewits Заставка ОРТ с обезьяной"
+    },
+    {
+     "id": "46975120",
+     "file": "46975120.mp4",
+     "duration": 7762,
+     "title": "12 Обезьян (авт.перевод Андрей Гаврилов) 1995г",
+     "year": null,
+     "moov": 5287854,
+     "description": "12 Обезьян (авт.перевод Андрей Гаврилов) 1995г"
+    },
+    {
+     "id": "1995-vhs-rip",
+     "file": "Смертельная битва 1995 VHS Rip.mp4",
+     "duration": 5828,
+     "title": "Смертельная Битва (1995) VHS Rip",
+     "year": "1995",
+     "moov": 4148599,
+     "description": "Оцифровка с кассеты. Озвучка - Сербин. Картинка темная, какую в 90е смотрели по видику."
+    },
+    {
+     "id": "videoplayback-27_202503",
+     "file": "videoplayback (27).mp4",
+     "duration": 200,
+     "title": "Ты был солнечным днём",
+     "year": "1998",
+     "moov": 60638,
+     "description": "слова, музыка- Зоя Арова исполнение- Зося Харлампиди"
+    },
+    {
+     "id": "ntv-logos-ads-1-08-09-1994",
+     "file": "НТВ - Заставки, рекламы, анонсы (кассета 1) (08-09.1994).mp4",
+     "duration": 500,
+     "title": "НТВ - Заставки, рекламы, анонсы (кассета 1) (08-09.1994) (VHSRip, MPG)",
+     "year": "1994",
+     "moov": 377685,
+     "description": "Заставки, рекламы, анонсы с лицензионной видеокассеты \"Наполеон - Путь К Вершине\". Август-сентябрь 1994 г. VHS-копия с исходников. Содержание: * Заставка \"Скоро на канале\" * Анонс фильма \"Блеф Кугана\" * Анонс фильма \"Заснувший\" * Анонс передачи \"Лучшие Из Лучших\" * Заставка рекламы (начальная) * Рек"
+    },
+    {
+     "id": "glasnost-booth-show",
+     "file": "Оба-на! Выпуск № 6. Будка гадости.-gdBHmyUPEYs.mp4",
+     "duration": 1181,
+     "title": "Booth of Glasnost (БУДКА ГЛАСНОСТИ)",
+     "year": null,
+     "moov": 886684,
+     "description": "A Russian television show that aired from 1991-1993. A booth is installed in various cities of the former Soviet Union where people can speak their minds."
+    },
+    {
+     "id": "the-queen-of-spades-1982",
+     "file": "The Queen of Spades (1982).mp4",
+     "duration": 5197,
+     "title": "The Queen of Spades (1982)",
+     "year": "1982",
+     "moov": 3961756,
+     "description": "Russia. Directed by Igor Maslennikov. Starring Alla Demidova, Viktor Proskurin, Irina Dymchenko. Original title: Pikovaya Dama . Based on the story by Alexander Pushkin. Russian language with English subtitles. Plot: A young soldier attempts to make a fortune at a game of cards through otherworldly "
+    },
+    {
+     "id": "irony-of-fate-1976",
+     "file": "Irony of Fate (1976) pt 1.mp4",
+     "duration": 5991,
+     "title": "Irony of Fate (1976)",
+     "year": "1976",
+     "moov": 5017119,
+     "description": "Russia. Directed by Eldar Ryazanov. Starring Andrey Myagkov, Barbara Brylska, Yuriy Yakovlev, Olga Naumenko. Russian language with English subtitles. Plot: In this two-part movie made for Russian television, two strangers--a man and a woman--brought together by chance on New Year's Eve find a relati"
+    },
+    {
+     "id": "50431188",
+     "file": "50431188.mp4",
+     "duration": 5358,
+     "title": "Авария(авт.перевод Андрей Гаврилов)1997г",
+     "year": null,
+     "moov": 3997534,
+     "description": "Авария(авт.перевод Андрей Гаврилов)1997г"
+    }
+   ]
+  },
+  {
+   "id": "khronika",
+   "dial": 6,
+   "name": "ХРОНИКА",
+   "family": "educational",
+   "color": "#78909C",
+   "description": "Newsreels and documentaries: Novosti Dnya, science films, and the century on film.",
+   "items": [
+    {
+     "id": "38-ya-parallel-1981",
+     "file": "38-я параллель (1981) [pqdNLQIwGPM].mp4",
+     "duration": 3282,
+     "title": "38-я параллель (1981)",
+     "year": "1981",
+     "moov": 2620929,
+     "description": "Тридцать восьмая параллель. Политический обозреватель А.Каверзнев знакомит нас с одним из государств в Восточной Азии - Корейской Народно-Демократической Республикой, рассказывает о ее культуре, экономике, особенностях быта."
+    },
+    {
+     "id": "NewsOfDayNo.1-21943January",
+     "file": "Novosti_dnya_No.1-2Yanvar_1943_512kb.mp4",
+     "duration": 922,
+     "title": "\"News of day\" No.1-2 (1943, January)",
+     "year": "1943",
+     "moov": 417208,
+     "description": "Newsreel from The Great Patriotic War (1941 - 1945)"
+    },
+    {
+     "id": "NewsOfDayFromJanuary1942",
+     "file": "Novosti_dnya_Yanvar_1942_512kb.mp4",
+     "duration": 686,
+     "title": "\"News of day\" from January, 1942",
+     "year": "1942",
+     "moov": 310864,
+     "description": "Newsreel from The Great Patriotic War (1941 - 1945)"
+    },
+    {
+     "id": "larisa-1980",
+     "file": "Larisa (1980) USA Criterion Bluray Extra.mp4",
+     "duration": 1246,
+     "title": "Larisa (1980)",
+     "year": "1980",
+     "moov": 842425,
+     "description": "Elem Klimov's tribute to his late wife, director Larisa Shepitko, killed in a car accident a year earlier. Features excerpts from all of her films, and archival audio of her discussing life and art."
+    },
+    {
+     "id": "1972.01-01-1971-1972-no-1",
+     "file": "1972.01 Новости Дня 01 Итоги 1971 года, встреча Нового 1972 года (Новости дня № 1).mp4",
+     "duration": 611,
+     "title": "1972.01 Новости Дня 01 Итоги 1971 Года, Встреча Нового 1972 Года (Новости Дня № 1)",
+     "year": "1972",
+     "moov": 267524,
+     "description": "📽️ «Новости дня» №1 — январь 1972 Краткое содержание эпизодов: 🔹 Эпизод 1 — Титры: «Вступая в год 1972», логотип РГАКФД, портрет Ленина, дата выпуска, студия ЦСДФ. 🔹 Эпизод 2 — Зимняя Москва: снег, Кремль, флаги, прохожие, трамваи. 🔹 Эпизод 3 — Пленум ЦК КПСС: зал Дворца съездов, выступление Брежнев"
+    },
+    {
+     "id": "sondovonskiy-mezhdunarodnyy-detskiy-lager",
+     "file": "Сондовонский международный детский лагерь [s_r4wUCmKFs].mp4",
+     "duration": 1209,
+     "title": "Сондовонский международный детский лагерь",
+     "year": "1994",
+     "moov": 883264,
+     "description": "Счастливый рай для Корейских детей и детей иностранцев в КНДР на Восточном море, недалеко от Вонсана. В фильме подробно показана жизнь и отдых в стране настоящего социализма. 1994 год. На русском языке"
+    },
+    {
+     "id": "the-homeland-of-electricity",
+     "file": "The Homeland of Electricity (1967) USA Criterion Bluray.mp4",
+     "duration": 2330,
+     "title": "The Homeland of Electricity (1967)",
+     "year": "1967",
+     "moov": 1594366,
+     "description": "The Homeland of Electricity, Larisa Shepitko's adaptation of an Andrei Platonov story, was one of three short films collected in an omnibus work (Beginning of an Unknown Era) commissioned to honor the 50th Anniversary of the October Revolution. Censors eventually shelved the film and it would not se"
+    },
+    {
+     "id": "1496408853179",
+     "file": "1496408853179.mp4",
+     "duration": 4183,
+     "title": "Island Ablazed",
+     "year": "1961",
+     "moov": 1635837,
+     "description": "A documentary recounting the history of the Cuban Revolution and its impact on Cuba's youth, as well as Cuba's struggle for independence and revolution."
+    },
+    {
+     "id": "1955.12.00-.-65",
+     "file": "1955.12.00 Новости дня вып. 65 Киножурнал.mp4",
+     "duration": 614,
+     "title": "1955.12.00 Новости Дня Вып. 65 Киножурнал",
+     "year": "1955",
+     "moov": 238757,
+     "description": "Киножурнал «Новости дня» 1955, декабрь, № 65. 1. Москва. Заседание 4-й сессии Верховного Совета СССР в Большом Кремлевском дворце. Выступают А.Г. Зверев, Н.А. Булганин, Н.С. Хрущев. 2. Магнитогорск. Плавка стали в мартеновском цехе металлургического комбината им. Сталина. 3. Минск. Сборка мощных лес"
+    },
+    {
+     "id": "NewsOfDayNo.791942November",
+     "file": "Novosti_dnya_No.7911.42_512kb.mp4",
+     "duration": 610,
+     "title": "\"News of day\" No.79 (1942, November)",
+     "year": "1942",
+     "moov": 276635,
+     "description": "Newsreel from The Great Patriotic War (1941 - 1945)"
+    },
+    {
+     "id": "KinotecaInvasionOfRussia",
+     "file": "Kinoteca - Invasion of Russia.mp4",
+     "duration": 419,
+     "title": "Kinoteca: Invasion Of Russia",
+     "year": null,
+     "moov": 471268,
+     "description": "\"Kinoteca - (Invasion of Russia) - Lenin & Sec - in car; Russian on RR - march - banner - Lenin speaking - Congress Soviet - Kids watching parade; Starving kids; Market place.\" National Archives Identifier: 89768 \"This material was collected by CBS for its 1960s television documentary series, WORLD "
+    },
+    {
+     "id": "1980.-80-1979",
+     "file": "Москва 1980. Олимпиада 80 (1979).mp4",
+     "duration": 2680,
+     "title": "Москва 1980. Олимпиада 80 (1979)",
+     "year": "1979",
+     "moov": 2705335,
+     "description": "• Год: 1979 •Страна: короткая • Производство: ЦСДФ (Центральная студия документальных фильмов) • Учетный номер (РГАКФД): Арх. № 28434 (и архивные спецвыпуски к Олимпиаде) • Жанр: Документальный, кинохроника • Режиссер: В. Коновалов • Сценаристы: А. Кулешов, В. Коновалов • Продолжительность: 44:40 • "
+    },
+    {
+     "id": "NewsOfDayNo.60june271941",
+     "file": "Novosti_dnya_No.6027.06.41_512kb.mp4",
+     "duration": 633,
+     "title": "\"News of day\" No.60 (June 27, 1941)",
+     "year": "1941",
+     "moov": 286908,
+     "description": "Newsreel from The Great Patriotic War (1941 - 1945)"
+    },
+    {
+     "id": "1-august-19th-1991",
+     "file": "(6) Steve Rosenberg - Remembering Gorbachev 08-30-2026.mp4",
+     "duration": 1128,
+     "title": "August 19th, 1991",
+     "year": "1991",
+     "moov": 922095,
+     "description": "Dance of the Cygnets ▪ During the failed 1991 Soviet coup d'état , Tchaikovsky's Swan Lake played on Soviet Television for three days without a break. ▪ The airing of Swan Lake was already a political tradition when the Soviet Union's government faced a crisis: it happened after the death of Leonid "
+    },
+    {
+     "id": "TheProdigalSonTheLifeandWorkofSergeiProkofiev",
+     "file": "Prodigal.Son.The.Life.and.Work.of.Sergei.Prokofiev.1991.VHSRip.AAC2.0.x264-rattera.mp4",
+     "duration": 5510,
+     "title": "The Prodigal Son. : The Life and Work of Sergei Prokofiev",
+     "year": "1993",
+     "moov": 8092397,
+     "description": "This revealing and evocative drama-documentary was commissioned from the young and highly regarded Russian film maker Andrei Nekrasov. He uses a cast of fine Russian actors, together with archive film clips and Prokofiev's own writings, to tell the story of the composer's life and career in Russia a"
+    },
+    {
+     "id": "sen-bong-avangard-koreyskiy-kolkhoz-1946",
+     "file": "Сен-бонг (Авангард корейский колхоз) - Sen-bong (Avangard Korean Kolkhoz) 1946 [59975242].mp4",
+     "duration": 1497,
+     "title": "Сен-бонг (Авангард корейский колхоз) - Sen-bong (Avangard Korean Kolkhoz) 1946",
+     "year": "1946",
+     "moov": 1205168,
+     "description": "Документальный фильм о корейском колхозе \"Авангард\" (ныне Чиилийский район Кызылординская область Казахстана). Неожиданная и шикарная находка с замечательного сайта koryo-saram.ru - возможно самый первый фильм о советских корейцах, созданный после депортации - \"Колхоз \"Авангард\"\" (режиссер И. Вереща"
+    },
+    {
+     "id": "pesn-o-geroyakh-1932",
+     "file": "Песнь о героях (Комсомол) Song of Heroes (Komsomol) [1932] [Q2EzQwNoG4A].mp4",
+     "duration": 2995,
+     "title": "Песнь о героях (Комсомол) Song of Heroes (Komsomol) [1932]",
+     "year": "1932",
+     "moov": 2325567,
+     "description": "Α documentary about the building of blast furnaces by Komsomol, the Communist Union of Youth, as part of Stalin’s first five-year plan for the Soviet Union. The film is set in Magnitogorsk in the Ural Mountains, where an industrial city of over 200,000 people was built in just a few years, and the K"
+    },
+    {
+     "id": "a-sixth-part-of-the-world-1926",
+     "file": "A Sixth Part of the World (1926).mp4",
+     "duration": 4447,
+     "title": "A Sixth Part of the World (1926)",
+     "year": "1926",
+     "moov": 3672846,
+     "description": "Russia. Directed by Dziga Vertov. Also known as THE SIXTH PART OF THE WORLD. Original title Shestaya Chast Mira . Silent film with Russian intertitles and English subtitles. Plot: Vignettes give an idea of the range of different peoples and cultures that comprise the vast terrain of the Soviet Union"
+    },
+    {
+     "id": "gravidance-2000",
+     "file": "GraviDance (2000).mp4",
+     "duration": 1511,
+     "title": "GraviDance (2000)",
+     "year": "2000",
+     "moov": 1133670,
+     "description": "Vladimir Kobrin's GraviDance (2000)"
+    },
+    {
+     "id": "jews-on-land-1927",
+     "file": "Евреи_на_земле_1927.mp4",
+     "duration": 1074,
+     "title": "Евреи На Земле (jews on land) 1927",
+     "year": null,
+     "moov": 711468,
+     "description": "AKA \"The Jew and the Earth\" is 1927 Soviet short documentary film directed by Abram Room."
+    },
+    {
+     "id": "historia-da-guerra-civil-dziga-vertov-1922",
+     "file": "Historia_da_Guerra_Civil-Dziga_Vertov(1922).mp4",
+     "duration": 5637,
+     "title": "История гражданской войны",
+     "year": "1921",
+     "moov": 4273395,
+     "description": "The epic story of the Russian Civil War (1918–21): the White Terror, the counterrevolutionary uprisings, the guerrilla war, the Kolchak front, the Wrangel front and the Kronstadt rebellion. Documentary by director Dziga Vertov."
+    },
+    {
+     "id": "ten-years-of-the-space-age-1967",
+     "file": "Ten Years of the Space Age (1967).mp4",
+     "duration": 3075,
+     "title": "Ten Years Of The Space Age/10 лет космической эры (1967) AI English Subtitles",
+     "year": "1967",
+     "moov": 2350740,
+     "description": "A feature on Soviet space exploration on the 50th anniversary of the Russian Socialist Revolution. HD Webrip, unfortunately I could not find any human-made subtitles and had to resort to AI generated english subs. I cannot guarantee their accuracy, but an attempt has been made to clean/edit them."
+    },
+    {
+     "id": "lucky_people_center_international",
+     "file": "Video 147.mp4",
+     "duration": 4652,
+     "title": "Lucky People Center International (1998) (English subs, SD)",
+     "year": "1998",
+     "moov": 3877491,
+     "description": "Uploaded here for preservation and posterity sake."
+    },
+    {
+     "id": "NewsOfDayNo.104november61941",
+     "file": "Novosti_dnya_No.10406.11.41_512kb.mp4",
+     "duration": 492,
+     "title": "\"News of day\" No.104 (November 6, 1941)",
+     "year": "1941",
+     "moov": 223221,
+     "description": "Newsreel from The Great Patriotic War (1941 - 1945)"
+    },
+    {
+     "id": "dniprospetsstal-004-01",
+     "file": "Студія ДНЕПРОСПЕЦСТАЛЬ_Помни_Dniprospetsstal_004_01.ia.mp4",
+     "duration": 363,
+     "title": "Remember! (Pomni) — WWII 30th Anniversary Commemorative Film (1975)",
+     "year": "1975",
+     "moov": 182066,
+     "description": "An authentic, restored amateur documentary film titled \"Remember!\" (Pomni), produced by the Amateur Film Studio of the \"Dniprospetsstal\" (DSS) Electrometallurgical Plant in 1975. The film was dedicated to the 30th anniversary of the victory over Nazi Germany in World War II and features its original"
+    },
+    {
+     "id": "NewsOfDayNo.131945AtMay",
+     "file": "Novosti_dnya_No.13May_1945_512kb.mp4",
+     "duration": 601,
+     "title": "\"News of day\" No.13 (1945, at May)",
+     "year": "1945",
+     "moov": 272559,
+     "description": "Newsreel from The Great Patriotic War (1941 - 1945)"
+    },
+    {
+     "id": "automation-1983",
+     "file": "automation 1983.ia.mp4",
+     "duration": 1047,
+     "title": "Automation 1983",
+     "year": "1983",
+     "moov": 717604,
+     "description": "automation 1983"
+    },
+    {
+     "id": "OnMay9th1945.TheForgottenNewsreel",
+     "file": "9_may_512kb.mp4",
+     "duration": 1688,
+     "title": "On May, 9th 1945. The forgotten newsreel.",
+     "year": "1945",
+     "moov": 762560,
+     "description": "Unknown newsreel about Victory Day celebrating in 1945."
+    },
+    {
+     "id": "NewsOfDay1943AtSpring",
+     "file": "Novosti_dnya_Vesna_1943_512kb.mp4",
+     "duration": 592,
+     "title": "\"News of day\" (1943, at Spring)",
+     "year": "1943",
+     "moov": 268510,
+     "description": "Newsreel from The Great Patriotic War (1941 - 1945)"
+    },
+    {
+     "id": "032-04-video-excerpt-chiatura-1979",
+     "file": "032_04_Video_Excerpt_Chiatura_1979.mp4",
+     "duration": 415,
+     "title": "Excerpts from “Chiatura” (100th Anniversary Film), 1979 | ამონარიდები ფილმიდან “ჭიათურა” (100 წლის იუბილე), 1979",
+     "year": "1979",
+     "moov": 197311,
+     "description": "A collection of excerpts from the 1979 documentary telefilm “Chiatura,” created to celebrate the city’s 100th anniversary as an industrial centre. The film presents a heroic, Soviet narrative of Chiatura’s history, which begins by recounting Akaki Tsereteli’s role in popularising manganese. The film"
+    },
+    {
+     "id": "RussianAirShow",
+     "file": "Russian Air Show.mp4",
+     "duration": 543,
+     "title": "War Dept. Military IntelIigence Film \"Russian Air Show\"",
+     "year": null,
+     "moov": 468595,
+     "description": "U.S. War Department Military Intelligence film #MID-3090R. National Archives description: \"MILITARY FILM REPORT: Josef Stalin and staff watch air show. Russian planes go through maneuvers; anti-aircraft and machine guns fire at planes; blimps fly over and parachutists jump from planes.\" National Arc"
+    },
+    {
+     "id": "KinotecaUnforgettableYears",
+     "file": "Kinoteca - Unforgettable Years.mp4",
+     "duration": 684,
+     "title": "Kinoteca: Unforgettable Years",
+     "year": null,
+     "moov": 402063,
+     "description": "Soviet newsreels. \"Kinoteca - Unforgettable Years - CU - faces - Russian - Lenin speaking; Gers enter Russia; US Naval Ship; Japanese Naval; White execute Reds; White Russian arriving -Red Army; Speech; Communist demonstrations around world.\" http://research.archives.gov/description/89771 \"Note: All"
+    },
+    {
+     "id": "meteors-1947",
+     "file": "Meteors (1947).mp4",
+     "duration": 581,
+     "title": "Meteors (1947) by Pavel Klushantsev AI Upscale",
+     "year": "1947",
+     "moov": 398969,
+     "description": "Meteors (Метеориты), more properly translated \"Meteorites\" a 1947 film from the USSR by Pavel Klushantsev which explores the scientific and historical understanding of meteorites at the time, produced by Lennauchfilm in the USSR. Upscaled from the \"Road to the Stars\" Video Dimensions DVD release. En"
+    },
+    {
+     "id": "railway-workers-1982",
+     "file": "railway workers 1982.ia.mp4",
+     "duration": 1200,
+     "title": "Railway Workers 1982",
+     "year": "1982",
+     "moov": 654694,
+     "description": "railway workers 1982"
+    },
+    {
+     "id": "que-viva-mexico-1931",
+     "file": "Que Viva Mexico (1931).mp4",
+     "duration": 5050,
+     "title": "¡Que Viva Mexico! (1931)",
+     "year": "1931",
+     "moov": 3842269,
+     "description": "Russia/USA. Directed by Sergei Eisenstein and Grigoriy Aleksandrov [or Grigory Alexandrov]. Also known as THUNDER OVER MEXICO. Russian language with English subtitles. Plot: An attempt at reconstructing the great director Eisenstein's legendary unfinished work on Mexico."
+    },
+    {
+     "id": "energy-equipment-on-the-railway-1983",
+     "file": "energy equipment on the railway (1983).ia.mp4",
+     "duration": 1793,
+     "title": "Energy Equipment On The Railway ( 1983)",
+     "year": "1983",
+     "moov": 977670,
+     "description": "energy equipment on the railway (1983)"
+    },
+    {
+     "id": "i-see-the-earth-1970",
+     "file": "I See the Earth! (1970).mp4",
+     "duration": 1018,
+     "title": "I See the Earth!/Vizhu zemlyu!/Вижу Землю! (1970) AI Upscale",
+     "year": "1970",
+     "moov": 1108597,
+     "description": "AI Upscale of the 1970 documentary film \"I See The Earth!\" by Pavel Klushantsev, produced by Lennauchfilm studio in the USSR. In Russian with English subtitles. A popular science film dedicated to research of the Earth from spacecraft, instilling a sense of empathy for protection of the Earth's natu"
+    },
+    {
+     "id": "a_requiem",
+     "file": "Video 22.mp4",
+     "duration": 3566,
+     "title": "Paradjanov: A Requiem (documentary, English subs) (low res, but highly recommended)",
+     "year": "1994",
+     "moov": 3370901,
+     "description": "Uploaded here for preservation and posterity sake. More details coming soon."
+    },
+    {
+     "id": "vhs_otkuda_u_moskvy_denjgi_1999",
+     "file": "Откуда У Москвы Деньги (Студия ТШ, 1999).mp4",
+     "duration": 1561,
+     "title": "Откуда У Москвы Деньги (Студия ТШ, 1999) (VHSRip, H264)",
+     "year": "1999",
+     "moov": 1186964,
+     "description": "Документальный фильм \"Откуда У Москвы Деньги\" (1999) режиссёра, автора сценария и оператора Тофика Шахвердиева, посвящённый экономике и социальной политике Москвы конца 1990-х. Картина пытается ответить на распространённый в то время вопрос: откуда у Москвы средства на масштабное городское строитель"
+    },
+    {
+     "id": "1955.01.00-.-01",
+     "file": "1955.01.00 Новости дня вып. 01 Киножурнал.mp4",
+     "duration": 481,
+     "title": "1955.01.00 Новости Дня Вып. 01 Киножурнал",
+     "year": "1955",
+     "moov": 165663,
+     "description": "Киножурнал «Новости дня» 1955, №1. Хроника наших дней. 1. Москва. Первый подшипниковый завод: токарь-передовик В. Тепляков. 2. Целина. Комсомолка З. Гаврилова (1954). Внуково: встреча молодёжи из Вены. 3. Кишинёв. Школьник Алик Гойхман: уроки, шахматы, победа. 4. Москва-река. Тренировка гребцов «Кры"
+    },
+    {
+     "id": "667565820545",
+     "file": "667565820545.mp4",
+     "duration": 959,
+     "title": "Cooperation: USSR-Japan / 1980",
+     "year": "1980",
+     "moov": 376653,
+     "description": "newsreel about the Cooperation: USSR–Japan"
+    },
+    {
+     "id": "cursed-and-forgotten-1997",
+     "file": "yt1s.com - Cursed and Forgotten 1997 English Subtitles 60FPS.ia.mp4",
+     "duration": 4153,
+     "title": "Cursed And Forgotten (1997)",
+     "year": "1997",
+     "moov": 3941964,
+     "description": "A documentary about the First Chechen War by Sergei Govorukhin, the son of director Stanislav Govorukhin. First and only documentary. Contains some footage from the Tajik Civil War"
+    },
+    {
+     "id": "kim-ir-sen-sredi-veteranov-antiyaponskoy-revolyutsii",
+     "file": "Ким Ир Сен среди ветеранов антияпонской революции [1990].mp4",
+     "duration": 3249,
+     "title": "Ким Ир Сен среди ветеранов антияпонской революции",
+     "year": "1990",
+     "moov": 2727088,
+     "description": "Фильм рассказывает о великом Ким Ир Сене, и содержит массу любопытнейшей информации, в том числе кинохроники времен создания КНДР, войны с США и т.д."
+    },
+    {
+     "id": "NewsOfDayNo.29june1944",
+     "file": "Novosti_dnya_No.29Iyun_1944_512kb.mp4",
+     "duration": 461,
+     "title": "\"News of day\" No.29 (June, 1944)",
+     "year": "1944",
+     "moov": 209441,
+     "description": "Newsreel from The Great Patriotic War (1941 - 1945)"
+    },
+    {
+     "id": "1973_20260924",
+     "file": "Радиодиверсанты (1973).mp4",
+     "duration": 2952,
+     "title": "Радиодиверсанты (1973)",
+     "year": "1973",
+     "moov": 2311924,
+     "description": "• Год: 1973 • Страна: СССР • Производство: Творческое объединение «Экран» (Центральное телевидение СССР). • Жанр: Документальный • Режиссер: Владимир Осьминин • Сценаристы: А. Панфилов, Дмитрий Морозов • Диктор (текст читает): Леонид Хмара • Продолжительность: 49:12 • Качество: 648x480 Описание: Док"
+    },
+    {
+     "id": "otechestvennaya-osvoboditelnaya-voyna-ch1-amerikanskiye-agressory-i-podzhigateli-koreyskoy-voyny",
+     "file": "Отечественная освободительная война ч.1 - Американские агрессоры и поджигатели корейской войны.mp4",
+     "duration": 2097,
+     "title": "Отечественная освободительная война ч.1 - Американские агрессоры и поджигатели корейской войны",
+     "year": "1965",
+     "moov": 1752280,
+     "description": "조국해방전쟁 제1부 미제침략자는 조선전쟁의 도발자 Д/ф Война на Корейском полуострове (КНДР). На русском языке. О том как американский империализм подготовил и развязал войну в Корее в 1950 г. Первая серия шестисерийного документального фильма о войне в Корее - \"Американские агрессоры и поджигатели корейской войны\" - посв"
+    },
+    {
+     "id": "1966-no-01no-1-1966-no-21519",
+     "file": "1966 Новости дня № 01+№+1,+1966+г_+ЦСДФ_+РГАКФФД_+Арх_+№+21519.mp4",
+     "duration": 594,
+     "title": "1966 Новости Дня № 01+№+ 1,+ 1966+г +ЦСДФ +РГАКФФД +Арх +№+ 21519",
+     "year": "1966",
+     "moov": 520787,
+     "description": "📌 «Новости дня» — Январь 1966: СССР в кадре Первый выпуск легендарного киножурнала за 1966 год — живая летопись эпохи. От строительства ЛЭП в снегу до торжественной церемонии «Высокая награда», от хоккея на стадионе «Темп» до балета в Париже и новогодних праздников — каждый кадр дышит историей. 🎬 В "
+    },
+    {
+     "id": "NewsOfDayNo.103november21941",
+     "file": "Novosti_dnya_No.10302.11.41_512kb.mp4",
+     "duration": 477,
+     "title": "\"News of day\" No.103 (November 2, 1941)",
+     "year": "1941",
+     "moov": 216505,
+     "description": "Newsreel from The Great Patriotic War (1941 - 1945)"
+    },
+    {
+     "id": "zhivoy-lenin-1958",
+     "file": "Живой Ленин - Lenin is Alive (1958) [HsykZHBeJVg].mp4",
+     "duration": 1590,
+     "title": "Живой Ленин - Lenin is Alive (1958)",
+     "year": "1958",
+     "moov": 1184649,
+     "description": "Кинохроника о Владимире Ильиче Ленине снятые при его жизни. Киностудия ЦСДФ Режиссёры: М. Ромм, М. Славинская Операторы: Э. Тиссе, А. Левицкий, Е. Славинский, Г. Гибнер, Ю. Желябужский, П. Новицкий Год выпуска: 1958 Страна: СССР Жанр: Документальный фильм"
+    },
+    {
+     "id": "like-a-fish-in-water-kak-ryba-v-vode-1976",
+     "file": "Like a fish in water - Kak ryba v vode (1976).mp4",
+     "duration": 921,
+     "title": "Like a fish in water - Kak ryba v vode (1976)",
+     "year": "1979",
+     "moov": 1212629,
+     "description": "A documentary film about the first acquaintance of babies with swimming - a sport for body and soul, an almost universal means of raising strong, healthy and tempered children"
+    }
+   ]
+  }
+ ]
+}

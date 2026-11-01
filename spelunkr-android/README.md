@@ -145,6 +145,46 @@ explicit:
 - **Focus styling:** the site's yellow rim marks focus. All buttons are Compose `clickable`s, so a tap and the
   D-pad's centre button do the same thing.
 
+## TV SETUP
+
+Under SETUP (top bar, or the Watch bar). Nothing here lowers quality: the Archive keeps one copy of each tape,
+and the app always plays that copy untouched.
+
+| Setting | Choices | What it does |
+|---|---|---|
+| Shape | FIT / FILL / STRETCH | How a tape fills the screen when watching. |
+| Match frame rate | ON / OFF | Lets the TV switch to the tape's frame rate when it can do so seamlessly. |
+| Tunneled playback | OFF / ON | Hands picture timing to the TV's video hardware (smoother on many TVs). |
+| Audio | SURROUND / STEREO | Dolby (AC-3) passthrough when a tape has it, or always two channels. |
+| Download boost | OFF / 2 / 4 / 6 | Fetches each tape over several connections (`ParallelDataSource`). Busy Archive servers cap each connection; 16 MB from one TOONERTIA server went from 0.9 Mbit/s on 1 connection to 3.2 on 6. |
+| Smoothness | START FAST / BALANCED / SMOOTHEST | Buffer profiles, switchable while playing: start after 1 s, 2.5 s or 5 s; keep 1, 2 or up to 5 minutes ready. |
+| Preload | OFF / NEXT DOOR / WHOLE DIAL | Which tape indexes to fetch ahead. WHOLE DIAL warms every channel and allows 1 GB of storage. |
+| Server | FASTEST / ARCHIVE.ORG | Time both Archive servers and use the faster, or let archive.org choose. |
+| Preview channels | SHOW / HIDE | The site's scheduled-but-unlisted channels (WARP ZONE, WAKU WAKU), in the PREVIEW category. |
+
+The guide and directory have category keys (REWIND, ARCHIVE, FILM, TV SERIES, EDUCATIONAL, OTHER, PREVIEW,
+from each channel's own type). CH ▲ / ▼ stays inside the category picked.
+
+## ru-splunker (Soviet & retro Russian channels)
+
+A second app from the same code (`ru` flavor): its own name, icon and banner, and it installs next to SPELUNKR.
+Spelunkr has no Russian channels, so ru-splunker's lineup is built from archive.org by
+`tools/build_ru_lineup.py` and bundled as `app/src/ru/assets/ru-lineup.json`. The script keeps only items that
+meet all of these:
+
+- not access-restricted;
+- a playable MP4 between 2 minutes and 6 hours;
+- Russian (by language, a Cyrillic title, or a Soviet subject);
+- made in 2000 or earlier, or, when undated, marked Soviet-era or VHS.
+
+It records each tape's length and index size, and shuffles each channel with a fixed seed. Every copy of the
+app plays from the same epoch (1 Nov 2026), so channels are live and in sync like Spelunkr's. Refresh the
+lineup with `python3 tools/build_ru_lineup.py app/src/ru/assets/ru-lineup.json`; `RuLineupTest` checks it.
+
+Current Russian TV recordings on archive.org (1TV, NTV, …) are access-restricted, so they can't be included.
+Many Soviet films and cartoons on archive.org are user uploads whose rights belong to others (Gosfilmofond,
+Soyuzmultfilm's successors…). The same caution as for Spelunkr's tapes applies before sharing the app.
+
 ## Build
 
 Requirements: JDK 17 or newer, and the Android SDK with platform 36 (Android Studio installs both). The Gradle
@@ -154,15 +194,17 @@ wrapper downloads Gradle 9.8.2 itself.
 cd spelunkr-android
 # Point Gradle at the SDK (Android Studio writes this file for you):
 echo "sdk.dir=$HOME/Android/Sdk" > local.properties
-./gradlew assembleDebug          # → app/build/outputs/apk/debug/app-debug.apk
-./gradlew testDebugUnitTest      # schedule tests
+./gradlew assembleSpelunkrDebug     # → app/build/outputs/apk/spelunkr/debug/app-spelunkr-debug.apk
+./gradlew assembleRuDebug           # ru-splunker → app/build/outputs/apk/ru/debug/app-ru-debug.apk
+./gradlew testSpelunkrDebugUnitTest testRuDebugUnitTest
 ```
 
 Or open the `spelunkr-android` folder in Android Studio and press Run.
 
 ### Release APK
 
-`./gradlew assembleRelease` builds a shrunk (R8) release APK of about 2 MB. To sign it, put these properties
+`./gradlew assembleSpelunkrRelease` (or `assembleRuRelease`, or `assembleRelease` for both) builds a shrunk
+(R8) release APK of about 2 MB. To sign it, put these properties
 in `~/.gradle/gradle.properties`, never in the repo:
 
 ```properties
@@ -185,7 +227,7 @@ factors.
 ## Run on a phone
 
 1. Turn on Developer options and USB debugging on the phone, then plug it in.
-2. `adb install -r app/build/outputs/apk/debug/app-debug.apk`, or press Run in Android Studio.
+2. `adb install -r app/build/outputs/apk/spelunkr/debug/app-spelunkr-debug.apk`, or press Run in Android Studio.
 3. Open **SPELUNKR** from the app drawer.
 
 Phone emulator: Device Manager → any Pixel with an API 34+ image.
@@ -198,7 +240,7 @@ Phone emulator: Device Manager → any Pixel with an API 34+ image.
 2. Developer options → turn on **USB debugging** (or **Network debugging** / **Wireless debugging**).
 3. `adb connect <tv-ip>:5555` and accept the prompt on the TV. (Wireless debugging on Google TV: use the
    pairing port and code it shows, then `adb pair <ip>:<port>`.)
-4. `adb install -r app/build/outputs/apk/debug/app-debug.apk`
+4. `adb install -r app/build/outputs/apk/spelunkr/debug/app-spelunkr-debug.apk`
 5. The app appears in the TV's Apps row with its banner. On Google TV, look under Apps → "Your apps".
 
 **Emulator:**
@@ -207,7 +249,7 @@ Phone emulator: Device Manager → any Pixel with an API 34+ image.
 sdkmanager "system-images;android-34;android-tv;x86" "emulator"
 avdmanager create avd -n tv -k "system-images;android-34;android-tv;x86" -d tv_1080p
 emulator -avd tv
-adb install -r app/build/outputs/apk/debug/app-debug.apk
+adb install -r app/build/outputs/apk/spelunkr/debug/app-spelunkr-debug.apk
 ```
 
 (Or in Android Studio: Device Manager → Create device → TV → 1080p.) The emulator's extended controls include

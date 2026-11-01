@@ -13,8 +13,8 @@ android {
         applicationId = "com.example.spelunkrtv"
         minSdk = 23
         targetSdk = 36
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 4
+        versionName = "1.3"
     }
 
     // Release signing comes from Gradle properties (~/.gradle/gradle.properties or -P flags), never
@@ -48,6 +48,23 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+
+    // One codebase, two apps that install side by side.
+    flavorDimensions += "lineup"
+    productFlavors {
+        create("spelunkr") {
+            dimension = "lineup"
+            buildConfigField("String", "LINEUP", "\"spelunkr\"")
+        }
+        // ru-splunker: Soviet & retro Russian channels, its lineup bundled from tools/build_ru_lineup.py.
+        create("ru") {
+            dimension = "lineup"
+            applicationIdSuffix = ".ru"
+            versionNameSuffix = "-ru"
+            buildConfigField("String", "LINEUP", "\"ru\"")
+        }
     }
 
     testOptions.unitTests.all { test ->

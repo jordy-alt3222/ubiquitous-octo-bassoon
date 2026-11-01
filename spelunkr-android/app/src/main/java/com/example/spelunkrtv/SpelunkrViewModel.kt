@@ -3,7 +3,6 @@ package com.example.spelunkrtv
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.spelunkrtv.data.BroadcastRepository
 import com.example.spelunkrtv.data.Channel
 import com.example.spelunkrtv.data.SetupStore
 import com.example.spelunkrtv.data.TvSetup
@@ -33,7 +32,7 @@ sealed interface Lineup {
 }
 
 class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
-    private val repo = BroadcastRepository()
+    private val repo = com.example.spelunkrtv.data.Brand.broadcast(app)
     val player = LivePlayer(app, repo::now)
 
     private val setupStore = SetupStore(app)
