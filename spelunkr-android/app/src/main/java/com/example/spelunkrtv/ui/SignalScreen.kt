@@ -103,6 +103,11 @@ private fun RightNow(tuned: Channel?, state: LivePlayer.State, modifier: Modifie
             Line("RECEIVED", "${formatBytes(link.bytes)} since tuning in · now ${formatBits(link.bitsPerSecond)}")
             Line("BUFFERED", "${link.bufferedMs / 1000} s of video ready ahead")
             Line("THIS TAPE", link.tapeBitsPerSecond?.let { "needs about ${formatBits(it)}" } ?: "Size not known until it starts")
+            Line(
+                "TAPE INDEX",
+                link.indexBytes?.let { "${formatBytes(it)} · " + if (link.indexCached) "was already on this device" else "downloaded for this tune" }
+                    ?: "Size not listed",
+            )
             link.error?.let { Line("LAST PROBLEM", it, Palette.Live) }
         }
     }

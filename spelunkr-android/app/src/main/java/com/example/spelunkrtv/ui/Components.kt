@@ -74,7 +74,7 @@ fun SpelunkrButton(
             .border(if (focused) 3.dp else 1.dp, if (focused) Palette.Yellow else Palette.Rim)
             .remoteFocusable()
             .clickable(interactionSource = interaction, indication = null, enabled = enabled, onClick = onClick)
-            .padding(horizontal = if (isTv) 14.dp else 12.dp, vertical = if (isTv) 4.dp else 10.dp),
+            .padding(horizontal = 12.dp, vertical = if (isTv) 4.dp else 10.dp),
         contentAlignment = Alignment.Center,
     ) {
         Text(
@@ -200,15 +200,30 @@ fun TuningSlate(channel: Channel?, link: StreamLink, modifier: Modifier = Modifi
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text("ONE MOMENT PLEASE", style = spelunkrText(if (large) 40.sp else 22.sp, Palette.Yellow), textAlign = TextAlign.Center)
-        Text("TUNING" + ".".repeat(dots), style = spelunkrText(if (large) 22.sp else 14.sp))
+        // The site's own words: TUNING, then STILL TUNING, and BIG TAPE for the long ones.
+        val slow = link.waitingMs / 1000 >= SLOW_ARCHIVE_S
+        val big = (link.indexBytes ?: 0) >= BIG_TAPE_INDEX_BYTES && !link.indexCached
+        Text(
+            when {
+                slow && big -> "BIG TAPE · STILL TUNING"
+                slow -> "STILL TUNING"
+                else -> "TUNING" + ".".repeat(dots)
+            },
+            style = spelunkrText(if (large) 22.sp else 14.sp),
+        )
         if (channel != null) {
             Text("CH ${channel.dialLabel} · ${channel.name}", style = spelunkrText(if (large) 18.sp else 12.sp, Palette.Muted))
         }
         val small = spelunkrText(if (large) 16.sp else 10.sp, Color.White, shadow = false)
         val waited = link.waitingMs / 1000
         Text(
-            if (link.bytes == 0L) "CALLING ARCHIVE.ORG… ${waited}s"
-            else "RECEIVING FROM ARCHIVE.ORG · ${formatBytes(link.bytes)} · ${formatBits(link.bitsPerSecond)}",
+            when {
+                link.indexCached -> "TAPE INDEX ON THIS DEVICE · FETCHING VIDEO FROM ARCHIVE.ORG"
+                link.bytes == 0L -> "CALLING ARCHIVE.ORG… ${waited}s"
+                link.indexBytes != null && link.bytes < link.indexBytes ->
+                    "LOADING THE TAPE'S INDEX · ${formatBytes(link.bytes)} of ${formatBytes(link.indexBytes)} · ${formatBits(link.bitsPerSecond)}"
+                else -> "RECEIVING FROM ARCHIVE.ORG · ${formatBytes(link.bytes)} · ${formatBits(link.bitsPerSecond)}"
+            },
             style = small,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(top = if (large) 16.dp else 6.dp, start = 8.dp, end = 8.dp),
@@ -226,6 +241,8 @@ fun TuningSlate(channel: Channel?, link: StreamLink, modifier: Modifier = Modifi
 }
 
 private const val SLOW_ARCHIVE_S = 15
+/** Indexes this big take a while on a home line; the site calls these BIG TAPEs. */
+private const val BIG_TAPE_INDEX_BYTES = 8_000_000L
 
 /** NO SIGNAL, with why in plain words and when the app tries again. */
 @Composable

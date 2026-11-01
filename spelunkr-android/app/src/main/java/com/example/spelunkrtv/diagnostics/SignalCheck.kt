@@ -6,6 +6,7 @@ import android.net.NetworkCapabilities
 import android.util.Log
 import com.example.spelunkrtv.data.BroadcastRepository
 import com.example.spelunkrtv.data.Lineup
+import com.example.spelunkrtv.player.ArchiveLocator
 import com.example.spelunkrtv.player.LivePlayer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -30,12 +31,17 @@ data class TapeUnderTest(val url: String, val bitsPerSecond: Long?)
 class SignalCheck(private val context: Context) {
     private val json = Json { ignoreUnknownKeys = true }
 
-    suspend fun run(tape: TapeUnderTest?, emit: (List<CheckRow>) -> Unit) = withContext(Dispatchers.IO) {
+    suspend fun run(
+        tape: TapeUnderTest?,
+        servers: (String) -> List<ArchiveLocator.Server>,
+        emit: (List<CheckRow>) -> Unit,
+    ) = withContext(Dispatchers.IO) {
         val rows = mutableListOf(
             CheckRow(NETWORK, Verdict.Checking, "Checking…"),
             CheckRow(SCHEDULE, Verdict.Checking, "Waiting…"),
             CheckRow(CLOCK, Verdict.Checking, "Waiting…"),
             CheckRow(ARCHIVE, Verdict.Checking, "Waiting…"),
+            CheckRow(SERVERS, Verdict.Checking, "Waiting…"),
         )
         fun set(index: Int, row: CheckRow) {
             rows[index] = row
@@ -49,6 +55,22 @@ class SignalCheck(private val context: Context) {
         set(1, scheduleRow)
         set(2, clock(serverTime))
         set(3, archive(tape))
+        set(4, servers(tape, servers))
+    }
+
+    /** Both storage servers that hold the tape, timed: they can differ by 50 times, and the app plays from the faster. */
+    private fun servers(tape: TapeUnderTest?, servers: (String) -> List<ArchiveLocator.Server>): CheckRow {
+        val list = servers(tape?.url ?: FALLBACK_TAPE)
+        if (list.isEmpty()) return CheckRow(SERVERS, Verdict.Warn, "archive.org didn't say which servers hold this tape, so it plays through archive.org's redirect")
+        val shown = list.joinToString(" · ") { s -> "${s.host.substringBefore('.')} ${s.bitsPerSecond?.let { formatBits(it) } ?: "no answer"}" }
+        val best = list.mapNotNull { it.bitsPerSecond }.maxOrNull()
+        val needs = tape?.bitsPerSecond
+        return when {
+            best == null -> CheckRow(SERVERS, Verdict.Fail, "$shown. Neither server answered")
+            needs != null && best < needs -> CheckRow(SERVERS, Verdict.Warn, "$shown. Even the faster is below what this tape needs (${formatBits(needs)})")
+            list.size > 1 -> CheckRow(SERVERS, Verdict.Ok, "$shown. The app plays from the faster one")
+            else -> CheckRow(SERVERS, Verdict.Ok, shown)
+        }
     }
 
     private fun network(): CheckRow {
@@ -177,6 +199,7 @@ class SignalCheck(private val context: Context) {
         const val SCHEDULE = "SPELUNKR SCHEDULE"
         const val CLOCK = "DEVICE CLOCK"
         const val ARCHIVE = "INTERNET ARCHIVE"
+        const val SERVERS = "THIS TAPE'S SERVERS"
         private const val SAMPLE_BYTES = 2L * 1024 * 1024
         private const val SAMPLE_MAX_MS = 10_000L
         private const val CLOCK_TOLERANCE_MS = 60_000L

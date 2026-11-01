@@ -101,6 +101,7 @@ class BroadcastRepository {
                     description = descriptions.getOrNull(i)?.description,
                     durationMs = item.duration * 1000L,
                     inPointMs = (item.inS ?: 0) * 1000L,
+                    indexBytes = item.moov,
                 )
             },
         )

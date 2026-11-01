@@ -65,6 +65,7 @@ fun WatchScreen(
     onForward: () -> Unit,
     onSpelunk: () -> Unit,
     onSignal: () -> Unit,
+    onGoLive: () -> Unit,
 ) {
     val isTv = LocalIsTv.current
     var controls by remember { mutableStateOf(false) }
@@ -183,8 +184,12 @@ fun WatchScreen(
                     SpelunkrButton("15S ▶▶", onForward, enabled = !state.live || state.paused)
                     SpelunkrButton("SPELUNK", onSpelunk, gold = true)
                     SpelunkrButton("SIGNAL", onSignal)
-                    Spacer(Modifier.width(8.dp))
-                    LiveBadge(state.live, state.behindLiveMs, state.paused)
+                    // Behind live (a stall, or the viewer's own rewind): one key says how far, and goes back.
+                    if (!state.live && !state.paused && state.airing != null) {
+                        SpelunkrButton("-${runtime(state.behindLiveMs)} · GO LIVE", onGoLive)
+                    } else {
+                        LiveBadge(state.live, state.behindLiveMs, state.paused)
+                    }
                 }
             }
         }

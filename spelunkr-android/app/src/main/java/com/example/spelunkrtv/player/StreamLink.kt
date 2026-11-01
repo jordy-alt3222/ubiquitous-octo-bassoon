@@ -31,6 +31,10 @@ data class StreamLink(
     /** Why the last attempt failed, in plain words. */
     val error: String? = null,
     val retryInMs: Long = 0,
+    /** Size of the tape's index, which must arrive before the first frame. */
+    val indexBytes: Long? = null,
+    /** The index was already on disk, so only video had to come from the Archive. */
+    val indexCached: Boolean = false,
 )
 
 /** Counts every byte the player's network reads deliver; called on the loader threads. */

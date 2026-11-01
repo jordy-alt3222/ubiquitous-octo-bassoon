@@ -65,6 +65,8 @@ data class ManifestItem(
     val duration: Int,
     val inS: Int? = null,
     val outS: Int? = null,
+    /** Size in bytes of the file's index (its MP4 "moov"), which sits at the start of every tape. */
+    val moov: Long? = null,
     val title: String? = null,
     val year: String? = null,
 )

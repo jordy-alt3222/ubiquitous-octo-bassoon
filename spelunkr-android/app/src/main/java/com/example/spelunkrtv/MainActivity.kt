@@ -192,6 +192,7 @@ fun SpelunkrApp(vm: SpelunkrViewModel, onExit: () -> Unit) {
                 onForward = vm.player::forward15,
                 onSpelunk = vm::spelunk,
                 onSignal = { vm.open(Screen.Signal) },
+                onGoLive = vm.player::goLive,
             )
             Screen.Signal -> SignalScreen(
                 rows = signal,

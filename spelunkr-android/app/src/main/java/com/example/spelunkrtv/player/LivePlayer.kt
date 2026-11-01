@@ -11,24 +11,34 @@ import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
+import androidx.media3.common.Timeline
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DefaultHttpDataSource
+import androidx.media3.datasource.ResolvingDataSource
+import androidx.media3.exoplayer.DefaultLoadControl
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import com.example.spelunkrtv.schedule.Airing
 import com.example.spelunkrtv.schedule.ChannelSchedule
+import com.example.spelunkrtv.schedule.Program
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlin.math.abs
 
 /**
  * Plays a channel "live": whatever the schedule says is on right now, from the right second.
  * Pause and the 15-second keys let the viewer fall behind live, like the site's DVR keys;
- * forward never goes past live. If buffering leaves playback well behind where the viewer
- * chose to be, it jumps back into sync. Every tune and failure is logged under [TAG].
+ * forward never goes past live.
+ *
+ * Built for the Archive's big, slow tapes: tape indexes are kept on disk ([TapeCache]) and
+ * fetched ahead ([TapeWarmer]); requests go straight to the storage server ([ArchiveLocator]);
+ * a tuned tape jumps to live once, as soon as its index has arrived; and a short stall later on
+ * leaves the viewer a few seconds behind rather than stalling again to catch up. Every tune and
+ * failure is logged under [TAG].
  */
 @OptIn(UnstableApi::class)
-class LivePlayer(context: Context, private val clock: () -> Long) {
+class LivePlayer(private val context: Context, private val clock: () -> Long) {
 
     data class State(
         val airing: Airing? = null,
@@ -42,17 +52,42 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
     }
 
     private val counter = ByteCounter()
+    private val locator = ArchiveLocator(userAgent(context))
+
+    /** archive.org, then straight to the tape's storage server once it is known. */
+    private val network = ResolvingDataSource.Factory(
+        WholeResponses.Factory(
+            DefaultHttpDataSource.Factory()
+                .setUserAgent(userAgent(context))
+                // The Archive can take a while to start a big tape; ExoPlayer's default is 8 s.
+                .setConnectTimeoutMs(CONNECT_TIMEOUT_MS)
+                .setReadTimeoutMs(READ_TIMEOUT_MS)
+                .setTransferListener(counter),
+        ),
+    ) { spec -> spec.withUri(locator.resolve(spec.uri)) }
+
+    private val warmer = TapeWarmer(
+        context,
+        ResolvingDataSource.Factory(
+            WholeResponses.Factory(
+                DefaultHttpDataSource.Factory()
+                    .setUserAgent(userAgent(context))
+                    .setConnectTimeoutMs(CONNECT_TIMEOUT_MS)
+                    .setReadTimeoutMs(READ_TIMEOUT_MS),
+            ),
+        ) { spec -> spec.withUri(locator.resolve(spec.uri)) },
+    )
 
     val player: ExoPlayer = ExoPlayer.Builder(context)
         .setMediaSourceFactory(
-            DefaultMediaSourceFactory(context).setDataSourceFactory(
-                DefaultHttpDataSource.Factory()
-                    .setUserAgent(userAgent(context))
-                    // The Archive can take a while to start a big tape; ExoPlayer's default is 8 s.
-                    .setConnectTimeoutMs(CONNECT_TIMEOUT_MS)
-                    .setReadTimeoutMs(READ_TIMEOUT_MS)
-                    .setTransferListener(counter),
-            ),
+            DefaultMediaSourceFactory(context).setDataSourceFactory(TapeCache.playerDataSource(context, network)),
+        )
+        .setLoadControl(
+            DefaultLoadControl.Builder()
+                // Bank up to two minutes when the line allows, and after a stall refill ten
+                // seconds rather than five, so a slow line plays in longer runs and stops less.
+                .setBufferDurationsMs(MIN_BUFFER_MS, MAX_BUFFER_MS, START_BUFFER_MS, RESTART_BUFFER_MS)
+                .build(),
         )
         .setAudioAttributes(
             AudioAttributes.Builder().setUsage(C.USAGE_MEDIA).setContentType(C.AUDIO_CONTENT_TYPE_MOVIE).build(),
@@ -69,8 +104,17 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
     private var schedule: ChannelSchedule? = null
     /** How far behind live the viewer chose to be (pause, rewind). */
     private var chosenDelayMs = 0L
+    /** How far behind live stalls have left playback; caught up only once it passes a minute. */
+    private var stallDelayMs = 0L
     private var paused = false
     private var noSignal = false
+    /**
+     * A tape was just loaded for programme time [loadTarget]: as soon as its index is in, and
+     * before anything shows, move on by however long that took (none while paused).
+     */
+    private var syncOnIndex = false
+    private var loadTarget = 0L
+    private var loadAskedAt = 0L
 
     // What the link to the Archive is doing, for the screen and the signal check.
     private var bytesAtTune = 0L
@@ -82,15 +126,26 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
     private var lastError: String? = null
     private var failures = 0
     private var retryAt = 0L
-    private var lastResyncAt = 0L
+    private var lastCatchUpAt = 0L
+    private var lastSwitchAt = 0L
+    private var bytesAtLoad = 0L
+    /** When this load's first byte arrived; its speed is judged from then, not from the lookup. */
+    private var firstByteAt = 0L
+    /** This load has shown a picture: from then on a stall is the buffer's business, not a reason to switch servers. */
+    private var loadPlayed = false
+    private var indexCached = false
 
-    private val retry = Runnable { schedule?.let { loadAt(clock() - chosenDelayMs) } }
+    private val retry = Runnable { schedule?.let { loadAt(clock() - chosenDelayMs - stallDelayMs) } }
 
     init {
         player.addListener(object : Player.Listener {
             override fun onMediaItemTransition(mediaItem: MediaItem?, reason: Int) {
                 queueNext()
                 publish()
+            }
+
+            override fun onTimelineChanged(timeline: Timeline, reason: Int) {
+                if (syncOnIndex) syncToLive(timeline)
             }
 
             override fun onPlaybackStateChanged(playbackState: Int) {
@@ -104,6 +159,7 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
                         lastError = null
                         failures = 0
                         waitingSince = 0
+                        loadPlayed = true
                     }
                     Player.STATE_BUFFERING -> if (waitingSince == 0L) waitingSince = now
                     Player.STATE_ENDED -> playNextTape()
@@ -115,6 +171,12 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
                 noSignal = true
                 lastError = describe(error)
                 failures++
+                // Next time, try the tape's other server (or archive.org) instead of this one.
+                locator.avoid(counter.host)
+                // A file that ended early can't be trusted on disk either: fetch its index afresh.
+                if (generateSequence<Throwable>(error) { it.cause }.any { it is java.io.EOFException }) {
+                    (currentAiring() ?: schedule?.airingAt(loadTarget))?.let { TapeCache.forget(context, it.program) }
+                }
                 val wait = minOf(RETRY_MAX_MS, RETRY_MS shl (failures - 1).coerceAtMost(4))
                 retryAt = SystemClock.elapsedRealtime() + wait
                 Log.w(TAG, "No signal (${error.errorCodeName}): $lastError. Trying again in ${wait / 1000} s", error)
@@ -128,6 +190,7 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
     fun tune(schedule: ChannelSchedule) {
         this.schedule = schedule
         chosenDelayMs = 0
+        stallDelayMs = 0
         paused = false
         noSignal = false
         lastError = null
@@ -135,6 +198,8 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
         bytesAtTune = counter.bytes.get()
         counter.host = null
         handler.removeCallbacks(retry)
+        // The tape being tuned needs the whole line.
+        warmer.stop()
         loadAt(clock())
     }
 
@@ -145,6 +210,7 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
 
     fun stop() {
         handler.removeCallbacks(retry)
+        warmer.stop()
         player.stop()
         waitingSince = 0
         publish()
@@ -152,6 +218,7 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
 
     fun release() {
         handler.removeCallbacksAndMessages(null)
+        warmer.stop()
         player.release()
     }
 
@@ -159,10 +226,26 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
         get() = player.volume == 0f
         set(value) { player.volume = if (value) 0f else 1f }
 
+    /**
+     * Fetches these tapes' indexes in the background, most wanted first, but only while the tape
+     * on screen is playing with plenty in hand; otherwise warming would starve it.
+     */
+    fun warm(programs: List<Program>) {
+        if (paused || noSignal || player.playbackState != Player.STATE_READY || player.totalBufferedDuration < WARM_WHEN_BUFFERED_MS) {
+            // Never compete with a tape that is struggling. Whatever was fetched stays on disk,
+            // and warming picks up from there next time.
+            warmer.stop()
+            return
+        }
+        programs.forEach { locator.lookUp(it.videoUrl) }
+        warmer.warm(programs)
+    }
+
     fun togglePause() {
         if (schedule == null) return
         if (paused) {
             chosenDelayMs = (clock() - programTime()).coerceAtLeast(0)
+            stallDelayMs = 0
             paused = false
             player.play()
         } else {
@@ -176,7 +259,10 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
         val airing = currentAiring() ?: return
         val target = (programTime() - SKIP_MS).coerceAtLeast(airing.startMs)
         seekToProgramTime(target)
-        if (!paused) chosenDelayMs = clock() - target
+        if (!paused) {
+            chosenDelayMs = clock() - target
+            stallDelayMs = 0
+        }
         publish()
     }
 
@@ -186,7 +272,26 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
         if (behind < LIVE_SLACK_MS) return
         val target = programTime() + minOf(SKIP_MS, behind)
         seekToProgramTime(target)
-        if (!paused) chosenDelayMs = (clock() - target).let { if (it < LIVE_SLACK_MS) 0 else it }
+        if (!paused) {
+            chosenDelayMs = (clock() - target).let { if (it < LIVE_SLACK_MS) 0 else it }
+            stallDelayMs = 0
+        }
+        publish()
+    }
+
+    /** Both storage servers for the tape at [videoUrl], with their measured speed. Blocking. */
+    fun servers(videoUrl: String): List<ArchiveLocator.Server> = locator.servers(videoUrl)
+
+    /** JUMP TO LIVE: back to the second everyone else is watching. */
+    fun goLive() {
+        if (schedule == null) return
+        chosenDelayMs = 0
+        stallDelayMs = 0
+        if (paused) {
+            paused = false
+            player.play()
+        }
+        seekToProgramTime(clock())
         publish()
     }
 
@@ -201,18 +306,57 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
         lastTickAt = now
         lastTickBytes = total
 
-        // Catch up after a stall, but not over and over: on a slow line every catch-up costs
-        // another wait, and chasing live in a loop would never show a picture.
-        val airing = currentAiring()
-        if (airing != null && !paused && player.playbackState == Player.STATE_READY && now - lastResyncAt > RESYNC_COOLDOWN_MS) {
-            val drift = clock() - programTime() - chosenDelayMs
-            if (drift > RESYNC_MS) {
-                Log.i(TAG, "${drift / 1000} s behind live after a stall; catching up")
-                lastResyncAt = now
+        // A tune stuck on a crawling server while its mirror is free: switch now. What has
+        // arrived of the index is already on disk, so the other server picks up from there.
+        val tape = currentAiring() ?: schedule?.airingAt(loadTarget)
+        val waited = if (waitingSince > 0) now - waitingSince else 0
+        val loaded = total - bytesAtLoad
+        if (loaded > 0 && firstByteAt == 0L) firstByteAt = now
+        val loadSpeed = if (firstByteAt > 0 && now > firstByteAt) loaded * 8_000 / (now - firstByteAt) else 0
+        // Nothing at all for a while, or the other server was measured at least twice as fast.
+        val stuck = loaded == 0L && waited > SWITCH_AFTER_MS
+        val crawling = firstByteAt > 0 && now - firstByteAt > SWITCH_AFTER_MS && loadSpeed < SLOW_SERVER_BPS
+        if (tape != null && !paused && !loadPlayed && player.playbackState == Player.STATE_BUFFERING && now - lastSwitchAt > SWITCH_AFTER_MS &&
+            counter.host != null && (stuck || crawling) &&
+            locator.hasFasterThan(tape.program.videoUrl, counter.host, if (stuck) 0 else loadSpeed * 2)
+        ) {
+            Log.i(TAG, "${counter.host} is crawling (${loadSpeed / 1000} kbit/s); switching to its mirror")
+            lastSwitchAt = now
+            locator.avoid(counter.host)
+            loadAt(loadTarget + (clock() - loadAskedAt))
+        }
+
+        if (currentAiring() != null && !paused && player.playbackState == Player.STATE_READY) {
+            // A stall puts playback behind. Jumping straight back would mean another stall, so a
+            // short one is simply kept (the badge shows how far behind); only once stalls add up
+            // to a minute does it catch up, and then at most once a minute.
+            val drift = clock() - programTime() - chosenDelayMs - stallDelayMs
+            if (drift > STALL_NOTICE_MS) stallDelayMs += drift
+            if (stallDelayMs > CATCH_UP_AFTER_MS && now - lastCatchUpAt > CATCH_UP_AFTER_MS) {
+                Log.i(TAG, "${stallDelayMs / 1000} s behind after stalls; catching up")
+                lastCatchUpAt = now
+                stallDelayMs = 0
                 seekToProgramTime(clock() - chosenDelayMs)
             }
         }
         publish()
+    }
+
+    /** The tape's index has arrived and it can seek: move to live now, while nothing is showing yet. */
+    private fun syncToLive(timeline: Timeline) {
+        if (timeline.isEmpty || player.currentMediaItemIndex >= timeline.windowCount) return
+        val window = timeline.getWindow(player.currentMediaItemIndex, Timeline.Window())
+        if (window.isPlaceholder || !window.isSeekable) return
+        syncOnIndex = false
+        val airing = currentAiring() ?: return
+        // Aim a little ahead: the first seconds of video still have to arrive after the seek.
+        val target = loadTarget + if (paused) 0L else clock() - loadAskedAt + SYNC_LEAD_MS
+        if (!airing.contains(target)) return
+        val position = target - airing.startMs
+        if (abs(position - player.currentPosition) > SYNC_MIN_MS) {
+            Log.i(TAG, "Index in; moving ${(position - player.currentPosition) / 1000} s on to live")
+            player.seekTo(position)
+        }
     }
 
     private fun currentAiring(): Airing? = player.currentMediaItem?.mediaId?.let { airings[it] }
@@ -232,8 +376,19 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
         val now = schedule.airingAt(t)
         val next = schedule.airingAt(now.endMs)
         airings.clear()
-        Log.i(TAG, "Tuning \"${now.program.title}\" at ${(t - now.startMs) / 1000} s from ${now.program.videoUrl}")
-        if (waitingSince == 0L) waitingSince = SystemClock.elapsedRealtime()
+        // Find its storage servers while the index loads, so the seek to live goes direct. The
+        // next tape's are looked up later, by warming, so the two don't share the line now.
+        locator.lookUp(now.program.videoUrl)
+        indexCached = TapeCache.isIndexCached(context, now.program)
+        Log.i(TAG, "Tuning \"${now.program.title}\" at ${(t - now.startMs) / 1000} s from ${now.program.videoUrl}" +
+            (if (indexCached) " (index on disk)" else now.program.indexBytes?.let { " (index ${it / 1000} KB to fetch)" } ?: ""))
+        waitingSince = SystemClock.elapsedRealtime()
+        bytesAtLoad = counter.bytes.get()
+        firstByteAt = 0
+        loadPlayed = false
+        syncOnIndex = true
+        loadTarget = t
+        loadAskedAt = clock()
         player.setMediaItems(listOf(mediaItem(now), mediaItem(next)), 0, t - now.startMs)
         player.prepare()
         player.playWhenReady = !paused
@@ -245,7 +400,7 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
      * next tape rather than reloading the one that just ran out, which would end again at once.
      */
     private fun playNextTape() {
-        val t = clock() - chosenDelayMs
+        val t = clock() - chosenDelayMs - stallDelayMs
         val ended = currentAiring()
         Log.i(TAG, "\"${ended?.program?.title}\" ran out before its listed end; moving on")
         loadAt(if (ended != null && ended.contains(t)) ended.endMs else t)
@@ -264,6 +419,8 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
 
     private fun mediaItem(airing: Airing): MediaItem {
         airings[airing.key] = airing
+        // Lets the cache keep exactly this tape's index, and nothing after it.
+        TapeCache.note(airing.program)
         val inPoint = airing.program.inPointMs
         return MediaItem.Builder()
             .setMediaId(airing.key)
@@ -305,6 +462,8 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
                 tapeBitsPerSecond = tapeBitrate(),
                 error = lastError,
                 retryInMs = if (noSignal) (retryAt - now).coerceAtLeast(0) else 0,
+                indexBytes = (airing ?: schedule?.airingAt(clock()))?.program?.indexBytes,
+                indexCached = indexCached,
             ),
         )
     }
@@ -315,11 +474,21 @@ class LivePlayer(context: Context, private val clock: () -> Long) {
         const val LIVE_SLACK_MS = 2_000L
         const val CONNECT_TIMEOUT_MS = 15_000
         const val READ_TIMEOUT_MS = 20_000
-        private const val RESYNC_MS = 8_000L
-        private const val RESYNC_COOLDOWN_MS = 60_000L
+        private const val MIN_BUFFER_MS = 60_000
+        private const val MAX_BUFFER_MS = 120_000
+        private const val START_BUFFER_MS = 2_500
+        private const val RESTART_BUFFER_MS = 10_000
+        private const val WARM_WHEN_BUFFERED_MS = 20_000L
+        private const val SYNC_LEAD_MS = 1_500L
+        private const val SYNC_MIN_MS = 1_500L
+        private const val STALL_NOTICE_MS = 1_000L
+        private const val CATCH_UP_AFTER_MS = 60_000L
         private const val RETRY_MS = 5_000L
         private const val RETRY_MAX_MS = 60_000L
         private const val RECEIVING_MS = 3_000L
+        /** A tune still waiting after this long, below [SLOW_SERVER_BPS], tries the other server. */
+        private const val SWITCH_AFTER_MS = 12_000L
+        private const val SLOW_SERVER_BPS = 1_500_000L
 
         /** Says who is asking, so the Archive can tell this app's traffic apart. */
         fun userAgent(context: Context): String {

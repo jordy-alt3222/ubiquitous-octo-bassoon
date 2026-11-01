@@ -83,6 +83,7 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
             while (isActive) {
                 _now.value = repo.now()
                 player.tick()
+                warmAhead()
                 checkAsleep()
                 delay(1_000)
             }
@@ -124,6 +125,27 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
 
     private val channels: List<Channel>
         get() = (_lineup.value as? Lineup.Ready)?.channels.orEmpty()
+
+    /**
+     * What to fetch ahead while the tape on screen plays comfortably, like the site's neighbour
+     * warming: the next tape on this channel, so the change of programme doesn't stall, then
+     * what is on the channels either side, so CH ▲ / ▼ start quickly.
+     */
+    private fun warmAhead() {
+        val list = channels
+        val index = list.indexOfFirst { it.id == _tuned.value?.id }
+        if (index < 0 || _screen.value == Screen.Home) return
+        val now = repo.now()
+        val schedules = _schedules.value
+        val programs = buildList {
+            schedules[list[index].id]?.upNext(now, 1)?.firstOrNull()?.let { add(it.program) }
+            for (step in intArrayOf(1, -1)) {
+                val neighbour = list[((index + step) % list.size + list.size) % list.size]
+                schedules[neighbour.id]?.airingAt(now)?.let { add(it.program) }
+            }
+        }
+        player.warm(programs)
+    }
 
     // --- Tuning ------------------------------------------------------------------------------
 
@@ -200,7 +222,7 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
         signalJob = viewModelScope.launch {
             val state = player.state.value
             val tape = state.airing?.let { TapeUnderTest(it.program.videoUrl, state.link.tapeBitsPerSecond) }
-            signalCheck.run(tape) { rows -> _signal.value = rows }
+            signalCheck.run(tape, player::servers) { rows -> _signal.value = rows }
         }
     }
 

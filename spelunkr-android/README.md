@@ -71,9 +71,50 @@ This part is not on the website. It was added so you can see whether the app is 
 - **Logcat.** Every tune, the server reached, catch-ups and failures are written to `adb logcat -s Spelunkr`.
 
 The player also allows archive.org more time than ExoPlayer's default: 15 s to connect and 20 s per read, instead
-of 8 s. After a failure it waits 5 s, then 10, 20, 40 and at most 60 s before retrying. It catches up to live
-at most once a minute, so a slow line can't trap it in a loop. A tape that is shorter than its listing moves on
-to the next tape instead of reloading.
+of 8 s. After a failure it waits 5 s, then 10, 20, 40 and at most 60 s before retrying. A tape that is shorter
+than its listing moves on to the next tape instead of reloading.
+
+## How it streams the Archive's big tapes
+
+Every tape is a single MP4 file with an index (the "moov"), sometimes at the start of the file and sometimes
+at the very end. The player has to download the whole index before it can show the first frame. The schedule
+files list the index size, and it is large: a median of 7–11 MB on the REWIND channels, and up to 42 MB on the
+longest tapes. On a home line that alone is tens of
+seconds per tune. The app works around it as follows:
+
+- **Indexes are kept on disk** (`TapeCache`, up to 300 MB, oldest dropped first). Only the index part of each
+  file (wherever it sits) and its first few bytes are stored, never the video. Coming back to a channel, a
+  retry, or reopening the app reads the index from disk instead of downloading it again.
+- **Indexes are fetched ahead** (`TapeWarmer`), like the site's "neighbour warming". This only happens while the
+  tape on screen is playing with at least 20 s buffered, one tape at a time. It fetches the next tape on the
+  channel, so the change of programme doesn't stall, and what's on the channels either side, so CH ▲ / ▼
+  start quickly. A tune stops warming so the tape being tuned gets the whole line.
+- **The faster of the tape's two servers** (`ArchiveLocator`). archive.org keeps every item on two servers (`d1`
+  and its mirror `d2`), and their speeds can differ hugely. On 1 Nov 2026 one TOONERTIA tape came off `d1` at
+  under 1 Mbit/s and off `d2` at about 60 Mbit/s. archive.org's redirect, and spelunkr.tv itself (which always
+  uses `d1`), can land on the slow one, and then no amount of buffering helps. Like the site, the app asks
+  archive.org's metadata where the item lives. Unlike the site, it times a 512 KB read from both servers and
+  plays from the faster, going straight there and skipping the redirect on every request.
+  - Server speeds are remembered for 10 minutes.
+  - A server that fails is avoided for 5 minutes.
+  - A tune switches to the mirror when nothing has arrived for 12 s, or when it has crawled below 1.5 Mbit/s
+    for 12 s and the mirror was measured at least twice as fast. The index bytes already received stay on
+    disk.
+  - SIGNAL CHECK shows both servers' speeds for the tape on air.
+- **A deeper buffer:** up to 2 minutes of video ahead when the line allows, and 10 s refilled after a stall
+  before playing again (ExoPlayer's default is 5 s), so a slow line plays in longer runs and stops less often.
+- **One wait to tune in:** the player jumps to the live second as soon as the tape's index has arrived, before
+  anything is shown. It no longer shows a frame and then stalls again to catch up.
+- **Dropped connections resume.** Slow Archive servers sometimes close a connection partway through. ExoPlayer
+  reads that as the end of the file and gives up on the tape. `WholeResponses` turns it into an error instead,
+  so ExoPlayer reconnects and carries on from the same byte.
+- **No stall chasing:** after a stall mid-show, playback continues a few seconds behind live, and the badge shows
+  by how much. The Watch bar's "-0:12 · GO LIVE" key goes back to the live second. Only once stalls add up to a
+  minute does it catch up by itself, at most once a minute.
+
+What can't be fixed on the device: some tapes need more than many home lines deliver. RADIO-ACTIVE TV runs at
+about 10 Mbit/s, and archive.org has no lighter copy of those files. SIGNAL CHECK compares your line's speed
+with what the tape on air needs.
 
 ## Phone vs TV: one codebase
 

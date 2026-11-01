@@ -13,6 +13,11 @@ data class Program(
     val durationMs: Long,
     /** Where in the file the aired part begins. */
     val inPointMs: Long,
+    /**
+     * How many bytes at the start of the file are its index, which the player must have in full
+     * before the first frame: up to 40 MB on the long tapes. Null when the schedule doesn't say.
+     */
+    val indexBytes: Long? = null,
 ) {
     val videoUrl: String
         get() = "https://archive.org/download/$archiveId/" +
