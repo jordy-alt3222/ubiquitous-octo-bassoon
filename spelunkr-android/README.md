@@ -171,6 +171,12 @@ and the app always plays that copy untouched.
   909 from the 90s and 653 from the 80s, down to 43 from the 1920s, plus 1,425 with no year.
 - **DECADE CHANNELS:** one channel per decade (THE 80s on 980, THE 90s on 990, THE 2000s on 900…) mixing every
   channel's tapes from it, in the DECADES category.
+- **Thin decades topped up (SPELUNKR only):** Spelunkr has few tapes from the early decades, so
+  `tools/build_decade_extras.py` adds up to 150 per decade from the 1900s to the 1970s. They come from
+  archive.org's own collections: silent and feature films, the Prelinger archive, classic TV and old
+  commercials. They are bundled as `app/src/spelunkr/assets/decade-extras.json` and go only into the decade
+  channels, never into Spelunkr's own channels. The 2010s and 2020s aren't topped up: in these collections
+  those years are mostly upload dates. `DecadeExtrasTest` checks the file.
 - **MY DIAL:** switch channels on or off the dial, and star channels to mix into **MY MIX** (999), your own
   channel.
 

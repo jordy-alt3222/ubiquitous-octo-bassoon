@@ -102,7 +102,16 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
     val signal: StateFlow<List<CheckRow>> = _signal.asStateFlow()
     private var signalJob: Job? = null
 
+    /** Extra tapes for thin decades (SPELUNKR only), read from the app once. */
+    @Volatile private var extras: Map<Int, List<com.example.spelunkrtv.schedule.Program>> = emptyMap()
+
     init {
+        viewModelScope.launch {
+            extras = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+                runCatching { com.example.spelunkrtv.data.DecadeExtras.load(app) }.getOrDefault(emptyMap())
+            }
+            rebuildDial()
+        }
         player.apply(setup.value)
         load()
         viewModelScope.launch {
@@ -203,19 +212,22 @@ class SpelunkrViewModel(app: Application) : AndroidViewModel(app) {
                 }
             }
         }
-        val counts = tapes.values.flatten().distinctBy { it.videoUrl }.mapNotNull { Dial.decadeOf(it) }
+        val counts = (tapes.values.flatten() + extras.values.flatten()).distinctBy { it.videoUrl }.mapNotNull { Dial.decadeOf(it) }
             .groupingBy { it }.eachCount().filterValues { it >= MIN_DECADE_TAPES }.toSortedMap()
         _decades.value = counts
         if (allLoaded && setup.decadeChannels) {
             val everything = tapes.values.flatten()
             for (decade in counts.keys.filter { setup.decades.isEmpty() || it in setup.decades }) {
                 val id = "decade-$decade"
-                val schedule = Dial.mix(id, everything, setOf(decade)) ?: continue
+                val topUp = extras[decade].orEmpty()
+                val schedule = Dial.mix(id, everything + topUp, setOf(decade)) ?: continue
                 schedules[id] = schedule
                 dial += Channel(
                     id = id, name = Dial.decadeName(decade), dial = Dial.decadeDial(decade),
                     color = DECADE_COLORS[(decade / 10) % DECADE_COLORS.size],
-                    description = "Every channel's tapes from the ${decade}s, mixed into one.",
+                    description = "Every channel's tapes from the ${decade}s, mixed into one" + if (topUp.isEmpty()) "." else
+                        ", topped up with ${topUp.size} from archive.org's own collections (silent and feature films, " +
+                        "the Prelinger archive, classic TV, old commercials).",
                     family = "decades", logoRows = emptyList(), items = schedule.programsAt(now).size,
                     videoSeconds = schedule.programsAt(now).sumOf { it.durationMs } / 1000,
                     versions = emptyList(),
