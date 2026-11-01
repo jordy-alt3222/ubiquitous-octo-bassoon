@@ -4,6 +4,7 @@ import com.example.spelunkrtv.schedule.ChannelSchedule
 import com.example.spelunkrtv.schedule.Program
 import com.example.spelunkrtv.schedule.ScheduleVersion
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.int
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
@@ -33,6 +34,15 @@ class RuLineupTest {
         tapes.forEach { t ->
             assertTrue(t.getValue("file").jsonPrimitive.content.endsWith(".mp4", ignoreCase = true))
             assertTrue(t.getValue("duration").jsonPrimitive.int in 120..6 * 3600)
+        }
+    }
+
+    @Test
+    fun onlyTheUssrEra() {
+        channels.flatMap { it.getValue("items").jsonArray }.forEach { t ->
+            t.jsonObject["year"]?.jsonPrimitive?.contentOrNull?.toIntOrNull()?.let { year ->
+                assertTrue("${t.jsonObject["title"]} is from $year", year <= 1991)
+            }
         }
     }
 

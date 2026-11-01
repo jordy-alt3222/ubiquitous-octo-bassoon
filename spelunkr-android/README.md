@@ -165,7 +165,7 @@ and the app always plays that copy untouched.
 The guide and directory have category keys (REWIND, ARCHIVE, FILM, TV SERIES, EDUCATIONAL, OTHER, PREVIEW,
 from each channel's own type). CH ▲ / ▼ stays inside the category picked.
 
-## ru-splunker (Soviet & retro Russian channels)
+## ru-splunker (USSR-era channels)
 
 A second app from the same code (`ru` flavor): its own name, icon and banner, and it installs next to SPELUNKR.
 Spelunkr has no Russian channels, so ru-splunker's lineup is built from archive.org by
@@ -175,7 +175,8 @@ meet all of these:
 - not access-restricted;
 - a playable MP4 between 2 minutes and 6 hours;
 - Russian (by language, a Cyrillic title, or a Soviet subject);
-- made in 2000 or earlier, or, when undated, marked Soviet-era or VHS.
+- made in the USSR era (1991 or earlier), or, when undated, marked Soviet (Soviet/СССР, Soyuzmultfilm, Mosfilm,
+  Lenfilm, Central TV/Gosteleradio, Novosti Dnya and so on).
 
 It records each tape's length and index size, and shuffles each channel with a fixed seed. Every copy of the
 app plays from the same epoch (1 Nov 2026), so channels are live and in sync like Spelunkr's. Refresh the

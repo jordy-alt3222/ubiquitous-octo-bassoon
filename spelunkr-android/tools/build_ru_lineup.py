@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Builds ru-splunker's lineup: Soviet & retro Russian channels from playable archive.org video.
+"""Builds ru-splunker's lineup: USSR-era channels (up to 1991) from playable archive.org video.
 
     python3 tools/build_ru_lineup.py app/src/ru/assets/ru-lineup.json
+    python3 tools/build_ru_lineup.py app/src/ru/assets/ru-lineup.json --only=goluboy-ekran   # one channel
 
 For each channel it searches archive.org, keeps only items that are not access-restricted, have
 an MP4 between 2 minutes and 6 hours, look Russian (language, Cyrillic title or Soviet subject)
-and date from 2000 or earlier (or, undated, say they are Soviet-era or VHS). It records each tape's length and the size
+and date from 1991 or earlier (or, undated, say they are Soviet). It records each tape's length and the size
 and place of its MP4 index, then shuffles each channel with a fixed seed. Every copy of the app
 reads the same file and the same epoch, so every viewer sees the same tape at the same second.
 """
@@ -16,6 +17,14 @@ EPOCH_MS = 1793491200000  # 2026-11-01T00:00:00Z: when the schedule begins, for 
 PER_CHANNEL = 120
 BASE = 'mediatype:movies AND NOT collection:(tvnews OR tvarchive) AND NOT access-restricted-item:true'
 RUS = 'language:(rus OR russian)'
+
+# Central Television's programmes, by name, for ГОЛУБОЙ ЭКРАН.
+SOVIET_TV = ('"советское телевидение" OR "soviet television" OR "soviet tv" OR "центральное телевидение" OR "цт ссср" '
+             'OR гостелерадио OR "песня года" OR "голубой огонёк" OR телеспектакль OR телефильм OR кинопанорама '
+             'OR "кабачок 13 стульев" OR "клуб кинопутешествий" OR "в мире животных" OR "утренняя почта" OR "вокруг смеха" '
+             'OR "что? где? когда?" OR квн OR "ну-ка, девушки" OR "очевидное-невероятное" OR "международная панорама" '
+             'OR "программа время" OR "в гостях у сказки" OR "служу советскому союзу" OR абвгдейка OR "весёлые ребята" '
+             'OR "до 16 и старше" OR "музыкальный ринг" OR "камера смотрит в мир" OR виа OR эстрада')
 
 CHANNELS = [
     dict(id="multiki", dial=1, name="МУЛЬТИКИ", family="cartoons", color="#E53935",
@@ -31,15 +40,15 @@ CHANNELS = [
          description="Soviet science fiction: spaceships, distant planets and quiet philosophical robots.",
          q=f'{RUS} AND subject:(фантастика OR "science fiction" OR sci-fi)'),
     dict(id="goluboy-ekran", dial=5, name="ГОЛУБОЙ ЭКРАН", family="tv", color="#1E88E5",
-         description="Television from the Soviet years and the nineties, much of it off home VHS: shows, concerts, Song of the Year, adverts.",
-         q=f'subject:("советское телевидение" OR "soviet television" OR "soviet tv" OR "центральное телевидение" OR "цт ссср" OR гостелерадио OR "песня года" OR эстрада OR "советская эстрада" OR "голубой огонёк" OR виа) OR ({RUS} AND subject:(vhs OR "90-е" OR 1990s OR реклама OR "russian tv" OR "russian television"))'),
+         description="Soviet Central Television: TV plays, KVN, Club of Film Travels, Morning Mail, Song of the Year, the New Year Blue Light and the evening programmes.",
+         q=" OR ".join(f"{field}:({SOVIET_TV})" for field in ("subject", "title", "description"))),
     dict(id="khronika", dial=6, name="ХРОНИКА", family="educational", color="#78909C",
          description="Newsreels and documentaries: Novosti Dnya, science films, and the century on film.",
          q=f'{RUS} AND subject:(кинохроника OR документальный OR documentary OR newsreel OR "новости дня")'),
 ]
 
 NOT_RETRO = re.compile(r"tom and jerry|том и джерри|silent hill|angry birds|фиксики|smeshariki|смешарики|маша и медведь|masha and the bear|"
-                       r"yiddish ?book ?center|monster high|школа монстров", re.I)
+                       r"yiddish ?book ?center|monster high|школа монстров|варкентин|уральские пельмени|плохие новости", re.I)
 
 
 def same_title(title):
@@ -49,10 +58,11 @@ def same_title(title):
     t = re.sub(r"\b(1[89]\d\d|20\d\d)\b", " ", t)
     return re.sub(r"[\W_]+", " ", t).strip()
 CYRILLIC = re.compile(r"[А-Яа-яЁё]")
-# "Retro": a year up to 2000, or something that says Soviet era or the VHS days.
-RETRO_MARK = re.compile(r"soviet|советск|ссср|ussr|союзмультфильм|soyuzmultfilm|мосфильм|mosfilm|ленфильм|lenfilm|"
-                        r"гостелерадио|центральное телевидение|\bцт\b|vhs|видеокассет|новости дня", re.I)
-MAX_YEAR = 2000
+# USSR era only: a year up to 1991, or (undated) something that says it is Soviet.
+SOVIET_MARK = re.compile(r"soviet|советск|ссср|ussr|союзмультфильм|soyuzmultfilm|мосфильм|mosfilm|ленфильм|lenfilm|"
+                         r"гостелерадио|госкино|центральное телевидение|\bцт\b|новости дня|киножурнал|"
+                         r"беларусьфильм|киностудия им\.? ?горького|свердловская киностудия", re.I)
+MAX_YEAR = 1991
 
 
 def get_json(url):
@@ -114,13 +124,16 @@ def tape(identifier):
         year = int(year.group(1)) if year else None
         if year and year > MAX_YEAR:
             return None
+        # Metadata years can be wrong; a later year in the title gives a tape away.
+        if any(int(y) > MAX_YEAR for y in re.findall(r"\b(19\d\d|20\d\d)\b", str(title))):
+            return None
         subjects = " ".join(md.get("subject") if isinstance(md.get("subject"), list) else [str(md.get("subject") or "")])
         language = " ".join(md.get("language") if isinstance(md.get("language"), list) else [str(md.get("language") or "")])
         russian = re.search(r"rus", language, re.I) or CYRILLIC.search(title) or re.search(r"soviet|советск|ссср|ussr", subjects + title, re.I)
         if not russian or NOT_RETRO.search(title + " " + subjects):
             return None
         description = first(md.get("description")) or ""
-        if not year and not RETRO_MARK.search(" ".join([str(title), subjects, str(description)[:500]])):
+        if not year and not SOVIET_MARK.search(" ".join([str(title), subjects, str(description)[:500]])):
             return None
         best = None
         for f in m.get("files", []):
@@ -150,10 +163,20 @@ def tape(identifier):
         return None
 
 
-def main(out):
+def main(out, only=None):
+    """Builds every channel, or with [only] rebuilds that one channel inside the existing file."""
+    existing = {}
+    if only:
+        with open(out, encoding="utf-8") as f:
+            existing = {c["id"]: c for c in json.load(f)["channels"]}
     channels, seen = [], set()
+    if only:
+        seen = {t["id"] for cid, c in existing.items() if cid != only for t in c["items"]}
     with ThreadPoolExecutor(8) as pool:
         for spec in CHANNELS:
+            if only and spec["id"] != only:
+                channels.append(existing[spec["id"]])
+                continue
             ids = [i for i in search(spec["q"]) if i not in seen]
             tapes, titles = [], set()
             for t in pool.map(tape, ids):
@@ -170,4 +193,6 @@ def main(out):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "ru-lineup.json")
+    args = [a for a in sys.argv[1:] if not a.startswith("--only=")]
+    only = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--only=")), None)
+    main(args[0] if args else "ru-lineup.json", only)

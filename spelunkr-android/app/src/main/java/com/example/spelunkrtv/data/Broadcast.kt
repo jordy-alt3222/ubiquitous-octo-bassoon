@@ -17,9 +17,9 @@ object Brand {
     val isRu: Boolean = BuildConfig.LINEUP == "ru"
     val name: String = if (isRu) "RU-SPLUNKER" else "SPELUNKR"
     val guideName: String = if (isRu) "Ru-splunker" else "Spelunkr"
-    val tagline: String = if (isRu) "Soviet & retro TV from the Internet Archive." else "Like cable TV, but weirder. SPELUNKR.TV"
+    val tagline: String = if (isRu) "Soviet TV, film and cartoons, 1922–1991, from the Internet Archive." else "Like cable TV, but weirder. SPELUNKR.TV"
     val about: String = if (isRu) {
-        "A free alternative TV network\nof Soviet and retro Russian video from the Internet Archive."
+        "A free alternative TV network\nof the USSR's films, cartoons and television, from the Internet Archive."
     } else {
         "We are a free alternative TV network\nbuilt from the Internet Archive's forgotten videos."
     }
